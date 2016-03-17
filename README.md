@@ -1,8 +1,8 @@
 #Cross-development
 
 Alunos: 
-Beatriz Rezener Dourado Matos
-João Gabriel de Britto e Silva
+* Beatriz Rezener Dourado Matos
+* João Gabriel de Britto e Silva
   
 Orientador: Prof. Dr. Paulo Roberto Miranda Meirelles
 
