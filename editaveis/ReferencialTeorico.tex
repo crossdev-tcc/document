@@ -1,0 +1,95 @@
+\part{Meus Referenciais Teóricos}
+
+\chapter[Arquiteturas móveis]{Arquiteturas Móveis}
+
+
+Aqui serão descritos as arquiteturas móveis mais conhecidas e utilizadas no mercado. São elas iOS e Android.
+
+
+\section{iOS}
+
+O sistema operacional iOS foi lançado juntamente com o primeiro iPhone criado em Janeiro de 2007 e 
+funciona como uma interface entre as aplicações desenvolvidas pelos programadores (apps) e o hardware 
+dos dispositivos (iPhone, iPad, iPod). Desta forma a comunicação com o hardware do dispositivo se dá 
+por meio de um conjunto bem definido de interfaces do sistema, o que facilita o desenvolvimento de apps 
+que funcionam corretamente entre os variados tipos de hardware dos dispositivos da Apple. Sua arquitetura 
+é baseada em camadas, conforme a figura X a seguir.
+
+ 
+\begin{itemize}
+
+	\item Cocoa Touch Layer
+	\item Media Layer;
+	\item Core Services Layer;
+	\item Core OS Layer;
+
+\end{itemize}
+
+
+Como recomendação, a Apple explica que deve-se preferir o uso de camadas mais elevadas, pois as camadas de 
+mais alto nível possuem abstrações orientadas a objeto de funcionalidades das camadas mais baixas. Isso 
+torna o desenvolvimento mais fácil, pois reduz a quantidade de código que deve ser criado e mantém funcionalidade 
+complexas das camadas mais baixas encapsuladas por meio das interfaces. No entanto, não há problema em usar 
+funcionalidades presentes nas camadas mais baixas, se essas não estiverem disponíveis por meio de abstrações nas 
+camadas mais elevadas.A maioria das interfaces disponíveis para uso são disponibilizadas por meio de frameworks, 
+que são diretórios, que podem ser adicionados ao projeto no Xcode, contendo DSL's e os recursos necessários como, 
+imagens, apps auxiliares e arquivos header, para a biblioteca funcionar corretamente.
+
+
+\begin{itemize}
+
+	\item A camada Cocoa Touch é a camada mais alto nível onde são fornecidos serviços básicos de interação 
+    com o usuário como entrada baseada em toques e notificações Push e outras tecnologias necessárias para
+     melhorar a experiencia do usuário como multitarefas, Continuidade (Handoff) e AirDrop, além de frameworks 
+     de alto nível que permitem acesso a funcionalidades do sistema como AddressBook para contatos, EventKit 
+     para eventos relacionados ao calendário e MapKit para mapas.
+	\item A camada logo abaixo da Cocoa Touch é a camada Media que contém tecnologias e frameworks necessários 
+    para a implementação de experiencias multimedia com áudio, vídeo e gráficos.
+	\item A próxima camada, logo abaixo da camada Media, é a camada Core Services. Essa camada está mais próxima 
+    do hardware e portanto possui acesso a funcionalidades de mais baixo nível como localização, telefonia, threads 
+    e SQLite. Aqui residem dois dos frameworks mais importantes do iOS que são o Foundation e o Core Foundation, 
+    ambos relacionados com o gerenciamento de dados e alguns serviços e definem todos os tipos básicos de dados que 
+    todos os apps usam, como por exemplo, coleções, strings, data e hora, sockets e threads.
+	\item A última camada é a camada Core OS, na qual as funcionalidades de mais baixo nível são construidas e 
+    provavelmente utilizadas por outros frameworks em outras camadas. Se a aplicação possui requisitos de segurança 
+    ou comunicação com acessórios externos mais complicados, é possível usar as funcionalidades dessa camada.
+
+\end{itemize}
+
+
+
+\section{Desenvolvimento}
+
+O Desenvolvimento (Miolo ou Corpo do Trabalho) é subdividido em seções de 
+acordo com o planejamento do autor. As seções primárias são aquelas que 
+resultam da primeira divisão do texto do documento, geralmente 
+correspondendo a divisão em capítulos. Seções secundárias, terciárias, 
+etc., são aquelas que resultam da divisão do texto de uma seção primária, 
+secundária, terciária, etc., respectivamente.
+
+As seções primárias são numeradas consecutivamente, seguindo a série 
+natural de números inteiros, a partir de 1, pela ordem de sua sucessão no 
+documento.
+
+O Desenvolvimento é a seção mais importante do trabalho, por isso exigi-se 
+organização, objetividade e clareza. É conveniente dividi-lo em pelo menos 
+três partes:
+
+\begin{itemize}
+
+	\item Referencial teórico, que corresponde a uma análise dos trabalhos 
+	relevantes, encontrados na pesquisa bibliográfica sobre o assunto. 
+	\item Metodologia, que é a descrição de todos os passos metodológicos 
+	utilizados no trabalho. Sugere-se que se enfatize especialmente em (1) 
+	População ou Sujeitos da pesquisa, (2) Materiais e equipamentos 
+	utilizados e (3) Procedimentos de coleta de dados.
+	\item Resultados, Discussão dos resultados e Conclusões, que é onde se 
+	apresenta os dados encontrados a análise feita pelo autor à luz do 
+	Referencial teórico e as Conclusões.
+
+\end{itemize}
+
+\section{Uso de editores de texto}
+
+O uso de programas de edição eletrônica de textos é de livre escolha do autor. 
+
