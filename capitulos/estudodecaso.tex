@@ -11,11 +11,26 @@ pessoas possuem em casa em suas ``farmacinhas'' particulares.
 Como recursos nativos do sistema o aplicativo utiliza: localização geográfica, notificações locais, ligação, câmera e rolo de câmera;
 
 
-Como banco de dados foi usado o SQLite, através do framework externo e open-source \textit{FMDB}, 
+Como banco de dados foi usado o SQLite, através do \textit{framework} externo e \textit{open-source FMDB}, 
 disponível no \href{https://github.com/ccgus/fmdb}{Github};
 
-A arquitetura do sistema foi criada em cima do padrão de projeto MVC, 
-possuindo Objetos de Acesso a Dados (DAO) para comunicação com o banco de dados;
+A arquitetura do sistema foi criada com base no padrão de projeto MVC, possuindo Objetos de Acesso a Dados (DAO) para comunicação 
+com o banco de dados. No entanto, o MVC tradcional difere em alguns aspectos do MVC usado no \textit{iOS}. 
+
+No \textit{iOS} o MVC trás uma controladora ligada à classe de \textit{view}, o que é chamado de \textit{ViewController} que é responsável por 
+criar a ponte entre a interação do usuário com as classes modelos e a \textit{view}. Dessa forma, as \textit{ViewControllers} têm a 
+responsabilidade de repassar as entradas do usuário para a modelo e controlar a \textit{view} para apresentar os resultados que modelo retornar. 
+
+
+\textcolor{red}{Diferente do MVC tradicional no qual a controladora apenas repassa as informações que estão entrando na fronteira da aplicação, 
+as \textit{ViewControllers} têm, além dessa responsabilidade, também a responsabilidade de instanciar e gerenciar a \textit{view} no tocante
+a organização dos elementos e apresentação das informações.}
+
+
+\textcolor{red}{Outra observação sobre as diferenças entre os dois MVC's, é que no MVC 
+tradicional pode haver uma controladora apenas para todas as modelos ou uma controladora por modelo, mas nenhuma ligada diretamente 
+a uma \textit{view}, no entanto, no iOS há, necessáriamente, uma \textit{ViewController} por \textit{view}, podendo haver ainda uma 
+controladora relacionada com cada modelo conforme o padrão tradicional do MVC.}
 
 
 \section{Análise dos dados} \label{sec:analise}
