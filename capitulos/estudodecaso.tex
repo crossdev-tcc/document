@@ -4,11 +4,31 @@ Texto introdutório da seção
 
 \section{Descrição do projeto selecionado} \label{subsec:descricaodoprojeto}
 
-O Mini Farma é um aplicativo criado inicialmente para a plataforma iOS que serve para controle dos medicamentos que as 
-pessoas possuem em casa em suas ``farmacinhas'' particulares.
+Mini Farma é um aplicativo criado inicialmente para a plataforma iOS que serve para controle dos medicamentos que as 
+pessoas possuem em casa em suas ``farmacinhas'' particulares.\textcolor{red}{INSERIR PRINT DA TELA INICIAL?}
 
 
-Como recursos nativos do sistema o aplicativo utiliza: localização geográfica, notificações locais, ligação, câmera e rolo de câmera;
+O aplicativo utiliza recursos nativos do sistema, os quais são descritos a seguir. 
+\begin{itemize}
+	\item \textbf{Localização geográfica}: Define a posição geográfica do dispositivo que o usuário está utilizando para poder permitir
+    que seja salva a localização da farmácia onde ele comprou um medicamento para, caso seja necessário, explicar para alguém onde a 
+    farmácia fica. Também é possível com base nessa localização da farmácia e do usuário, traçar uma rota para levá-lo diretamente à 
+    farmácia em questão;
+	\item \textbf{Notificações locais}: Diferente das notificações \textit{Push} as notificações locais são criadas e agendadas na central 
+    de notificações do dispositivo e o sistema se encarrega de entregá-las corretamente de acordo com parâmentros definidos pelo aplicativo. 
+    No caso do Mini Farma, as notificações são usadas para lembrar o usuário, na data e hora corretas, de que o mesmo deve tomar seus medicamentos;
+	\item \textbf{Ligação}: As notificações podem conter ações que executam um determinado bloco de código dentro do aplicativo. No Mini Farma, 
+    uma das notificações possíveis é a de aviso de pouca quantidade ou remédio esgotado, no caso do medicamento ter acabado. 
+    Quando essa notificação é enviada, pode ser feita uma ligação diretamente pela ação da notificação para o número da 
+    farmácia cadastrado no aplicativo. Dessa forma, o usuário pode solicitar uma nova quantidade de medicamento diretamente com a farmácia. 
+	\item \textbf{Câmera}: Para facilitar a identificação dos medicamentos, é possível tirar uma foto com a câmera do dispositivo para 
+    cada remédio cadastrado. Além de uma foto para o medicamento em si, é possível tirar uma foto da receita dele, caso haja;
+    \item \textbf{Rolo de câmera}: Se o usuário já tiver uma foto que o ajude a identificar o seu medicamento ou da receita do mesmo salva 
+    no rolo de câmera, é possível escolher a foto sem precisar tirar uma nova;
+\end{itemize}
+
+\textcolor{red}{\textit{* Vale ressaltar, que com excessão da Ligação, todos os outros recursos nativos do sistema, precisam necessariamente serem autorizados pelo
+usuário para funcionar. Caso o usuário não autorize, o aplicativo ficará com funcionalidades reduzidas.}} 
 
 
 Como banco de dados foi usado o SQLite, através do \textit{framework} externo e \textit{open-source FMDB}, 
