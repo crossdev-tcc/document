@@ -70,34 +70,74 @@ Arquitetura
 
 \section{Ionic}
 
-\textit{Ionic} é um \textit{framework} gratuito e \textit{open source} para desenvolvimento de aplicativos híbridos utilizando tecnologias 
-\textit{web} como \textit{HTML}, \textit{CSS} e \textit{JavaScript} otimizadas para dispositivos móveis. Com apenas um código é possível criar aplicativos para diversas plataformas como
+\textit{Ionic} é um \textit{framework} gratuito e \textit{open source} para desenvolvimento de aplicativos híbridos 
+utilizando tecnologias 
+\textit{web} como HTML, CSS e JavaScript otimizadas para dispositivos móveis. 
+Com apenas um código é possível criar aplicativos para diversas plataformas como
 \textit{iOS} e \textit{Android}. %Criado sob o \textit{framework} Cordova que permite acesso a funcionalidades nativas dos dispositivos.
 
-Cordova é um \textit{framework} para desenvolvimento de aplicativos híbridos criado pela empresa Nitobi. 
-Após ser comprada pela Adobe Systems Inc. teve seu código doado para a Apache para garantir que outras empresas pudessem contribuir, já que muitas empresas confiavam e conheciam as licenças da Apache.
+PhoneGap é um \textit{framework} para desenvolvimento de aplicativos híbridos, criado pela empresa Nitobi. 
+Após ser comprada pela Adobe Systems Inc. teve seu código doado para a Apache Software Foundation 
+para garantir que outras empresas pudessem contribuir, já que muitas empresas confiavam e conheciam as licenças da Apache.
 Como o PhoneGap é uma marca registrada de propriedade da Adobe, na Apache teve seu nome alterado para Cordova.
-Tanto o Apache Cordova quanto o Adobe PhoneGap, são gratuitos e \textit{open sources}, no entanto, o PhoneGap possui um ambiente integrado com serviços da Adobe como o PhoneGap Build.
+Tanto o Apache Cordova quanto o Adobe PhoneGap, são gratuitos e \textit{open sources}, no entanto, o 
+PhoneGap possui um ambiente integrado com serviços da Adobe como o PhoneGap Build.
 
 %e seu código liberado em uma versão \textit{open source}, onde grandes empresas, como Google, Mozilla e Microsoft, contribuiram para o projeto. 
 Cordova permite que aplicações não nativas tenham acesso a funcionalidades nativas do dispositivo como sensores, 
 contatos e camera. No entanto, o Cordova apenas consegue fazer um aplicativo criado em 
-\textit{HTML} rodar como se fosse nativo em um dispositivo com \textit{Android} e \textit{iOS}, mas não consegue 
+HTML rodar como se fosse nativo em um dispositivo com \textit{Android} e \textit{iOS}, mas não consegue 
 imitar a usabilidade e aparência dos dispositivos nativos. 
-Para preencher essa lacuna, outros \textit{frameworks} foram criados em cima do Cordova como um complemento, provendo bibliotecas \textit{HTML} e \textit{CSS} para a 
-criação de um \textit{front-end} que se aproxime o máximo possível da usabilidade e experiência de usuário de aplicações nativas.
+Para preencher essa lacuna, outros \textit{frameworks} foram criados em cima do Cordova como um complemento, 
+provendo bibliotecas HTML e CSS para a 
+criação de um \textit{front-end} que se aproxime o máximo possível da usabilidade e experiência de usuário de 
+aplicações móveis nativas.
 
-O Cordova possui muitos plugins para poder acessar funcionalidades específicas do aparelho em que está sendo executado. Esses devem ser instalados no projeto do aplicativo via \textit{Command-Line Interface} (CLI). 
+O Cordova possui muitos plugins para poder acessar funcionalidades específicas do aparelho em que está sendo 
+executado. Esses devem ser instalados no projeto do aplicativo via \textcolor{red}{\textit{Command-Line Interface} (CLI) - Colocar na lista de acronimos}. 
 
-A fim de se evitar confusões em relação aos nomes dados ao PhoneGap e ao Cordova, pode-se entender o PhoneGap como uma distribuição criada pela Adobe do Apache Cordova. 
+A fim de se evitar confusões em relação aos nomes dados ao PhoneGap e ao Cordova, pode-se entender o PhoneGap 
+como uma distribuição do Apache Cordova mantido pela Adobe. 
 
+%https://www.quora.com/What-is-the-difference-between-PhoneGap-and-Cordova-and-why-would-I-select-one-over-another
+%http://luisvasconcellos.com/2015/04/06/apps-hibridas-com-cordova-e-ionic.html
+%https://www.quora.com/What-is-the-difference-between-Cordova-and-Ionic
+%https://en.wikipedia.org/wiki/Apache_Cordova
+%http://cordova.apache.org/docs/en/latest/guide/overview/
+
+O Ionic provê além do HTML e {SS otimizado para dispositivos móveis, um série de ferramentas de 
+apoio que asseguram velocidade e facilidade no desenvolvimento de aplicativos híbridos. Essas ferramentas são listadas a seguir 
+com uma breve explicação do que cada uma pode fazer.
 
 \begin{itemize}
 
-    \item Cordova
-	
-    \item Ionic
+    \item \textbf{Ionic Framework}: É o \textit{framework front-end} para criação de aplicativos híbridos com tecnologias \textit{web} construído em cima
+    do Apache Cordova. Facilita a criação de aplicativos com interface gráfica e interações muito semelhantes aos dispositivos nativos, de modo que 
+    a experiência de usuário não seja diferente no uso de uma aplicação nativa e multi plataforma. 
     
-    \item AngularJS
-
+    \item \textbf{Ionic Creator}: Com essa ferramenta \textit{on-line} é possível criar protótipos funcionais utilizando \textit{drag'n'drop}
+    , que podem ser executados em dispositivos ou simuladores, e depois exportar o projeto criado para a 
+    inserção de lógicas de negócio. Ela é gratuita para teste, ou seja, é possível criar um protótipo e fazer o \textit{download}
+    do código para continuar o desenvolvimento, no entanto, no momento em que este trabalho foi conduzido, só era possível
+    fazer a pré-visualização em dispositivos reais para usuários pagantes.
+    
+    \item \textbf{Ionic Lab}: É uma ferramenta \textit{desktop} para testar o projeto que está sendo criado com o Ionic. Nela é possível
+    executar o projeto em templates prontos de \textit{iOS} e \textit{Android}, rodar os simuladores de cada plataforma,
+    gerenciar plugins do Cordova e ver um console com logs relativos à execução do projeto. Encapsula o CLI do Ionic com uma interface gráfica simples
+    e intuitiva.
+    
+    \item \textbf{Ionic Playground}: É uma ferramenta \textit{on-line} para criar e testar códigos HTML, CSS e JavaScript 
+    já integrado com a plataforma AngularJS. Nela é possível editar códigos nas três linguagens citadas e ver em tempo real as alterações 
+    feitas aparecerem dentro de um template de dispositivo móvel, sem a necessidade de salvar, compilar ou executar o projeto e sem ter que 
+    configurar o ambiente necessário para o desenvolvimento. 
+    
+    \item \textbf{Ionic View App}: É um aplicativo disponível para as plataformas \textit{iOS} e \textit{Android} onde é possível testar o aplicativo criado no
+    Ionic diretamente em um dispositivo real como se fosse nativo. É possível compartilhar os projetos criados para serem
+    testados por clientes e testadores sem a necessidade de passar pelas lojas de aplicativos de cada plataforma. É semelhante ao serviço 
+    Testflight da Apple para testar aplicativos, ainda em desenvolvimento, e receber \textit{feedbacks} dos clientes e testadores que o testarem.
+    
+    \item \textbf{Ionic Platform}: É a plataforma \textit{on-line} do Ionic que possui serviços de \textit{backend} em nuvem para análise de dados de uso,
+     usuários, configuração de \textit{Push Notifications}, criação dos pacotes nativos e dar \textit{deploy} nas aplicações criadas sem a necessidade de
+     resubmeter o aplicativo para as lojas. 
+     
 \end{itemize}
