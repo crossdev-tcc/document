@@ -7,8 +7,8 @@ Aqui serão descritos as arquiteturas móveis mais conhecidas e utilizadas no me
 O sistema operacional \textit{iOS} foi lançado juntamente com o primeiro \textit{iPhone} criado em Janeiro de 2007 e 
 funciona como uma interface entre as aplicações desenvolvidas pelos programadores (\textit{apps}) e o \textit{hardware} 
 dos dispositivos (\textit{iPhone}, \textit{iPad}, \textit{iPod}). Desta forma a comunicação com o \textit{hardware} do dispositivo se dá 
-por meio de um conjunto bem definido de interfaces do sistema, o que facilita o desenvolvimento de apps 
-que funcionam corretamente entre os variados tipos de hardware dos dispositivos da \textit{Apple}. Sua arquitetura 
+por meio de um conjunto bem definido de interfaces do sistema, o que facilita o desenvolvimento de \textit{apps} 
+que funcionam corretamente entre os variados tipos de \textit{hardware} dos dispositivos da Apple. Sua arquitetura 
 é baseada em camadas, conforme a figura a seguir.
  
 %\begin{figure}
@@ -20,38 +20,40 @@ que funcionam corretamente entre os variados tipos de hardware dos dispositivos 
 %A Figura \ref{fig:iosLayers} Mostrar as camadas da plataforma \textit{iOS}.
 \begin{itemize}
 
-	\item Cocoa Touch Layer
-	\item Media Layer;
-	\item Core Services Layer;
-	\item Core OS Layer;
+	\item \textit{Cocoa Touch Layer};
+	\item \textit{Media Layer};
+	\item \textit{Core Services Layer};
+	\item \textit{Core OS Layer};
 
 \end{itemize}
 
 Como recomendação, a Apple explica que deve-se preferir o uso de camadas mais elevadas, pois as camadas de 
-mais alto nível possuem abstrações orientadas a objeto de funcionalidades das camadas mais baixas. Isso 
-torna o desenvolvimento mais fácil, pois reduz a quantidade de código que deve ser criado e mantém funcionalidade 
+mais alto nível possuem abstrações orientadas à objeto de funcionalidades das camadas mais baixas. Isso 
+torna o desenvolvimento mais fácil, pois reduz a quantidade de código que deve ser criado e mantém funcionalidades 
 complexas das camadas mais baixas encapsuladas por meio das interfaces. No entanto, não há problema em usar 
 funcionalidades presentes nas camadas mais baixas, se essas não estiverem disponíveis por meio de abstrações nas 
-camadas mais elevadas.A maioria das interfaces disponíveis para uso são disponibilizadas por meio de frameworks, 
-que são diretórios, que podem ser adicionados ao projeto no Xcode, contendo DSL's e os recursos necessários como, 
-imagens, apps auxiliares e arquivos header, para a biblioteca funcionar corretamente.
+camadas mais elevadas. 
+
+A maioria das interfaces disponíveis para uso são disponibilizadas por meio de frameworks, 
+que são diretórios, que podem ser adicionados ao projeto no \textit{Xcode}, contendo DSL's e os recursos necessários como, 
+imagens, aplicativos auxiliares e arquivos \textit{header}, para a biblioteca funcionar corretamente.
 
 \begin{itemize}
 
-	\item A camada Cocoa Touch é a camada mais alto nível onde são fornecidos serviços básicos de interação 
-    com o usuário como entrada baseada em toques e notificações Push e outras tecnologias necessárias para
-     melhorar a experiencia do usuário como multitarefas, Continuidade (Handoff) e AirDrop, além de frameworks 
-     de alto nível que permitem acesso a funcionalidades do sistema como AddressBook para contatos, EventKit 
-     para eventos relacionados ao calendário e MapKit para mapas.
-	\item A camada logo abaixo da Cocoa Touch é a camada Media que contém tecnologias e frameworks necessários 
-    para a implementação de experiencias multimedia com áudio, vídeo e gráficos.
-	\item A próxima camada, logo abaixo da camada Media, é a camada Core Services. Essa camada está mais próxima 
-    do hardware e portanto possui acesso a funcionalidades de mais baixo nível como localização, telefonia, threads 
-    e SQLite. Aqui residem dois dos frameworks mais importantes do iOS que são o Foundation e o Core Foundation, 
+	\item A camada \textit{Cocoa Touch} é a camada mais alto nível onde são fornecidos serviços básicos de interação 
+    com o usuário como entrada baseada em toques e notificações \textit{Push} e outras tecnologias necessárias para
+     melhorar a experiencia do usuário como multitarefas, Continuidade (\textit{Handoff}) e \textit{AirDrop}, além de frameworks 
+     de alto nível que permitem acesso a funcionalidades do sistema como \textit{AddressBook} para contatos, \textit{EventKit} 
+     para eventos relacionados ao calendário e \textit{MapKit} para mapas.
+	\item A camada logo abaixo da \textit{Cocoa Touch} é a camada \textit{Media} que contém tecnologias e \textit{frameworks} necessários 
+    para a implementação de experiências multimídia com áudio, vídeo e gráficos.
+	\item A próxima camada, logo abaixo da camada \textit{Media}, é a camada \textit{Core Services}. Essa camada está mais próxima 
+    do \textit{hardware} e portanto possui acesso a funcionalidades de mais baixo nível como localização, telefonia, \textit{threads} 
+    e \textit{SQLite}. Aqui residem dois dos \textit{frameworks} mais importantes do \textit{iOS} que são o \textit{Foundation} e o \textit{Core Foundation}, 
     ambos relacionados com o gerenciamento de dados e alguns serviços e definem todos os tipos básicos de dados que 
-    todos os apps usam, como por exemplo, coleções, strings, data e hora, sockets e threads.
-	\item A última camada é a camada Core OS, na qual as funcionalidades de mais baixo nível são construidas e 
-    provavelmente utilizadas por outros frameworks em outras camadas. Se a aplicação possui requisitos de segurança 
+    todos os \textit{apps} usam, como por exemplo, coleções, \textit{strings}, data e hora, \textit{sockets} e \textit{threads}.
+	\item A última camada é a camada \textit{Core OS}, na qual as funcionalidades de mais baixo nível são construídas e 
+    provavelmente utilizadas por outros \textit{frameworks} em outras camadas. Se a aplicação possui requisitos de segurança 
     ou comunicação com acessórios externos mais complicados, é possível usar as funcionalidades dessa camada.
 
 \end{itemize}
@@ -72,32 +74,32 @@ Arquitetura
 
 \textit{Ionic} é um \textit{framework} gratuito e \textit{open source} para desenvolvimento de aplicativos híbridos 
 utilizando tecnologias 
-\textit{web} como HTML, CSS e JavaScript otimizadas para dispositivos móveis. 
+\textit{web} como \textit{HTML}, \textit{CSS} e \textit{JavaScript} otimizadas para dispositivos móveis. 
 Com apenas um código é possível criar aplicativos para diversas plataformas como
 \textit{iOS} e \textit{Android}. %Criado sob o \textit{framework} Cordova que permite acesso a funcionalidades nativas dos dispositivos.
 
-PhoneGap é um \textit{framework} para desenvolvimento de aplicativos híbridos, criado pela empresa Nitobi. 
+\textit{PhoneGap} é um \textit{framework} para desenvolvimento de aplicativos híbridos, criado pela empresa Nitobi. 
 Após ser comprada pela Adobe Systems Inc. teve seu código doado para a Apache Software Foundation 
 para garantir que outras empresas pudessem contribuir, já que muitas empresas confiavam e conheciam as licenças da Apache.
-Como o PhoneGap é uma marca registrada de propriedade da Adobe, na Apache teve seu nome alterado para Cordova.
-Tanto o Apache Cordova quanto o Adobe PhoneGap, são gratuitos e \textit{open sources}, no entanto, o 
-PhoneGap possui um ambiente integrado com serviços da Adobe como o PhoneGap Build.
+Como o \textit{PhoneGap} é uma marca registrada de propriedade da Adobe, na Apache teve seu nome alterado para Cordova.
+Tanto o \textit{Apache Cordova} quanto o \textit{Adobe PhoneGap}, são gratuitos e \textit{open sources}, no entanto, o 
+\textit{PhoneGap} possui um ambiente integrado com serviços da Adobe como o \textit{PhoneGap Build}.
 
 %e seu código liberado em uma versão \textit{open source}, onde grandes empresas, como Google, Mozilla e Microsoft, contribuiram para o projeto. 
 Cordova permite que aplicações não nativas tenham acesso a funcionalidades nativas do dispositivo como sensores, 
-contatos e camera. No entanto, o Cordova apenas consegue fazer um aplicativo criado em 
-HTML rodar como se fosse nativo em um dispositivo com \textit{Android} e \textit{iOS}, mas não consegue 
+contatos e câmera. No entanto, o Cordova apenas consegue fazer um aplicativo criado em 
+\textit{HTML} rodar como se fosse nativo em um dispositivo com \textit{Android} e \textit{iOS}, mas não consegue 
 imitar a usabilidade e aparência dos dispositivos nativos. 
 Para preencher essa lacuna, outros \textit{frameworks} foram criados em cima do Cordova como um complemento, 
-provendo bibliotecas HTML e CSS para a 
+provendo bibliotecas \textit{HTML} e \textit{CSS} para a 
 criação de um \textit{front-end} que se aproxime o máximo possível da usabilidade e experiência de usuário de 
 aplicações móveis nativas.
 
-O Cordova possui muitos plugins para poder acessar funcionalidades específicas do aparelho em que está sendo 
-executado. Esses devem ser instalados no projeto do aplicativo via \textcolor{red}{\textit{Command-Line Interface} (CLI) - Colocar na lista de acronimos}. 
+O \textit{Cordova} possui muitos plugins para poder acessar funcionalidades específicas do aparelho em que está sendo 
+executado. Esses devem ser instalados no projeto do aplicativo via \textit{CLI}. 
 
-A fim de se evitar confusões em relação aos nomes dados ao PhoneGap e ao Cordova, pode-se entender o PhoneGap 
-como uma distribuição do Apache Cordova mantido pela Adobe. 
+A fim de se evitar confusões em relação aos nomes dados ao \textit{PhoneGap} e ao \textit{Cordova}, pode-se entender o \textit{PhoneGap} 
+como uma distribuição do \textit{Apache Cordova}, mantido pela Adobe Systems Inc. 
 
 %https://www.quora.com/What-is-the-difference-between-PhoneGap-and-Cordova-and-why-would-I-select-one-over-another
 %http://luisvasconcellos.com/2015/04/06/apps-hibridas-com-cordova-e-ionic.html
@@ -105,7 +107,7 @@ como uma distribuição do Apache Cordova mantido pela Adobe.
 %https://en.wikipedia.org/wiki/Apache_Cordova
 %http://cordova.apache.org/docs/en/latest/guide/overview/
 
-O Ionic provê além do HTML e {SS otimizado para dispositivos móveis, um série de ferramentas de 
+O \textit{Ionic} provê além do \textit{HTML} e \textit{CSS} otimizado para dispositivos móveis, um série de ferramentas de 
 apoio que asseguram velocidade e facilidade no desenvolvimento de aplicativos híbridos. Essas ferramentas são listadas a seguir 
 com uma breve explicação do que cada uma pode fazer.
 
@@ -115,7 +117,7 @@ com uma breve explicação do que cada uma pode fazer.
     do Apache Cordova. Facilita a criação de aplicativos com interface gráfica e interações muito semelhantes aos dispositivos nativos, de modo que 
     a experiência de usuário não seja diferente no uso de uma aplicação nativa e multi plataforma. 
     
-    \item \textbf{Ionic Creator}: Com essa ferramenta \textit{on-line} é possível criar protótipos funcionais utilizando \textit{drag'n'drop}
+    \item \textbf{Ionic Creator}: Com essa ferramenta \textit{on-line} é possível criar protótipos funcionais utilizando \textit{drag and drop}
     , que podem ser executados em dispositivos ou simuladores, e depois exportar o projeto criado para a 
     inserção de lógicas de negócio. Ela é gratuita para teste, ou seja, é possível criar um protótipo e fazer o \textit{download}
     do código para continuar o desenvolvimento, no entanto, no momento em que este trabalho foi conduzido, só era possível
@@ -123,20 +125,20 @@ com uma breve explicação do que cada uma pode fazer.
     
     \item \textbf{Ionic Lab}: É uma ferramenta \textit{desktop} para testar o projeto que está sendo criado com o Ionic. Nela é possível
     executar o projeto em templates prontos de \textit{iOS} e \textit{Android}, rodar os simuladores de cada plataforma,
-    gerenciar plugins do Cordova e ver um console com logs relativos à execução do projeto. Encapsula o CLI do Ionic com uma interface gráfica simples
+    gerenciar plugins do Cordova e ver um console com logs relativos à execução do projeto. Encapsula o \textit{CLI} do \textit{Ionic} com uma interface gráfica simples
     e intuitiva.
     
-    \item \textbf{Ionic Playground}: É uma ferramenta \textit{on-line} para criar e testar códigos HTML, CSS e JavaScript 
+    \item \textbf{Ionic Playground}: É uma ferramenta \textit{on-line} para criar e testar códigos \textit{HTML}, \textit{CSS} e \textit{JavaScript} 
     já integrado com a plataforma AngularJS. Nela é possível editar códigos nas três linguagens citadas e ver em tempo real as alterações 
-    feitas aparecerem dentro de um template de dispositivo móvel, sem a necessidade de salvar, compilar ou executar o projeto e sem ter que 
+    feitas aparecerem dentro de um \textit{template} de dispositivo móvel, sem a necessidade de salvar, compilar ou executar o projeto e sem ter que 
     configurar o ambiente necessário para o desenvolvimento. 
     
-    \item \textbf{Ionic View App}: É um aplicativo disponível para as plataformas \textit{iOS} e \textit{Android} onde é possível testar o aplicativo criado no
-    Ionic diretamente em um dispositivo real como se fosse nativo. É possível compartilhar os projetos criados para serem
+    \item \textbf{Ionic View App}: É um aplicativo disponível para as plataformas \textit{iOS} e \textit{Android} onde é possível testar o 
+    aplicativo criado no \textit{Ionic} diretamente em um dispositivo real como se fosse nativo. É possível compartilhar os projetos criados para serem
     testados por clientes e testadores sem a necessidade de passar pelas lojas de aplicativos de cada plataforma. É semelhante ao serviço 
-    Testflight da Apple para testar aplicativos, ainda em desenvolvimento, e receber \textit{feedbacks} dos clientes e testadores que o testarem.
+    \textit{Testflight} da Apple para testar aplicativos, ainda em desenvolvimento, e receber \textit{feedbacks} dos clientes e testadores que o testarem.
     
-    \item \textbf{Ionic Platform}: É a plataforma \textit{on-line} do Ionic que possui serviços de \textit{backend} em nuvem para análise de dados de uso,
+    \item \textbf{Ionic Platform}: É a plataforma \textit{on-line} do \textit{Ionic} que possui serviços de \textit{back-end} em nuvem para análise de dados de uso,
      usuários, configuração de \textit{Push Notifications}, criação dos pacotes nativos e dar \textit{deploy} nas aplicações criadas sem a necessidade de
      resubmeter o aplicativo para as lojas. 
      
