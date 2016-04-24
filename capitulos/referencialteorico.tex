@@ -1,15 +1,16 @@
-\chapter{Desenvolvimento de aplicativos móveis}\label{referencialteorico}
+\chapter{Desenvolvimento de aplicativos móveis} \label{referencialteorico}
 
-Aqui serão descritos as arquiteturas móveis mais conhecidas e utilizadas no mercado. São elas \textit{iOS} e \textit{Android}.
 
-\section{iOS}
+%Aqui serão descritos as arquiteturas móveis mais conhecidas e utilizadas no mercado. São elas \textit{iOS} e \textit{Android}.
+
+\section{iOS} \label{ios}
 
 O sistema operacional \textit{iOS} foi lançado juntamente com o primeiro \textit{iPhone} criado em Janeiro de 2007 e 
 funciona como uma interface entre as aplicações desenvolvidas pelos programadores (\textit{apps}) e o \textit{hardware} 
 dos dispositivos (\textit{iPhone}, \textit{iPad}, \textit{iPod}). Desta forma a comunicação com o \textit{hardware} do dispositivo se dá 
 por meio de um conjunto bem definido de interfaces do sistema, o que facilita o desenvolvimento de \textit{apps} 
-que funcionam corretamente entre os variados tipos de \textit{hardware} dos dispositivos da Apple. Sua arquitetura 
-é baseada em camadas, conforme a figura a seguir.
+que funcionam corretamente entre os variados tipos de \textit{hardware} dos dispositivos da Apple. 
+Sua arquitetura é baseada nas camadas listadas a seguir%, conforme a figura a seguir.
  
 %\begin{figure}
 %  \includegraphics[width=\linewidth]{SystemLayers_2x.png}
@@ -32,9 +33,9 @@ mais alto nível possuem abstrações orientadas à objeto de funcionalidades da
 torna o desenvolvimento mais fácil, pois reduz a quantidade de código que deve ser criado e mantém funcionalidades 
 complexas das camadas mais baixas encapsuladas por meio das interfaces. No entanto, não há problema em usar 
 funcionalidades presentes nas camadas mais baixas, se essas não estiverem disponíveis por meio de abstrações nas 
-camadas mais elevadas. 
+camadas superiores. 
 
-A maioria das interfaces disponíveis para uso são disponibilizadas por meio de frameworks, 
+A maioria das interfaces disponíveis para uso são disponibilizadas por meio de \textit{frameworks}, 
 que são diretórios, que podem ser adicionados ao projeto no \textit{Xcode}, contendo DSL's e os recursos necessários como, 
 imagens, aplicativos auxiliares e arquivos \textit{header}, para a biblioteca funcionar corretamente.
 
@@ -42,7 +43,7 @@ imagens, aplicativos auxiliares e arquivos \textit{header}, para a biblioteca fu
 
 	\item A camada \textit{Cocoa Touch} é a camada mais alto nível onde são fornecidos serviços básicos de interação 
     com o usuário como entrada baseada em toques e notificações \textit{Push} e outras tecnologias necessárias para
-     melhorar a experiencia do usuário como multitarefas, Continuidade (\textit{Handoff}) e \textit{AirDrop}, além de frameworks 
+     melhorar a experiencia do usuário como multitarefas, Continuidade (\textit{Handoff}) e \textit{AirDrop}, além de \textit{frameworks} 
      de alto nível que permitem acesso a funcionalidades do sistema como \textit{AddressBook} para contatos, \textit{EventKit} 
      para eventos relacionados ao calendário e \textit{MapKit} para mapas.
 	\item A camada logo abaixo da \textit{Cocoa Touch} é a camada \textit{Media} que contém tecnologias e \textit{frameworks} necessários 
@@ -55,28 +56,17 @@ imagens, aplicativos auxiliares e arquivos \textit{header}, para a biblioteca fu
 	\item A última camada é a camada \textit{Core OS}, na qual as funcionalidades de mais baixo nível são construídas e 
     provavelmente utilizadas por outros \textit{frameworks} em outras camadas. Se a aplicação possui requisitos de segurança 
     ou comunicação com acessórios externos mais complicados, é possível usar as funcionalidades dessa camada.
-
+    
 \end{itemize}
 
-\section{Android}
+\section{Ionic} \label{ionic}
 
-Arquitetura
+\textit{Ionic} é um \textit{framework} gratuito e \textit{open source} para desenvolvimento de aplicativos híbridos utilizando tecnologias 
+\textit{web} como \textit{HTML}, \textit{CSS} e \textit{JavaScript} otimizadas para dispositivos móveis. Criado sobre os \textit{frameworks} \textit{Cordova} e \textit{AngularJS},
+com apenas um código é possível criar aplicativos para diversas plataformas como \textit{iOS} e \textit{Android}. O \textit{Ionic} conta ainda com um conjunto de ferramentas para auxiliar 
+no desenvolvimento dos aplicativos.
 
-\begin{itemize}
-
-	\item Arquitetura 1
-    \item Arquitetura 2
-    \item Arquitetura 3 
-
-\end{itemize}
-
-\section{Ionic}
-
-\textit{Ionic} é um \textit{framework} gratuito e \textit{open source} para desenvolvimento de aplicativos híbridos 
-utilizando tecnologias 
-\textit{web} como \textit{HTML}, \textit{CSS} e \textit{JavaScript} otimizadas para dispositivos móveis. 
-Com apenas um código é possível criar aplicativos para diversas plataformas como
-\textit{iOS} e \textit{Android}. %Criado sob o \textit{framework} Cordova que permite acesso a funcionalidades nativas dos dispositivos.
+\subsection{PhoneGap e Cordova} \label{subsec:phonegap}
 
 \textit{PhoneGap} é um \textit{framework} para desenvolvimento de aplicativos híbridos, criado pela empresa Nitobi. 
 Após ser comprada pela Adobe Systems Inc. teve seu código doado para a Apache Software Foundation 
@@ -84,9 +74,8 @@ para garantir que outras empresas pudessem contribuir, já que muitas empresas c
 Como o \textit{PhoneGap} é uma marca registrada de propriedade da Adobe, na Apache teve seu nome alterado para Cordova.
 Tanto o \textit{Apache Cordova} quanto o \textit{Adobe PhoneGap}, são gratuitos e \textit{open sources}, no entanto, o 
 \textit{PhoneGap} possui um ambiente integrado com serviços da Adobe como o \textit{PhoneGap Build}.
-
-%e seu código liberado em uma versão \textit{open source}, onde grandes empresas, como Google, Mozilla e Microsoft, contribuiram para o projeto. 
-Cordova permite que aplicações não nativas tenham acesso a funcionalidades nativas do dispositivo como sensores, 
+ 
+\textit{Cordova} permite que aplicações não nativas tenham acesso a funcionalidades nativas do dispositivo como sensores, 
 contatos e câmera. No entanto, o Cordova apenas consegue fazer um aplicativo criado em 
 \textit{HTML} rodar como se fosse nativo em um dispositivo com \textit{Android} e \textit{iOS}, mas não consegue 
 imitar a usabilidade e aparência dos dispositivos nativos. 
@@ -107,14 +96,26 @@ como uma distribuição do \textit{Apache Cordova}, mantido pela Adobe Systems I
 %https://en.wikipedia.org/wiki/Apache_Cordova
 %http://cordova.apache.org/docs/en/latest/guide/overview/
 
-O \textit{Ionic} provê além do \textit{HTML} e \textit{CSS} otimizado para dispositivos móveis, um série de ferramentas de 
-apoio que asseguram velocidade e facilidade no desenvolvimento de aplicativos híbridos. Essas ferramentas são listadas a seguir 
+\subsection{AngularJS} \label{subsec:angularjs}
+
+\textit{HTML} é a principal linguagem de marcação para a criação de páginas \textit{web}. No entanto, os conteúdos exibidos são estáticos e o\textit{HTML} não fornece suporte para conteúdos dinâmicos.
+\textit{AngularJS} é um \textit{framework open source}, mantido pelo Google, que permite extender a sintaxe do \textit{HTML} para poder criar páginas \textit{web} com conteúdos dinâmicos.
+
+
+Com ele é possível utilizar \textit{tags} não nativas do \textit{HTML} para gerenciar conteúdos que ainda não foram dispostos na tela. 
+Foi projetado para criação de \textit{SPA's} e com isso faz com que as páginas sejam mais rápidas, visto que, apenas é carregado o conteúdo que precisa ser mostrado, 
+deixando outros conteúdos para serem carregados dinâmicamente depois, de acordo com as interações do usuário.    
+
+\subsection{Ferramentas de Apoio} \label{subsec:ferramentasapoio}
+
+O \textit{Ionic} provê além do \textit{HTML} e \textit{CSS} otimizado para dispositivos móveis, uma série de ferramentas de 
+apoio que fornecem velocidade e facilidade no desenvolvimento de aplicativos híbridos. Essas ferramentas são listadas a seguir 
 com uma breve explicação do que cada uma pode fazer.
 
 \begin{itemize}
 
     \item \textbf{Ionic Framework}: É o \textit{framework front-end} para criação de aplicativos híbridos com tecnologias \textit{web} construído em cima
-    do Apache Cordova. Facilita a criação de aplicativos com interface gráfica e interações muito semelhantes aos dispositivos nativos, de modo que 
+    do \textit{Apache Cordova}. Facilita a criação de aplicativos com interface gráfica e interações muito semelhantes aos dispositivos nativos, de modo que 
     a experiência de usuário não seja diferente no uso de uma aplicação nativa e multi plataforma. 
     
     \item \textbf{Ionic Creator}: Com essa ferramenta \textit{on-line} é possível criar protótipos funcionais utilizando \textit{drag and drop}
@@ -123,13 +124,13 @@ com uma breve explicação do que cada uma pode fazer.
     do código para continuar o desenvolvimento, no entanto, no momento em que este trabalho foi conduzido, só era possível
     fazer a pré-visualização em dispositivos reais para usuários pagantes.
     
-    \item \textbf{Ionic Lab}: É uma ferramenta \textit{desktop} para testar o projeto que está sendo criado com o Ionic. Nela é possível
+    \item \textbf{Ionic Lab}: É uma ferramenta \textit{desktop} para testar o projeto que está sendo criado com o \textit{Ionic}. Nela é possível
     executar o projeto em templates prontos de \textit{iOS} e \textit{Android}, rodar os simuladores de cada plataforma,
-    gerenciar plugins do Cordova e ver um console com logs relativos à execução do projeto. Encapsula o \textit{CLI} do \textit{Ionic} com uma interface gráfica simples
+    gerenciar plugins do \textit{Cordova} e ver um console com \textit{logs} relativos à execução do projeto. Encapsula o \textit{CLI} do \textit{Ionic} com uma interface gráfica simples
     e intuitiva.
     
     \item \textbf{Ionic Playground}: É uma ferramenta \textit{on-line} para criar e testar códigos \textit{HTML}, \textit{CSS} e \textit{JavaScript} 
-    já integrado com a plataforma AngularJS. Nela é possível editar códigos nas três linguagens citadas e ver em tempo real as alterações 
+    já integrado com a plataforma \textit{AngularJS}. Nela é possível editar códigos nas três linguagens citadas e ver em tempo real as alterações 
     feitas aparecerem dentro de um \textit{template} de dispositivo móvel, sem a necessidade de salvar, compilar ou executar o projeto e sem ter que 
     configurar o ambiente necessário para o desenvolvimento. 
     
@@ -140,6 +141,6 @@ com uma breve explicação do que cada uma pode fazer.
     
     \item \textbf{Ionic Platform}: É a plataforma \textit{on-line} do \textit{Ionic} que possui serviços de \textit{back-end} em nuvem para análise de dados de uso,
      usuários, configuração de \textit{Push Notifications}, criação dos pacotes nativos e dar \textit{deploy} nas aplicações criadas sem a necessidade de
-     resubmeter o aplicativo para as lojas. 
+     resubmeter o aplicativo para as respectivas lojas. 
      
 \end{itemize}
