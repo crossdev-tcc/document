@@ -1,22 +1,52 @@
 \chapter{Desenvolvimento de aplicativos móveis} \label{referencialteorico}
 
+Com o aumento da quantidade de dispositivos móveis no mercado, a demanda por aplicações móveis também aumentou.
+De início, a única opção que havia era desenvolver aplicações específicas para uma plataforma, utilizando todo o ambiente daquela plataforma, por exemplo,
+no caso do \textit{iOS}, a liguagem de programação era o \textit{Objective-C} com a \textit{IDE Xcode} e o \textit{SDK} do \textit{iOS}.
 
 
+Essa forma de desenvolvimento é conhecida como desenvolvimento \textbf{nativo} e é aquele no qual um aplicativo é projetado e construído especificamente para uma plataforma. 
+Todas as funcionalidades da plataforma estão disponíveis sem restrição e existem padrões de interface gráfica e experiência de usuário específicos, que ajudam o usuário a 
+entender como aquele aplicativo funciona, já que todos os outros aplicativos daquela plataforma seguem os mesmos padrões. 
 
 
-aqui serão descritos as diferencas sucintamente enre nativo e cross
+No entanto, com o aumento exponencial da demanda por aplicativos, surgiu a necessidade de desenvolvimento rápido para muitas plataformas distintas, o que era caro e difícil,
+visto que, cada plataforma tinha um ambiente de desenvolvimento completamente diferente das demais, o que fazia com que a equipe tivesse que ter muitos conhecimentos diferentes
+para poder desenvolver e manter vários aplicativos.  
 
-explicar as diferencas
- dizer pq vai falar sobre ios e pq nao vai sobre android e outras
- no caso eh pq o app escolhido eh em ios
 
-%Aqui serão descritos as arquiteturas móveis mais conhecidas e utilizadas no mercado. São elas \textit{iOS} e \textit{Android}.
+Com esse novo panorama do mercado, surgiu a necessidade da criação de apenas um \textit{app} que pudesse ser executado em várias plataformas. Essa forma de desenvolvimento ficou conhecida como 
+%começaram a surgir ferramentas para o desenvolvimento  
+\textbf{multiplataformas} (\textit{cross-platform}) e consiste na criação de uma página \textit{web}, 
+normalmente utilizando \textit{HTML} e \textit{CSS}. Essa página pode ser vista diretamente pelo \textit{browser} que o dispositivo possui ou ainda ser mostrada dentro de uma \textit{web view} 
+embutida em um aplicativo nativo, ou seja, é feito apenas um código, que é executado e mostrado em um \textit{container} dentro de um aplicativo nativo. 
+
+
+Dessa forma, é possível desenvolver um mesmo aplicativo que será executado dentro de várias plataformas diferentes, sem a necessidade de ter uma equipe especialista em cada plataforma, pois a única 
+parte nativa do aplicativo, é uma \textit{web view} simples, o que não requer grandes conhecimentos específicos em cada plataforma.
+
+
+No entanto, não é possível ter acesso total às funcionalidades da plataforma, assim como no desenvolvimento nativo, e também não existe padrão de interface ou de experiência de usuário que sirva
+para várias plataformas ao mesmo tempo, podendo causar uma sensação ruim na usabilidade e experiência de uso do aplicativo. 
+
+
+Nas próximas seções, serão apresentadas as arquiteturas da plataforma \textit{iOS} e do \textit{Ionic}, usadas para desenvolvimento nativo e multiplataforma, respectivamente.
+
+%aqui serão descritos as diferencas sucintamente enre nativo e cross
+%explicar as diferencas
+% dizer pq vai falar sobre ios e pq nao vai sobre android e outras
+% no caso eh pq o app escolhido eh em ios
+% Referencias boas para leitura
+% http://www.teclogica.com.br/blog/desenvolvimento-para-dispositivos-moveis-nativo-x-cross-platform/ 
+% http://pt.slideshare.net/suelengc/nativo-vs-crossplataform
+% https://www.ibm.com/developerworks/community/blogs/ctaurion/entry/desenvolvimento_de_apps-parte_2_hibrido_nativo_ou_web?lang=en
+% http://blog.concretesolutions.com.br/2016/03/nativo-x-hibrido/
 
 \section{iOS} \label{ios}
 
 O sistema operacional \textit{iOS} foi lançado juntamente com o primeiro \textit{iPhone} criado em Janeiro de 2007 e 
 funciona como uma interface entre as aplicações desenvolvidas pelos programadores (\textit{apps}) e o \textit{hardware} 
-dos dispositivos (\textit{iPhone}, \textit{iPad}, \textit{iPod}). Desta forma a comunicação com o \textit{hardware} do dispositivo se dá 
+dos dispositivos (\textit{iPhone}, \textit{iPad}, \textit{iPod}). Dessa forma, a comunicação com o \textit{hardware} do dispositivo se dá 
 por meio de um conjunto bem definido de interfaces do sistema, o que facilita o desenvolvimento de \textit{apps} 
 que funcionam corretamente entre os variados tipos de \textit{hardware} dos dispositivos da Apple. 
 Sua arquitetura é baseada nas camadas listadas a seguir%, conforme a figura a seguir.
@@ -45,9 +75,10 @@ funcionalidades presentes nas camadas mais baixas, se essas não estiverem dispo
 camadas superiores. 
 
 A maioria das interfaces disponíveis para uso são disponibilizadas por meio de \textit{frameworks}, 
-que são diretórios, que podem ser adicionados ao projeto no \textit{Xcode}, contendo DSL's e os recursos necessários como, 
-imagens, aplicativos auxiliares e arquivos \textit{header}, para a biblioteca funcionar corretamente.
+que são diretórios, que podem ser adicionados ao projeto no \textit{Xcode}, contendo \textit{DSL's} e os recursos necessários como, 
+imagens, aplicativos auxiliares e arquivos \textit{header}, para o \textit{framework} funcionar corretamente.
 
+As camadas do \textit{iOS} são explicadas com mais detalhes a seguir. 
 \begin{itemize}
 
 	\item A camada \textit{Cocoa Touch} é a camada mais alto nível onde são fornecidos serviços básicos de interação 
@@ -78,8 +109,8 @@ no desenvolvimento dos aplicativos.
 \subsection{PhoneGap e Cordova} \label{subsec:phonegap}
 
 \textit{PhoneGap} é um \textit{framework} para desenvolvimento de aplicativos híbridos, criado pela empresa Nitobi. 
-Após ser comprada pela Adobe Systems Inc. teve seu código doado para a Apache Software Foundation 
-para garantir que outras empresas pudessem contribuir, já que muitas empresas confiavam e conheciam as licenças da Apache.
+Após a empresa ser comprada pela Adobe Systems Inc. o \textit{PhoneGap} teve seu código doado para a Apache Software Foundation 
+para garantir que outras empresas pudessem contribuir, já que muitas empresas já conheciam as licenças da Apache.
 Como o \textit{PhoneGap} é uma marca registrada de propriedade da Adobe, na Apache teve seu nome alterado para Cordova.
 Tanto o \textit{Apache Cordova} quanto o \textit{Adobe PhoneGap}, são gratuitos e \textit{open sources}, no entanto, o 
 \textit{PhoneGap} possui um ambiente integrado com serviços da Adobe como o \textit{PhoneGap Build}.
@@ -107,7 +138,7 @@ como uma distribuição do \textit{Apache Cordova}, mantido pela Adobe Systems I
 
 \subsection{AngularJS} \label{subsec:angularjs}
 
-\textit{HTML} é a principal linguagem de marcação para a criação de páginas \textit{web}. No entanto, os conteúdos exibidos são estáticos e o\textit{HTML} não fornece suporte para conteúdos dinâmicos.
+\textit{HTML} é a principal linguagem de marcação para a criação de páginas \textit{web}. No entanto, os conteúdos exibidos são estáticos e o \textit{HTML} não fornece suporte para conteúdos dinâmicos.
 \textit{AngularJS} é um \textit{framework open source}, mantido pelo Google, que permite extender a sintaxe do \textit{HTML} para poder criar páginas \textit{web} com conteúdos dinâmicos.
 
 
@@ -125,7 +156,7 @@ com uma breve explicação do que cada uma pode fazer.
 
     \item \textbf{Ionic Framework}: É o \textit{framework front-end} para criação de aplicativos híbridos com tecnologias \textit{web} construído em cima
     do \textit{Apache Cordova}. Facilita a criação de aplicativos com interface gráfica e interações muito semelhantes aos dispositivos nativos, de modo que 
-    a experiência de usuário não seja diferente no uso de uma aplicação nativa e multi plataforma. 
+    a experiência de usuário não seja diferente no uso de uma aplicação nativa e multiplataforma. 
     
     \item \textbf{Ionic Creator}: Com essa ferramenta \textit{on-line} é possível criar protótipos funcionais utilizando \textit{drag and drop}
     , que podem ser executados em dispositivos ou simuladores, e depois exportar o projeto criado para a 
