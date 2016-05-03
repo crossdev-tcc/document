@@ -97,28 +97,26 @@ As camadas do \textit{iOS} são explicadas com mais detalhes a seguir.
 
 \section{Android} \label{android}
 
-
-
-
 \textit{\textcolor{red}{COLOCAR IMAGEM DA ARQUITERUA ANDROID - PASTA figuras, IMAGEM arc-android.png}}
 
 \begin{itemize}
 %http://source.android.com/devices/index.html <- Fonte principal
 %traduzir e parafrasear
 
-    \item \textit{Application framework}:
-    \item \textit{Binder IPC Proxies}: 
-    \item \textit{Android Systems Services}:
-    
+    \item A camada mais elevada é a \textit{Application Framework}, onde as aplicações construídas pelos desenvolvedores são instaladas.
+    \item A camada logo a abaixo da \textit{Application Framework} é a \textit{Binder IPC Proxies}, onde \textit{IPC} significa \textit{Inter-Process Comunication}.
+    É a camada que faz uma ponte entre as aplicações instaladas na camada superior com a próxima camada, a \textit{System Services}. É uma interface que permite que \textit{API's}
+    de alto nível interajam com serviços do sistema que residem na camada abaixo dela. 
+    \item Abaixo da \textit{Binder IPC Proxies} fica a \textit{System Services}, que , por meio de módulos, permite acesso a \textit{hardwares} específicos. Cada serviço presente nessa camada,
+    foi desenvolvido para gerenciar um componente específico, como busca e notificações. Os serviços foram divididos em duas categorias, \textit{Media} e \textit{System}, explicadas a seguir.
     \begin{itemize}
-    
-        \item \textit{Media Server}:
-        \item \textit{system Server}:
-         
+        \item \textit{Media Server}: são os serviços responsáveis por gerenciar conteúdos de mídia como gravação e reprodução de audio e vídeo. 
+        \item \textit{System Server}: são serviços responsáveis por gerenciar os demais tipos de serviço do sistema como notificações e \textit{windows}.
     \end{itemize}
-    
-    \item \textit{HAL}:
-    \item \textit{Linux Kernel}:
+    \item Abaixo da camada \textit{System Services} fica a camada \textit{HAL} que permite que fornecedores de \textit{hardware} criem interfaces e \textit{drivers} para os \textit{hardwares} que
+    ele oferecem. Com isso, é possível criar novas funcionalidades e implementá-las sem afetar o resto das camadas do sistema.  
+    \item A camada mais baixa é a \textit{Linux Kernel} que é uma versão do \textit{kernel} do Linux com algumas modificações como uma gerenciamento de memória mais avançados e próprio para dispositivos 
+    móveis e funcionalidades para dispositivos embarcados. 
     
 \end{itemize}
 
