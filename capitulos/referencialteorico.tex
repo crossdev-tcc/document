@@ -50,6 +50,18 @@ funciona como uma interface entre as aplicações desenvolvidas pelos programado
 dos dispositivos (\textit{iPhone}, \textit{iPad}, \textit{iPod}). Dessa forma, a comunicação com o \textit{hardware} do dispositivo se dá 
 por meio de um conjunto bem definido de interfaces do sistema, o que facilita o desenvolvimento de \textit{apps} 
 que funcionam corretamente entre os variados tipos de \textit{hardware} dos dispositivos da Apple. 
+
+Como recomendação, a Apple explica que deve-se preferir o uso de camadas mais elevadas, pois as camadas de 
+mais alto nível possuem abstrações orientadas à objeto de funcionalidades das camadas mais baixas. Isso 
+torna o desenvolvimento mais fácil, pois reduz a quantidade de código que deve ser criado e mantém funcionalidades 
+complexas das camadas mais baixas encapsuladas por meio das interfaces. No entanto, não há problema em usar 
+funcionalidades presentes nas camadas mais baixas, se essas não estiverem disponíveis por meio de abstrações nas 
+camadas superiores. 
+
+A maioria das interfaces disponíveis para uso são disponibilizadas por meio de \textit{frameworks}, 
+que são diretórios, que podem ser adicionados ao projeto no \textit{Xcode}, contendo \textit{DSL's} e os recursos necessários como, 
+imagens, aplicativos auxiliares e arquivos \textit{header}, para o \textit{framework} funcionar corretamente.
+
 Sua arquitetura é baseada nas camadas listadas a seguir.%, conforme a figura a seguir.
  
 \textit{\textcolor{red}{COLOCAR IMAGEM DA ARQUITERUA iOS - PASTA figuras, IMAGEM arc-ios.png}}
@@ -62,17 +74,6 @@ Sua arquitetura é baseada nas camadas listadas a seguir.%, conforme a figura a 
 	\item \textit{Core OS Layer};
 
 \end{itemize}
-
-Como recomendação, a Apple explica que deve-se preferir o uso de camadas mais elevadas, pois as camadas de 
-mais alto nível possuem abstrações orientadas à objeto de funcionalidades das camadas mais baixas. Isso 
-torna o desenvolvimento mais fácil, pois reduz a quantidade de código que deve ser criado e mantém funcionalidades 
-complexas das camadas mais baixas encapsuladas por meio das interfaces. No entanto, não há problema em usar 
-funcionalidades presentes nas camadas mais baixas, se essas não estiverem disponíveis por meio de abstrações nas 
-camadas superiores. 
-
-A maioria das interfaces disponíveis para uso são disponibilizadas por meio de \textit{frameworks}, 
-que são diretórios, que podem ser adicionados ao projeto no \textit{Xcode}, contendo \textit{DSL's} e os recursos necessários como, 
-imagens, aplicativos auxiliares e arquivos \textit{header}, para o \textit{framework} funcionar corretamente.
 
 As camadas do \textit{iOS} são explicadas com mais detalhes a seguir. 
 \begin{itemize}
@@ -97,7 +98,16 @@ As camadas do \textit{iOS} são explicadas com mais detalhes a seguir.
 
 \section{Android} \label{android}
 
+O sistema operacional \textit{Android} foi criado pela \textit{start-up} homônima Android Inc. em outubro de 2003. Em agosto de 2005 foi adquirida pela empresa Google, que lançou
+em novembro de 2007, juntamente com a OHA, o sistema \textit{Android}, \textit{open-source} e baseado no \textit{kernel} do Linux. Uma semana depois, foi liberada a primeira versão do \textit{SDK} para \textit{Android}.
+O sistema foi concebido originalmente para camêras fotográficas, no entanto, foi percebido por seus criadores um mercado maior no ramo da telefonia e desviou-se o 
+foco para \textit{smartphones}, competindo diretamente como Symbian e Windows Mobile.
+
+A arquitetura Android é baseada nas seguintes camadas listadas a seguir. 
+
 \textit{\textcolor{red}{COLOCAR IMAGEM DA ARQUITERUA ANDROID - PASTA figuras, IMAGEM arc-android.png}}
+
+As camadas do Android são explicadas com mais detalhes a seguir.
 
 \begin{itemize}
 %http://source.android.com/devices/index.html <- Fonte principal
