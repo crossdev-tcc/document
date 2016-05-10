@@ -1,6 +1,7 @@
 \chapter{Estudo de Caso} \label{estudodecaso}
 
-Texto introdutório da seção
+Foi realizado um estudo de caso para comparar o desenvolvimento de aplicações móveis utilizando ferramentas nativas e multiplataformas. Para isso, um aplicativo feito em \textit{iOS} 
+nativo foi recriado utilizando o \textit{framework Ionic}. A seguir o aplicativo escolhido é detalhado em termos de funcionalidades e recursos utilizados. 
 
 \section{Descrição do projeto selecionado} \label{subsec:descricaodoprojeto}
 
@@ -27,31 +28,31 @@ O aplicativo utiliza recursos nativos do sistema, os quais são descritos a segu
     no rolo de câmera, é possível escolher a foto sem precisar tirar uma nova;
 \end{itemize}
 
-\textcolor{red}{\textit{* Vale ressaltar, que com excessão da Ligação, todos os outros recursos nativos do sistema, precisam necessariamente serem autorizados pelo
-usuário para funcionar. Caso o usuário não autorize, o aplicativo ficará com funcionalidades reduzidas.}} 
+\textit{* Vale ressaltar, que com excessão da Ligação, todos os outros recursos nativos do sistema, precisam necessariamente serem autorizados pelo
+usuário para funcionar. Caso o usuário não autorize, o aplicativo ficará com funcionalidades reduzidas.} 
 
 
 Como banco de dados foi usado o SQLite, através do \textit{framework} externo e \textit{open-source FMDB}, 
 disponível no \href{https://github.com/ccgus/fmdb}{Github};
 
 A arquitetura do sistema foi criada com base no padrão de projeto MVC, possuindo Objetos de Acesso a Dados (DAO) para comunicação 
-com o banco de dados. \textcolor{red}{No entanto, o MVC tradicional difere em alguns aspectos do MVC usado no \textit{iOS}.} 
+com o banco de dados. No entanto, o MVC tradicional difere em alguns aspectos do MVC usado no \textit{iOS}. 
 
-\textcolor{red}{No \textit{iOS} o MVC trás uma controladora ligada à classe de \textit{view}, o que é chamado de \textit{ViewController} que é responsável por 
-criar a ponte entre a interação do usuário com as classes modelos e a \textit{view}. Dessa forma, as \textit{ViewControllers} têm a 
-responsabilidade de repassar as entradas do usuário para a modelo e controlar a \textit{view} para apresentar os resultados que modelo retornar.}
+No \textit{iOS} o MVC trás uma controladora ligada à classe de \textit{view}, que é chamado de \textit{ViewController}, que é responsável por 
+criar a ponte entre a interação do usuário pela \textit{view} com as classes modelos. Dessa forma, as \textit{ViewControllers} têm a 
+responsabilidade de repassar as entradas do usuário para a modelo e controlar a \textit{view} para apresentar os resultados que modelo retornar.
 
 
-\textcolor{red}{Diferente do MVC tradicional no qual a controladora apenas repassa as informações que estão entrando na fronteira da aplicação, 
+Diferente do MVC tradicional no qual a controladora apenas repassa as informações que estão entrando na fronteira da aplicação, 
 as \textit{ViewControllers} têm, além dessa responsabilidade, também a responsabilidade de instanciar e gerenciar a \textit{view} no tocante
-a organização dos elementos e apresentação das informações.}
+a organização dos elementos e apresentação das informações.
 
 
-\textcolor{red}{Outra observação sobre as diferenças entre os dois MVC's, é que no MVC tradicional pode haver uma controladora apenas 
+Outra observação sobre as diferenças entre os dois MVC's, é que no MVC tradicional pode haver uma controladora apenas 
 para todas as modelos ou uma controladora por modelo, mas nenhuma ligada diretamente a uma \textit{view}, no entanto, no iOS há uma 
-\textit{ViewController} por \textit{view}, podendo haver ainda uma controladora relacionada com cada modelo conforme o padrão tradicional do MVC.}
+\textit{ViewController} por \textit{view}, podendo haver ainda uma controladora relacionada com cada modelo conforme o padrão tradicional do MVC.
 
-\textcolor{yellow}{\textit{TALVEZ SERIA BOM COLOCAR UMAS IMAGENS AQUI PARA MOSTRAR AS DIFERENCAS ENTRE OS DOIS MVCs GRAFICAMENTE, V-C-M E V-VC-C-M-DAO}}
+\textcolor{red}{\textit{TALVEZ SERIA BOM COLOCAR UMAS IMAGENS AQUI PARA MOSTRAR AS DIFERENCAS ENTRE OS DOIS MVCs GRAFICAMENTE, V-C-M E V-VC-C-M-DAO}}
 
 \section{Ambiente de desenvolvimento} \label{subsec:ambientedesenvolvimento}
 
@@ -64,6 +65,10 @@ conhecimento intermediário na plataforma \textit{iOS}. Os detalhes técnicos s�
     \item \textbf{Linguagem de Programação}: \textit{Swift} v1.3;
     \item \textbf{Tempo de desenvolvimento}: Ambos os integrantes trabalharam no projeto quatro horas por dia de segunda à sexta por duas semanas;
 \end{itemize}
+
+\section{Desenvolvimento multiplataformas do projeto} \label{sec:desenvolvimentomulti}
+
+Desenvolvimento multi se deu da seguinte forma......
 
 A partir do aplicativo feito em \textit{iOS}, foi construída uma versão utilizando o \textit{Ionic} para as plataformas \textit{Android} e \textit{iOS}.
 Para a criação dessa versão do \textit{app}, a equipe foi alterada, mas permaneceu com dois integrantes, que são os autores deste trabalho.
@@ -86,8 +91,3 @@ e apenas possuiam um conhecimento básico em \textit{HTML}, \textit{CSS} e \text
 \begin{comment}
 será que aqui fala das versoes do ios, ionic, cordova, angularjs? sim e explicar pq nao escolheu a versao 2 do ionic, pq eh recente e estavel
 \end{comment}
-
-
-\section{Desenvolvimento multiplataformas do projeto} \label{sec:desenvolvimentomulti}
-
-Desenvolvimento multi se deu da seguinte forma......
