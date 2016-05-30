@@ -1,18 +1,24 @@
 \chapter{Estudo de Caso} \label{estudodecaso}
 
 Foi realizado um estudo de caso para comparar o desenvolvimento de aplicações móveis utilizando ferramentas nativas e multiplataformas. Para isso, um aplicativo feito em \textit{iOS} 
-nativo foi recriado utilizando o \textit{framework Ionic}. A seguir o aplicativo escolhido é detalhado em termos de funcionalidades e recursos utilizados. 
+nativo foi recriado utilizando o \textit{Ionic framework}. A seguir o aplicativo escolhido é detalhado em termos de funcionalidades e recursos utilizados. 
 
 \section{Descrição do projeto selecionado} \label{subsec:descricaodoprojeto}
 
 Mini Farma é um aplicativo criado inicialmente para a plataforma iOS que serve para controle dos medicamentos que as 
-pessoas possuem em casa em suas ``farmacinhas'' particulares.\textcolor{red}{INSERIR PRINT DA TELA INICIAL?}
+pessoas possuem em casa em suas ``farmacinhas'' particulares.
 
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=0.5\textwidth]{minifarma}
+    \caption[minifarma]{ minifarma. Fonte: Elaborado pelos autores.}
+	\label{fig:minifarma}
+\end{figure}
 
 O aplicativo utiliza recursos nativos do sistema, os quais são descritos a seguir. 
 \begin{itemize}
-	\item \textbf{Localização geográfica}: Define a posição geográfica do dispositivo que o usuário está utilizando para poder permitir
-    que seja salva a localização da farmácia onde ele comprou um medicamento para, caso seja necessário, explicar para alguém onde a 
+	\item \textbf{Localização geográfica}: Define a posição geográfica do dispositivo que o usuário está utilizando para salvar a 
+    localização da farmácia onde ele comprou um medicamento para, caso seja necessário, explicar para alguém onde a 
     farmácia fica. Também é possível com base nessa localização da farmácia e do usuário, traçar uma rota para levá-lo diretamente à 
     farmácia em questão;
 	\item \textbf{Notificações locais}: Diferente das notificações \textit{Push} as notificações locais são criadas e agendadas na central 
@@ -40,10 +46,10 @@ com o banco de dados. No entanto, o MVC tradicional difere em alguns aspectos do
 
 No \textit{iOS} o MVC trás uma controladora ligada à classe de \textit{view}, que é chamado de \textit{ViewController}, que é responsável por 
 criar a ponte entre a interação do usuário pela \textit{view} com as classes modelos. Dessa forma, as \textit{ViewControllers} têm a 
-responsabilidade de repassar as entradas do usuário para a modelo e controlar a \textit{view} para apresentar os resultados que modelo retornar.
+responsabilidade de repassar as entradas do usuário para a modelo e controlar a \textit{view} para apresentar os resultados que a modelo retornar.
 
 
-Diferente do MVC tradicional no qual a controladora apenas repassa as informações que estão entrando na fronteira da aplicação, 
+Diferente do MVC tradicional, no qual a controladora apenas repassa as informações que estão entrando na fronteira da aplicação, 
 as \textit{ViewControllers} têm, além dessa responsabilidade, também a responsabilidade de instanciar e gerenciar a \textit{view} no tocante
 a organização dos elementos e apresentação das informações.
 
@@ -52,7 +58,14 @@ Outra observação sobre as diferenças entre os dois MVC's, é que no MVC tradi
 para todas as modelos ou uma controladora por modelo, mas nenhuma ligada diretamente a uma \textit{view}, no entanto, no iOS há uma 
 \textit{ViewController} por \textit{view}, podendo haver ainda uma controladora relacionada com cada modelo conforme o padrão tradicional do MVC.
 
-\textcolor{red}{\textit{TALVEZ SERIA BOM COLOCAR UMAS IMAGENS AQUI PARA MOSTRAR AS DIFERENCAS ENTRE OS DOIS MVCs GRAFICAMENTE, V-C-M E V-VC-C-M-DAO}}
+%\textcolor{red}{\textit{TALVEZ SERIA BOM COLOCAR UMAS IMAGENS AQUI PARA MOSTRAR AS DIFERENCAS ENTRE OS DOIS MVCs GRAFICAMENTE, V-C-M E V-VC-C-M-DAO}}
+
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=1.0\textwidth]{mvc}
+    \caption[Padrão \textit{Model-View-Controller}]{ Padrão \textit{Model-View-Controller}. Fonte: Apple Documentation.}
+	\label{fig:mvc}
+\end{figure}
 
 \section{Ambiente de desenvolvimento} \label{subsec:ambientedesenvolvimento}
 
@@ -60,36 +73,47 @@ O projeto do aplicativo Mini Farma foi executado contando com uma equipe de dois
 conhecimento intermediário na plataforma \textit{iOS}. Os detalhes técnicos são listados a seguir.
 \begin{itemize}
     \item \textbf{Máquinas}: Dois MacBook Pro Retina 13", processador \textit{Intel Core i5}, 8 GB de \textit{RAM};
-    \item \textbf{Sistema Operacional}: \textit{Mac OS X Yosemite};
+    \item \textbf{Sistema Operacional das máquinas}: \textit{Mac OS X Yosemite};
+    \item \textbf{Sistema Operacional alvo do aplicativo}: iOS 8;
     \item \textbf{IDE}: \textit{Xcode} v6.4;
     \item \textbf{Linguagem de Programação}: \textit{Swift} v1.3;
+    \item \textbf{Banco de dados}: SQLite v3.8.10.2;
     \item \textbf{Tempo de desenvolvimento}: Ambos os integrantes trabalharam no projeto quatro horas por dia de segunda à sexta por duas semanas;
 \end{itemize}
 
 \section{Desenvolvimento multiplataformas do projeto} \label{sec:desenvolvimentomulti}
 
-Desenvolvimento multi se deu da seguinte forma......
-
 A partir do aplicativo feito em \textit{iOS}, foi construída uma versão utilizando o \textit{Ionic} para as plataformas \textit{Android} e \textit{iOS}.
 Para a criação dessa versão do \textit{app}, a equipe foi alterada, mas permaneceu com dois integrantes, que são os autores deste trabalho.
-No entanto, os integrantes não possuiam qualquer conhecimento prévio no \textit{framework Ionic}
+No entanto, os integrantes não possuiam qualquer conhecimento prévio nos \textit{frameworks Ionic, AngularJS} e \textit{Cordova}
 e apenas possuiam um conhecimento básico em \textit{HTML}, \textit{CSS} e \textit{JavaScript}. Os detalhes técnicos são listados a seguir.
    
 \begin{itemize}
     \item \textbf{Máquinas}: Dois MacBook Pro Retina 13", processador \textit{Intel Core i5}, 8 GB de \textit{RAM};
-    \item \textbf{Sistema Operacional}: \textit{Mac OS X El Capitan};
+    \item \textbf{Sistema Operacional das máquinas}: \textit{Mac OS X El Capitan} v10.11.5;
+    \item \textbf{Sistema Operacional alvo do aplicativo}: \textit{iOS} 9 e \textit{Android} \textcolor{red}{4.4.2};%API 19
     \item \textbf{IDE}: \textit{WebStorm} v2016.1.1;
-    \item \textbf{Linguagem de Programação}: \textit{JavaScript}. 
+    \item \textbf{\textit{Frameworks}}:
     \begin{itemize}
-        \item \textit{HTML} e \textit{CSS} foram usados paralelamente para a criação da interface gráfica do aplicativo;
+        \item \textbf{\textit{Ionic}}: \textit{Copenhagen} v1.2.4*;
+        \item \textbf{\textit{AngularJS}}: \textit{foam-acceleration} v1.4.3*;
+        
+        * Durante a execução deste trabalho, já haviam sido disponibilizadas as versões 2 do \textit{Ionic} e do \textit{AngularJS}, no entanto,
+        os autores optaram por não utilizá-las por ainda se tratarem de versões \textit{beta} e portanto instáveis, o que poderia 
+        impactar negativamente no desenvolvimento do projeto.
+        
+        \item \textbf{\textit{Cordova}}: v6.0.0;
     \end{itemize}
+    \item \textbf{Linguagem de Programação}: \textit{JavaScript} v1.7. 
+    \begin{itemize}
+        \item \textit{HTML} 5 e \textit{CSS} 3 foram usados paralelamente para a criação da interface gráfica do aplicativo;
+    \end{itemize}
+    \item \textbf{Banco de dados}: SQLite v3.8.10.2;
     \item \textbf{Ambiente de suporte}: \textit{Google Chrome}, para \textit{debug} do aplicativo;
-    \item \textbf{Tempo de desenvolvimento}: Ambos os integrantes trabalharam x horas;
+    \item \textbf{Tempo de desenvolvimento}: Ambos os integrantes trabalharam \textcolor{red}{XX} horas;
 \end{itemize}
 
-\begin{comment}
-será que aqui fala das versoes do ios, ionic, cordova, angularjs? sim e explicar pq nao escolheu a versao 2 do ionic, pq eh recente e estavel
-\end{comment}
+\subsection{Experiências de Desenvolvimento} \label{sec:experienciasdev}
 
 \textcolor{red}{PARECER SOBRE A UTILIZAÇÃO DO GOOGLE MAPS - A utilização do mapa se deu por meio da \textit{API Maps} do Google. Não houveram grandes dificuldades na criação do mapa e renderização do mesmo na tela. Apenas por meio de pesquisas e estudos na documentação
 da \textit{API} já foram suficientes para a elaboração do que precisava ser feito. }
