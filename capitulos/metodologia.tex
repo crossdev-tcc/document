@@ -1,43 +1,47 @@
 \chapter{Metodologia} \label{metodologia}
-
-Nesta seção é apresentada a metodologia utilizada para o desenvolvimento desse trabalho.
-
-\section{Planejamento da pesquisa} \label{sec:planejamento}
-
-Para a realização deste trabalho foi feita uma pesquisa sobre desenvolvimento de aplicativos móveis. Para isso, foram utilizados artigos e materiais \textit{on-line} para definição de como é o desenvolvimento
-de aplicações móveis de maneira nativa e de maneira multiplataformas e, com isso, foi feita uma comparação entre os dois modos. Após a definição de como se dá esse desenvolvimento específico de \textit{software},
-foi feito um estudo de caso para comprovar empiricamente as diferenças pesquisadas e descritas na pesquisa realizada. Com base na experiência tida no estudo de caso, foram feitas as considerações preliminares
-do trabalho.
-
-\subsection{Hipóteses} \label{subsec:hipoteses}
-
-H1: Manutenção de aplicativos nativos é mais fácil que multiplataformas. 
-(Demora na adaptação de frameworks multiplataformas para as atualizações lançadas para as plataformas nativas, ou seja, quando há uma atualização de ambiente ou linguagem nativa,
-os frameworks demoram para poder integrar as novas funcionalidades)
+%Nesta seção é apresentada a metodologia utilizada para o desenvolvimento desse trabalho.
+Para a realização deste trabalho foi feita, incialmente, uma pesquisa sobre desenvolvimento de aplicativos móveis. 
+Para isso, foram utilizados artigos e materiais \textit{on-line} para definição de como é o desenvolvimento
+de aplicações móveis de maneira nativa e de maneira multiplataformas e, com isso, foi feita uma comparação 
+entre os dois modos. 
 
 
-H2: Desenvolvimento multiplataformas pode ser visto como uma linha de produtos.
+Após a definição de como se dá esse desenvolvimento específico de \textit{software},
+foi feito um estudo de caso para comprovar empiricamente as diferenças pesquisadas e descritas na seção 2 
+desse trabalho. Com base na experiência obtida no estudo de caso, foram feitas as considerações preliminares
+do trabalho e um planejamento do que poderá ser feito em trabalhos futuros.
+%\section{Planejamento da pesquisa} \label{sec:planejamento}
+\section{Hipóteses/Questão de Pesquisa} \label{subsec:hipoteses}
 
+As hipóteses/questões de pesquisa são apresentadas a seguir.
 
-\subsection{Seleção das plataformas} \label{subsec:selecaodasplataformas}
+\begin{itemize}
+    \item \textbf{H1}: Manutenção de aplicativos nativos é mais fácil que multiplataformas.
+    %(Demora na adaptação de frameworks multiplataformas para as atualizações lançadas para as plataformas nativas, ou seja, quando há uma atualização de ambiente ou linguagem nativa, 
+    %os frameworks demoram para poder integrar as novas funcionalidades)
+    %depende muito da criacao de plugins de terceiros para poder implementar as funcionalidades nativas 
+    \item \textbf{H2}: Desenvolvimento multiplataformas pode ser visto como uma linha de produtos.
+    \item \textbf{Q1}: O desenvolvimento multiplataformas apresenta mais desvantagens do que o nativo?
+    \item \textbf{Q2}: A manutenção de aplicativos multiplataformas é mais fácil do que a dos nativos?
+    \item \textbf{Q3}: A evolução de aplicativos multiplataformas é mais difícil do que a dos nativos? 
+\end{itemize}
 
-A escolha do \textit{Ionic framework} se deu por alguns fatores, listados a seguir. 
+\section{Seleção das plataformas} \label{subsec:selecaodasplataformas}
+
+Existem, atualmente, muitas ferramentas e \textit{frameworks} para o desenvolvimento de aplicações móveis multiplataformas. Dentre elas, a escolha do \textit{Ionic framework} se deu por alguns fatores, listados a seguir. 
+
 \begin{enumerate}
-    \item Novo, open source, gratuito,
-    \item Ambiente de apoio gratuito e robusto
-    \item Utiliza AngularJS e Cordova que são dois frameworks estáveis, muito conhecidos e utilizados
-    \item Muitos plugins disponíveis e comunidade muito ativa para resolução de problemas %http://codepen.io/b00stup/post/why-ionic-framework
-    \item Framework que consegue imitar melhor a aparencia e usabilidade dos dispositivos nativos %http://www.joshmorony.com/8-reasons-why-im-glad-i-switched-to-the-ionic-framework/
+    \item É um \textit{framework open source} e gratuito;
+    \item Possui um ambiente de apoio gratuito e robusto, com muitas ferramentas e tutoriais disponíveis;
+    \item Utiliza AngularJS e Cordova que são dois \textit{frameworks} estáveis, muito conhecidos, utilizados e mantidos por duas grandes empresas;
+    \item Possui muitos \textit{plugins} disponíveis e uma comunidade muito ativa para resolução de problemas; %http://codepen.io/b00stup/post/why-ionic-framework
+    \item Consegue criar uma aparência e usabilidade muito próximos dos dispositivos nativos; %http://www.joshmorony.com/8-reasons-why-im-glad-i-switched-to-the-ionic-framework/
+    \item Possui uma arquitetura projetada para otimizar a performance nos dispositivos móveis; 
 \end{enumerate}
- 
-\begin{comment}
-Porque Ionic? Porque não, outro? Quais os criterios usados para escolher o Ionic?
-Ionic é open source, gratuito, muito focado em performance e possui html e css otimizados para dispositivos móveis.
-\end{comment}
 
-\subsection{Seleção do projeto} \label{subsec:selecaodoprojeto}
+\section{Seleção do projeto} \label{subsec:selecaodoprojeto}
 
-A escolha do aplicativo Mini Farma se deu por alguns fatores, listados a seguir:
+Para a realização do estudo de caso, foi escolhido o aplicativo Mini Farma, criado nativamente para a plataforma \textit{iOS}. A escolha se deu por alguns fatores, listados a seguir:
 
 \begin{enumerate}
     \item É de propriedade de um dos autores deste trabalho;
