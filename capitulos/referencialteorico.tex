@@ -1,17 +1,27 @@
 \chapter{Desenvolvimento de aplicativos móveis} \label{referencialteorico} 
 
-Nesta seção, serão apresentadas as arquiteturas da plataforma \textit{iOS}, \textit{Android} e do \textit{Ionic Framework}, usadas para desenvolvimento nativo e multiplataforma.
+Nesta seção, serão apresentadas semelhanças e diferenças, vantagens e desvantagens do desenvolvimento nativo em relação ao \textit{cross-plataform}, 
+bem como serão descritas as arquiteturas das plataformas \textit{iOS} e \textit{Android}, duas das plataformas mais conhecidas e utilizadas atualmente para desenvolvimento nativo, 
+e do \textit{Ionic Framework}, usado para desenvolvimento multiplataformas e \textit{frameworks} necessários para o correto funcionamento do \textit{Ionic}.
 
 %aqui serão descritos as diferencas sucintamente enre nativo e cross
 %explicar as diferencas
-% dizer pq vai falar sobre ios e pq nao vai sobre android e outras
-% no caso eh pq o app escolhido eh em ios
 % Referencias boas para leitura
 % http://www.teclogica.com.br/blog/desenvolvimento-para-dispositivos-moveis-nativo-x-cross-platform/ 
 % http://pt.slideshare.net/suelengc/nativo-vs-crossplataform
 % https://www.ibm.com/developerworks/community/blogs/ctaurion/entry/desenvolvimento_de_apps-parte_2_hibrido_nativo_ou_web?lang=en
 % http://blog.concretesolutions.com.br/2016/03/nativo-x-hibrido/
 % http://martinfowler.com/articles/multiMobile/#cost
+
+\section{Desenvolvimento Nativo} \label{desenvolvimentonativo}
+
+nativo 
+
+
+\section{Desenvolvimento \textit{Cross-platform}} \label{desenvolvimentomulti}
+
+multi
+
 
 \section{iOS} \label{ios}
 
@@ -32,6 +42,7 @@ A maioria das interfaces disponíveis para uso são disponibilizadas por meio de
 que são diretórios, que podem ser adicionados ao projeto no \textit{Xcode}, contendo \textit{DSL's} e os recursos necessários como, 
 imagens, aplicativos auxiliares e arquivos \textit{header}, para o \textit{framework} funcionar corretamente.
 
+\subsection{Arquitetura \textit{iOS}} \label{arc-ios-section}
 Sua arquitetura é baseada nas camadas listadas, conforme a Figura~\ref{fig:arc-ios} a seguir.
  
 \begin{figure}[H]
@@ -68,6 +79,8 @@ em novembro de 2007, juntamente com a OHA, o sistema \textit{Android}, \textit{o
 O sistema foi concebido originalmente para camêras fotográficas, no entanto, foi percebido por seus criadores um mercado maior no ramo da telefonia e desviou-se o 
 foco para \textit{smartphones}, competindo diretamente como Symbian e Windows Mobile.
 
+\subsection{Arquitetura \textit{Android}} \label{arc-android-section}
+
 A arquitetura Android é baseada nas camadas apresentadas na Figura~\ref{fig:arc-android} e são explicadas com mais detalhes a seguir.
 
 \begin{itemize}
@@ -98,14 +111,7 @@ A arquitetura Android é baseada nas camadas apresentadas na Figura~\ref{fig:arc
 	\label{fig:arc-android}
 \end{figure}
 
-\section{Ionic} \label{ionic}
-
-\textit{Ionic} é um \textit{framework} gratuito e \textit{open source} para desenvolvimento de aplicativos híbridos utilizando tecnologias 
-\textit{web} como \textit{HTML}, \textit{CSS} e \textit{JavaScript} otimizadas para dispositivos móveis. Criado sobre os \textit{frameworks} \textit{Cordova} e \textit{AngularJS},
-com apenas um código é possível criar aplicativos para várias plataformas como \textit{iOS} e \textit{Android}, por exemplo, dentre outras. O \textit{Ionic} conta ainda com um conjunto de ferramentas para auxiliar 
-no desenvolvimento dos aplicativos.
-
-\subsection{PhoneGap e Cordova} \label{subsec:phonegap}
+\section{PhoneGap e Cordova} \label{subsec:phonegap}
 
 \textit{PhoneGap} é um \textit{framework} para desenvolvimento de aplicativos híbridos, criado pela empresa Nitobi. 
 Após a empresa ser comprada pela Adobe Systems Inc. o \textit{PhoneGap} teve seu código doado para a Apache Software Foundation 
@@ -139,7 +145,7 @@ como uma distribuição do \textit{Apache Cordova}, mantido pela Adobe Systems I
 %https://en.wikipedia.org/wiki/Apache_Cordova
 %http://cordova.apache.org/docs/en/latest/guide/overview/
 
-\subsection{AngularJS} \label{subsec:angularjs}
+\section{AngularJS} \label{subsec:angularjs}
 
 \textit{HTML} é a principal linguagem de marcação para a criação de páginas \textit{web}. No entanto, os conteúdos exibidos são estáticos e o \textit{HTML} não fornece suporte para conteúdos dinâmicos.
 \textit{AngularJS} é um \textit{framework open source}, mantido pelo Google, que permite extender a sintaxe do \textit{HTML} para poder criar páginas \textit{web} com conteúdos dinâmicos.
@@ -151,7 +157,28 @@ O servidor retorna o conteúdo específico e o AngularJS apresenta o novo conte�
 
 
 Foi projetado para criação de \textit{SPA's} e com isso faz com que as páginas sejam mais rápidas, visto que, apenas é carregado o conteúdo que precisa ser mostrado, 
-deixando outros conteúdos para serem carregados dinâmicamente depois, de acordo com as interações do usuário.    
+deixando outros conteúdos para serem carregados dinâmicamente depois, de acordo com as interações do usuário.   
+
+\section{Ionic} \label{ionic}
+%http://blog.ionic.io/how-2015-went-for-ionic/
+\textit{Ionic} é um \textit{framework} gratuito e \textit{open source} para desenvolvimento de aplicativos híbridos utilizando tecnologias 
+\textit{web} como \textit{HTML}, \textit{CSS} e \textit{JavaScript} otimizadas para dispositivos móveis. 
+
+
+Foi criado pela empresa Drifty Co. em 2013 com base na necessidade que seus clientes apresentavam de criarem \textit{apps}. 
+Foi projetado para ser muito performático e funcionar com padrões e tecnologias \textit{web} modernas. 
+
+
+Criado sobre os \textit{frameworks} \textit{Cordova} e \textit{AngularJS}, com apenas um código é possível criar aplicativos para várias 
+plataformas como \textit{iOS} e \textit{Android}, por exemplo, dentre outras. O \textit{Ionic} conta ainda com um conjunto de ferramentas para auxiliar 
+no desenvolvimento dos aplicativos.
+
+\subsection{Arquitetura de um projeto Ionic} \label{subsec:arc-ionic}
+
+Um projeto Ionic segue a seguinte arquitetura...
+
+
+Um projeto Ionic segue a seguinte estrutura de diretorios...
 
 \subsection{Ferramentas de Apoio} \label{subsec:ferramentasapoio}
 
