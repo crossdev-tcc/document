@@ -1,8 +1,7 @@
-\chapter{Desenvolvimento de aplicativos móveis} \label{referencialteorico} 
+\chapter{Desenvolvimento de aplicativos móveis} \label{cap:referencialteorico} 
 
-Nesta seção, serão apresentadas semelhanças e diferenças, vantagens e desvantagens do desenvolvimento nativo em relação ao \textit{cross-plataform}, 
-bem como serão descritas as arquiteturas das plataformas \textit{iOS} e \textit{Android}, duas das plataformas mais conhecidas e utilizadas atualmente para desenvolvimento nativo, 
-e do \textit{Ionic Framework}, usado para desenvolvimento multiplataformas e \textit{frameworks} necessários para o correto funcionamento do \textit{Ionic}.
+DIZER COMO EH EM RELACAO AO DESENVOLVIMENTO NORMAL DE SOFTWARE
+-> 3.1. Challenges of mobile applications development: http://www.sciencedirect.com/science/article/pii/S2090447915001276
 
 %aqui serão descritos as diferencas sucintamente enre nativo e cross
 %explicar as diferencas
@@ -13,17 +12,13 @@ e do \textit{Ionic Framework}, usado para desenvolvimento multiplataformas e \te
 % http://blog.concretesolutions.com.br/2016/03/nativo-x-hibrido/
 % http://martinfowler.com/articles/multiMobile/#cost
 
-\section{Desenvolvimento Nativo} \label{desenvolvimentonativo}
+\chapter{Desenvolvimento Nativo} \label{cap:desenvolvimentonativo}
 
 nativo 
 
+\section{iOS} \label{sec:ios}
 
-\section{Desenvolvimento \textit{Cross-platform}} \label{desenvolvimentomulti}
-
-multi
-
-
-\section{iOS} \label{ios}
+NESTA SEÇÃO serão descritas as arquiteturas das plataformas \textit{iOS} e \textit{Android}, duas das plataformas mais conhecidas e utilizadas atualmente para desenvolvimento nativo....
 
 O sistema operacional \textit{iOS} foi lançado juntamente com o primeiro \textit{iPhone} criado em Janeiro de 2007 e 
 funciona como uma interface entre as aplicações desenvolvidas pelos programadores (\textit{apps}) e o \textit{hardware} 
@@ -42,7 +37,7 @@ A maioria das interfaces disponíveis para uso são disponibilizadas por meio de
 que são diretórios, que podem ser adicionados ao projeto no \textit{Xcode}, contendo \textit{DSL's} e os recursos necessários como, 
 imagens, aplicativos auxiliares e arquivos \textit{header}, para o \textit{framework} funcionar corretamente.
 
-\subsection{Arquitetura \textit{iOS}} \label{arc-ios-section}
+\subsection{Arquitetura \textit{iOS}} \label{subsec:arc-ios}
 Sua arquitetura é baseada nas camadas listadas, conforme a Figura~\ref{fig:arc-ios}, a seguir.
  
 \begin{figure}[H]
@@ -72,7 +67,7 @@ As camadas do \textit{iOS} são explicadas com mais detalhes a seguir.
     ou comunicação com acessórios externos mais complicados, é possível usar as funcionalidades dessa camada.
 \end{itemize}
 
-\subsection{Desenvolvimento \textit{iOS}} \label{arc-ios-section}
+\subsection{Desenvolvimento \textit{iOS}} \label{subsec:dev-ios}
 Para o desenvolvimento de aplicativos \textit{iOS}, é necessário cumprir alguns requisitos listados a seguir. 
 ...
 
@@ -82,14 +77,14 @@ Para o desenvolvimento nativo \textit{iOS}, é necessário que o programador pos
 O desenvolvimento é atrelado a duas linguagens de programação, o \textit{Objective-C} ou \textit{Swift}.
 ...
 
-\section{Android} \label{android}
+\section{Android} \label{sec:android}
 
 O sistema operacional \textit{Android} foi criado pela \textit{start-up} homônima Android Inc. em outubro de 2003. Em agosto de 2005 foi adquirida pela empresa Google, que lançou
 em novembro de 2007, juntamente com a OHA, o sistema \textit{Android}, \textit{open-source} e baseado no \textit{kernel} do Linux. Uma semana depois, foi liberada a primeira versão do \textit{SDK} para \textit{Android}.
 O sistema foi concebido originalmente para camêras fotográficas, no entanto, foi percebido por seus criadores um mercado maior no ramo da telefonia e desviou-se o 
 foco para \textit{smartphones}, competindo diretamente como Symbian e Windows Mobile.
 
-\subsection{Arquitetura \textit{Android}} \label{arc-android-section}
+\subsection{Arquitetura \textit{Android}} \label{subsec:arc-android}
 
 A arquitetura Android é baseada nas camadas apresentadas na Figura~\ref{fig:arc-android} e são explicadas com mais detalhes a seguir.
 
@@ -121,7 +116,7 @@ A arquitetura Android é baseada nas camadas apresentadas na Figura~\ref{fig:arc
 	\label{fig:arc-android}
 \end{figure}
 
-\subsection{Desenvolvimento \textit{Android}} \label{arc-android-section}
+\subsection{Desenvolvimento \textit{Android}} \label{subsec:dev-android}
 
 O desenvolvimento de aplicativos para \textit{Android} é mais aberto e exige menos requisitos.
 ...
@@ -132,8 +127,11 @@ O ambiente necessário para o desenvolvimento é simples, requerendo apenas um c
 Só há uma linguagem de programação, que é o \textit{Java}.
 ... 
 
+\chapter{Desenvolvimento \textit{Cross-platform}} \label{cap:desenvolvimentomulti}
 
-\section{PhoneGap e Cordova} \label{subsec:phonegap}
+multi
+
+\section{PhoneGap e Cordova} \label{sec:phonegap}
 
 \textit{PhoneGap} é um \textit{framework} para desenvolvimento de aplicativos híbridos, criado pela empresa Nitobi. 
 Após a empresa ser comprada pela Adobe Systems Inc. o \textit{PhoneGap} teve seu código doado para a Apache Software Foundation 
@@ -167,7 +165,7 @@ como uma distribuição do \textit{Apache Cordova}, mantido pela Adobe Systems I
 %https://en.wikipedia.org/wiki/Apache_Cordova
 %http://cordova.apache.org/docs/en/latest/guide/overview/
 
-\section{AngularJS} \label{subsec:angularjs}
+\section{AngularJS} \label{sec:angularjs}
 
 \textit{HTML} é a principal linguagem de marcação para a criação de páginas \textit{web}. No entanto, os conteúdos exibidos são estáticos e o \textit{HTML} não fornece suporte para conteúdos dinâmicos.
 \textit{AngularJS} é um \textit{framework open source}, mantido pelo Google, que permite extender a sintaxe do \textit{HTML} para poder criar páginas \textit{web} com conteúdos dinâmicos.
@@ -181,7 +179,10 @@ O servidor retorna o conteúdo específico e o AngularJS apresenta o novo conte�
 Foi projetado para criação de \textit{SPA's} e com isso faz com que as páginas sejam mais rápidas, visto que, apenas é carregado o conteúdo que precisa ser mostrado, 
 deixando outros conteúdos para serem carregados dinâmicamente depois, de acordo com as interações do usuário.   
 
-\section{Ionic} \label{ionic}
+\section{Ionic} \label{sec:ionic}
+
+NESTA SEÇÃO e do \textit{Ionic Framework}, usado para desenvolvimento multiplataformas e \textit{frameworks} necessários para o correto funcionamento do \textit{Ionic}...
+
 %http://blog.ionic.io/how-2015-went-for-ionic/
 \textit{Ionic} é um \textit{framework} gratuito e \textit{open source} para desenvolvimento de aplicativos híbridos utilizando tecnologias 
 \textit{web} como \textit{HTML}, \textit{CSS} e \textit{JavaScript} otimizadas para dispositivos móveis. 
@@ -222,7 +223,7 @@ Um projeto \textit{Ionic} pode ser dividido em cinco camadas, listadas e detalha
     retorne um valor falso.  
 \end{itemize}
 
-\subsection{Desenvolvimento \textit{Ionic}} \label{arc-android-section}
+\subsection{Desenvolvimento \textit{Ionic}} \label{subsec:dev-ionic}
 Para o desenvolvimento de aplicações utilizando \textit{Ionic}, não é necessário nenhum equipamento específico, assim como no desenvolvimento \textit{Android}.
 ...
 
@@ -237,7 +238,7 @@ Pode-se utilizar qualquer \textit{IDE} de acordo com as preferências do program
 A linguagem utilizada é o \textit{JavaScript}, usando ainda \textit{HTML} e \textit{CSS}....
 
 
-\subsection{Ferramentas de Apoio} \label{subsec:ferramentasapoio}
+\subsection{Ferramentas de Apoio} \label{subsec:ionicferramentasapoio}
 
 O \textit{Ionic} provê além do \textit{HTML} e \textit{CSS} otimizado para dispositivos móveis, uma série de ferramentas de 
 apoio que fornecem velocidade e facilidade no desenvolvimento de aplicativos híbridos. Essas ferramentas são listadas a seguir 
@@ -275,3 +276,14 @@ com uma breve explicação do que cada uma pode fazer.
      resubmeter o aplicativo para as respectivas lojas. 
      
 \end{itemize}
+
+\chapter{Comparativo (Nativo x \textit{Cross-platform})} \label{cap:comparativo}
+
+Nesta seção, serão apresentadas semelhanças e diferenças, vantagens e desvantagens do desenvolvimento nativo em relação ao \textit{cross-plataform}.
+
+\section{} 
+
+
+\chapter{Linha de Produto de \textit{Software (SPL)}} \label{cap:linhaproduto}
+
+SPL
