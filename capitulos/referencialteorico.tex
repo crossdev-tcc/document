@@ -1,3 +1,5 @@
+%\begin{comment}
+    
 \chapter{Desenvolvimento de aplicativos móveis} \label{cap:referencialteorico} 
 
 DIZER COMO EH EM RELACAO AO DESENVOLVIMENTO NORMAL DE SOFTWARE
@@ -277,24 +279,62 @@ com uma breve explicação do que cada uma pode fazer.
      
 \end{itemize}
 
+%\end{comment}
+
 \chapter{Comparativo (Nativo x \textit{Cross-platform})} \label{cap:comparativo}
 
-Após o estudo feito sobre desenvolvimento de aplicações móveis utilizando diferentes abordagens, nesta seção, serão apresentadas semelhanças e diferenças, 
-vantagens e desvantagens do desenvolvimento \textit{cross-plataform} em relação ao nativo.
+Cada plataforma possui seu próprio ambiente de desenvolvimento, arquitetura, ferramentas, mercado de distribuição e público alvo. 
+E cada abordagem de desenvolvimento possui suas características próprias e inerentes à forma como se dá o projeto, desenvolvimento e distribuição dos \textit{apps}.
 
-\section{Vantagens x Desvantagens} \label{sec:vantagensxdesvantagens}
-fazer uma tabela na mao no numbers e depois referenciar tudo o que eu falei com os artigos que a gnt achou
+Algo importante que deve ser feito pela equipe de desenvolvimento é decidir para qual plataforma desenvolver, tendo sempre em vista que 
+ao não criar o aplicativo para uma plataforma, uma grande parcela do mercado pode estar sendo desconsiderada, o que acaba por reduzir o alcance
+da aplicação e por consequência os lucros obtidos com o \textit{app}.
 
-\section{Semelhanças x Diferenças} \label{sec:semelhancaxdiferenca}
-Tópico 2 desse artigo: \href{http://ac.els-cdn.com/S1877050912005303/1-s2.0-S1877050912005303-main.pdf?_tid=572e7f04-2913-11e6-8079-00000aab0f01&acdnat=1464907552_10ca875bd7eb95dd321f887b649203d4}{artigo}
+Para o desenvolvimento de várias aplicações para cada plataforma de maneira nativa, é preciso passar por todo o processo de desenvolvimento novamente, 
+pois para cada plataforma há uma arquitetura distinta que deve ser seguida, padrões de código e interface de usuário e \textit{API's} próprias. 
+Isso implica em planejar cada \textit{app} com base em uma plataforma distinta, por mais
+que se trate do mesmo aplicativo. Por exemplo, existem componentes que não existem em todas as arquiteturas 
+(\textit{navigationController} e \textit{tabBarController}, por exemplo) e que devem ser considerados no projeto do \textit{app} para as demais plataformas.
+
+Dessa forma, cada aplicação deve ser codificada considerando as diferentes arquiteturas, componentes e \textit{guidelines}, customizadas o máximo possível 
+para ser a mesma aplicação em plataformas distintas e por fim, gerados novos executáveis e distribuídos nas diferentes lojas de aplicativos.
+
+No entanto, quando se pensa em desenvolvimento multiplataformas, o projeto se torna agnóstico em relação à plataforma, pois o projeto é feito pensando-se 
+apenas em uma arquitetura, um ambiente de desenvolvimento, um conjunto único de ferramentas e não de acordo com as características de cada plataforma.
+
+A Figura~\ref{fig:dev-natxcross} mostra as diferenças no processo de desenvolvimento de um \textit{app} utilizando tecnologias \textit{cross-plataform} e 
+nativas.
+
+A Tabela~\ref{vantxdesva} sumariza as principais vantagens e desvantagens de cada tipo de desenvolvimento para uma melhor compreensão de cada abordagem.
 
 \begin{figure}[h]
   \centering
-    \includegraphics[width=1.0\textwidth]{dev-natxcross}
-    \caption[Desenvolvimento Nativo x \textit{Cross-plataform}]{ Desenvolvimento Nativo x \textit{Cross-plataform}. Fonte: Baseado em XX.}
+    \includegraphics[width=1.0\textwidth]{dev-natxcross}%potential advantages and disadivantages of multiplataform development frameworks/shakshuki et al.
+    \caption[Desenvolvimento \textit{Cross-plataform} x Nativo]{ Desenvolvimento \textit{Cross-plataform} x Nativo. Fonte: Baseado em shakshuki et al.}
 	\label{fig:dev-natxcross}
 \end{figure}
 
 \chapter{Linha de Produto de \textit{Software (SPL)}} \label{cap:linhaproduto}
 
 Linha de produto de software
+
+\begin{comment}
+\begin{table}[h]
+	\centering
+	\label{tab01}
+	\begin{tabular}{ccc}
+		\toprule
+		\textbf{} & \textbf{Vantagens} & \textbf{Desvantagens} \\
+		\midrule
+		\multirow{3}{*}{Nativo}             & Explora todas as capacidades do dispositivos                                                                          & Necessário um aplicativo por plataforma \\
+		                                    & Maior performance                                                                                                     & Mais caro e mais difícil de manter, por ter que manter varios apps diferentes \\
+                                            & Oferece experiencia nativa de usabilidade para o usuario                                                              & Requer domínio de vários ambientes e linguagens para cada plataforma \\
+        \multirow{4}{*}{Multiplataformas}   & Só é preciso dominar uma linguagem e um ambiente                                                                      & Não possui acesso a todas as funcionalidades do dispositivo \\
+                                            & Desenvolve apenas um código e pode distribuir em várias lojas de apps, o que faz com que o alcance do app seja maior  & Menor performance comparada ao nativo, linguagens interpretadas e compiladas \\
+                                            & Reduz custo, tempo e esforço de desenvolvimento e manutenção                                                          & Não possui a mesma usabilidade e experiência de uso das aplicações nativas \\
+                                            & & Não possui as últimas atualizações lançadas pelo SO, pois para cada atualização do SO, é preciso ser feita uma atualização na plataforma cross \\
+		\bottomrule
+	\end{tabular}
+	\caption{Vantagens x Desvantagens de desenvolvimento multiplataformas em relação ao nativo}
+\end{table}
+\end{comment}
