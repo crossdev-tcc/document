@@ -16,34 +16,35 @@ DIZER COMO EH EM RELACAO AO DESENVOLVIMENTO NORMAL DE SOFTWARE
 
 nativo 
 
-\section{iOS} \label{sec:ios}
+Nas seções a seguir serão descritas as arquiteturas das plataformas \textit{iOS} e \textit{Android}, duas das plataformas mais conhecidas e utilizadas atualmente para desenvolvimento nativo....
 
-NESTA SEÇÃO serão descritas as arquiteturas das plataformas \textit{iOS} e \textit{Android}, duas das plataformas mais conhecidas e utilizadas atualmente para desenvolvimento nativo....
+\section{iOS} \label{sec:ios}
 
 O sistema operacional \textit{iOS} foi lançado juntamente com o primeiro \textit{iPhone} criado em Janeiro de 2007 e 
 funciona como uma interface entre as aplicações desenvolvidas pelos programadores (\textit{apps}) e o \textit{hardware} 
-dos dispositivos (\textit{iPhone}, \textit{iPad}, \textit{iPod}). Dessa forma, a comunicação com o \textit{hardware} do dispositivo se dá 
+dos dispositivos (\textit{iPhone}, \textit{iPad}, \textit{iPod}) \cite{apple_inc_apple_2007}. 
+Dessa forma, a comunicação com o \textit{hardware} do dispositivo se dá 
 por meio de um conjunto bem definido de interfaces do sistema, o que facilita o desenvolvimento de \textit{apps} 
-que funcionam corretamente entre os variados tipos de \textit{hardware} dos dispositivos da Apple. 
+que funcionam entre os variados tipos de \textit{hardware} dos dispositivos da Apple \cite{apple_inc_developing_2016}. 
 
 Como recomendação, a Apple explica que deve-se preferir o uso de camadas mais elevadas, pois as camadas de 
 mais alto nível possuem abstrações orientadas à objeto de funcionalidades das camadas mais baixas. Isso 
 torna o desenvolvimento mais fácil, pois reduz a quantidade de código que deve ser criado e mantém funcionalidades 
 complexas das camadas mais baixas encapsuladas por meio das interfaces. No entanto, não há problema em usar 
 funcionalidades presentes nas camadas mais baixas, se essas não estiverem disponíveis por meio de abstrações nas 
-camadas superiores. 
+camadas superiores \cite{apple_inc_tech_2014}. 
 
 A maioria das interfaces disponíveis para uso são disponibilizadas por meio de \textit{frameworks}, 
 que são diretórios, que podem ser adicionados ao projeto no \textit{Xcode}, contendo \textit{DSL's} e os recursos necessários como, 
-imagens, aplicativos auxiliares e arquivos \textit{header}, para o \textit{framework} funcionar corretamente.
+imagens, aplicativos auxiliares e arquivos \textit{header}, para o \textit{framework} funcionar corretamente \cite{apple_inc_tech_2014}.
 
-\subsection{Arquitetura \textit{iOS}} \label{subsec:arc-ios}
+\subsection{Arquitetura \textit{iOS}} \label{arc-ios-section}
 Sua arquitetura é baseada nas camadas listadas, conforme a Figura~\ref{fig:arc-ios}, a seguir.
  
 \begin{figure}[H]
   \centering
     \includegraphics[width=0.5\textwidth]{arc-ios}
-    \caption[Arquitetura iOS]{ Arquitetura iOS. Fonte: REFERENCIAR A Apple CORRETAMENTE.}
+    \caption[Arquitetura iOS]{ Arquitetura iOS. Fonte: \cite{apple_inc_tech_2014}.}
 	\label{fig:arc-ios}
 \end{figure}
 
@@ -54,28 +55,33 @@ As camadas do \textit{iOS} são explicadas com mais detalhes a seguir.
     com o usuário como entrada baseada em toques e notificações \textit{Push} e outras tecnologias necessárias para
      melhorar a experiencia do usuário como multitarefas, Continuidade (\textit{Handoff}) e \textit{AirDrop}, além de \textit{frameworks} 
      de alto nível que permitem acesso a funcionalidades do sistema como \textit{AddressBook} para contatos, \textit{EventKit} 
-     para eventos relacionados ao calendário e \textit{MapKit} para mapas.
+     para eventos relacionados ao calendário e \textit{MapKit} para mapas \cite{apple_inc_tech_2014}.
 	\item A camada logo abaixo da \textit{Cocoa Touch} é a camada \textit{Media} que contém tecnologias e \textit{frameworks} necessários 
-    para a implementação de experiências multimídia com áudio, vídeo e gráficos.
+    para a implementação de experiências multimídia com áudio, vídeo e gráficos \cite{apple_inc_tech_2014}.
 	\item A próxima camada, logo abaixo da camada \textit{Media}, é a camada \textit{Core Services}. Essa camada está mais próxima 
     do \textit{hardware} e portanto possui acesso a funcionalidades de mais baixo nível como localização, telefonia, \textit{threads} 
     e \textit{SQLite}. Aqui residem dois dos \textit{frameworks} mais importantes do \textit{iOS} que são o \textit{Foundation} e o \textit{Core Foundation}, 
     ambos relacionados com o gerenciamento de dados e alguns serviços e definem todos os tipos básicos de dados que 
-    todos os \textit{apps} usam, como por exemplo, coleções, \textit{strings}, data e hora, \textit{sockets} e \textit{threads}.
+    todos os \textit{apps} usam, como por exemplo, coleções, \textit{strings}, data e hora, \textit{sockets} e \textit{threads} \cite{apple_inc_tech_2014}.
 	\item A última camada é a camada \textit{Core OS}, na qual as funcionalidades de mais baixo nível são construídas e 
     provavelmente utilizadas por outros \textit{frameworks} em outras camadas. Se a aplicação possui requisitos de segurança 
-    ou comunicação com acessórios externos mais complicados, é possível usar as funcionalidades dessa camada.
+    ou comunicação com acessórios externos mais complicados, é possível usar as funcionalidades dessa camada \cite{apple_inc_tech_2014}.
 \end{itemize}
 
-\subsection{Desenvolvimento \textit{iOS}} \label{subsec:dev-ios}
-Para o desenvolvimento de aplicativos \textit{iOS}, é necessário cumprir alguns requisitos listados a seguir. 
-...
+\subsection{Desenvolvimento \textit{iOS}} \label{arc-ios-section}
 
-Para o desenvolvimento nativo \textit{iOS}, é necessário que o programador possua no mínimo, dois equipamentos Apple, que são o computador com o sistema operacional Mac OS, e um iPhone.
-...
+O kit de desenvolvimento da plataforma (SDK) \textit{iOS} permite que os desenvolvedores criem suas aplicações e a testem em emuladores. 
+Contudo, para que os testes sejam realizados em um dispositivo é exigida uma licença do \textit{Apple Developer Program}, 
+com custo de US\$99,00 anuais. A licença também é necessária para a utilização de recursos avançados e para a distribuição 
+na \textit{App Store}, loja de aplicativos da Apple \cite{apple_inc_program_2016}.   
 
-O desenvolvimento é atrelado a duas linguagens de programação, o \textit{Objective-C} ou \textit{Swift}.
-...
+Para a distrituição de aplicativos \textit{iOS}, além da licença citada, é necessário submeter a aplicação para avaliação e aprovação da Apple antes de ir para a App Store. Para agilizar o processo de aprovação, é necessário que o aplicativo esteja de acordo com as diretrizes estabelecidades pela Apple, como as orientações de interface gráfica e as orientações de revisão da App Store \cite{apple_inc_submitting_2016}.
+
+Desenvolver aplicativos para a plataforma iOS requer um computador com o sistema operacional Mac OS e o ambiente de desenvolvimento Xcode \cite{heitkotter_evaluating_2013}. 
+O desenvolvimento é atrelado a duas linguagens de programação, o \textit{Objective-C} e o \textit{Swift}.
+O Objective-C constitui-se em um superconjunto da linguagem de programação C, da qual herda a maior parte da sua sintaxe, incluindo tipos primitivos e fluxo de declarações, e adiciona sintaxe própria para definição de classes e métodos \cite{apple_inc_about_2014}. 
+%É uma linguagem que teve origem nos anos 80 e ganhou destaque junto ao crescimento da Apple.
+O \textit{Swift} foi lançado pela Apple como um sucessor do \textit{Objective-C}. É uma linguagem gratuita, código aberto e pode ser integrada a códigos \textit{Objective-C} \cite{apple_inc_swift_2016}. Pouco tempo após o seu lançamento, tornou-se uma das linguagens de programação mais utilizadas no mundo \cite{rebouas_empirical_2016}. Segundo a Apple, o \textit{Swift} possui uma sintaxe concisa, além de ser intuitivo e poderoso \cite{apple_inc_swift_2016}.
 
 \section{Android} \label{sec:android}
 
@@ -92,40 +98,38 @@ A arquitetura Android é baseada nas camadas apresentadas na Figura~\ref{fig:arc
 %http://source.android.com/devices/index.html <- Fonte principal
 %traduzir e parafrasear
 
-    \item A camada mais elevada é a \textit{Application Framework}, onde as aplicações construídas pelos desenvolvedores são instaladas.
+    \item A camada mais elevada é a \textit{Application Framework}, onde as aplicações construídas pelos desenvolvedores são instaladas \cite{android_android_2016}.
     \item A camada logo a abaixo da \textit{Application Framework} é a \textit{Binder IPC Proxies}, onde \textit{IPC} significa \textit{Inter-Process Comunication}.
     É a camada que faz uma ponte entre as aplicações instaladas na camada superior com a próxima camada, a \textit{System Services}. É uma interface que permite que \textit{API's}
-    de alto nível interajam com serviços do sistema que residem na camada abaixo dela. 
+    de alto nível interajam com serviços do sistema que residem na camada abaixo dela \cite{android_android_2016}. 
     \item Abaixo da \textit{Binder IPC Proxies} fica a \textit{System Services}, que , por meio de módulos, permite acesso a \textit{hardwares} específicos. Cada serviço presente nessa camada,
-    foi desenvolvido para gerenciar um componente específico, como busca e notificações. Os serviços foram divididos em duas categorias, \textit{Media} e \textit{System}, explicadas a seguir.
+    foi desenvolvido para gerenciar um componente específico, como busca e notificações. Os serviços foram divididos em duas categorias, \textit{Media} e \textit{System}, explicadas a seguir \cite{android_android_2016}.
     \begin{itemize}
         \item \textit{Media Server}: são os serviços responsáveis por gerenciar conteúdos de mídia como gravação e reprodução de audio e vídeo. 
         \item \textit{System Server}: são serviços responsáveis por gerenciar os demais tipos de serviço do sistema como notificações e \textit{windows}.
     \end{itemize}
     \item Abaixo da camada \textit{System Services} fica a camada \textit{HAL} que permite que fornecedores de \textit{hardware} criem interfaces e \textit{drivers} para os \textit{hardwares} que
-    ele oferecem. Com isso, é possível criar novas funcionalidades e implementá-las sem afetar o resto das camadas do sistema.  
+    ele oferecem. Com isso, é possível criar novas funcionalidades e implementá-las sem afetar o resto das camadas do sistema \cite{android_android_2016}.  
     \item A camada mais baixa é a \textit{Linux Kernel} que é uma versão do \textit{kernel} do Linux com algumas modificações como uma gerenciamento de memória mais avançados e próprio para dispositivos 
-    móveis e funcionalidades para dispositivos embarcados. 
+    móveis e funcionalidades para dispositivos embarcados \cite{android_android_2016}. 
     
 \end{itemize}
 
 \begin{figure}[h]
   \centering
-    \includegraphics[width=0.35\textwidth]{arc-android}
-    \caption[Arquitetura Android]{ Arquitetura Android. Fonte: REFERENCIAR A Google CORRETAMENTE.}
+    \includegraphics[width=0.5\textwidth]{arc-android}
+    \caption[Arquitetura Android]{ Arquitetura Android. Fonte: \cite{android_android_2016}.}
 	\label{fig:arc-android}
 \end{figure}
 
 \subsection{Desenvolvimento \textit{Android}} \label{subsec:dev-android}
 
-O desenvolvimento de aplicativos para \textit{Android} é mais aberto e exige menos requisitos.
-...
+Para o desenvolvimento de aplicações \textit{Android} é necessário conhecimento na linguagem de programação Java.
+Não é requerido sistema operacional específico e a IDE recomendada pelo Google é o \textit{Android Studio}, oficial para desenvolvimento de aplicativos \textit{Android} \cite{android_meet_2016}.
+%O ambiente necessário para o desenvolvimento requer um computador com qualquer sistema operacional e o \textit{Android Studio}, a \textit{IDE} oficial para a criação de aplicativos Android \cite{android_meet_2016}.
 
-O ambiente necessário para o desenvolvimento é simples, requerendo apenas um computador com qualquer sistema operacional e qualquer \textit{IDE}, sendo recomendado o uso do \textit{Android Studio}.
-...
-
-Só há uma linguagem de programação, que é o \textit{Java}.
-... 
+Para a publicação na loja de aplicativos do Google, \textit{Google Play Store}, é cobrada uma taxa única de US\$25. 
+Antes de serem publicados, os aplicativos passam por um processo de revisão para assegurar que não violam as políticas estabelecidas pela loja \cite{meier_creating_2015}.  
 
 \chapter{Desenvolvimento \textit{Cross-platform}} \label{cap:desenvolvimentomulti}
 
