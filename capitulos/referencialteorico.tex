@@ -1,5 +1,3 @@
-%\begin{comment}
-    
 \chapter{Desenvolvimento de aplicativos móveis} \label{cap:referencialteorico} 
 
 DIZER COMO EH EM RELACAO AO DESENVOLVIMENTO NORMAL DE SOFTWARE
@@ -306,8 +304,6 @@ com uma breve explicação do que cada uma pode fazer.
      
 \end{itemize}
 
-%\end{comment}
-
 \chapter{Comparativo (Nativo x \textit{Cross-platform})} \label{cap:comparativo}
 
 Cada plataforma possui seu próprio ambiente de desenvolvimento, arquitetura, ferramentas, mercado de distribuição e público alvo. 
@@ -319,27 +315,34 @@ da aplicação e por consequência os lucros obtidos com o \textit{app}.
 
 Para o desenvolvimento de várias aplicações para cada plataforma de maneira nativa, é preciso passar por todo o processo de desenvolvimento novamente, 
 pois para cada plataforma há uma arquitetura distinta que deve ser seguida, padrões de código e interface de usuário e \textit{API's} próprias. 
-Isso implica em planejar cada \textit{app} com base em uma plataforma distinta, por mais
-que se trate do mesmo aplicativo. Por exemplo, existem componentes que não existem em todas as arquiteturas 
-(\textit{navigationController} e \textit{tabBarController}, por exemplo) e que devem ser considerados no projeto do \textit{app} para as demais plataformas.
-
 Dessa forma, cada aplicação deve ser codificada considerando as diferentes arquiteturas, componentes e \textit{guidelines}, customizadas o máximo possível 
 para ser a mesma aplicação em plataformas distintas e por fim, gerados novos executáveis e distribuídos nas diferentes lojas de aplicativos.
 
+Isso implica em planejar cada \textit{app} com base em uma plataforma distinta, por mais
+que se trate do mesmo aplicativo, o que acaba por encarecer e tornar mais lento o desenvolvimento. 
+Por exemplo, existem componentes que não existem em todas as arquiteturas 
+(\textit{navigationController} e \textit{tabBarController}, por exemplo) e que devem ser considerados no projeto do \textit{app} para as demais plataformas.
+
 No entanto, quando se pensa em desenvolvimento multiplataformas, o projeto se torna agnóstico em relação à plataforma, pois o projeto é feito pensando-se 
-apenas em uma arquitetura, um ambiente de desenvolvimento, um conjunto único de ferramentas e não de acordo com as características de cada plataforma.
+apenas em uma arquitetura, um ambiente de desenvolvimento, um conjunto único de ferramentas e não de acordo com as características de cada plataforma. 
+Dessa forma, a equipe de desenvolvedores pode focar nos requisitos da aplicação sem se preocupar tanto com as diferenças entre 
+plataformas.
 
 A Figura~\ref{fig:dev-natxcross} mostra as diferenças no processo de desenvolvimento de um \textit{app} utilizando tecnologias \textit{cross-plataform} e 
 nativas.
 
-A Tabela~\ref{vantxdesva} sumariza as principais vantagens e desvantagens de cada tipo de desenvolvimento para uma melhor compreensão de cada abordagem.
-
-\begin{figure}[h]
+\begin{figure}[H]
   \centering
     \includegraphics[width=1.0\textwidth]{dev-natxcross}%potential advantages and disadivantages of multiplataform development frameworks/shakshuki et al.
     \caption[Desenvolvimento \textit{Cross-plataform} x Nativo]{ Desenvolvimento \textit{Cross-plataform} x Nativo. Fonte: Baseado em shakshuki et al.}
 	\label{fig:dev-natxcross}
 \end{figure}
+
+A Tabela~\ref{vantxdesva} sumariza as principais vantagens e desvantagens de cada tipo de desenvolvimento para uma melhor compreensão de cada abordagem.
+
+\textcolor{red}{AQUI TEM UMA TABELA!!}
+
+
 
 \chapter{Linha de Produto de \textit{Software (SPL)}} \label{cap:linhaproduto}
 
