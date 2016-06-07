@@ -16,30 +16,15 @@ DIZER COMO EH EM RELACAO AO DESENVOLVIMENTO NORMAL DE SOFTWARE
 
 \chapter{Desenvolvimento Nativo} \label{cap:desenvolvimentonativo}
 
-O desenvolvimento de aplicações nativas 
+Aplicações nativas são desenvolvidas com o uso de ferramentas e linguagens de programação específicas para determinada plataforma, usando o \textit{SDK} e \textit{frameworks} providos por ela. Os \textit{apps} ficam vinculados a esse ambiente, executando apenas nos dispositivos da plataforma alvo \cite{kassas_taxonomy_2015}. Caso haja a necessidade de implementação para múltiplas plataformas, a aplicação deve ser desenvolvida separadamente para cada uma delas \cite{heitkotter_evaluating_2013}.
+%para cada um dos ambientes
+%para cada uma das plataformas
+%Dado que
 
-uma aplicação é implementada para uma plataforma alvo específica usando seu SDK e frameworks.
-o app está vinculado a esse ambiente específico.
-Por exemplo, aplicações para android são tipicamente programadas usando Java, acessam as funcionalidades da plataforma
-por meio de frameworks providos pelo Android e renderizam a interface de usuario empregando elementos fornecidos pela plataforma
+Posto que o \textit{app} é desenvolvido em ambiente próprio, segue-se os padrões técnicos, de interface e de experiência de usuário determinados pela plataforma, provendo um \textit{look and feel} de aplicação nativa ao usuário.
+Aplicações nativas tem fácil acesso, por meio de APIs fornecidas pelas plataformas, a recursos dos dispositivos móveis, como sensores, câmera, GPS, contatos e e-mail \cite{kassas_taxonomy_2015}.
 
-
-apps nativos são desenvolvidos usando as ferramentas e linguagem de programação providas para uma plataforma mobile específica.
-Os apps rodam apenas nos dispositivos com a plataforma alvo.
-O app pode ser baixado e instalado da loja.
-
-Aplicativos nativos são desenvolvidos \cite{kassas_taxonomy_2015}.
-
-
-As empresas (apple, android) disponibilizam SDK proprios, API proprias...
-
-Acesso a funcionalidades do celular
-
-
-Cross: Acesso limitado a funcionalidades, 
-
-
-Nas seções a seguir serão descritas as arquiteturas das plataformas \textit{iOS} e \textit{Android}, duas das plataformas mais conhecidas e utilizadas atualmente para desenvolvimento nativo....
+Nas seções a seguir serão descritas as arquiteturas das plataformas \textit{iOS} e \textit{Android}, duas das plataformas mais conhecidas e utilizadas para desenvolvimento nativo de aplicações \textit{mobile} \cite{jobe_native_2013}.
 
 \section{iOS} \label{sec:ios}
 
@@ -305,6 +290,14 @@ com uma breve explicação do que cada uma pode fazer.
 \end{itemize}
 
 \chapter{Comparativo (Nativo x \textit{Cross-platform})} \label{cap:comparativo}
+
+% LEMBRAR DE POR COMO VANTAGEM DO CROSS: FASTER(INITIAL) SPEED TO MARKET
+% Esse site faz um comparativo muito bom... http://www.ymedialabs.com/hybrid-vs-native-mobile-apps-the-answer-is-clear/
+%gostei da conclusao a que ele chegou da escolha de nativo ou hibrido!
+
+% e cita dados interessantes e informacoes como
+% o facebook era hibrido e depois veio pro nativo
+% o instagram demorou 2 anos pra desenvolver a versao android (questao: sera que realmente % é necessario lançar mais de uma plataforma ao mesmo tempo?)
 
 Cada plataforma possui seu próprio ambiente de desenvolvimento, arquitetura, ferramentas, mercado de distribuição e público alvo \cite{shakshuki_4th_2013}.
 E cada abordagem de desenvolvimento possui suas características próprias e inerentes à forma como se dá o projeto, desenvolvimento e distribuição dos \textit{apps} \cite{corral_ant_2012}.
