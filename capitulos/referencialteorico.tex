@@ -96,7 +96,7 @@ O \textit{Swift} foi lançado pela Apple como um sucessor do \textit{Objective-C
 O sistema operacional \textit{Android} foi criado pela \textit{start-up} homônima Android Inc. em outubro de 2003. Em agosto de 2005 foi adquirida pela empresa Google, que lançou
 em novembro de 2007, juntamente com a OHA, o sistema \textit{Android}, \textit{open-source} e baseado no \textit{kernel} do Linux. Uma semana depois, foi liberada a primeira versão do \textit{SDK} para \textit{Android}.
 O sistema foi concebido originalmente para camêras fotográficas, no entanto, foi percebido por seus criadores um mercado maior no ramo da telefonia e desviou-se o 
-foco para \textit{smartphones}, competindo diretamente como Symbian e Windows Mobile.
+foco para \textit{smartphones}, competindo diretamente com Symbian e Windows Mobile.
 
 \subsection{Arquitetura \textit{Android}} \label{subsec:arc-android}
 
@@ -169,29 +169,30 @@ crossapps sao apps desenvolvidos uitlizando recnologias web que suportam multipl
 
 \textit{PhoneGap} é um \textit{framework} para desenvolvimento de aplicativos híbridos, criado pela empresa Nitobi. 
 Após a empresa ser comprada pela Adobe Systems Inc. o \textit{PhoneGap} teve seu código doado para a Apache Software Foundation 
-para garantir que outras empresas pudessem contribuir, já que muitas empresas já conheciam as licenças da Apache.
+para garantir que outras empresas pudessem contribuir, já que muitas empresas já conheciam as licenças da Apache \cite{bezerra_desenvolvimento_2016}.
 
 
 Como o \textit{PhoneGap} é uma marca registrada de propriedade da Adobe, na Apache teve seu nome alterado para Cordova.
 Tanto o \textit{Apache Cordova} quanto o \textit{Adobe PhoneGap}, são gratuitos e \textit{open sources}, no entanto, o 
-\textit{PhoneGap} possui um ambiente integrado com serviços da Adobe como o \textit{PhoneGap Build}, por exemplo.
+\textit{PhoneGap} possui um ambiente integrado com serviços da Adobe como o \textit{PhoneGap Build}, por exemplo \cite{bezerra_desenvolvimento_2016}.
  
 \textit{Cordova} permite que aplicações não nativas tenham acesso a funcionalidades nativas do dispositivo como sensores, 
 contatos e câmera. No entanto, o Cordova apenas consegue fazer um aplicativo criado em 
 \textit{HTML} rodar como se fosse nativo em um dispositivo com \textit{Android} e \textit{iOS}, mas não consegue 
-imitar a usabilidade e aparência dos dispositivos nativos. 
-
+imitar a usabilidade e aparência dos dispositivos nativos \cite{bezerra_desenvolvimento_2016}. 
 
 Para preencher essa lacuna, outros \textit{frameworks} foram criados em cima do Cordova como um complemento, 
 provendo bibliotecas \textit{HTML} e \textit{CSS} para a 
 criação de um \textit{front-end} que se aproxime o máximo possível da usabilidade e experiência de usuário de 
-aplicações móveis nativas.
+aplicações móveis nativas \cite{bezerra_desenvolvimento_2016}.
 
 O \textit{Cordova} possui muitos plugins para poder acessar funcionalidades específicas do aparelho em que está sendo 
-executado. Esses devem ser instalados no projeto do aplicativo via \textit{CLI}. 
+executado. Esses devem ser instalados no projeto do aplicativo via \textit{CLI} \cite{bezerra_desenvolvimento_2016}. 
 
 A fim de se evitar confusões em relação aos nomes dados ao \textit{PhoneGap} e ao \textit{Cordova}, pode-se entender o \textit{PhoneGap} 
 como uma distribuição do \textit{Apache Cordova}, mantido pela Adobe Systems Inc. 
+
+%(http://ddd.uab.cat/pub/tfg/2014/tfg_5062/article.pdf phonegap)
 
 %https://www.quora.com/What-is-the-difference-between-PhoneGap-and-Cordova-and-why-would-I-select-one-over-another
 %http://luisvasconcellos.com/2015/04/06/apps-hibridas-com-cordova-e-ionic.html
@@ -202,16 +203,25 @@ como uma distribuição do \textit{Apache Cordova}, mantido pela Adobe Systems I
 \section{AngularJS} \label{sec:angularjs}
 
 \textit{HTML} é a principal linguagem de marcação para a criação de páginas \textit{web}. No entanto, os conteúdos exibidos são estáticos e o \textit{HTML} não fornece suporte para conteúdos dinâmicos.
-\textit{AngularJS} é um \textit{framework open source}, mantido pelo Google, que permite extender a sintaxe do \textit{HTML} para poder criar páginas \textit{web} com conteúdos dinâmicos.
-
+\textit{AngularJS} é um \textit{framework open source}, mantido pelo Google, que permite extender a sintaxe do \textit{HTML} para poder criar páginas \textit{web} com conteúdos dinâmicos \cite{bezerra_desenvolvimento_2016}.
 
 Com ele é possível utilizar \textit{tags} não nativas do \textit{HTML} para gerenciar conteúdos que ainda não foram dispostos na tela, ou seja, o usuário faz uma ação por meio da interface gráfica, 
 o AngularJS interpreta a ação e faz uma requisição para o servidor pedindo apenas o conteúdo necessário, que é diferente do que já está sendo mostrado para o usuário. 
-O servidor retorna o conteúdo específico e o AngularJS apresenta o novo conteúdo inserindo-o corretamente junto com o antigo já mostrado.
-
+O servidor retorna o conteúdo específico e o AngularJS apresenta o novo conteúdo inserindo-o corretamente junto com o antigo já mostrado (https://angularjs.org/).
+\textcolor{red}{FAZER IMAGEM EXPLICATIVA DO FUNCIONAMENTO DO ANGULAR}
 
 Foi projetado para criação de \textit{SPA's} e com isso faz com que as páginas sejam mais rápidas, visto que, apenas é carregado o conteúdo que precisa ser mostrado, 
-deixando outros conteúdos para serem carregados dinâmicamente depois, de acordo com as interações do usuário.   
+deixando outros conteúdos para serem carregados dinâmicamente depois, de acordo com as interações do usuário.
+
+%(Diseño e implementación de una aplicación multidispositivo en un entorno HTML5, Alvaro Martínez Rodríguez, fala que é feito para SPAs).
+%(http://ddd.uab.cat/pub/tfg/2015/tfg_7125/Articulo-TFG_2.0.pdf)
+
+
+%(http://www.barbiana20.unirc.it/wp-content/uploads/2015/07/Tesi-Cristiano-finale-2.pdf , artigo italiano fala muito bem explicado a origem do angularjs)
+%(\textcolor{red}{ESTE ARTIGO ESTA OTIMO PARA CRIAR A IMAGEM QUE EU QUERO BASEADA NA IMAGEM DELE DA PAGINA 33, OU COLOCAR A IMAGEM DELE E CITAR ELE DIRETAMENTE})
+%(tbm fala que é feito para SPAs, pagina 54)
+
+
 
 \section{Ionic} \label{sec:ionic}
 
@@ -274,40 +284,40 @@ A linguagem utilizada é o \textit{JavaScript}, usando ainda \textit{HTML} e \te
 
 \subsection{Ferramentas de Apoio} \label{subsec:ionicferramentasapoio}
 
-O \textit{Ionic} provê além do \textit{HTML} e \textit{CSS} otimizado para dispositivos móveis, uma série de ferramentas de 
-apoio que fornecem velocidade e facilidade no desenvolvimento de aplicativos híbridos. Essas ferramentas são listadas a seguir 
-com uma breve explicação do que cada uma pode fazer.
+O \textit{Ionic} provê além do \textit{HTML} e \textit{CSS} otimizado para dispositivos móveis, 
+uma série de ferramentas, que compõem um ecossistema de apoio, que fornecem velocidade e facilidade no desenvolvimento de aplicativos híbridos. 
+Essas ferramentas são listadas a seguir com uma breve explicação do que cada uma pode fazer (http://ionicframework.com).
 
 \begin{itemize}
 
     \item \textbf{Ionic Framework}: É o \textit{framework front-end} para criação de aplicativos híbridos com tecnologias \textit{web} construído em cima
     do \textit{Apache Cordova}. Facilita a criação de aplicativos com interface gráfica e interações muito semelhantes aos dispositivos nativos, de modo que 
-    a experiência de usuário não seja diferente no uso de uma aplicação nativa e multiplataforma. 
+    a experiência de usuário não seja diferente no uso de uma aplicação nativa e multiplataforma (http://ionicframework.com). 
     
     \item \textbf{Ionic Creator}: Com essa ferramenta \textit{on-line} é possível criar protótipos funcionais utilizando \textit{drag and drop}
     , que podem ser executados em dispositivos ou simuladores, e depois exportar o projeto criado para a 
     inserção de lógicas de negócio. Ela é gratuita para teste, ou seja, é possível criar um protótipo e fazer o \textit{download}
     do código para continuar o desenvolvimento, no entanto, no momento em que este trabalho foi conduzido, só era possível
-    fazer a pré-visualização em dispositivos reais para usuários pagantes.
+    fazer a pré-visualização em dispositivos reais para usuários pagantes (http://ionic.io/products/creator).
     
     \item \textbf{Ionic Lab}: É uma ferramenta \textit{desktop} para testar o projeto que está sendo criado com o \textit{Ionic}. Nela é possível
     executar o projeto em templates prontos de \textit{iOS} e \textit{Android}, rodar os simuladores de cada plataforma,
     gerenciar plugins do \textit{Cordova} e ver um console com \textit{logs} relativos à execução do projeto. Encapsula o \textit{CLI} do \textit{Ionic} com uma interface gráfica simples
-    e intuitiva.
+    e intuitiva (http://lab.ionic.io).
     
     \item \textbf{Ionic Playground}: É uma ferramenta \textit{on-line} para criar e testar códigos \textit{HTML}, \textit{CSS} e \textit{JavaScript} 
     já integrado com a plataforma \textit{AngularJS}. Nela é possível editar códigos nas três linguagens citadas e ver em tempo real as alterações 
     feitas aparecerem dentro de um \textit{template} de dispositivo móvel, sem a necessidade de salvar, compilar ou executar o projeto e sem ter que 
-    configurar o ambiente necessário para o desenvolvimento. 
+    configurar o ambiente necessário para o desenvolvimento (http://play.ionic.io/). 
     
     \item \textbf{Ionic View App}: É um aplicativo disponível para as plataformas \textit{iOS} e \textit{Android} onde é possível testar o 
     aplicativo criado no \textit{Ionic} diretamente em um dispositivo real como se fosse nativo. É possível compartilhar os projetos criados para serem
     testados por clientes e testadores sem a necessidade de passar pelas lojas de aplicativos de cada plataforma. É semelhante ao serviço 
-    \textit{Testflight} da Apple para testar aplicativos, ainda em desenvolvimento, e receber \textit{feedbacks} dos clientes e testadores que o testarem.
+    \textit{Testflight} da Apple para testar aplicativos, ainda em desenvolvimento, e receber \textit{feedbacks} dos clientes e testadores que o testarem (http://view.ionic.io).
     
     \item \textbf{Ionic Platform}: É a plataforma \textit{on-line} do \textit{Ionic} que possui serviços de \textit{back-end} em nuvem para análise de dados de uso,
      usuários, configuração de \textit{Push Notifications}, criação dos pacotes nativos e dar \textit{deploy} nas aplicações criadas sem a necessidade de
-     resubmeter o aplicativo para as respectivas lojas. 
+     resubmeter o aplicativo para as respectivas lojas (http://ionic.io/platform). 
      
 \end{itemize}
 
