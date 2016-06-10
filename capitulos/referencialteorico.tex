@@ -227,14 +227,14 @@ deixando outros conteúdos para serem carregados dinâmicamente depois, de acord
 %NESTA SEÇÃO e do \textit{Ionic Framework}, usado para desenvolvimento multiplataformas e \textit{frameworks} necessários para o correto funcionamento do \textit{Ionic}...
 %http://blog.ionic.io/how-2015-went-for-ionic/
 \textit{Ionic} é um \textit{framework} gratuito e \textit{open source} para desenvolvimento de aplicativos híbridos utilizando tecnologias 
-\textit{web} como \textit{HTML}, \textit{CSS} e \textit{JavaScript} otimizadas para dispositivos móveis \cite{drifty_ionic:_2013}. 
+\textit{web} como \textit{HTML}, \textit{CSS} e \textit{JavaScript} otimizadas para dispositivos móveis \cite{drifty_ionic:_2016}. 
 
 Foi criado pela empresa Drifty Co. em 2013 com base na necessidade que seus clientes apresentavam de criarem \textit{apps}. 
 Foi projetado para ser muito performático e funcionar com padrões e tecnologias \textit{web} modernas \cite{drifty_about_2016}.
 
 Criado sobre os \textit{frameworks} \textit{Cordova} e \textit{AngularJS}, com apenas um código é possível criar aplicativos para várias 
 plataformas como \textit{iOS} e \textit{Android}, por exemplo, dentre outras. O \textit{Ionic} conta ainda com um conjunto de ferramentas para auxiliar 
-no desenvolvimento dos aplicativos \cite{drifty_ionic:_2013}.
+no desenvolvimento dos aplicativos \cite{drifty_ionic:_2016}.
 
 \subsubsection{Arquitetura de um projeto Ionic} \label{subsubsection:arc-ionic}
 
@@ -246,21 +246,21 @@ Um projeto \textit{Ionic} pode ser dividido em cinco camadas, listadas e detalha
     o seu homônimo no padrão \textit{MVC}. Muitas vezes são chamadas de \textit{templates}, pois é a forma com o AngularJS 
     se refere a elas. São, normalmente, arquivos \textit{HTML} separados, que são chamados e inseridos quando necessário pelo
     AngularJS. É possível utilizar \textit{data binding} nas Views para poder estabelecer uma conexão com a controladora
-    e compartilhar informações entre as duas camadas \cite{drifty_ionic_2016-4}.
+    e compartilhar informações entre as duas camadas \cite{drifty_ionic_2016}.
     \item \textit{Controllers}: É a camada responsável por controlar o fluxo de dados e lógica da aplicação. Também pode ser
     comparada com a camada homônima no padrão \textit{MVC}. Ela é responsável por apresentar ao usuário as Views e chamar as camadas
     de dados (\textit{Services/Factories}) para ligar os dados reais da aplicação, por meio de \textit{data binding}, à interface
     gráfica. As controladoras possuem uma variável chamada \textit{scope}, que possui todas as informações que são necessárias 
-    para a criação da View \cite{drifty_ionic_2016-4}.
+    para a criação da View \cite{drifty_ionic_2016}.
     \item \textit{Data(Services/Factories)}: É a camada que se aproxima da camada \textit{model} do padrão \textit{MVC}. Encapsula
     dados da aplicação e provê esses dados, geralmente, por meio de um \textit{web service}. Essa camada responde às requisições
-    da controladora com os dados a serem utilizados para a criação da View e para serem mostrados para o usuário \cite{drifty_ionic_2016-4}. 
+    da controladora com os dados a serem utilizados para a criação da View e para serem mostrados para o usuário \cite{drifty_ionic_2016}. 
     \item \textit{App Configuration}: Nesta camada, as controladoras são ligadas às suas interfaces por meio de rotas. É possível
-    também, criar rotas padrão, para o caso de não haver nenhuma rota que esteja sendo identificada o sistema não quebrar \cite{drifty_ionic_2016-4}.
+    também, criar rotas padrão, para o caso de não haver nenhuma rota que esteja sendo identificada o sistema não quebrar \cite{drifty_ionic_2016}.
     \item \textit{Directives}: Essa camada serve para especificar comportamentos específicos em elementos de uma página 
     \textit{HTML}, ou seja, elas são um elemento ou um atributo que podem iniciar um comportamento específico definido 
     pelo programador. É possível, por exemplo, criar uma diretiva para sempre colocar uma imagem padrão caso uma validação 
-    retorne um valor falso \cite{drifty_ionic_2016-4}.
+    retorne um valor falso \cite{drifty_ionic_2016}.
 \end{itemize}
 
 \subsubsection{Desenvolvimento \textit{Ionic}} \label{subsubsection:dev-ionic}
@@ -274,38 +274,38 @@ A linguagem utilizada é o \textit{JavaScript}, usando ainda \textit{HTML} e \te
 
 O \textit{Ionic} provê além do \textit{HTML} e \textit{CSS} otimizado para dispositivos móveis, 
 uma série de ferramentas, que compõem um ecossistema de apoio, que fornecem velocidade e facilidade no desenvolvimento de aplicativos híbridos. 
-Essas ferramentas são listadas a seguir com uma breve explicação do que cada uma pode fazer \cite{drifty_ionic:_2013}.
+Essas ferramentas são listadas a seguir com uma breve explicação do que cada uma pode fazer \cite{drifty_ionic:_2016}.
 
 \begin{itemize}
 
     \item \textbf{Ionic Framework}: É o \textit{framework front-end} para criação de aplicativos híbridos com tecnologias \textit{web} construído em cima
     do \textit{Apache Cordova}. Facilita a criação de aplicativos com interface gráfica e interações muito semelhantes aos dispositivos nativos, de modo que 
-    a experiência de usuário não seja diferente no uso de uma aplicação nativa e multiplataforma \cite{drifty_ionic:_2013}. 
+    a experiência de usuário não seja diferente no uso de uma aplicação nativa e multiplataforma \cite{drifty_ionic:_2016}. 
     
     \item \textbf{Ionic Creator}: Com essa ferramenta \textit{on-line} é possível criar protótipos funcionais utilizando \textit{drag and drop}
     , que podem ser executados em dispositivos ou simuladores, e depois exportar o projeto criado para a 
     inserção de lógicas de negócio. Ela é gratuita para teste, ou seja, é possível criar um protótipo e fazer o \textit{download}
     do código para continuar o desenvolvimento, no entanto, no momento em que este trabalho foi conduzido, só era possível
-    fazer a pré-visualização em dispositivos reais para usuários pagantes \cite{drifty_ionic_2016}.
+    fazer a pré-visualização em dispositivos reais para usuários pagantes \cite{drifty_ionic_2016-1}.
     
     \item \textbf{Ionic Lab}: É uma ferramenta \textit{desktop} para testar o projeto que está sendo criado com o \textit{Ionic}. Nela é possível
     executar o projeto em templates prontos de \textit{iOS} e \textit{Android}, rodar os simuladores de cada plataforma,
     gerenciar plugins do \textit{Cordova} e ver um console com \textit{logs} relativos à execução do projeto. Encapsula o \textit{CLI} do \textit{Ionic} com uma interface gráfica simples
-    e intuitiva \cite{drifty_ionic_2015}.
+    e intuitiva \cite{drifty_ionic_2016-2}.
     
+    \item \textbf{Ionic Platform}: É a plataforma \textit{on-line} do \textit{Ionic} que possui serviços de \textit{back-end} em nuvem para análise de dados de uso,
+     usuários, configuração de \textit{Push Notifications}, criação dos pacotes nativos e dar \textit{deploy} nas aplicações criadas sem a necessidade de
+     resubmeter o aplicativo para as respectivas lojas \cite{drifty_ionic_2016-3}.
+     
     \item \textbf{Ionic Playground}: É uma ferramenta \textit{on-line} para criar e testar códigos \textit{HTML}, \textit{CSS} e \textit{JavaScript} 
     já integrado com a plataforma \textit{AngularJS}. Nela é possível editar códigos nas três linguagens citadas e ver em tempo real as alterações 
     feitas aparecerem dentro de um \textit{template} de dispositivo móvel, sem a necessidade de salvar, compilar ou executar o projeto e sem ter que 
-    configurar o ambiente necessário para o desenvolvimento \cite{drifty_ionic_2016-2}. 
+    configurar o ambiente necessário para o desenvolvimento \cite{drifty_ionic_2016-4}. 
     
     \item \textbf{Ionic View App}: É um aplicativo disponível para as plataformas \textit{iOS} e \textit{Android} onde é possível testar o 
     aplicativo criado no \textit{Ionic} diretamente em um dispositivo real como se fosse nativo. É possível compartilhar os projetos criados para serem
     testados por clientes e testadores sem a necessidade de passar pelas lojas de aplicativos de cada plataforma. É semelhante ao serviço 
-    \textit{Testflight} da Apple para testar aplicativos, ainda em desenvolvimento, e receber \textit{feedbacks} dos clientes e testadores que o testarem \cite{drifty_ionic_2016-3}.
-    
-    \item \textbf{Ionic Platform}: É a plataforma \textit{on-line} do \textit{Ionic} que possui serviços de \textit{back-end} em nuvem para análise de dados de uso,
-     usuários, configuração de \textit{Push Notifications}, criação dos pacotes nativos e dar \textit{deploy} nas aplicações criadas sem a necessidade de
-     resubmeter o aplicativo para as respectivas lojas \cite{drifty_ionic_2016-1}. 
+    \textit{Testflight} da Apple para testar aplicativos, ainda em desenvolvimento, e receber \textit{feedbacks} dos clientes e testadores que o testarem \cite{drifty_ionic_2016-5}. 
      
 \end{itemize}
 
