@@ -159,13 +159,9 @@ Solucao surgiu os webapps e as aplicações híbridas.
 A abordagem híbrida surgiu como uma combinação do uso das tecnologias web junto à possibilidade de acesso à funcionalidades nativas \cite{heitkotter_evaluating_2013}.
 Em essência, aplicações híbridas são \textit{web sites} inseridos em um wrapper...
 
-
-
 %http://www.ymedialabs.com/hybrid-vs-native-mobile-apps-the-answer-is-clear/
 
 crossapps sao apps desenvolvidos uitlizando recnologias web que suportam multiplas plataformas moveis, podem ser webapps ou hybrids.
-
-
 
 \subsection{PhoneGap e Cordova} \label{subsection:phonegap}
 
@@ -206,46 +202,39 @@ como uma distribuição do \textit{Apache Cordova}, mantido pela Adobe Systems I
 
 \textit{HTML} é a principal linguagem de marcação para a criação de páginas \textit{web}. No entanto, os conteúdos 
 exibidos são estáticos e o \textit{HTML} não fornece suporte para conteúdos dinâmicos.
-\textit{AngularJS} é um \textit{framework open source}, mantido pelo Google, que permite extender a sintaxe do 
-\textit{HTML} para poder criar páginas \textit{web} com conteúdos dinâmicos \cite{bezerra_desenvolvimento_2016}.
+\textit{AngularJS} é um \textit{framework open source}, mantido pelo Google, que permite estender a sintaxe do 
+\textit{HTML} para poder criar páginas \textit{web} com conteúdos dinâmicos \cite{bezerra_desenvolvimento_2016}. Com ele é possível utilizar \textit{tags} 
+não nativas do \textit{HTML} para gerenciar conteúdos que ainda não 
+foram dispostos na tela \cite{google_angularjs_2016}.
 
-Com ele é possível utilizar \textit{tags} não nativas do \textit{HTML} para gerenciar conteúdos que ainda não 
-foram dispostos na tela, ou seja, o usuário faz uma ação por meio da interface gráfica, 
-o AngularJS interpreta a ação e faz uma requisição para o servidor pedindo apenas o conteúdo necessário, que é 
+O usuário faz uma ação por meio da interface gráfica, 
+o \textit{AngularJS} interpreta a ação e faz uma requisição para o servidor pedindo apenas o conteúdo necessário, que é 
 diferente do que já está sendo mostrado para o usuário. 
-O servidor retorna o conteúdo específico e o AngularJS apresenta o novo conteúdo inserindo-o corretamente junto 
-com o antigo já mostrado (https://angularjs.org/).
-\textcolor{red}{FAZER IMAGEM EXPLICATIVA DO FUNCIONAMENTO DO ANGULAR}
+O servidor retorna o conteúdo específico e o \textit{AngularJS} apresenta o novo conteúdo inserindo-o corretamente junto 
+com o antigo já mostrado \cite{ursino_angularjs:_2015}. O ciclo do \textit{AngularJS} é esquematizado na Figura~\ref{fig:angular_response} a seguir.
+
+\begin{figure}[h]
+  \centering
+    \includegraphics[width=1.0\textwidth]{angular_response}
+    \caption[Ciclo de atualização com \textit{AngularJS}]{ Ciclo de atualização com \textit{AngularJS}. Fonte: Baseado em \cite{ursino_angularjs:_2015}.}
+	\label{fig:angular_response}
+\end{figure}
 
 Foi projetado para criação de \textit{SPA's} e com isso faz com que as páginas sejam mais rápidas, visto que, apenas é carregado o conteúdo que precisa ser mostrado, 
-deixando outros conteúdos para serem carregados dinâmicamente depois, de acordo com as interações do usuário.
-
-%(Diseño e implementación de una aplicación multidispositivo en un entorno HTML5, Alvaro Martínez Rodríguez, fala que é feito para SPAs).
-%(http://ddd.uab.cat/pub/tfg/2015/tfg_7125/Articulo-TFG_2.0.pdf)
-
-
-%(http://www.barbiana20.unirc.it/wp-content/uploads/2015/07/Tesi-Cristiano-finale-2.pdf , artigo italiano fala muito bem explicado a origem do angularjs)
-%(\textcolor{red}{ESTE ARTIGO ESTA OTIMO PARA CRIAR A IMAGEM QUE EU QUERO BASEADA NA IMAGEM DELE DA PAGINA 33, OU COLOCAR A IMAGEM DELE E CITAR ELE DIRETAMENTE})
-%(tbm fala que é feito para SPAs, pagina 54)
-
-
+deixando outros conteúdos para serem carregados dinâmicamente depois, de acordo com as interações do usuário \cite{rodriguez_diseno_2015}.
 
 \subsection{Ionic} \label{subsection:ionic}
-
-NESTA SEÇÃO e do \textit{Ionic Framework}, usado para desenvolvimento multiplataformas e \textit{frameworks} necessários para o correto funcionamento do \textit{Ionic}...
-
+%NESTA SEÇÃO e do \textit{Ionic Framework}, usado para desenvolvimento multiplataformas e \textit{frameworks} necessários para o correto funcionamento do \textit{Ionic}...
 %http://blog.ionic.io/how-2015-went-for-ionic/
 \textit{Ionic} é um \textit{framework} gratuito e \textit{open source} para desenvolvimento de aplicativos híbridos utilizando tecnologias 
-\textit{web} como \textit{HTML}, \textit{CSS} e \textit{JavaScript} otimizadas para dispositivos móveis. 
-
+\textit{web} como \textit{HTML}, \textit{CSS} e \textit{JavaScript} otimizadas para dispositivos móveis \cite{drifty_ionic:_2013}. 
 
 Foi criado pela empresa Drifty Co. em 2013 com base na necessidade que seus clientes apresentavam de criarem \textit{apps}. 
-Foi projetado para ser muito performático e funcionar com padrões e tecnologias \textit{web} modernas. 
-
+Foi projetado para ser muito performático e funcionar com padrões e tecnologias \textit{web} modernas \cite{drifty_about_2016}.
 
 Criado sobre os \textit{frameworks} \textit{Cordova} e \textit{AngularJS}, com apenas um código é possível criar aplicativos para várias 
 plataformas como \textit{iOS} e \textit{Android}, por exemplo, dentre outras. O \textit{Ionic} conta ainda com um conjunto de ferramentas para auxiliar 
-no desenvolvimento dos aplicativos.
+no desenvolvimento dos aplicativos \cite{drifty_ionic:_2013}.
 
 \subsubsection{Arquitetura de um projeto Ionic} \label{subsubsection:arc-ionic}
 
@@ -257,37 +246,29 @@ Um projeto \textit{Ionic} pode ser dividido em cinco camadas, listadas e detalha
     o seu homônimo no padrão \textit{MVC}. Muitas vezes são chamadas de \textit{templates}, pois é a forma com o AngularJS 
     se refere a elas. São, normalmente, arquivos \textit{HTML} separados, que são chamados e inseridos quando necessário pelo
     AngularJS. É possível utilizar \textit{data binding} nas Views para poder estabelecer uma conexão com a controladora
-    e compartilhar informações entre as duas camadas.
+    e compartilhar informações entre as duas camadas \cite{drifty_ionic_2016-4}.
     \item \textit{Controllers}: É a camada responsável por controlar o fluxo de dados e lógica da aplicação. Também pode ser
     comparada com a camada homônima no padrão \textit{MVC}. Ela é responsável por apresentar ao usuário as Views e chamar as camadas
     de dados (\textit{Services/Factories}) para ligar os dados reais da aplicação, por meio de \textit{data binding}, à interface
     gráfica. As controladoras possuem uma variável chamada \textit{scope}, que possui todas as informações que são necessárias 
-    para a criação da View.
+    para a criação da View \cite{drifty_ionic_2016-4}.
     \item \textit{Data(Services/Factories)}: É a camada que se aproxima da camada \textit{model} do padrão \textit{MVC}. Encapsula
     dados da aplicação e provê esses dados, geralmente, por meio de um \textit{web service}. Essa camada responde às requisições
-    da controladora com os dados a serem utilizados para a criação da View e para serem mostrados para o usuário. 
+    da controladora com os dados a serem utilizados para a criação da View e para serem mostrados para o usuário \cite{drifty_ionic_2016-4}. 
     \item \textit{App Configuration}: Nesta camada, as controladoras são ligadas às suas interfaces por meio de rotas. É possível
-    também, criar rotas padrão, para o caso de não haver nenhuma rota que esteja sendo identificada o sistema não quebrar.
+    também, criar rotas padrão, para o caso de não haver nenhuma rota que esteja sendo identificada o sistema não quebrar \cite{drifty_ionic_2016-4}.
     \item \textit{Directives}: Essa camada serve para especificar comportamentos específicos em elementos de uma página 
     \textit{HTML}, ou seja, elas são um elemento ou um atributo que podem iniciar um comportamento específico definido 
     pelo programador. É possível, por exemplo, criar uma diretiva para sempre colocar uma imagem padrão caso uma validação 
-    retorne um valor falso.  
+    retorne um valor falso \cite{drifty_ionic_2016-4}.
 \end{itemize}
 
 \subsubsection{Desenvolvimento \textit{Ionic}} \label{subsubsection:dev-ionic}
 Para o desenvolvimento de aplicações utilizando \textit{Ionic}, não é necessário nenhum equipamento específico, assim como no desenvolvimento \textit{Android}.
-...
-
-É necessário apenas um computador com qualquer sistema operacional
-
-No entanto, para o desenvolvimento do app \textit{iOS}, ainda é necessário que se possua um computador com Mac OS e com o Xcode.
-...
-
-Pode-se utilizar qualquer \textit{IDE} de acordo com as preferências do programador.
-...
-
-A linguagem utilizada é o \textit{JavaScript}, usando ainda \textit{HTML} e \textit{CSS}....
-
+É necessário apenas um computador com qualquer SO, no entanto, para o desenvolvimento do \textit{app iOS}, ainda é necessário que se possua um computador com o
+SO \textit{Mac OS} e com o Xcode \cite{drifty_installing_2016}.
+Pode-se utilizar qualquer \textit{IDE} de acordo com as preferências do programador, não há qualquer tipo de recomendação técnica por parte da equipe ou presente na documentação do \textit{Ionic}.
+A linguagem utilizada é o \textit{JavaScript}, usando ainda \textit{HTML} e \textit{CSS} para criação da interface gráfica.
 
 \subsubsection{Ferramentas de Apoio} \label{subsection:ionicferramentasapoio}
 
