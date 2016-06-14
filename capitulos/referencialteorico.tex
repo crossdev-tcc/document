@@ -357,6 +357,47 @@ nativas.
 	\label{fig:dev-natxcross}
 \end{figure}
 
-A Tabela~\ref{vantxdesva} sumariza as principais vantagens e desvantagens de cada tipo de desenvolvimento para uma melhor compreensão de cada abordagem.
-
-\textcolor{red}{AQUI TEM UMA TABELA!!}
+A Tabela~\ref{tab:vantxdesva} sumariza as principais vantagens e desvantagens de cada tipo de desenvolvimento para uma melhor compreensão de cada abordagem.
+\cite{corral_ant_2012, holzinger_making_2012, charland_mobile_2011, barth_alise_2014, kassas_taxonomy_2015} 
+\begin{table}[h]
+	\centering
+	{\renewcommand\arraystretch{1.25}
+		\begin{tabular}{|l|l|l|} \hline
+			& \multicolumn{1}{l|}{Vantagens} & \multicolumn{1}{l|}{Desvantagens}  \\ \hline\hline
+			Nativo& 
+			\multicolumn{1}{p{6cm}|}{\raggedright 
+					\begin{itemize}
+						\item Explora todas as capacidades do dispositivos
+						\item Maior performance
+						\item Oferece experiencia nativa de usabilidade para o usuário
+						\item Integração próxima com o sistema e outros aplicativos
+					\end{itemize}
+				} & 
+			\multicolumn{1}{p{6cm}|}{\raggedright 
+					\begin{itemize}
+						\item Necessário um aplicativo por plataforma
+						\item Mais caro e mais difícil de manter, por ter que manter vários \textit{apps} diferentes
+						\item Requer domínio de vários ambientes e linguagens para cada plataforma
+					\end{itemize}				
+				}\\ \hline
+			
+			Multiplataformas& 
+			\multicolumn{1}{p{6cm}|}{\raggedright 
+					\begin{itemize}		
+						\item Só é preciso dominar uma linguagem e um ambiente
+						\item Desenvolve apenas um código e pode distribuir em várias lojas de \textit{apps}, o que faz com que o alcance do \textit{app} seja maior
+						\item Reduz custo, tempo e esforço de desenvolvimento e manutenção
+					\end{itemize}		
+				} & 
+			\multicolumn{1}{p{6cm}|}{\raggedright 
+					\begin{itemize}		
+						\item Não possui acesso a todas as funcionalidades do dispositivo
+						\item Menor performance comparada ao nativo, linguagens interpretadas e compiladas
+						\item Não possui a mesma usabilidade e experiência de uso das aplicações nativas
+						\item Não possui as últimas atualizações lançadas pelo SO, pois para cada atualização do SO, é preciso ser feita uma atualização na plataforma \textit{cross}											
+					\end{itemize}												
+				}\\ \hline
+		\end{tabular}}
+	\caption{Vantagens e desvantagens das abordagens de desenvolvimento nativo e multiplataforma }
+	\label{tab:vantxdesva}
+\end{table}
