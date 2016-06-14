@@ -4,26 +4,21 @@ Com o aumento da quantidade de dispositivos móveis no mercado, a demanda por ap
 De início, a única opção que havia era desenvolver aplicações específicas para uma plataforma, utilizando todo o ambiente daquela plataforma, por exemplo,
 no caso do \textit{iOS}, a liguagem de programação era o \textit{Objective-C} com a \textit{IDE Xcode} e o \textit{SDK} do \textit{iOS}.
 
-
 Essa forma de desenvolvimento é conhecida como desenvolvimento \textbf{nativo} e é aquele no qual um aplicativo é projetado e construído especificamente para uma plataforma. 
 Todas as funcionalidades da plataforma estão disponíveis sem restrição e existem padrões de interface gráfica e experiência de usuário específicos, que ajudam o usuário a 
 entender como aquele aplicativo funciona, já que todos os outros aplicativos daquela plataforma seguem os mesmos padrões. 
 
-
 No entanto, com o aumento exponencial da demanda por aplicativos, surgiu a necessidade de desenvolvimento rápido para muitas plataformas distintas, o que era caro e difícil,
 visto que, cada plataforma tinha um ambiente de desenvolvimento completamente diferente das demais, o que fazia com que a equipe tivesse que ter muitos conhecimentos diferentes
 para poder desenvolver e manter vários aplicativos.  
-
 
 Com esse novo panorama do mercado, surgiu a necessidade da criação de apenas um \textit{app} que pudesse ser executado em várias plataformas. Essa forma de desenvolvimento ficou conhecida como 
 \textbf{multiplataformas} (\textit{cross-platform}) e consiste na criação de uma página \textit{web}, 
 normalmente utilizando \textit{HTML} e \textit{CSS}. Essa página pode ser mostrada dentro de uma \textit{web view}%vista diretamente pelo \textit{browser} que o dispositivo possui ou ainda ser 
 embutida em um aplicativo nativo, ou seja, é feito apenas um código, que é executado e mostrado em um \textit{container} dentro de um aplicativo nativo. 
 
-
 Dessa forma, é possível desenvolver um mesmo aplicativo que será executado dentro de várias plataformas diferentes, sem a necessidade de ter uma equipe especialista em cada plataforma, pois a única 
 parte nativa do aplicativo, é uma \textit{web view} simples, o que não requer grandes conhecimentos específicos em cada plataforma.
-
 
 No entanto, não é possível ter acesso total às funcionalidades da plataforma, assim como no desenvolvimento nativo, e também não existe padrão de interface ou de experiência de usuário que sirva
 para várias plataformas ao mesmo tempo, podendo causar uma sensação ruim na usabilidade e experiência de uso do aplicativo.
@@ -35,17 +30,12 @@ para várias plataformas ao mesmo tempo, podendo causar uma sensação ruim na u
 A justificativa
 
 \section{Objetivos} \label{sec:objetivos}
-
-São apresentados, nesta seção, os objetivos gerais e específicos, deste trabalho. 
-\textcolor{red}{\textbf{\textit{REVER ESSES OBJETIVOS, TALVEZ TENTAR FAZER PARECIDO OU IGUAL AO DO KANASHIRO!!!}}}
-
-\subsection{Objetivos Gerais}  \label{subsec:objetivos_gerais}
-
-Definir por meio de pesquisa e comprovação empírica as vantagens e desvantagens de desenvolvimento multiplataformas de aplicações móveis em relação ao desenvolvimento nativo. 
-
-\subsection{Objetivos Específicos}  \label{subsec:objetivos_especificos}
-
-Os objetivos específicos deste trabalho são listados a seguir.
+%São apresentados, nesta seção, os objetivos gerais e específicos, deste trabalho. 
+%\subsection{Objetivos Gerais}  \label{subsec:objetivos_gerais}
+O objetivo deste trabalho é definir por meio de pesquisa e comprovação empírica as vantagens e desvantagens de desenvolvimento multiplataformas de aplicações móveis em relação ao desenvolvimento nativo. 
+Com base nesse objetivo principal, existem ainda outros objetivos secundários que precisam ser atingidos para 
+%\subsection{Objetivos Específicos}  \label{subsec:objetivos_especificos}
+%Os objetivos específicos deste trabalho são listados a seguir.
 
 \begin{itemize}
     \item Pesquisar sobre o desenvolvimento de aplicativos móveis;
@@ -54,16 +44,12 @@ Os objetivos específicos deste trabalho são listados a seguir.
     \item Desenvolver uma réplica de um aplicativo criado nativamente, para a plataforma \textit{iOS}, utilizando tecnologias multiplataformas, para \textit{iOS} e \textit{Android};
     \item Comparar o desenvolvimento do aplicativo multiplataformas com o aplicativo nativo;
 \end{itemize}
-
-\subsection{Questão Problema} \label{sec:questaoproblema}
-
-A questão problema a ser respondida com este trabalho é apresentada a seguir.
-
+%\subsection{Questão Problema} \label{sec:questaoproblema}
+Com base nos objetivos traçados para o presente trabalho, a questão problema a ser respondida é:
 \begin{center}
     \textit{Quais as vantagens e desvantagens do desenvolvimento multiplataforma de aplicações móveis em relação ao desenvolvimento nativo?}
 \end{center}
-
-A partir da pergunta feita, foi formulada duas hipóteses acerca do tema, que são apresentadas a seguir.
+A partir da pergunta feita, foram formuladas duas hipóteses acerca do tema, que são apresentadas a seguir.
 
 \begin{itemize}
     \item \textbf{H1}: As plataformas \textit{cross-development} estão evoluídas ao ponto de apresentarem mais vantagens do que desvantagens.
@@ -74,10 +60,10 @@ A partir da pergunta feita, foi formulada duas hipóteses acerca do tema, que s�
 \section{Organização do Trabalho}\label{sec:organizacao}
 
 Este trabalho foi dividido em cinco capítulos. %, sendo o capítulo~\ref{cap:introducao} de introdução. 
-Na Seção~\ref{cap:referencialteorico}, é feito um estudo sobre como é e como evoluiu o desenvolvimento de aplicações 
+No Capítulo~\ref{cap:referencialteorico}, é feito um estudo sobre como é e como evoluiu o desenvolvimento de aplicações 
 móveis ao longo dos últimos anos, assim como um comparativo para avaliar vantagens e desvantagens entre o desenvolvimento 
 de aplicativos móveis de maneira nativa e multiplataformas. 
-Na Seção~\ref{cap:metodologia}, é apresentada a metodologia adotada para o desenvolvimento do trabalho.  
-Na Seção~\ref{cap:estudodecaso}, é descrito o estudo de caso, realizado durante o trabalho, sobre o desenvolvimento de aplicativos móveis.
-Por fim, na Seção~\ref{cap:consideracoespreliminares}, apresentam-se as considerações preliminares acerca do desenvolvimento multiplataformas e da realização do estudo de caso, bem como apresenta-se um 
+No Capítulo~\ref{cap:metodologia}, é apresentada a metodologia adotada para o desenvolvimento do trabalho.  
+No Capítulo~\ref{cap:estudodecaso}, é descrito o estudo de caso, realizado durante o trabalho, sobre o desenvolvimento de aplicativos móveis.
+Por fim, no Capítulo~\ref{cap:consideracoespreliminares}, apresentam-se as considerações preliminares acerca do desenvolvimento multiplataformas e da realização do estudo de caso, bem como apresenta-se um 
 cronograma preliminar do desenvolvimento da continuação desse trabalho no Trabalho de Conclusão de Curso II. 
