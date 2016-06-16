@@ -1,15 +1,22 @@
 \chapter{Desenvolvimento de aplicativos móveis} \label{cap:referencialteorico} 
 
-Segundo \citeonline{kassas_taxonomy_2015}, o desenvolvimento de aplicativos móveis é diferente do desenvolvimento de outros tipos de \textit{software}, pois os dispositivos possuem muitas limitações.
-
+Segundo \citeonline{kassas_taxonomy_2015}, o desenvolvimento de aplicativos móveis diferencia-se do desenvolvimento de outros tipos de \textit{software} por possuir particularidades e restrições. Os desenvolvedores devem ter em mente aspectos como as capacidades do dispositivo móvel, a mobilidade, as especificações dos dispositivos, o design e navegabilidade de interface do usuário, segurança e privacidade do usuário.
+ De acordo com \citeonline{corral_ant_2012}, aplicações móveis  são desenvolvidas de forma dinâmica e lançadas no mercado em pequenos ciclos. Os produtos finais costumam ser de pequeno porte e comercializados a preços baixos. As equipes de desenvolvimento também tendem a ser pequenas.
+Algumas particularidades a serem consideradas no desenvolvimento \textit{mobile} são listadas a seguir, baseadas em \citeonline{kassas_taxonomy_2015}.
 
 \begin{itemize}
-    \item recursos limitados
-    \item muitos sistemas operacionais
-    \item muitos dispositivos diferentes
-    \item experiencia de uso
-    \item manutencao da aplicacao
-    \item desenvolvimento cross
+	
+    \item \textbf{Limitações de recursos}: As capacidades de processamento e de armazenamento dos dispositivos móveis são limitadas e a conectividade pode ser afetada por ser uma plataforma móvel. 
+    
+    \item \textbf{Ecossistema heterogêneo}:   O desenvolvimento de aplicações móveis encontra-se em um contexto heterogêneo 
+    devido aos diferentes sistemas operacionais e aos numerosos dispositivos distintos, com variações de poder computacional, configurações de \textit{hardware} e tamanhos de tela.
+    Essas singularidades devem ser consideradas no desenvolvimento de \textit{apps}, o que  pode implicar na necessidade de diferentes versões de uma mesma aplicação.
+    
+    \item \textbf{Experiência de uso}: é importante que as aplicações sejam simples e que possuam uma interface amigável para atender às expectativas dos usuários, caso contrário, devido ao grande número de aplicações disponíveis, o \textit{app} pode ser descartado e substituído por outros presentes nas lojas de aplicativos.
+    
+    \item \textbf{Manutenção}: plataformas \textit{mobiles} passam por constantes atualizações que podem afetar \textit{apps} já desenvolvidos, a ponto de torná-los inúteis. Para que a aplicação continue a funcionar corretamente, são necessárias frequentes manutenções e atualizações.
+    Atualizações de \textit{apps} desenvolvidos para diferentes plataformas implicam na alteração de cada uma das versões desenvolvidas.
+    
 \end{itemize}
 %aqui serão descritos as diferencas sucintamente enre nativo e cross
 %explicar as diferencas
@@ -105,7 +112,7 @@ O \textit{Swift} foi lançado pela Apple como um sucessor do \textit{Objective-C
 O sistema operacional Android foi criado pela \textit{start-up} homônima Android Inc. em outubro de 2003. Em agosto de 2005 foi adquirida pela empresa Google, que lançou
 em novembro de 2007, juntamente com a \textit{OHA}, o sistema Android, \textit{open-source} e baseado no \textit{kernel} do Linux. Uma semana depois, foi liberada a primeira versão do \textit{SDK} para Android.
 O sistema foi concebido originalmente para camêras fotográficas, no entanto, foi percebido por seus criadores um mercado maior no ramo da telefonia e desviou-se o 
-foco para \textit{smartphones}, competindo diretamente com Symbian e Windows Mobile.
+foco para \textit{smartphones}, competindo diretamente com Symbian e Windows Mobile \cite{papajorgji_automated_2015}.
 
 \subsubsection{Arquitetura Android} \label{subsection:arc-android}
 
@@ -151,7 +158,7 @@ Antes de serem publicados, os aplicativos passam por um processo de revisão par
 \section{Desenvolvimento \textit{Cross-platform}} \label{section:desenvolvimentomulti}
 
 Para o desenvolvimento de uma aplicação nativa que possa ser executada em diferentes plataformas, se faz necessária a criação de uma para cada plataforma, o que exige tempo, investimento e uma equipe com conhecimento nas variadas tecnologias usadas pelas plataformas alvo.
-Soluções \textit{cross-platform} possibilitam a implementação de uma aplicação que pode ser executada em diferentes plataformas \cite{kassas_taxonomy_2015}. Essas aplicações são comumente categorizadas em \textit{webapps} e aplicações híbridas.
+Soluções \textit{cross-platform} possibilitam a implementação de uma aplicação que pode ser executada em diferentes plataformas \cite{kassas_taxonomy_2015}. Conforme \citeonline{heitkotter_evaluating_2013}, essas aplicações são comumente categorizadas em \textit{webapps} e aplicações híbridas.
 
 \textit{Web apps} são aplicações implementadas utilizando tecnologias \textit{web}, levando em conta aspectos intrínsecos aos dispositivos móveis, como tamanho de tela e modo de uso \cite{heitkotter_evaluating_2013}. Segundo \citeonline{stark_building_2010}, \textit{web apps} não são instalados no dispositivo e não ficam disponíveis nas lojas de aplicativos, em vez disso, são acessados pelos \textit{browsers} dos dispositivos. \textit{Web apps} não possibilitam o uso de alguns recursos de hardware dos dispositivos como sensores e \textit{GPS} \cite{heitkotter_evaluating_2013}. Conforme \citeonline{heitkotter_evaluating_2013}, \textit{web apps} costumam ter a aparência e o comportamento de páginas \textit{web} comuns, divergindo dos elementos de tela padrão providos pelas plataformas \textit{mobile}.
 
@@ -339,7 +346,7 @@ aplicação, podem ser feitas customizações para adaptar melhor o aplicativo p
 %Dessa forma, a equipe de desenvolvedores pode focar nos requisitos da aplicação sem se preocupar tanto com as diferenças entre plataformas.
 %essa frase depende da referencia ser encontrada
 
-A Figura~\ref{fig:dev-natxcross} mostra as diferenças no processo de desenvolvimento de um \textit{app} utilizando tecnologias \textit{cross-plataform} e 
+Na Figura~\ref{fig:dev-natxcross} são apresentadas as diferenças no processo de desenvolvimento de um \textit{app} utilizando tecnologias \textit{cross-plataform} e 
 nativas.
 
 \begin{figure}[H]
