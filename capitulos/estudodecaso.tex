@@ -2,12 +2,12 @@
 
 zotero://attachment/544/
 
-Foi realizado um estudo de caso para comparar o desenvolvimento de aplicações móveis utilizando ferramentas nativas e multiplataformas. Para isso, um aplicativo feito em \textit{iOS} 
+Foi realizado um estudo de caso para comparar o desenvolvimento de aplicações móveis utilizando ferramentas nativas e multiplataformas. Para isso, um aplicativo feito em iOS 
 nativo foi recriado utilizando o \textit{Ionic framework}. A seguir o aplicativo escolhido é detalhado em termos de funcionalidades e recursos utilizados. 
 
 \section{Descrição do projeto selecionado} \label{sec:descricaodoprojeto}
 
-Mini Farma é um aplicativo criado inicialmente para a plataforma \textit{iOS} que serve para controle dos medicamentos que as 
+Mini Farma é um aplicativo criado inicialmente para a plataforma iOS que serve para controle dos medicamentos que as 
 pessoas possuem em casa em suas ``farmacinhas'' particulares.
 
 \begin{figure}[h]
@@ -43,22 +43,22 @@ usuário para funcionar. Caso o usuário não autorize, o aplicativo ficará com
 Como banco de dados foi usado o SQLite, através do \textit{framework} externo e \textit{open-source FMDB}, 
 disponível no \href{https://github.com/ccgus/fmdb}{Github};
 
-A arquitetura do sistema foi criada com base no padrão de projeto MVC, possuindo Objetos de Acesso a Dados (DAO) para comunicação 
-com o banco de dados. No entanto, o MVC tradicional difere em alguns aspectos do MVC usado no \textit{iOS}. 
+A arquitetura do sistema foi criada com base no padrão de projeto \textit{MVC}, possuindo uma camada \textit{DAO} para comunicação 
+com o banco de dados. No entanto, o \textit{MVC} tradicional difere em alguns aspectos do \textit{MVC} usado no iOS. 
 
-No \textit{iOS} o MVC trás uma controladora ligada à classe de \textit{view}, que é chamado de \textit{ViewController}, que é responsável por 
+No iOS o \textit{MVC} trás uma controladora ligada à classe de \textit{view}, que é chamado de \textit{ViewController}, que é responsável por 
 criar a ponte entre a interação do usuário pela \textit{view} com as classes modelos. Dessa forma, as \textit{ViewControllers} têm a 
 responsabilidade de repassar as entradas do usuário para a modelo e controlar a \textit{view} para apresentar os resultados que a modelo retornar.
 
 
-Diferente do MVC tradicional, no qual a controladora apenas repassa as informações que estão entrando na fronteira da aplicação, 
+Diferente do \textit{MVC} tradicional, no qual a controladora apenas repassa as informações que estão entrando na fronteira da aplicação, 
 as \textit{ViewControllers} têm, além dessa responsabilidade, também a responsabilidade de instanciar e gerenciar a \textit{view} no tocante
 a organização dos elementos e apresentação das informações.
 
 
-Outra observação sobre as diferenças entre os dois MVC's, é que no MVC tradicional pode haver uma controladora apenas 
+Outra observação sobre as diferenças entre os dois \textit{MVCs}, é que no \textit{MVC} tradicional pode haver uma controladora apenas 
 para todas as modelos ou uma controladora por modelo, mas nenhuma ligada diretamente a uma \textit{view}, no entanto, no iOS há uma 
-\textit{ViewController} por \textit{view}, podendo haver ainda uma controladora relacionada com cada modelo conforme o padrão tradicional do MVC.
+\textit{ViewController} por \textit{view}, podendo haver ainda uma controladora relacionada com cada modelo conforme o padrão tradicional do \textit{MVC}.
 
 %\textcolor{red}{\textit{TALVEZ SERIA BOM COLOCAR UMAS IMAGENS AQUI PARA MOSTRAR AS DIFERENCAS ENTRE OS DOIS MVCs GRAFICAMENTE, V-C-M E V-VC-C-M-DAO}}
 
@@ -70,14 +70,14 @@ para todas as modelos ou uma controladora por modelo, mas nenhuma ligada diretam
 \end{figure}
 
 \subsection{Ambiente de desenvolvimento} \label{subsec:ambientedesenvolvimento}
-Nesta seção é apresentado todo o ambiente de desenvolvimento do \textit{app} Mini Farma quando foi feito originalmente para a plataforma \textit{iOS}. 
-O projeto foi executado contando com uma equipe de dois integrantes com conhecimentos intermediários na plataforma \textit{iOS}. 
+Nesta seção é apresentado todo o ambiente de desenvolvimento do \textit{app} Mini Farma quando foi feito originalmente para a plataforma iOS. 
+O projeto foi executado contando com uma equipe de dois integrantes com conhecimentos intermediários na plataforma iOS. 
 Os detalhes técnicos são listados a seguir.
 \begin{itemize}
     \item \textbf{Máquinas}: Dois MacBook Pro Retina 13", processador \textit{Intel Core i5}, 8 GB de \textit{RAM};
     \item \textbf{Sistema Operacional das máquinas}: \textit{Mac OS X Yosemite} v10.10.5;
     \item \textbf{Sistema Operacional alvo do aplicativo}: iOS 8;
-    \item \textbf{IDE}: \textit{Xcode} v6.4;
+    \item \textbf{\textit{IDE}}: \textit{Xcode} v6.4;
     \item \textbf{Linguagem de Programação}: \textit{Swift} v1.3;
     \item \textbf{Banco de dados}: SQLite v3.8.10.2;
     \item \textbf{Ambiente de suporte}: \textit{Plugin SQLite Manager} para \textit{Mozilla Firefox}, para criação do banco de dados;
@@ -86,26 +86,26 @@ Os detalhes técnicos são listados a seguir.
 
 \section{Desenvolvimento multiplataformas do projeto} \label{sec:desenvolvimentomulti}
 
-A partir do aplicativo feito em \textit{iOS}, foi construída uma versão utilizando o \textit{Ionic} para as plataformas \textit{Android} e \textit{iOS}.
+A partir do aplicativo feito em iOS, foi construída uma versão utilizando o Ionic para as plataformas Android e iOS.
 Para a criação dessa versão do \textit{app}, a equipe foi alterada, mas permaneceu com dois integrantes, que são os autores deste trabalho.
-No entanto, os integrantes não possuiam qualquer conhecimento prévio nos \textit{frameworks Ionic, AngularJS} e \textit{Cordova}
+No entanto, os integrantes não possuiam qualquer conhecimento prévio nos \textit{frameworks Ionic, AngularJS} e Cordova
 e apenas possuiam um conhecimento básico em \textit{HTML}, \textit{CSS} e \textit{JavaScript}. Os detalhes técnicos são listados a seguir.
    
 \begin{itemize}
     \item \textbf{Máquinas}: Dois MacBook Pro Retina 13", processador \textit{Intel Core i5}, 8 GB de \textit{RAM};
     \item \textbf{Sistema Operacional das máquinas}: \textit{Mac OS X El Capitan} v10.11.5;
-    \item \textbf{Sistema Operacional alvo do aplicativo}: \textit{iOS} 9 e \textit{Android} 4.4.2;%API 19
-    \item \textbf{IDE}: \textit{WebStorm} v2016.1.1;
+    \item \textbf{Sistema Operacional alvo do aplicativo}: iOS 9 e Android 4.4.2;
+    \item \textbf{\textit{IDE}}: \textit{WebStorm} v2016.1.1;
     \item \textbf{\textit{Frameworks}}:
     \begin{itemize}
-        \item \textbf{\textit{Ionic}}: \textit{Copenhagen} v1.2.4*;
-        \item \textbf{\textit{AngularJS}}: \textit{foam-acceleration} v1.4.3*;
+        \item \textbf{Ionic}: \textit{Copenhagen} v1.2.4*;
+        \item \textbf{AngularJS}: \textit{foam-acceleration} v1.4.3*;
         
-        * Durante a execução deste trabalho, já haviam sido disponibilizadas as versões 2 do \textit{Ionic} e do \textit{AngularJS}, no entanto,
+        * Durante a execução deste trabalho, já haviam sido disponibilizadas as versões 2 do Ionic e do AngularJS, no entanto,
         os autores optaram por não utilizá-las por ainda se tratarem de versões \textit{beta} e portanto instáveis, o que poderia 
         impactar negativamente no desenvolvimento do projeto.
         
-        \item \textbf{\textit{Cordova}}: v6.0.0;
+        \item \textbf{Cordova}: v6.0.0;
     \end{itemize}
     \item \textbf{Linguagem de Programação}: \textit{JavaScript} v1.7. 
     \begin{itemize}
