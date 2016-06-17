@@ -1,6 +1,7 @@
 \chapter{Estudo de Caso} \label{cap:estudodecaso}
 
-Com o intuito de comparar o desenvolvimento de aplicações móveis utilizando ferramentas nativas e multiplataformas, foi realizado um estudo de caso  utilizando ferramentas nativas e multiplataformas. Para isso, um aplicativo feito em iOS 
+Com o intuito de comparar o desenvolvimento de aplicações móveis utilizando ferramentas nativas e multiplataformas, 
+foi realizado um estudo de caso. Para isso, um aplicativo feito em iOS 
 nativo foi recriado utilizando o \textit{framework} Ionic. A seguir o aplicativo escolhido é detalhado em termos de funcionalidades e recursos utilizados. 
 
 \section{Descrição do projeto selecionado} \label{sec:descricaodoprojeto}
@@ -37,7 +38,6 @@ O aplicativo utiliza recursos nativos do sistema, os quais são descritos a segu
 \textit{* Vale ressaltar, que com excessão da Ligação, todos os outros recursos nativos do sistema, precisam necessariamente serem autorizados pelo
 usuário para funcionar. Caso o usuário não autorize, o aplicativo ficará com funcionalidades reduzidas.} 
 
-
 Como banco de dados foi usado o SQLite, por meio do \textit{framework} externo e \textit{open-source FMDB}, 
 disponível no \href{https://github.com/ccgus/fmdb}{Github};
 
@@ -48,17 +48,13 @@ No iOS o \textit{MVC} trás uma controladora ligada à classe de \textit{view}, 
 criar a ponte entre a interação do usuário pela \textit{view} com as classes modelos. Dessa forma, as \textit{ViewControllers} têm a 
 responsabilidade de repassar as entradas do usuário para a modelo e controlar a \textit{view} para apresentar os resultados que a modelo retornar.
 
-
 Diferente do \textit{MVC} tradicional, no qual a controladora apenas repassa as informações que estão entrando na fronteira da aplicação, 
 as \textit{ViewControllers} têm, além dessa responsabilidade, também a responsabilidade de instanciar e gerenciar a \textit{view} no tocante
 a organização dos elementos e apresentação das informações.
 
-
 Outra observação sobre as diferenças entre os dois \textit{MVCs}, é que no \textit{MVC} tradicional pode haver uma controladora apenas 
 para todas as modelos ou uma controladora por modelo, mas nenhuma ligada diretamente a uma \textit{view}, no entanto, no iOS há uma 
 \textit{ViewController} por \textit{view}, podendo haver ainda uma controladora relacionada com cada modelo conforme o padrão tradicional do \textit{MVC}.
-
-%\textcolor{red}{\textit{TALVEZ SERIA BOM COLOCAR UMAS IMAGENS AQUI PARA MOSTRAR AS DIFERENCAS ENTRE OS DOIS MVCs GRAFICAMENTE, V-C-M E V-VC-C-M-DAO}}
 
 \begin{figure}[h]
   \centering
@@ -79,7 +75,7 @@ Os detalhes técnicos são listados a seguir.
     \item \textbf{Linguagem de Programação}: \textit{Swift} v1.3;
     \item \textbf{Banco de dados}: SQLite v3.8.10.2;
     \item \textbf{Ambiente de suporte}: \textit{Plugin SQLite Manager} para \textit{Mozilla Firefox}, para criação do banco de dados;
-    \item \textbf{Tempo de desenvolvimento}: Ambos os integrantes trabalharam no projeto quatro horas por dia de segunda à sexta por três semanas;
+    %\item \textbf{Tempo de desenvolvimento}: Ambos os integrantes trabalharam no projeto quatro horas por dia de segunda à sexta por três semanas;
 \end{itemize}
 
 \section{Desenvolvimento multiplataformas do projeto} \label{sec:desenvolvimentomulti}
@@ -110,13 +106,15 @@ e apenas possuíam um conhecimento básico em \textit{HTML}, \textit{CSS} e \tex
         \item \textit{HTML} 5 e \textit{CSS} 3 foram usados paralelamente para a criação da interface gráfica do aplicativo;
     \end{itemize}
     \item \textbf{Banco de dados}: SQLite v3.8.10.2;
-    \item \textbf{Ambiente de suporte}: \textit{Google Chrome}, para \textit{debug} do aplicativo;
-    \item \textbf{Tempo de desenvolvimento}: Ambos os integrantes trabalharam \textcolor{red}{XX} horas;
+    \item \textbf{Ambiente de suporte}: Google Chrome, para \textit{debug} do aplicativo;
+    %\item \textbf{Tempo de desenvolvimento}: Ambos os integrantes trabalharam \textcolor{red}{XX} horas;
 \end{itemize}
 
-\subsection{Experiências de Desenvolvimento} \label{subsec:experienciasdev}
+\subsection{Relato de desenvolvimento} \label{subsec:experienciasdev}
 
-Constatações foram categorizadas por funcionalidades, já descritas na seção tal, com adição de um tópico de observações gerais
+É apresentado, a seguir, o relato das experiências obtidas durante o desenvolvimento com Ionic, divido nas funcionalidades 
+já descritas na Subseção~\ref{subsection:planejamentodesenvolvimento} deste trabalho.
+Há, ainda, um tópico de observações gerais pertinentes à implementação do \textit{app} como um todo.
 
  \begin{itemize}
  	
