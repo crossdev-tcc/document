@@ -126,14 +126,26 @@ Há, ainda, um tópico de observações gerais pertinentes à implementação do
  	
  	\item \textbf{Listagem de Remédios e Alertas};
  	
- 	\textcolor{red}{teve que criar tabs diferentes para ios e para android, pois a composicao original do aplicativo nao caia bem no android, entao foi necessario criar duas views para poder melhor adaptar ao android}
- 	Ainda assim, o ionic conseguiu deixar com aparencia bem nativa, mt legal ele mudar para um componente que é semelhante ao padrao da plataforma especifica
- 	
- 	Filtragem em vencidos e válidos
- 	
- 	Criacao da lista, mt simples
- 	
- 	
+	%\textcolor{red}{teve que criar tabs diferentes para ios e para android, pois a composicao original do aplicativo nao caia bem no android, 
+	%entao foi necessario criar duas views para poder melhor adaptar ao android}
+ 	%Ainda assim, o ionic conseguiu deixar com aparencia bem nativa, mt legal ele mudar para um componente que é semelhante ao padrao da plataforma especifica
+ 	%Criacao da lista, mt simples
+ 	%Filtragem em vencidos e válidos
+ 	\begin{itemize}
+		\item Para a tela inicial do \textit{app}, a lista de remédios e alertas, foi preciso realizar uma pequena alteração em relação ao original, para considerar, agora, 
+		dois sistemas operacionais diferentes (iOS e Android). Foi preciso criar duas 
+		\textit{views} para a mesma tela, pois o componente de abas (conhecido como \textit{tabs}), é diferente no iOS e no Android. Com isso, quando foi feito pensando-se no iOS do Ionic, ele não correspondia 
+		muito bem ao padrão de interface do Android, por isso foi preciso criar duas telas separadas e fazer uma verificação se o dispositivo é iOS ou Android. Após feita a verificação de dispositivo, o próprio
+		Ionic se encarrega de definir a aparência do componente para o padrão do sistema no qual o aplicativo está sendo executado.
+
+		\item Para a criação da lista de remédios e alertas que o usuário possui cadastrados, o componente usado no iOS é chamado de \textit{TableView}. No Ionic, o componente similar é o conjunto das diretivas 
+		\textit{ion-list} e \textit{ion-item} do Ionic com a diretiva \textit{ng-repeat} do AngularJS. 
+		É muito simples de ser implementada, possuindo documentação ampla e exemplos de uso nos \textit{sites} oficiais dos \textit{frameworks}.
+
+		\item Para a realização das filtragens dos remédios por data de validade, e dos alertas por ativos e inativos, bastou usar o componente \textit{filter} padrão do AngularJS. Dessa forma, foi possível 
+		mostrar apenas as informações que deveriam ser mostradas. Novamente, possuindo muitos exemplos e ajuda na documentação do \textit{framework}.
+	 \end{itemize}
+
  	\item \textbf{Cadastro de Remédios};
  	
  	\textcolor{red}{celulas colapsaveis na tela de add remedio}
@@ -154,15 +166,15 @@ Há, ainda, um tópico de observações gerais pertinentes à implementação do
  	
  	foto e comparar a selecao do local
  	
- 	
- 	
  	\item \textbf{Cadastro de Farmácias};
  	
- 	\textcolor{red}{PARECER SOBRE A UTILIZAÇÃO DO GOOGLE MAPS - A utilização do mapa se deu por meio da \textit{API Maps} do Google. Não houveram grandes dificuldades na criação do mapa e renderização do mesmo na tela. Apenas por meio de pesquisas e estudos na documentação
- 		da \textit{API} já foram suficientes para a elaboração do que precisava ser feito. }
- 	
- 	Ligação
- 	
+	 \begin{itemize}
+		\item Para cadastrar uma nova farmácia, o usuário deve marcar no mapa odne a farmácia se encontra. Para a utilização do mapa no Ionic, foi utilizada a \textit{API Maps} do Google, diferentemente da 
+		\textit{API MapKit} do iOS. Não houveram grandes dificuldades na criação do mapa e renderização do mesmo na tela. A dificuldade de implementação é similar a do iOS nativo.
+		Apenas realizando pesquisas e estudos na documentação da \textit{API} do Google, 
+		já foi possível a elaboração do que precisava ser feito, no caso, mostrar o mapa e fornecer a opção de mover o pino para um local específico e capturar as coordenadas daquele ponto. No caso, foi 
+		necessário utilizar a diretiva \textit{map} para renderização do mapa na tela e definir o \textit{callback} de reposicionamento do cursor e captura da localização.
+	 \end{itemize}
  	
  	\item \textbf{Cadastro de Alertas};
  	
