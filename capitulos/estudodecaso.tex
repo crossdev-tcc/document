@@ -148,28 +148,59 @@ Há, ainda, um tópico de observações gerais pertinentes à implementação do
 
  	\item \textbf{Cadastro de Remédios};
  	
- 	\textcolor{red}{celulas colapsaveis na tela de add remedio}
- 	
- 	\textcolor{red}{passar dados de uma pagina para outra, semelhante ao protocolo do ios em questao de dificuldade} (tb usando no cadastro de alertas)
- 	
- 	Acesso a camera [tirar foto da selecao e comparar, foto doremedio ou receita]
- 	
- 	Acesso a library de fotos
- 	
- 	Action sheet, igual ao nativo no ios e fez algo correspondente no android
- 	
- 	Alerta, mts simples tb
- 	
- 	uso do banco de dados
- 	
- 	picker view [foto comparando do de intervalo]
- 	
- 	foto e comparar a selecao do local
- 	
- 	\item \textbf{Cadastro de Farmácias};
- 	
+ 		 \begin{itemize}
+			\item No cadastro de remédios há o uso da câmera do dispositivo para tirar uma foto do medicamento e para registrar a prescrição médica. Opcionalmente, pode-se selecionar as fotos a partir da biblioteca de imagens do dispositivo. Com o uso do \textit{plugin} Cordova de acesso à câmera, essa foi uma tarefa tranquila e que funcionou corretamente em ambas as plataformas, Android e iOS. 
+			\item Para que o usuário opte entre  tirar uma nova foto e escolher da galeria do dispositivo, foi utilizado um componente conhecido no iOS como \textit{UIActionSheet}. Com o uso de um único código, o Ionic possibilitou a geração de um componente exatamente igual ao nativo do iOS e de um correspondente no Android. 
+			Na Figura~\ref{fig:ionic_action_camera} é possível observar as diferenças de interface, as quais foram adequadas pelo Ionic para cada plataforma.
+			
+			 \begin{figure}
+			 	\centering
+			 	\begin{minipage}{.5\textwidth}
+			 		\centering
+			 		\includegraphics[width=.8\linewidth]{ionic_action_camera_ios}
+			 	\end{minipage}%
+			 	\begin{minipage}{.5\textwidth}
+			 		\centering
+			 		\includegraphics[width=0.9\linewidth]{ionic_action_camera_android}
+			 	\end{minipage}
+			 	\caption[Telas de cadastro de foto de remédio (iOS \textit{versus} Android)]{ Telas de cadastro de foto de remédio (iOS \textit{versus} Android). Fonte: Elaborado pelos autores.}
+			 	\label{fig:ionic_action_camera}
+			 \end{figure}
+			 
+			 	\item Para a criação de uma nova categoria de remédios, foi utilizada interação por meio de uma caixa de diálogo, também conhecido como alerta. Para isso, utilizou-se os chamados \textit{popups} do Ionic.  Apesar de facilmente implementados e personalizáveis, esses componentes não se assemelham às caixas de diálogo nativas do iOS, \textit{UIAlertView} e do Android, \textit{AlertDialog}. O alerta criado é apresentado na Figura~\ref{fig:ionic_alert}. Posteriormente,  foi verificado que há no Cordova uma \textit{API} para caixas de diálogo que, diferente da disponibilizada pelo Ionic, gera uma interface adequada aos padrões de ambas as plataformas. Um exemplo de alerta  gerado pelo Cordova e idêntico à uma das plataformas, neste caso o iOS, é apresentado na Figura~\ref{fig:ios_prompt}.
+			 	
+			 	\begin{figure}[H]
+			 		\centering
+			 		\includegraphics[width=0.5\textwidth]{ionic_alert}
+			 		\caption[Tela de alerta]{Tela de alerta. Fonte: Elaborado pelos autores.}
+			 		\label{fig:ionic_alert}
+			 	\end{figure}
+			 	
+			 	\begin{figure}[H]
+			 		\centering
+			 		\includegraphics[width=0.5\textwidth]{ios_prompt}
+			 		\caption[Alerta Cordova - iOS]{Alerta Cordova - iOS. Fonte: \cite{framework_ngcordova_2016}.}
+			 		\label{fig:ios_prompt}
+			 	\end{figure}
+			 	
+			 	\item uso do banco de dados
+			 	
+			 	\item picker view [foto comparando do de intervalo]
+			 	
+			 	\item {red}{passar dados de uma pagina para outra, semelhante ao protocolo do ios em questao de dificuldade} (tb usando no cadastro de alertas)
+			 	
+			 	\item celulas colapsaveis na tela de add remedio
+			 	
+			 	\item foto e comparar a selecao do local
+			 	
+			 	\item Visao geral do cadastro
+			 	
+
+			 
+		 \end{itemize}
+     \item \textbf{Cadastro de Farmácias}; 	
 	 \begin{itemize}
-		\item Para cadastrar uma nova farmácia, o usuário deve marcar no mapa odne a farmácia se encontra. Para a utilização do mapa no Ionic, foi utilizada a \textit{API Maps} do Google, diferentemente da 
+		\item Para cadastrar uma nova farmácia, o usuário deve marcar no mapa onde a farmácia se encontra. Para a utilização do mapa no Ionic, foi utilizada a \textit{API Maps} do Google, diferentemente da 
 		\textit{API MapKit} do iOS. Não houveram grandes dificuldades na criação do mapa e renderização do mesmo na tela. A dificuldade de implementação é similar a do iOS nativo.
 		Apenas realizando pesquisas e estudos na documentação da \textit{API} do Google, 
 		já foi possível a elaboração do que precisava ser feito, no caso, mostrar o mapa e fornecer a opção de mover o pino para um local específico e capturar as coordenadas daquele ponto. No caso, foi 
@@ -193,7 +224,8 @@ Há, ainda, um tópico de observações gerais pertinentes à implementação do
  	\textcolor{red}{debug com alerta de javascript, nao eh falado em lugar nenhum, mas facilita muito. foi encontrado por pesquisas na comunidade on line}
  	\textcolor{red}{ng-class nao funciona na ion-nav e foi muito dificil descobrir isso}
  	\textcolor{red}{problemas na hora de executar no iphone, o projeto não executa corretamente as vezes por motivo desconhecido}
- 	
+ 	- Site do cordova bem documentado, com exemplos de uso
+ 	- Ressaltar a importancia de saber html, javascript e css
  \end{itemize} 
  
  \begin{figure}
