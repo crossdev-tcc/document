@@ -1,5 +1,5 @@
 \chapter{Estudo de Caso} \label{cap:estudodecaso}
-
+\begin{comment}
 Com o intuito de comparar o desenvolvimento de aplicações móveis utilizando ferramentas nativas e multiplataformas, 
 foi realizado um estudo de caso. Para isso, um aplicativo feito em iOS 
 nativo foi recriado utilizando o \textit{framework} Ionic. A seguir o aplicativo escolhido é detalhado em termos de funcionalidades e recursos utilizados. 
@@ -115,6 +115,7 @@ e apenas possuíam um conhecimento básico em \textit{HTML}, \textit{CSS} e \tex
     %\item \textbf{Tempo de desenvolvimento}: Ambos os integrantes trabalharam \textcolor{red}{XX} horas;
 \end{itemize}
 
+\end{comment}
 \subsection{Relato de desenvolvimento} \label{subsec:experienciasdev}
 
 É apresentado, a seguir, o relato das experiências obtidas durante o desenvolvimento com Ionic, divido nas funcionalidades 
@@ -125,26 +126,35 @@ Há, ainda, um tópico de observações gerais pertinentes à implementação do
  \begin{itemize}
  	
  	\item \textbf{Listagem de Remédios e Alertas};
- 	
-	%\textcolor{red}{teve que criar tabs diferentes para ios e para android, pois a composicao original do aplicativo nao caia bem no android, 
-	%entao foi necessario criar duas views para poder melhor adaptar ao android}
- 	%Ainda assim, o ionic conseguiu deixar com aparencia bem nativa, mt legal ele mudar para um componente que é semelhante ao padrao da plataforma especifica
- 	%Criacao da lista, mt simples
- 	%Filtragem em vencidos e válidos
- 	\begin{itemize}
-		\item Para a tela inicial do \textit{app}, a lista de remédios e alertas, foi preciso realizar uma pequena alteração em relação ao original, para considerar, agora, 
-		dois sistemas operacionais diferentes (iOS e Android). Foi preciso criar duas 
-		\textit{views} para a mesma tela, pois o componente de abas (conhecido como \textit{tabs}), é diferente no iOS e no Android. Com isso, quando foi feito pensando-se no iOS do Ionic, ele não correspondia 
-		muito bem ao padrão de interface do Android, por isso foi preciso criar duas telas separadas e fazer uma verificação se o dispositivo é iOS ou Android. Após feita a verificação de dispositivo, o próprio
-		Ionic se encarrega de definir a aparência do componente para o padrão do sistema no qual o aplicativo está sendo executado.
+		\begin{itemize}
+			\item Para a tela inicial do \textit{app}, a lista de remédios e alertas, foi preciso realizar uma pequena alteração em relação ao original, para considerar, agora, 
+			dois sistemas operacionais diferentes (iOS e Android). Foi preciso criar duas 
+			\textit{views} para a mesma tela, pois o componente de abas (conhecido como \textit{tabs}), é diferente no iOS e no Android. Com isso, quando foi feito pensando-se no iOS do Ionic, ele não correspondia 
+			muito bem ao padrão de interface do Android, por isso foi preciso criar duas telas separadas e fazer uma verificação se o dispositivo é iOS ou Android. Após feita a verificação de dispositivo, o próprio
+			Ionic se encarrega de definir a aparência do componente para o padrão do sistema no qual o aplicativo está sendo executado.
 
-		\item Para a criação da lista de remédios e alertas que o usuário possui cadastrados, o componente usado no iOS é chamado de \textit{TableView}. No Ionic, o componente similar é o conjunto das diretivas 
-		\textit{ion-list} e \textit{ion-item} do Ionic com a diretiva \textit{ng-repeat} do AngularJS. 
-		É muito simples de ser implementada, possuindo documentação ampla e exemplos de uso nos \textit{sites} oficiais dos \textit{frameworks}.
+			\item Para a criação da lista de remédios e alertas que o usuário possui cadastrados, o componente usado no iOS é chamado de \textit{UITableView}. No Ionic, o componente similar é o conjunto das diretivas 
+			\textit{ion-list} e \textit{ion-item} do Ionic com a diretiva \textit{ng-repeat} do AngularJS. 
+			É muito simples de ser implementada, possuindo documentação ampla e exemplos de uso nos \textit{sites} oficiais dos \textit{frameworks}.
 
-		\item Para a realização das filtragens dos remédios por data de validade, e dos alertas por ativos e inativos, bastou usar o componente \textit{filter} padrão do AngularJS. Dessa forma, foi possível 
-		mostrar apenas as informações que deveriam ser mostradas. Novamente, possuindo muitos exemplos e ajuda na documentação do \textit{framework}.
-	 \end{itemize}
+			\item Para a realização das filtragens dos remédios por data de validade, e dos alertas por ativos e inativos, bastou usar o componente \textit{filter} padrão do AngularJS. Dessa forma, foi possível 
+			mostrar apenas as informações que deveriam ser mostradas. Novamente, possuindo muitos exemplos e ajuda na documentação do \textit{framework}.
+
+		\end{itemize}
+
+	 	\begin{figure}[H]
+			\centering
+			\begin{minipage}{.5\textwidth}
+				\centering
+				\includegraphics[width=.8\linewidth]{ionic_lista_ios}
+			\end{minipage}
+			\begin{minipage}{.5\textwidth}
+				\centering
+				\includegraphics[width=0.9\linewidth]{ionic_lista_android}
+			\end{minipage}
+		\caption[Telas da lista de remédios (iOS \textit{versus} Android)]{ Telas da lista de remédios (iOS \textit{versus} Android). Fonte: Elaborado pelos autores.}
+		\label{fig:ionic_lista}
+		\end{figure}
 
  	\item \textbf{Cadastro de Remédios};
  	
@@ -204,17 +214,55 @@ Há, ainda, um tópico de observações gerais pertinentes à implementação do
 		\textit{API MapKit} do iOS. Não houveram grandes dificuldades na criação do mapa e renderização do mesmo na tela. A dificuldade de implementação é similar a do iOS nativo.
 		Apenas realizando pesquisas e estudos na documentação da \textit{API} do Google, 
 		já foi possível a elaboração do que precisava ser feito, no caso, mostrar o mapa e fornecer a opção de mover o pino para um local específico e capturar as coordenadas daquele ponto. No caso, foi 
-		necessário utilizar a diretiva \textit{map} para renderização do mapa na tela e definir o \textit{callback} de reposicionamento do cursor e captura da localização.
+		necessário utilizar a diretiva \textit{map} para renderização do mapa na tela e definir o \textit{callback} de reposicionamento do cursor e captura da localização. Na Figura~\ref{fig:add_farma} é possível 
+		ver as diferenças entre o mapa do \textit{MapKit} do iOS e da \textit{API Maps} do Google.
 	 \end{itemize}
+	 \begin{figure}[H]
+		\centering
+		\begin{minipage}{.5\textwidth}
+			\centering
+			\includegraphics[width=.9\linewidth]{ios_add_farma}
+		\end{minipage}
+		\begin{minipage}{.5\textwidth}
+			\centering
+			\includegraphics[width=0.9\linewidth]{ionic_add_farma}
+		\end{minipage}
+	\caption[Tela de adicionar farmácia (iOS \textit{versus} Ionic)]{ Tela de adicionar farmácia (iOS \textit{versus} Ionic). Fonte: Elaborado pelos autores.}
+	\label{fig:add_farma}
+	\end{figure}
  	
  	\item \textbf{Cadastro de Alertas};
  	
- 	\textcolor{red}{datepicker para selecionar data, foi utilizado um projeto disponivel no github para a exibição de um date picker para o cadastro de alertas, simples e fácil de se utilizar} (tb usado no cadastro de remedios) [foto comparando]
- 	
- 	time picker [foto comparando]
- 	
- 	Notificações
- 	
+	\begin{itemize}
+		\item Para o cadastro de um novo alerta, é preciso selecionar data e hora que o usuário será alertado. Para isso, o Ionic 1 não possui o componente adequado. Com isso, foi necessário procurar 
+		e utilizar um \textit{framework} terceiro. Os \textit{frameworks} escolhidos foram o \textit{ionic-datepicker}\footnote{\url{https://github.com/rajeshwarpatlolla/ionic-datepicker}} e 
+		\textit{ionic-timepicker}\footnote{\url{https://github.com/rajeshwarpatlolla/ionic-timepicker}}, respectivamente para seleção de data e hora. Ambos foram desenvolvidos pelo mesmo usuário no Github 
+		e instalados no projeto do aplicativo via \textit{CLI}. Nas próprias documentações dos \textit{frameworks} existem exemplos de uso suficientes para guiar a implementação das funcionalidades. 
+		Vale ressaltar que o componente do iOS possui a seleção de data e hora juntas, enquanto nos \textit{frameworks} utilizados, a seleção é separada, gerando uma pequena alteração na interface gráfica 
+		da tela de cadastro de alertas quando comparada com a do aplicativo original. As diferenças entre o original e Ionic podem ser vistas na Figura~\ref{fig:dateTimePicker}. O mesmo \textit{framework}
+		para seleção de data também foi utilizado na tela de cadastro de remédios para definir a data de validade do mesmo.
+
+		\item Para a criação dos alertas é preciso cadastrar notificações locais na central de notificações do dispositivo. Realizar essa tarefa teve o mesmo nível de dificuldade da implementação no iOS nativo. 
+		Apenas foi instalado um \textit{plugin} do Cordova para gerenciar a central de notificações e agendar notificações com as datas e horas corretas para serem entregues. 
+	\end{itemize}
+
+	\begin{figure}[H]
+		\centering
+		\begin{minipage}{.33\textwidth}
+			\centering
+			\includegraphics[width=0.95\linewidth]{ios_datetimepicker}
+		\end{minipage}%
+		\begin{minipage}{.33\textwidth}
+			\centering
+			\includegraphics[width=0.95\linewidth]{ionic_datepicker}
+		\end{minipage}
+		\begin{minipage}{.33\textwidth}
+			\centering
+			\includegraphics[width=0.95\linewidth]{ionic_timepicker}
+		\end{minipage}
+	\caption[Seleção de data e hora dos alertas (iOS \textit{versus} Ionic)]{ Seleção de data e hora dos alertas (iOS \textit{versus} Ionic). Fonte: Elaborado pelos autores.}
+	\label{fig:dateTimePicker}
+	\end{figure}
  	
  	\item \textbf{Observações gerais}; 	
  	
@@ -227,20 +275,6 @@ Há, ainda, um tópico de observações gerais pertinentes à implementação do
  	- Site do cordova bem documentado, com exemplos de uso
  	- Ressaltar a importancia de saber html, javascript e css
  \end{itemize} 
- 
- \begin{figure}
- 	\centering
- 	\begin{minipage}{.5\textwidth}
- 		\centering
- 		\includegraphics[width=.8\linewidth]{ionic_lista_ios}
- 	\end{minipage}%
- 	\begin{minipage}{.5\textwidth}
- 		\centering
- 		\includegraphics[width=0.9\linewidth]{ionic_lista_android}
- 	\end{minipage}
-  \caption[Telas da lista de remédios (iOS \textit{versus} Android)]{ Telas da lista de remédios (iOS \textit{versus} Android). Fonte: Elaborado pelos autores.}
-  \label{fig:ionic_lista}
- \end{figure}
 
  \begin{figure}
  	\centering
