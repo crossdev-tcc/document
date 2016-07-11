@@ -1,4 +1,4 @@
-\chapter{Estudo de Caso} \label{cap:estudodecaso}
+\chapter{Exemplo de Uso} \label{cap:estudodecaso}
 Com o intuito de comparar o desenvolvimento de aplicações móveis utilizando a abordagem nativa e multiplataforma, 
 foi realizado um estudo de caso. Para isso, um aplicativo feito em iOS 
 nativo foi recriado utilizando o \textit{framework} Ionic. A seguir o aplicativo escolhido é detalhado em termos de funcionalidades e recursos utilizados. 
@@ -11,7 +11,7 @@ pessoas possuem em casa em suas ``farmacinhas'' particulares.
 \begin{figure}[h]
   \centering
     \includegraphics[width=0.5\textwidth]{minifarma}
-    \caption[Tela inicial do aplicativo Mini Farma]{ Tela inicial do aplicativo Mini Farma. Fonte: Elaborado pelos autores.}
+    \caption[Tela inicial do aplicativo Mini Farma]{ Tela inicial do aplicativo Mini Farma.}
 	\label{fig:minifarma}
 \end{figure}
 
@@ -22,7 +22,7 @@ O aplicativo utiliza recursos nativos do sistema, os quais são descritos a segu
     farmácia fica. Também é possível com base nessa localização da farmácia e do usuário, traçar uma rota para levá-lo diretamente à 
     farmácia em questão;
 	\item \textbf{Notificações locais}: Diferente das notificações \textit{Push} as notificações locais são criadas e agendadas na central 
-    de notificações do dispositivo e o sistema se encarrega de entregá-las corretamente de acordo com parâmentros definidos pelo aplicativo. 
+    de notificações do dispositivo e o sistema se encarrega de entregá-las corretamente de acordo com parâmetros definidos pelo aplicativo. 
     No caso do Mini Farma, as notificações são usadas para lembrar o usuário, na data e hora corretas, de que o mesmo deve tomar seus medicamentos;
 	\item \textbf{Ligação}: As notificações podem conter ações que executam um determinado bloco de código dentro do aplicativo. No Mini Farma, 
     uma das notificações possíveis é a de aviso de pouca quantidade ou remédio esgotado, no caso do medicamento ter acabado. 
@@ -34,8 +34,8 @@ O aplicativo utiliza recursos nativos do sistema, os quais são descritos a segu
     no rolo de câmera, é possível escolher a foto sem precisar tirar uma nova;
 \end{itemize}
 
-\textit{* Vale ressaltar, que com excessão da Ligação, todos os outros recursos nativos do sistema, precisam necessariamente serem autorizados pelo
-usuário para funcionar. Caso o usuário não autorize, o aplicativo ficará com funcionalidades reduzidas.} 
+Com exceção da Ligação, todos os outros recursos nativos do sistema, precisam necessariamente serem autorizados pelo
+usuário para funcionar. Caso o usuário não autorize, o aplicativo ficará com funcionalidades reduzidas.
 
 Como banco de dados foi usado o SQLite, por meio do \textit{framework} externo e \textit{open-source FMDB}\footnote{\url{https://github.com/ccgus/fmdb}}, 
 disponível no Github;
@@ -43,7 +43,7 @@ disponível no Github;
 A arquitetura do sistema foi criada com base no padrão de projeto \textit{MVC}, possuindo uma camada \textit{DAO} para comunicação 
 com o banco de dados. No entanto, o \textit{MVC} tradicional difere em alguns aspectos do \textit{MVC} usado no iOS. 
 
-No iOS o \textit{MVC} trás uma controladora ligada à classe de \textit{view}, que é chamado de \textit{ViewController}, que é responsável por 
+No iOS, o \textit{MVC} trás uma controladora ligada à classe de \textit{view}, que é chamado de \textit{ViewController}, que é responsável por 
 criar a ponte entre a interação do usuário pela \textit{view} com as classes modelos. Dessa forma, as \textit{ViewControllers} têm a 
 responsabilidade de repassar as entradas do usuário para a modelo e controlar a \textit{view} para apresentar os resultados que a modelo retornar.
 
@@ -146,7 +146,7 @@ o multiplataforma Ionic. Há, ainda, um tópico de observações gerais pertinen
 			 		\centering
 			 		\includegraphics[width=0.9\linewidth]{ionic_lista_android}
 			 	\end{minipage}
-			 	\caption[Telas da lista de remédios (iOS \textit{versus} Android)]{ Telas da lista de remédios (iOS \textit{versus} Android). Fonte: Elaborado pelos autores.}
+			 	\caption[Telas da lista de remédios (iOS \textit{versus} Android)]{ Telas da lista de remédios (iOS \textit{versus} Android).}
 			 	\label{fig:ionic_lista}
 			 \end{figure}
 
@@ -170,7 +170,7 @@ o multiplataforma Ionic. Há, ainda, um tópico de observações gerais pertinen
 			 		\includegraphics[width=0.9\linewidth]{ionic_action_camera_android}
 			 	\end{minipage}
 			 	\caption[Telas de cadastro de foto de remédio (iOS \textit{versus} Android)]{ Telas de cadastro de foto de 
-				 remédio (iOS \textit{versus} Android). Fonte: Elaborado pelos autores.}
+				 remédio (iOS \textit{versus} Android).}
 			 	\label{fig:ionic_action_camera}
 			 \end{figure}
 
@@ -188,7 +188,7 @@ o multiplataforma Ionic. Há, ainda, um tópico de observações gerais pertinen
 			 		\includegraphics[width=0.9\linewidth]{ionic_picker_android}
 			 	\end{minipage}
 			 	\caption[Telas de cadastro de foto de remédio (iOS \textit{versus} Android)]{ Telas de cadastro de foto de 
-				 remédio (iOS \textit{versus} Android). Fonte: Elaborado pelos autores.}
+				 remédio (iOS \textit{versus} Android).}
 			 	\label{fig:ionic_picker}
 			 \end{figure}
 			 
@@ -199,7 +199,7 @@ o multiplataforma Ionic. Há, ainda, um tópico de observações gerais pertinen
 			 	\begin{figure}[H]
 			 		\centering
 			 		\includegraphics[width=0.5\textwidth]{ionic_alert}
-			 		\caption[Tela de alerta]{Tela de alerta. Fonte: Elaborado pelos autores.}
+			 		\caption[Tela de alerta]{Tela de alerta.}
 			 		\label{fig:ionic_alert}
 			 	\end{figure}
 			 	
@@ -225,7 +225,7 @@ o multiplataforma Ionic. Há, ainda, um tópico de observações gerais pertinen
 			 		 		\centering
 			 		 		\includegraphics[width=0.9\linewidth]{ionic_local_android}
 			 		 	\end{minipage}
-			 		 	\caption[Tela de cadastro de local do remédio  (iOS \textit{versus} Ionic)]{ Tela de cadastro de local do remédio  (iOS \textit{versus} Ionic). Fonte: Elaborado pelos autores.}
+			 		 	\caption[Tela de cadastro de local do remédio  (iOS \textit{versus} Ionic)]{ Tela de cadastro de local do remédio  (iOS \textit{versus} Ionic).}
 			 		 	\label{fig:ionic_local}
 			 		 \end{figure}
 			 	
@@ -240,7 +240,7 @@ o multiplataforma Ionic. Há, ainda, um tópico de observações gerais pertinen
 		 			 	\begin{figure}[H]
 		 			 		\centering
 		 			 		\includegraphics[width=0.4\textwidth]{ios_cadastro_remedio}
-		 			 		\caption[Tela de cadastro de remédio - iOS]{Tela de cadastro de remédio - iOS. Fonte: Elaborado pelos autores.}
+		 			 		\caption[Tela de cadastro de remédio - iOS]{Tela de cadastro de remédio - iOS.}
 		 			 		\label{fig:ios_cadastro_remedio}
 		 			 	\end{figure}
 			 
@@ -264,7 +264,7 @@ o multiplataforma Ionic. Há, ainda, um tópico de observações gerais pertinen
 			\centering
 			\includegraphics[width=0.9\linewidth]{ionic_add_farma}
 		\end{minipage}
-	\caption[Tela de adicionar farmácia (iOS \textit{versus} Ionic)]{ Tela de adicionar farmácia (iOS \textit{versus} Ionic). Fonte: Elaborado pelos autores.}
+	\caption[Tela de adicionar farmácia (iOS \textit{versus} Ionic)]{ Tela de adicionar farmácia (iOS \textit{versus} Ionic).}
 	\label{fig:add_farma}
 	\end{figure}
  	
@@ -297,7 +297,7 @@ o multiplataforma Ionic. Há, ainda, um tópico de observações gerais pertinen
 			\centering
 			\includegraphics[width=0.95\linewidth]{ionic_timepicker}
 		\end{minipage}
-	\caption[Seleção de data e hora dos alertas (iOS \textit{versus} Ionic)]{ Seleção de data e hora dos alertas (iOS \textit{versus} Ionic). Fonte: Elaborado pelos autores.}
+	\caption[Seleção de data e hora dos alertas (iOS \textit{versus} Ionic)]{ Seleção de data e hora dos alertas (iOS \textit{versus} Ionic).}
 	\label{fig:dateTimePicker}
 	\end{figure}
  	

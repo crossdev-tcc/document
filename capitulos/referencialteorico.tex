@@ -105,25 +105,32 @@ Contudo, para que os testes sejam realizados em um dispositivo é exigida uma li
 com custo de US\$99 anuais. A licença também é necessária para a utilização de recursos avançados e para a distribuição 
 na \textit{App Store}, loja de aplicativos da Apple \cite{apple_inc_program_2016}.   
 
-Para a distrituição de aplicativos iOS, além da licença citada, é necessário submeter a aplicação para avaliação e aprovação da Apple antes de ir para a \textit{App Store}. 
-Para agilizar o processo de aprovação, é necessário que o aplicativo esteja de acordo com as diretrizes estabelecidades pela Apple, como as orientações de interface gráfica e as orientações de revisão da \textit{App Store} \cite{apple_inc_submitting_2016}.
+Para a distribuição de aplicativos iOS, além da licença citada, é necessário submeter a aplicação para avaliação e aprovação da Apple antes de ir para a \textit{App Store}. 
+Para agilizar o processo de aprovação, é necessário que o aplicativo esteja de acordo com as diretrizes estabelecidas pela Apple, como as orientações de interface gráfica e as orientações de revisão da \textit{App Store} \cite{apple_inc_submitting_2016}.
 
 Desenvolver aplicativos para a plataforma iOS requer um computador com o sistema operacional Mac OS e o ambiente de desenvolvimento \textit{Xcode} \cite{heitkotter_evaluating_2013}. 
 O desenvolvimento é atrelado a duas linguagens de programação, o \textit{Objective-C} e o \textit{Swift}.
 O Objective-C constitui-se em um superconjunto da linguagem de programação C, da qual herda a maior parte da sua sintaxe, incluindo tipos primitivos e fluxo de declarações, e adiciona sintaxe própria para definição de classes e métodos \cite{apple_inc_about_2014}. 
 %É uma linguagem que teve origem nos anos 80 e ganhou destaque junto ao crescimento da Apple.
-O \textit{Swift} foi lançado pela Apple como um sucessor do \textit{Objective-C}. É uma linguagem gratuita, código aberto e pode ser integrada a códigos \textit{Objective-C} \cite{apple_inc_swift_2016}. Pouco tempo após o seu lançamento, tornou-se uma das linguagens de programação mais utilizadas no mundo \cite{rebouas_empirical_2016}. Segundo a Apple, o \textit{Swift} possui uma sintaxe concisa e muito intuitiva \cite{apple_inc_swift_2016}.
+O \textit{Swift} foi lançado pela Apple como um sucessor do \textit{Objective-C}. É uma linguagem \textit{software} livre e pode ser integrada a códigos \textit{Objective-C} \cite{apple_inc_swift_2016}. Pouco tempo após o seu lançamento, tornou-se uma das linguagens de programação mais utilizadas no mundo \cite{rebouas_empirical_2016}. Segundo a Apple, o \textit{Swift} possui uma sintaxe concisa e intuitiva \cite{apple_inc_swift_2016}.
 
 \subsection{Android} \label{subsection:android}
 
 O sistema operacional Android foi criado pela \textit{start-up} homônima Android Inc. em outubro de 2003. Em agosto de 2005 foi adquirida pela empresa Google, que lançou
 em novembro de 2007, juntamente com a \textit{OHA}, o sistema Android, \textit{open-source} e baseado no \textit{kernel} do Linux. Uma semana depois, foi liberada a primeira versão do \textit{SDK} para Android.
-O sistema foi concebido originalmente para camêras fotográficas, no entanto, foi percebido por seus criadores um mercado maior no ramo da telefonia e desviou-se o 
+O sistema foi concebido originalmente para câmeras fotográficas, no entanto, foi percebido por seus criadores um mercado maior no ramo da telefonia e desviou-se o 
 foco para \textit{smartphones}, competindo diretamente com Symbian e Windows Mobile \cite{papajorgji_automated_2015}.
 
 \subsubsection{Arquitetura Android} \label{subsection:arc-android}
 
 A arquitetura Android é baseada nas camadas apresentadas na Figura~\ref{fig:arc-android} e são explicadas com mais detalhes a seguir.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{arc-android}
+	\caption[Arquitetura Android]{ Arquitetura Android. Fonte: \cite{android_android_2016}.}
+	\label{fig:arc-android}
+\end{figure}
 
 \begin{itemize}
 %http://source.android.com/devices/index.html <- Fonte principal
@@ -145,13 +152,6 @@ A arquitetura Android é baseada nas camadas apresentadas na Figura~\ref{fig:arc
     móveis e funcionalidades para dispositivos embarcados \cite{android_android_2016}. 
     
 \end{itemize}
-
-\begin{figure}[h]
-  \centering
-    \includegraphics[width=0.5\textwidth]{arc-android}
-    \caption[Arquitetura Android]{ Arquitetura Android. Fonte: \cite{android_android_2016}.}
-	\label{fig:arc-android}
-\end{figure}
 
 \subsubsection{Desenvolvimento Android} \label{subsection:dev-android}
 
@@ -203,6 +203,9 @@ os sistemas e a capacidade de gestão de variações existentes entre os mesmos
 
 
 ...É possível fazer uma correlação com o desenvolvimento de aplicativos multiplataformas...
+
+Fazer link para as subsecoes 
+
 
 \subsection{PhoneGap e Cordova} \label{subsection:phonegap}
 
@@ -262,12 +265,12 @@ com o antigo já mostrado \cite{ursino_angularjs:_2015}. O ciclo do AngularJS é
 \end{figure}
 
 Foi projetado para criação de \textit{SPAs} e com isso faz com que as páginas sejam mais rápidas, visto que, apenas é carregado o conteúdo que precisa ser mostrado, 
-deixando outros conteúdos para serem carregados dinâmicamente depois, de acordo com as interações do usuário \cite{rodriguez_diseno_2015}.
+deixando outros conteúdos para serem carregados dinamicamente depois, de acordo com as interações do usuário \cite{rodriguez_diseno_2015}.
 
 \subsection{Ionic} \label{subsection:ionic}
 %NESTA SEÇÃO e do \textit{Ionic Framework}, usado para desenvolvimento multiplataformas e \textit{frameworks} necessários para o correto funcionamento do Ionic...
 %http://blog.ionic.io/how-2015-went-for-ionic/
-Ionic é um \textit{framework} gratuito e \textit{open source} para desenvolvimento de aplicativos híbridos utilizando tecnologias 
+Ionic é um \textit{framework} \textit{software} livre para desenvolvimento de aplicativos híbridos utilizando tecnologias 
 \textit{web} como \textit{HTML}, \textit{CSS} e \textit{JavaScript} otimizadas para dispositivos móveis \cite{drifty_ionic:_2016}. 
 
 Foi criado pela empresa Drifty Co. em 2013 com base na necessidade que seus clientes apresentavam de criarem \textit{apps}. 
