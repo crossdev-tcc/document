@@ -101,9 +101,8 @@ As camadas do iOS são explicadas com mais detalhes a seguir.
 \subsubsection{Desenvolvimento iOS} \label{subsubsection-dev-ios}
 
 O \textit{SDK} iOS permite que os desenvolvedores criem suas aplicações e a testem em emuladores. 
-Contudo, para que os testes sejam realizados em um dispositivo é exigida uma licença do \textit{Apple Developer Program}, 
-com custo de US\$99 anuais. A licença também é necessária para a utilização de recursos avançados e para a distribuição 
-na \textit{App Store}, loja de aplicativos da Apple \cite{apple_inc_program_2016}.   
+Contudo, para a utilização de recursos avançados e para a distribuição 
+na \textit{App Store}, loja de aplicativos da Apple \cite{apple_inc_program_2016}, é exigida uma licença do \textit{Apple Developer Program}, com custo de US\$99 anuais.   
 
 Para a distribuição de aplicativos iOS, além da licença citada, é necessário submeter a aplicação para avaliação e aprovação da Apple antes de ir para a \textit{App Store}. 
 Para agilizar o processo de aprovação, é necessário que o aplicativo esteja de acordo com as diretrizes estabelecidas pela Apple, como as orientações de interface gráfica e as orientações de revisão da \textit{App Store} \cite{apple_inc_submitting_2016}.
@@ -179,6 +178,8 @@ divergindo dos elementos de tela padrão providos pelas plataformas \textit{mobi
 A abordagem híbrida surgiu como uma combinação do uso das tecnologias \textit{web} junto à possibilidade de acesso a funcionalidades nativas \cite{heitkotter_evaluating_2013}.
 Em essência, aplicações híbridas são \textit{web app} empacotadas em um aplicativo nativo \cite{stark_building_2010}.
 
+\begin{comment}
+
 %\textcolor{red}{relacionar com linha de produto}
 
 Dentro da Engenharia de \textit{Software}, existe uma corrente que defende a criação de \textit{software} como uma Linha de Produtos (\textit{SPL}). 
@@ -200,12 +201,11 @@ engenharia necessários para construir aplicativos customizáveis e extensíveis
 temática, a partir de artefatos gerenciáveis e reutilizáveis, aproveitando a semelhança entre
 os sistemas e a capacidade de gestão de variações existentes entre os mesmos
 
+...É possível fazer uma correlação com o desenvolvimento de aplicativos multiplataforma...
+    
+\end{comment} 
 
-
-...É possível fazer uma correlação com o desenvolvimento de aplicativos multiplataformas...
-
-Fazer link para as subsecoes 
-
+Nas próximas subseções serão descritos algumas das tecnologias utilizadas para o desenvolvimento multiplataforma.
 
 \subsection{PhoneGap e Cordova} \label{subsection:phonegap}
 
@@ -268,7 +268,7 @@ Foi projetado para criação de \textit{SPAs} e com isso faz com que as páginas
 deixando outros conteúdos para serem carregados dinamicamente depois, de acordo com as interações do usuário \cite{rodriguez_diseno_2015}.
 
 \subsection{Ionic} \label{subsection:ionic}
-%NESTA SEÇÃO e do \textit{Ionic Framework}, usado para desenvolvimento multiplataformas e \textit{frameworks} necessários para o correto funcionamento do Ionic...
+%NESTA SEÇÃO e do \textit{Ionic Framework}, usado para desenvolvimento multiplataforma e \textit{frameworks} necessários para o correto funcionamento do Ionic...
 %http://blog.ionic.io/how-2015-went-for-ionic/
 Ionic é um \textit{framework} \textit{software} livre para desenvolvimento de aplicativos híbridos utilizando tecnologias 
 \textit{web} como \textit{HTML}, \textit{CSS} e \textit{JavaScript} otimizadas para dispositivos móveis \cite{drifty_ionic:_2016}. 
@@ -379,9 +379,9 @@ Isso implica em planejar cada \textit{app} com base em uma plataforma distinta, 
 e tornar mais lento o desenvolvimento \cite{kassas_taxonomy_2015}. Por exemplo, existem componentes que não existem em todas as arquiteturas (\textit{navigationController} e 
 \textit{tabBarController} presentes na plataforma iOS, por exemplo) e que devem ser considerados no projeto do \textit{app} para as demais plataformas \cite{shakshuki_4th_2013}.
 
-No entanto, quando se pensa em desenvolvimento multiplataformas, o projeto se torna agnóstico em relação à plataforma, pois o projeto é feito pensando-se 
+No entanto, quando se pensa em desenvolvimento multiplataforma, o projeto se torna agnóstico em relação à plataforma, pois o projeto é feito pensando-se 
 apenas em uma arquitetura, um ambiente de desenvolvimento e um conjunto único de ferramentas e não de acordo com as características de cada plataforma. Após o desenvolvimento do núcleo da
-aplicação, podem ser feitas customizações para adaptar melhor o aplicativo para cada plataforma alvo da distribuição, criando assim um produto final verdadeiramente multiplataformas \cite{corral_ant_2012}.
+aplicação, podem ser feitas customizações para adaptar melhor o aplicativo para cada plataforma alvo da distribuição, criando assim um produto final verdadeiramente multiplataforma \cite{corral_ant_2012}.
 %Dessa forma, a equipe de desenvolvedores pode focar nos requisitos da aplicação sem se preocupar tanto com as diferenças entre plataformas.
 %essa frase depende da referencia ser encontrada
 
@@ -409,7 +409,7 @@ As informações contidas na tabela foram reunidas de vários trabalhos encontra
 					\begin{itemize}
 						\item Explora todas as capacidades do dispositivos
 						\item Maior performance
-						\item Oferece experiencia nativa de usabilidade para o usuário
+						\item Oferece experiência nativa de usabilidade para o usuário
 						\item Integração próxima com o sistema e outros aplicativos
 					\end{itemize}
 				} & 

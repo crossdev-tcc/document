@@ -1,6 +1,6 @@
 \chapter{Considerações Preliminares} \label{cap:consideracoespreliminares}
 
-Ao longo da execução do trabalho, foi possível perceber que as ferramentas para desenvolvimento multiplataformas 
+Ao longo da execução do trabalho, foi possível perceber que as ferramentas para desenvolvimento multiplataforma 
 evoluíram muito desde sua criação, o que as tornaram, hoje, uma opção que deve ser considerada no momento da criação de um novo \textit{app}.
 
 Ambas as abordagens de desenvolvimento móvel possuem suas vantagens e desvantagens, conforme apresentado nos capítulos anteriores desse trabalho. 
@@ -8,8 +8,8 @@ No entanto, antigamente as ferramentas \textit{cross} apresentavam um \textit{ga
 dificilmente eram consideradas no momento do desenvolvimento de um aplicativo.
 
 Todas as funcionalidades do aplicativo Mini Farma, que foram planejadas para serem desenvolvidas no ambiente \textit{cross-plataform}, puderam ser desenvolvidas, não havendo quaisquer limitações 
-quanto ao uso dos recursos nativos do dispositivo necessários para o projeto selecionado. O \textit{app} multiplataformas se assemelhou muito 
-ao nativo em relação a aparência e usabilidade o que confirma a ideia de que as ferramentas multiplataformas estão cada vez mais se aproximando
+quanto ao uso dos recursos nativos do dispositivo necessários para o projeto selecionado. O \textit{app} multiplataforma se assemelhou muito 
+ao nativo em relação a aparência e usabilidade o que confirma a ideia de que as ferramentas multiplataforma estão cada vez mais se aproximando
 das nativas apresentando, com o passar do tempo, mais vantagens do que desvantagens, mostrando ainda, que os gargalos antes vistos para essa forma de desenvolvimento, não condizem
 mais com a realidade.
 
@@ -28,9 +28,9 @@ caso. Para cada situação existem fatores que devem ser avaliados de uma maneir
     características, opiniões, necessidades e gostos próprios inerentes à plataforma que usam. Com isso, no momento de criar um \textit{app} deve-se pensar para quem é esse aplicativo. Se ele for concebido 
     para suprir uma demanda de um grupo específico, talvez não haja a necessidade de criá-lo para várias plataformas;
     \item \textbf{Prazo de desenvolvimento}: Quanto mais plataformas para atender, maior é o tempo necessário para desenvolver a solução. Se o prazo do projeto for apertado para desenvolvimento de mais de uma solução 
-    nativa, há de considerar o desenvolvimento multiplataformas, visto que apenas será codificada uma solução que poderá atender várias plataformas diferentes;
+    nativa, há de considerar o desenvolvimento multiplataforma, visto que apenas será codificada uma solução que poderá atender várias plataformas diferentes;
     \item \textbf{Capital disponível para investimento}: Desenvolver para plataformas nativas exige ambiente, infraestrutura e conhecimentos diferentes para cada plataforma. Dessa forma, quanto mais plataformas se 
-    quer abarcar, mais custoso o projeto será. Uma solução multiplataformas pode ser mais viável economicamente dependendo da situação;
+    quer abarcar, mais custoso o projeto será. Uma solução multiplataforma pode ser mais viável economicamente dependendo da situação;
 \end{itemize}
 
 A Figura~\ref{fig:analiseapp} a seguir, resume os fatores que devem ser avaliados no momento da escolha da abordagem de desenvolvimento.
@@ -43,28 +43,33 @@ A Figura~\ref{fig:analiseapp} a seguir, resume os fatores que devem ser avaliado
 
 \section{Planos Futuros} \label{section:planosfuturos}
 
-Na continuação deste trabalho, o principal objetivo será responder a questão problema definida, comprovando ou refutando as hipóteses criadas.
-Para atingir esse objetivo, serão comparados códigos de aplicativos, desenvolvidos nativamente ou multiplataforma, 
-encontrados em repositórios públicos como Github, por exemplo. 
-Em posse dos códigos, será possível analisar métricas de qualidade de código e juntamente com o embasamento teórico e empírico desse trabalho, 
-criaremos um modelo de escolha para facilitar a tarefa dos desenvolvedores de escolherem qual a melhor abordagem deve ser utilizada.
-
-A seguir, é apresentado um cronograma preliminar das atividades que serão realizadas na continuação deste trabalho.
+Na continuação deste trabalho, serão realizadas novas análises de exemplos de uso a fim de obter mais detalhes sobre as vantagens e desvantagens das abordagens de desenvolvimento móvel.
+A seguir, é apresentado, na Tabela~\ref{tab:cronograma}, um cronograma preliminar das atividades a serem realizadas.
 
 \begin{table}[h]
 \resizebox{\textwidth}{!}{
-\begin{tabular}{|l|c|c|}
+\begin{tabular}{|l|c|c|c|c|c|c|}
 \hline
 \multicolumn{1}{|c|}{
-\textbf{Atividade}}	                & \textbf{Data de Início} & \textbf{Data de Término} \\ \hline
-Reunir aplicativos em repositórios  & 01/08/2016              & 01/09/2016                    \\ \hline
-Coletar dados de métricas           & 02/09/2016              & 01/10/2016                    \\ \hline
-Analisar dados obtidos	            & 02/10/2016              & 01/11/2016                    \\ \hline
-Criar modelo de escolha	            & 02/11/2016              & 01/12/2016                    \\ \hline 
-Concluir documento	                & 01/12/2016              & 15/12/2016                    \\ \hline
+\textbf{Atividade}}	                                            & \textbf{Julho} & \textbf{Agosto} & \textbf{Setembro} & \textbf{Outubro} & \textbf{Novembro} & \textbf{Dezembro}   \\ \hline
+Recriar um aplicativo nativo Android em Ionic                   & X              & X               & X                  & X               & X                 & X                   \\ \hline
+Propor um fluxograma de tomada de decisão                       & X              & X               & X                  & X               & X                 & X                   \\ \hline
+Investigar relação com linha de produto de \textit{software}    & X              & X               & X                  & X               & X                 & X                   \\ \hline
+Avaliar fluxograma proposto em um projeto Ionic                 & X              & X               & X                  & X               & X                 & X                   \\ \hline
+Refinar análise de vantagens e desvantagens e do fluxograma	    & X              & X               & X                  & X               & X                 & X                   \\ \hline
 \end{tabular}
 }
 \caption{Cronograma inicial para o TCC 2}
 \label{tab:cronograma}
 \end{table}
 
+Será recriado um aplicativo, originalmente feito para a plataforma Android, utilizando o \textit{framework} Ionic a fim de aprimorar o comparativo entre o desenvolvimento nativo e multiplataforma e colher mais insumos
+para a proposta de um fluxograma de tomada de decisão de qual abordagem é mais adequada para um dado contexto de desenvolvimento.
+
+Uma vez feito o novo aplicativo, será proposto um fluxograma para auxiliar desenvolvedores a escolher de forma mais assertiva qual abordagem utilizar no contexto de desenvolvimento que estiver imerso.
+
+Realizar pesquisas na área de linha de produto de \textit{software}, para investigar se há alguma relação com o desenvolvimento de aplicativos móveis.
+
+A fim de validar o fluxograma proposto, o mesmo será utilizado em um projeto de evolução de um aplicativo Ionic para avaliar se o modelo de tomada de decisão está correto ou precisa de melhorias.
+
+Ao final serão refinados a análise de vantagens e desvantagens das abordagens de desenvolvimento móvel e o fluxograma criado.

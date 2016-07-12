@@ -1,6 +1,6 @@
 \chapter{Exemplo de Uso} \label{cap:estudodecaso}
 Com o intuito de comparar o desenvolvimento de aplicações móveis utilizando a abordagem nativa e multiplataforma, 
-foi realizado um estudo de caso. Para isso, um aplicativo feito em iOS 
+foi realizado um estudo preliminar. Para isso, um aplicativo feito em iOS 
 nativo foi recriado utilizando o \textit{framework} Ionic. A seguir o aplicativo escolhido é detalhado em termos de funcionalidades e recursos utilizados. 
 
 \section{Descrição do projeto selecionado} \label{sec:descricaodoprojeto}
@@ -78,7 +78,15 @@ Os detalhes técnicos são listados a seguir.
 
 \section{Desenvolvimento multiplataformas do projeto} \label{sec:desenvolvimentomulti}
 
-A partir do aplicativo feito em iOS, foi construída uma versão utilizando o Ionic para as plataformas Android e iOS.
+A partir do aplicativo feito em iOS, foi construída uma versão utilizando o Ionic para as plataformas Android e iOS, 
+disponível em um repositório aberto no Github\footnote{\url{https://github.com/crossdev-tcc/ionic-apps}}. O desenvolvimento foi dividido nas seguintes funcionalidades:
+\begin{itemize}
+	\item \textbf{Listagem de Remédios e Alertas};
+	\item \textbf{Cadastro de Remédios}: sendo necessário o acesso a câmera fotográfica e galeria de fotos do dispositivo;
+	\item \textbf{Cadastro de Farmácias}: sendo necessário o acesso à localização do dispositivo e ligação de voz;
+	\item \textbf{Cadastro de Alertas}: sendo necessário o acesso à central de notificações locais do dispositivo;
+\end{itemize}
+%\textit{* Todas as funcionalidades exigem acesso ao banco de dados local SQLite criado para o aplicativo}
 Para a criação dessa versão do \textit{app}, a equipe foi alterada, mas permaneceu com dois integrantes, que são os autores deste trabalho.
 No entanto, os integrantes não possuíam qualquer conhecimento prévio nos \textit{frameworks} Ionic, AngularJS e Cordova
 e apenas possuíam um conhecimento básico em \textit{HTML}, \textit{CSS} e \textit{JavaScript}. Os detalhes técnicos são listados a seguir.
@@ -320,20 +328,9 @@ o multiplataforma Ionic. Há, ainda, um tópico de observações gerais pertinen
 		durante o desenvolvimento do \textit{app}, já que tudo é baseado nelas...}
 		\item O Cordova e o Ionic possuem documentações bem completas, apresentando exemplos de uso de códigos. A comunidade é ativa e disponibiliza \textit{APIs} adicionais e exemplos de códigos em repositórios online.
 	\end{itemize}
- 	
- 	%\textcolor{red}{nao é possivel debugar o ios pelo terminal, por causa da atualizacao do ios 9, por isso é necessario do xcode ou do safari, ou seja um mac}
-
- 	%\textcolor{red}{usar o banco na primeira controladora do sistema, cordova nao carrega antes da view}
-
- 	%\textcolor{red}{possibilidade de debugar com os navegadores, é possivel usar os navegadores para poder debugar enquanto esta rodando no simulador das plataformas}
-
- 	%\textcolor{red}{debug com alerta de javascript, nao eh falado em lugar nenhum, mas facilita muito. foi encontrado por pesquisas na comunidade on line}
-
- 	%\textcolor{red}{ng-class nao funciona na ion-nav e foi muito dificil descobrir isso}
-
- 	%\textcolor{red}{problemas na hora de executar no iphone, o projeto não executa corretamente as vezes por motivo desconhecido}
-
- 	%- Site do cordova bem documentado, com exemplos de uso
-
- 	%- Ressaltar a importancia de saber html, javascript e css
  \end{itemize} 
+
+Apesar das desvantagens citadas na Tabela~\ref{tab:vantxdesva}, não houveram limitações quanto ao uso dos recursos necessários para o projeto 
+ou problemas de performance que impactassem nos requisitos do aplicativo.
+Foi possível construir apenas um código e gerar dois executáveis de plataformas diferentes, o que poderia acarretar em redução de custos e tempo de desenvolvimento.
+Além disso o aplicativo desenvolvido apresentou aparência e usabilidade semelhantes ao nativo, adaptando-se a cada plataforma alvo seguindo seus padrões específicos de interface de usuário.
