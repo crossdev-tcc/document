@@ -19,7 +19,7 @@ Algumas particularidades a serem consideradas no desenvolvimento \textit{mobile}
     para atender às expectativas dos usuários, caso contrário, devido ao grande número de aplicações disponíveis, o \textit{app} pode ser descartado e substituído por outros presentes nas lojas de aplicativos.
     
     \item \textbf{Manutenção}: plataformas \textit{mobiles} passam por constantes atualizações que podem afetar 
-    \textit{apps} já desenvolvidos, a ponto de torná-los inutilizáveis ou causarem desconforto nos usuários. 
+    \textit{apps} já desenvolvidos, a ponto de torná-los inutilizáveis ou causarem desconforto aos usuários. 
     Para que a aplicação continue a funcionar corretamente, são necessárias frequentes manutenções e atualizações.
     Atualizações de \textit{apps} desenvolvidos para diferentes plataformas implicam na alteração de cada uma das versões desenvolvidas.
     
@@ -154,8 +154,8 @@ A arquitetura Android é baseada nas camadas apresentadas na Figura~\ref{fig:arc
 
 \subsubsection{Desenvolvimento Android} \label{subsection:dev-android}
 
-Para o desenvolvimento de aplicações Android é necessário conhecimento na linguagem de programação \textit{Java}.
-Não é requerido sistema operacional específico e a \textit{IDE} recomendada pelo Google é o \textit{Android Studio}, oficial para desenvolvimento de aplicativos Android \cite{android_meet_2016}.
+Para o desenvolvimento de aplicações Android é recomendada a  linguagem de programação \textit{Java}.
+Não é requerido sistema operacional específico e a \textit{IDE} indicada pelo Google é o \textit{Android Studio}, oficial para desenvolvimento de aplicativos Android \cite{android_meet_2016}.
 %O ambiente necessário para o desenvolvimento requer um computador com qualquer sistema operacional e o \textit{Android Studio}, a \textit{IDE} oficial para a criação de aplicativos Android \cite{android_meet_2016}.
 
 Para a publicação na loja de aplicativos do Google, \textit{Google Play Store}, é cobrada uma taxa única de US\$25. 
@@ -216,7 +216,7 @@ para garantir que outras empresas pudessem contribuir \cite{bezerra_desenvolvime
 
 Como o PhoneGap é uma marca registrada de propriedade da Adobe, na Apache teve seu nome alterado para Cordova.
 Tanto o \textit{Apache Cordova} quanto o \textit{Adobe PhoneGap}, são gratuitos e \textit{open sources}, no entanto, o 
-PhoneGap possui um ambiente integrado com serviços da Adobe como o \textit{PhoneGap Build}, por exemplo \cite{bezerra_desenvolvimento_2016}.
+PhoneGap possui um ambiente integrado com serviços da Adobe, como o \textit{PhoneGap Build} \cite{bezerra_desenvolvimento_2016}.
  
 Cordova permite que aplicações não nativas tenham acesso a funcionalidades nativas do dispositivo como sensores, 
 contatos e câmera. No entanto, o Cordova apenas consegue fazer um aplicativo criado em 
@@ -286,7 +286,7 @@ no desenvolvimento dos aplicativos \cite{drifty_ionic:_2016}.
 Um projeto Ionic pode ser dividido em cinco camadas, listadas e detalhadas a seguir.
 
 \begin{itemize}
-    \item \textit{Views}: São a camada de apresentação, onde as informações são mostradas para o usuário. Pode ser comparada como 
+    \item \textit{Views}: Camada de apresentação, onde as informações são mostradas para o usuário. Pode ser comparada como 
     o seu homônimo no padrão \textit{MVC}. Muitas vezes são chamadas de \textit{templates}, pois é a forma com o AngularJS 
     se refere a elas. São, normalmente, arquivos \textit{HTML} separados, que são chamados e inseridos quando necessário pelo
     AngularJS. É possível utilizar \textit{data binding} nas Views para poder estabelecer uma conexão com a controladora
@@ -299,7 +299,7 @@ Um projeto Ionic pode ser dividido em cinco camadas, listadas e detalhadas a seg
     \item \textit{Data(Services/Factories)}: É a camada que se aproxima da camada \textit{model} do padrão \textit{MVC}. Encapsula
     dados da aplicação e provê esses dados, geralmente, por meio de um \textit{web service}. Essa camada responde às requisições
     da controladora com os dados a serem utilizados para a criação da \textit{View} e para serem mostrados para o usuário \cite{drifty_ionic_2016}. 
-    \item \textit{App Configuration}: Nesta camada, as controladoras são ligadas às suas interfaces por meio de rotas. É possível
+    \item \textit{App Configuration}: Nesta camada, as controladoras são ligadas às suas interfaces por meio de rotas. É possível,
     também, criar rotas padrão, para o caso de não haver nenhuma rota que esteja sendo identificada, o que poderia fazer o sistema quebrar \cite{drifty_ionic_2016}.
     \item \textit{Directives}: Essa camada serve para especificar comportamentos específicos em elementos de uma página 
     \textit{HTML}, ou seja, elas são um elemento ou um atributo que podem iniciar um comportamento específico definido 
@@ -316,8 +316,8 @@ A linguagem utilizada é o \textit{JavaScript}, usando ainda \textit{HTML} e \te
 
 \subsubsection{Ferramentas de Apoio} \label{subsection:ionicferramentasapoio}
 
-O Ionic provê além do \textit{HTML} e \textit{CSS} otimizado para dispositivos móveis, 
-uma série de ferramentas, que compõem um ecossistema de apoio, que fornecem velocidade e facilidade no desenvolvimento de aplicativos híbridos. 
+O Ionic provê, além do \textit{HTML} e \textit{CSS} otimizado para dispositivos móveis, 
+uma série de ferramentas, que compõem um ecossistema de apoio e fornecem velocidade e facilidade no desenvolvimento de aplicativos híbridos. 
 Essas ferramentas são listadas a seguir com uma breve explicação do que cada uma pode fazer \cite{drifty_ionic:_2016}.
 
 \begin{itemize}

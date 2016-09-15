@@ -1,7 +1,7 @@
 \chapter{Exemplo de Uso} \label{cap:estudodecaso}
 Com o intuito de comparar o desenvolvimento de aplicações móveis utilizando a abordagem nativa e multiplataforma, 
 foi realizado um estudo preliminar. Para isso, um aplicativo feito em iOS 
-nativo foi recriado utilizando o \textit{framework} Ionic. A seguir o aplicativo escolhido é detalhado em termos de funcionalidades e recursos utilizados. 
+nativo foi recriado utilizando o \textit{framework} Ionic. A seguir, o aplicativo escolhido é detalhado em termos de funcionalidades e recursos utilizados. 
 
 \section{Descrição do projeto selecionado} \label{sec:descricaodoprojeto}
 
@@ -21,7 +21,7 @@ O aplicativo utiliza recursos nativos do sistema, os quais são descritos a segu
     localização da farmácia onde ele comprou um medicamento para, caso seja necessário, explicar para alguém onde a 
     farmácia fica. Também é possível com base nessa localização da farmácia e do usuário, traçar uma rota para levá-lo diretamente à 
     farmácia em questão;
-	\item \textbf{Notificações locais}: Diferente das notificações \textit{Push} as notificações locais são criadas e agendadas na central 
+	\item \textbf{Notificações locais}: Diferente das notificações \textit{Push}, as notificações locais são criadas e agendadas na central 
     de notificações do dispositivo e o sistema se encarrega de entregá-las corretamente de acordo com parâmetros definidos pelo aplicativo. 
     No caso do Mini Farma, as notificações são usadas para lembrar o usuário, na data e hora corretas, de que o mesmo deve tomar seus medicamentos;
 	\item \textbf{Ligação}: As notificações podem conter ações que executam um determinado bloco de código dentro do aplicativo. No Mini Farma, 
@@ -34,8 +34,8 @@ O aplicativo utiliza recursos nativos do sistema, os quais são descritos a segu
     no rolo de câmera, é possível escolher a foto sem precisar tirar uma nova;
 \end{itemize}
 
-Com exceção da Ligação, todos os outros recursos nativos do sistema, precisam necessariamente serem autorizados pelo
-usuário para funcionar. Caso o usuário não autorize, o aplicativo ficará com funcionalidades reduzidas.
+Com exceção da Ligação, todos os outros recursos nativos do sistema precisam necessariamente serem autorizados pelo
+usuário para funcionar. Caso o usuário não autorize, o aplicativo fica com funcionalidades reduzidas.
 
 Como banco de dados foi usado o SQLite, por meio do \textit{framework} externo e \textit{open-source FMDB}\footnote{\url{https://github.com/ccgus/fmdb}}, 
 disponível no Github;
@@ -43,13 +43,13 @@ disponível no Github;
 A arquitetura do sistema foi criada com base no padrão de projeto \textit{MVC}, possuindo uma camada \textit{DAO} para comunicação 
 com o banco de dados. No entanto, o \textit{MVC} tradicional difere em alguns aspectos do \textit{MVC} usado no iOS. 
 
-No iOS, o \textit{MVC} trás uma controladora ligada à classe de \textit{view}, que é chamado de \textit{ViewController}, que é responsável por 
+No iOS, o \textit{MVC} trás uma controladora ligada à classe de \textit{view}, que é chamado de \textit{ViewController}, responsável por 
 criar a ponte entre a interação do usuário pela \textit{view} com as classes modelos. Dessa forma, as \textit{ViewControllers} têm a 
 responsabilidade de repassar as entradas do usuário para a modelo e controlar a \textit{view} para apresentar os resultados que a modelo retornar.
 
 Diferente do \textit{MVC} tradicional, no qual a controladora apenas repassa as informações que estão entrando na fronteira da aplicação, 
 as \textit{ViewControllers} têm, além dessa responsabilidade, também a responsabilidade de instanciar e gerenciar a \textit{view} no tocante
-a organização dos elementos e apresentação das informações.
+à organização dos elementos e apresentação das informações.
 
 Outra observação sobre as diferenças entre os dois \textit{MVCs}, é que no \textit{MVC} tradicional pode haver uma controladora apenas 
 para todas as modelos ou uma controladora por modelo, mas nenhuma ligada diretamente a uma \textit{view}, no entanto, no iOS há uma 
@@ -76,7 +76,7 @@ Os detalhes técnicos são listados a seguir.
     \item \textbf{Ambiente de suporte}: \textit{Plugin SQLite Manager} para \textit{Mozilla Firefox}, para criação do banco de dados;
 \end{itemize}
 
-\section{Desenvolvimento multiplataformas do projeto} \label{sec:desenvolvimentomulti}
+\section{Desenvolvimento multiplataforma do projeto} \label{sec:desenvolvimentomulti}
 
 A partir do aplicativo feito em iOS, foi construída uma versão utilizando o Ionic para as plataformas Android e iOS, 
 disponível em um repositório aberto no Github\footnote{\url{https://github.com/crossdev-tcc/ionic-apps}}. O desenvolvimento foi dividido nas seguintes funcionalidades:
@@ -98,12 +98,10 @@ e apenas possuíam um conhecimento básico em \textit{HTML}, \textit{CSS} e \tex
     \item \textbf{\textit{IDE}}: \textit{WebStorm} v2016.1.1;
     \item \textbf{\textit{Frameworks}}:
     \begin{itemize}
-        \item \textbf{Ionic}: \textit{Copenhagen} v1.2.4*;
-        \item \textbf{AngularJS}: \textit{foam-acceleration} v1.4.3*;
-        
-        * Durante a execução deste trabalho, já haviam sido disponibilizadas as versões 2 do Ionic e do AngularJS, no entanto,
-        os autores optaram por não utilizá-las por ainda se tratarem de versões \textit{beta} e portanto instáveis, o que poderia 
-        impactar negativamente no desenvolvimento do projeto.
+        \item \textbf{Ionic}: \textit{Copenhagen} v1.2.4\footnote{Durante a execução deste trabalho, já haviam sido disponibilizadas as versões 2 do Ionic e do AngularJS, no entanto,
+        	os autores optaram por não utilizá-las por ainda se tratarem de versões \textit{beta} e portanto instáveis, o que poderia 
+        	impactar negativamente no desenvolvimento do projeto.\label{note1}};
+        \item \textbf{AngularJS}: \textit{foam-acceleration} v1.4.3\footref{note1};
         
         \item \textbf{Cordova}: v6.0.0;
     \end{itemize}
@@ -122,7 +120,7 @@ e apenas possuíam um conhecimento básico em \textit{HTML}, \textit{CSS} e \tex
 
 \subsection{Relato de desenvolvimento} \label{subsec:experienciasdev}
 
-É apresentado, a seguir, o relato das experiências obtidas durante o desenvolvimento com Ionic, divido nas funcionalidades 
+É apresentado, a seguir, o relato das experiências obtidas durante o desenvolvimento com Ionic, dividido nas funcionalidades 
 já descritas na Subseção~\ref{subsection:planejamentodesenvolvimento} deste trabalho, bem como feita a comparação entre o desenvolvimento nativo para iOS e 
 o multiplataforma Ionic. Há, ainda, um tópico de observações gerais pertinentes à implementação do \textit{app} como um todo. 
 
@@ -182,7 +180,7 @@ o multiplataforma Ionic. Há, ainda, um tópico de observações gerais pertinen
 			 	\label{fig:ionic_action_camera}
 			 \end{figure}
 
-			\item Outro componente utilizado e propriamente adaptado pelo Ionic para as plataformas foi o denominado no iOS como UIPickerView.
+			\item Outro componente utilizado e propriamente adaptado pelo Ionic para as plataformas foi o denominado no iOS como \textit{UIPickerView}.
 			Ele foi utilizado para a escolha de intervalo de uso do medicamento e é apresentado na Figura~\ref{fig:ionic_picker}.
 			 
 			 \begin{figure}
