@@ -45,7 +45,7 @@ com o banco de dados. No entanto, o \textit{MVC} tradicional difere em alguns as
 
 No iOS, o \textit{MVC} trás uma controladora ligada à classe de \textit{view}, que é chamado de \textit{ViewController}, responsável por 
 criar a ponte entre a interação do usuário pela \textit{view} com as classes modelos. Dessa forma, as \textit{ViewControllers} têm a 
-responsabilidade de repassar as entradas do usuário para a modelo e controlar a \textit{view} para apresentar os resultados que a modelo retornar.
+responsabilidade de repassar as entradas do usuário para a \textit{model} e controlar a \textit{view} para apresentar os resultados que a modelo retornar.
 
 Diferente do \textit{MVC} tradicional, no qual a controladora apenas repassa as informações que estão entrando na fronteira da aplicação, 
 as \textit{ViewControllers} têm, além dessa responsabilidade, também a responsabilidade de instanciar e gerenciar a \textit{view} no tocante
@@ -152,7 +152,7 @@ o multiplataforma Ionic. Há, ainda, um tópico de observações gerais pertinen
 			 		\centering
 			 		\includegraphics[width=0.9\linewidth]{ionic_lista_android}
 			 	\end{minipage}
-			 	\caption[Telas da lista de remédios (iOS \textit{versus} Android)]{ Telas da lista de remédios (iOS \textit{versus} Android).}
+			 	\caption[Telas da lista de remédios (Ionic iOS \textit{versus} Ionic Android)]{ Telas da lista de remédios (Ionic iOS à esquerda \textit{versus} Ionic Android à direita).}
 			 	\label{fig:ionic_lista}
 			 \end{figure}
 
@@ -175,8 +175,7 @@ o multiplataforma Ionic. Há, ainda, um tópico de observações gerais pertinen
 			 		\centering
 			 		\includegraphics[width=0.9\linewidth]{ionic_action_camera_android}
 			 	\end{minipage}
-			 	\caption[Telas de cadastro de foto de remédio (iOS \textit{versus} Android)]{ Telas de cadastro de foto de 
-				 remédio (iOS \textit{versus} Android).}
+			 	\caption[Telas de cadastro de foto de remédio (Ionic iOS \textit{versus} Ionic Android)]{ Telas de cadastro de foto de remédio (Ionic iOS à esquerda \textit{versus} Ionic Android à direita).}
 			 	\label{fig:ionic_action_camera}
 			 \end{figure}
 
@@ -193,26 +192,26 @@ o multiplataforma Ionic. Há, ainda, um tópico de observações gerais pertinen
 			 		\centering
 			 		\includegraphics[width=0.9\linewidth]{ionic_picker_android}
 			 	\end{minipage}
-			 	\caption[Telas de cadastro de foto de remédio (iOS \textit{versus} Android)]{ Telas de cadastro de foto de 
-				 remédio (iOS \textit{versus} Android).}
+			 	\caption[Telas de cadastro de intervalo de remédio (Ionic iOS \textit{versus} Ionic Android)]{ Telas de cadastro de intervalo de 
+				 remédio (Ionic iOS à esquerda \textit{versus} Ionic Android à direita).}
 			 	\label{fig:ionic_picker}
 			 \end{figure}
 			 
-		 	\item No formulário de cadastro há a opção de selecionar uma categoria para o medicamento, para isso, o usuário é direcionado à uma página que contém a lista de categorias disponíveis, seleciona alguma delas ou adiciona uma nova e é redirecionado à página de cadastro, com o campo de categoria preenchido com a escolha feita. Para isso é necessário o envio de dados de uma tela para a antecessora. No aplicativo nativo essa funcionalidade foi implementada com o uso dos chamados \textit{Protocols and Delegates}. Já no aplicativo multiplataforma não foi encontrada uma correspondência aos protocolos do iOS, foi, então, utilizada uma \textit{factory} para armazenar temporariamente o valor da categoria. Observou-se que o nível de dificuldade de ambas as abordagens é semelhante, não apresentando grande dificuldade de implementação.
+		 	\item No formulário de cadastro há a opção de selecionar uma categoria para o medicamento, para isso, o usuário é direcionado a uma página que contém a lista de categorias disponíveis, seleciona alguma delas ou adiciona uma nova e é redirecionado à página de cadastro, com o campo de categoria preenchido com a escolha feita. Para isso é necessário o envio de dados de uma tela para a antecessora. No aplicativo nativo, essa funcionalidade foi implementada com o uso dos chamados \textit{Protocols and Delegates}. Já no aplicativo multiplataforma, não foi encontrada uma correspondência aos protocolos do iOS, foi, então, utilizada uma \textit{factory} para armazenar temporariamente o valor da categoria. Observou-se que o nível de dificuldade de ambas as abordagens é semelhante, não apresentando grande dificuldade de implementação.
 			 
-			\item Para a criação de uma nova categoria de remédios, foi utilizada interação por meio de uma caixa de diálogo, também conhecido como alerta. Para isso, utilizou-se os chamados \textit{popups} do Ionic.  Apesar de facilmente implementados e personalizáveis, esses componentes não se assemelham às caixas de diálogo nativas do iOS, \textit{UIAlertView} e do Android, \textit{AlertDialog}. O alerta criado é apresentado na Figura~\ref{fig:ionic_alert}. Posteriormente,  foi verificado que há no Cordova uma \textit{API} para caixas de diálogo que, diferente da disponibilizada pelo Ionic, gera uma interface adequada aos padrões de ambas as plataformas. Um exemplo de alerta  gerado pelo Cordova e idêntico à uma das plataformas, neste caso o iOS, é apresentado na Figura~\ref{fig:ios_prompt}.
+			\item Para a criação de uma nova categoria de remédios, foi utilizada uma interação por meio de uma caixa de diálogo, também conhecida como alerta. Para isso, utilizou-se os chamados \textit{popups} do Ionic.  Apesar de facilmente implementados e personalizáveis, esses componentes não se assemelham às caixas de diálogo nativas do iOS, \textit{UIAlertView} e do Android, \textit{AlertDialog}. O alerta criado é apresentado na Figura~\ref{fig:ionic_alert}. Posteriormente,  foi verificado que há no Cordova uma \textit{API} para caixas de diálogo que, diferente da disponibilizada pelo Ionic, gera uma interface adequada aos padrões de ambas as plataformas. Um exemplo de alerta  gerado pelo Cordova e idêntico à uma das plataformas, neste caso o iOS, é apresentado na Figura~\ref{fig:ios_prompt}.
 			 	
 			 	\begin{figure}[H]
 			 		\centering
 			 		\includegraphics[width=0.5\textwidth]{ionic_alert}
-			 		\caption[Tela de alerta]{Tela de alerta.}
+			 		\caption[Tela de alerta - Ionic]{Tela de alerta - Ionic.}
 			 		\label{fig:ionic_alert}
 			 	\end{figure}
 			 	
 			 	\begin{figure}[H]
 			 		\centering
 			 		\includegraphics[width=0.5\textwidth]{ios_prompt}
-			 		\caption[Alerta Cordova - iOS]{Alerta Cordova - iOS. Fonte: \cite{framework_ngcordova_2016}.}
+			 		\caption[Alerta Cordova - iOS nativo]{Alerta Cordova - iOS nativo. Fonte: \cite{framework_ngcordova_2016}.}
 			 		\label{fig:ios_prompt}
 			 	\end{figure}
 			 	
@@ -231,7 +230,7 @@ o multiplataforma Ionic. Há, ainda, um tópico de observações gerais pertinen
 			 		 		\centering
 			 		 		\includegraphics[width=0.9\linewidth]{ionic_local_android}
 			 		 	\end{minipage}
-			 		 	\caption[Tela de cadastro de local do remédio  (iOS \textit{versus} Ionic)]{ Tela de cadastro de local do remédio  (iOS \textit{versus} Ionic).}
+			 		 	\caption[Tela de cadastro de local do remédio  (Ionic iOS \textit{versus} Ionic Android)]{ Tela de cadastro de local do remédio  (Ionic iOS à esquerda \textit{versus} Ionic Android à direita).}
 			 		 	\label{fig:ionic_local}
 			 		 \end{figure}
 			 	
@@ -246,7 +245,7 @@ o multiplataforma Ionic. Há, ainda, um tópico de observações gerais pertinen
 		 			 	\begin{figure}[H]
 		 			 		\centering
 		 			 		\includegraphics[width=0.4\textwidth]{ios_cadastro_remedio}
-		 			 		\caption[Tela de cadastro de remédio - iOS]{Tela de cadastro de remédio - iOS.}
+		 			 		\caption[Tela de cadastro de remédio - iOS]{Tela de cadastro de remédio - iOS nativo.}
 		 			 		\label{fig:ios_cadastro_remedio}
 		 			 	\end{figure}
 			 
@@ -270,7 +269,7 @@ o multiplataforma Ionic. Há, ainda, um tópico de observações gerais pertinen
 			\centering
 			\includegraphics[width=0.9\linewidth]{ionic_add_farma}
 		\end{minipage}
-	\caption[Tela de adicionar farmácia (iOS \textit{versus} Ionic)]{ Tela de adicionar farmácia (iOS \textit{versus} Ionic).}
+	\caption[Tela de adicionar farmácia (iOS \textit{versus} Ionic)]{ Tela de adicionar farmácia (iOS nativo à esquerda \textit{versus} Ionic iOS à direita).}
 	\label{fig:add_farma}
 	\end{figure}
  	
@@ -299,11 +298,7 @@ o multiplataforma Ionic. Há, ainda, um tópico de observações gerais pertinen
 			\centering
 			\includegraphics[width=0.95\linewidth]{ionic_datepicker}
 		\end{minipage}
-		\begin{minipage}{.33\textwidth}
-			\centering
-			\includegraphics[width=0.95\linewidth]{ionic_timepicker}
-		\end{minipage}
-	\caption[Seleção de data e hora dos alertas (iOS \textit{versus} Ionic)]{ Seleção de data e hora dos alertas (iOS \textit{versus} Ionic).}
+	\caption[Seleção de data e hora dos alertas (iOS \textit{versus} Ionic)]{ Seleção de data e hora dos alertas (iOS nativo à esquerda \textit{versus} Ionic iOS à direita).}
 	\label{fig:dateTimePicker}
 	\end{figure}
  	
