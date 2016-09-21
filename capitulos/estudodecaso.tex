@@ -40,7 +40,7 @@ usuário para funcionar. Caso o usuário não autorize, o aplicativo fica com fu
 Como banco de dados foi usado o SQLite, por meio do \textit{framework} externo e \textit{open-source FMDB}\footnote{\url{https://github.com/ccgus/fmdb}}, 
 disponível no Github;
 
-A arquitetura do sistema foi criada com base no padrão de projeto \textit{MVC}, possuindo uma camada \textit{DAO} para comunicação 
+A arquitetura do sistema foi criada com base no padrão de projeto \textit{MVC}, possuindo uma camada \textit{DAO (Data Access Object)} para comunicação 
 com o banco de dados. No entanto, o \textit{MVC} tradicional difere em alguns aspectos do \textit{MVC} usado no iOS. 
 
 No iOS, o \textit{MVC} trás uma controladora ligada à classe de \textit{view}, que é chamado de \textit{ViewController}, responsável por 
@@ -280,9 +280,9 @@ o multiplataforma Ionic. Há, ainda, um tópico de observações gerais pertinen
 		e utilizar um \textit{framework} terceiro. Os \textit{frameworks} escolhidos foram o \textit{ionic-datepicker}\footnote{\url{https://github.com/rajeshwarpatlolla/ionic-datepicker}} e 
 		\textit{ionic-timepicker}\footnote{\url{https://github.com/rajeshwarpatlolla/ionic-timepicker}}, respectivamente para seleção de data e hora. Ambos foram desenvolvidos pelo mesmo usuário no Github 
 		e instalados no projeto do aplicativo via \textit{CLI}. Nas próprias documentações dos \textit{frameworks} existem exemplos de uso suficientes para guiar a implementação das funcionalidades. 
-		Vale ressaltar que o componente do iOS possui a seleção de data e hora juntas, enquanto nos \textit{frameworks} utilizados, a seleção é separada, gerando uma pequena alteração na interface gráfica 
-		da tela de cadastro de alertas quando comparada com a do aplicativo original. As diferenças entre o original e Ionic podem ser vistas na Figura~\ref{fig:dateTimePicker}. O mesmo \textit{framework}
-		para seleção de data também foi utilizado na tela de cadastro de remédios para definir a data de validade do mesmo.
+		Vale ressaltar que o componente \textit{DatePicker} do iOS permite a seleção de data e hora ao mesmo tempo, enquanto nos \textit{frameworks} utilizados, a seleção de data e hora é separada em dois componentes distintos, 
+		gerando uma pequena alteração na interface gráfica da tela de cadastro de alertas quando comparada com a do aplicativo original. As diferenças entre o original e Ionic podem ser vistas na 
+		Figura~\ref{fig:dateTimePicker}. O mesmo \textit{framework} para seleção de data também foi utilizado na tela de cadastro de remédios para definir a data de validade do mesmo.
 
 		\item Para a criação dos alertas é preciso cadastrar notificações locais na central de notificações do dispositivo. Realizar essa tarefa teve o mesmo nível de dificuldade da implementação no iOS nativo. 
 		Apenas foi instalado um \textit{plugin} do Cordova para gerenciar a central de notificações e agendar notificações com as datas e horas corretas para serem entregues. 

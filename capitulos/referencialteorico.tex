@@ -44,13 +44,13 @@ a aplicação deve ser desenvolvida separadamente para cada uma delas \cite{heit
 %Dado que
 
 Posto que o \textit{app} é desenvolvido em ambiente próprio, segue-se os padrões técnicos, de interface e de experiência de usuário determinados pela plataforma, provendo um \textit{look and feel} de aplicação nativa ao usuário.
-Aplicações nativas tem fácil acesso, por meio de \textit{APIs} fornecidas pelas plataformas, a recursos dos dispositivos móveis, como sensores, câmera, \textit{GPS}, contatos e \textit{e-mail} \cite{kassas_taxonomy_2015}.
+Aplicações nativas tem fácil acesso, por meio de \textit{APIs (Application Programming Interface)} fornecidas pelas plataformas, a recursos dos dispositivos móveis, como sensores, câmera, \textit{GPS (Global Positioning System)}, contatos e \textit{e-mail} \cite{kassas_taxonomy_2015}.
 
 Nas seções a seguir serão descritas as arquiteturas das plataformas iOS e Android, duas das plataformas mais conhecidas e utilizadas para desenvolvimento nativo de aplicações \textit{mobile} \cite{jobe_native_2013}.
 
 \subsection{iOS} \label{subsection:ios}
 
-O sistema operacional iOS foi lançado juntamente com o primeiro \textit{iPhone} criado em Janeiro de 2007 e 
+O sistema operacional iOS foi lançado em Janeiro de 2007 juntamente com o primeiro \textit{iPhone} e 
 funciona como uma interface entre as aplicações desenvolvidas pelos programadores (\textit{apps}) e o \textit{hardware} 
 dos dispositivos (\textit{iPhone}, \textit{iPad}, \textit{iPod}) \cite{apple_inc_apple_2007}. 
 Dessa forma, a comunicação com o \textit{hardware} do dispositivo se dá 
@@ -64,7 +64,7 @@ complexas das camadas mais baixas encapsuladas por meio das interfaces. No entan
 funcionalidades presentes nas camadas mais baixas, se essas não estiverem disponíveis por meio de abstrações nas 
 camadas superiores \cite{apple_inc_tech_2014}. 
 
-A maioria das interfaces disponíveis para uso são disponibilizadas por meio de \textit{frameworks} que podem ser adicionados ao projeto no \textit{Xcode}, contendo \textit{DSLs} e os recursos necessários como, 
+A maioria das interfaces disponíveis para uso são disponibilizadas por meio de \textit{frameworks} que podem ser adicionados ao projeto no \textit{Xcode}, contendo \textit{DSLs (Dynamic Shared Libraries)} e os recursos necessários como, 
 imagens, aplicativos auxiliares e arquivos \textit{header}, para o \textit{framework} funcionar corretamente \cite{apple_inc_tech_2014}.
 
 \subsubsection{Arquitetura iOS} \label{subsubsection:arc-ios}
@@ -115,7 +115,7 @@ O \textit{Swift} foi lançado pela Apple como um sucessor do \textit{Objective-C
 \subsection{Android} \label{subsection:android}
 
 O sistema operacional Android foi criado pela \textit{start-up} homônima Android Inc. em outubro de 2003. Em agosto de 2005 foi adquirida pela empresa Google, que lançou
-em novembro de 2007, juntamente com a \textit{OHA}, o sistema Android, \textit{open-source} e baseado no \textit{kernel} do Linux. Uma semana depois, foi liberada a primeira versão do \textit{SDK} para Android.
+em novembro de 2007, juntamente com a \textit{OHA (Open Handset Alliance)}, o sistema Android, \textit{open-source} e baseado no \textit{kernel} do Linux. Uma semana depois, foi liberada a primeira versão do \textit{SDK} para Android.
 O sistema foi concebido originalmente para câmeras fotográficas, no entanto, foi percebido por seus criadores um mercado maior no ramo da telefonia e desviou-se o 
 foco para \textit{smartphones}, competindo diretamente com Symbian e Windows Mobile \cite{papajorgji_automated_2015}.
 
@@ -144,7 +144,7 @@ A arquitetura Android é baseada nas camadas apresentadas na Figura~\ref{fig:arc
         \item \textit{Media Server}: são os serviços responsáveis por gerenciar conteúdos de mídia como gravação e reprodução de audio e vídeo. 
         \item \textit{System Server}: são serviços responsáveis por gerenciar os demais tipos de serviço do sistema como notificações e \textit{windows}.
     \end{itemize}
-    \item Abaixo da camada \textit{System Services} fica a camada \textit{HAL} que permite que fornecedores de \textit{hardware} criem interfaces e \textit{drivers} para os \textit{hardwares} que
+    \item Abaixo da camada \textit{System Services} fica a camada \textit{HAL (Hardware Abstraction Layer)} que permite que fornecedores de \textit{hardware} criem interfaces e \textit{drivers} para os \textit{hardwares} que
     ele oferecem. Com isso, é possível criar novas funcionalidades e implementá-las sem afetar o resto das camadas do sistema \cite{android_android_2016}.  
     \item A camada mais baixa é a \textit{Linux Kernel} que é uma versão do \textit{kernel} do Linux com algumas modificações como um gerenciamento de memória mais avançado e próprio para dispositivos 
     móveis e funcionalidades para dispositivos embarcados \cite{android_android_2016}. 
@@ -160,11 +160,13 @@ Não é requerido sistema operacional específico e a \textit{IDE} indicada pelo
 Para a publicação na loja de aplicativos do Google, \textit{Google Play Store}, é cobrada uma taxa única de US\$25. 
 Antes de serem publicados, os aplicativos passam por um processo de revisão para assegurar que não violam as políticas estabelecidas pela loja \cite{meier_creating_2015}.  
 
-\section{Desenvolvimento \textit{Cross-platform}} \label{section:desenvolvimentomulti}
+\section{Desenvolvimento Multiplataforma} \label{section:desenvolvimentomulti}
 
-Para o desenvolvimento de uma aplicação nativa que possa ser executada em diferentes plataformas, se faz necessária a criação de uma para cada plataforma, 
-o que exige tempo, investimento e uma equipe com conhecimento nas variadas tecnologias usadas pelas plataformas alvo.
-Soluções \textit{cross-platform} possibilitam a implementação de uma aplicação que pode ser executada em diferentes plataformas \cite{kassas_taxonomy_2015}. 
+%Quando se desenvolve, nativamente, um aplicativo, é necessário perpassar todo o processo de desenvolvimento novamente para cada plataforma alvo que se deseja alcançar.
+%Para o desenvolvimento de uma aplicação nativa que possa ser executada em diferentes plataformas, se faz necessária a criação de uma para cada plataforma, 
+Para o desenvolvimento de uma aplicação nativa deve-se desenvolver o mesmo aplicativo para cada plataforma que se deseja alcançar,
+o que exige tempo, investimento e uma equipe com conhecimento nas variadas tecnologias usadas pelas distintas plataformas alvo.
+Soluções multiplataforma possibilitam a implementação de uma aplicação que pode ser executada em diferentes plataformas \cite{kassas_taxonomy_2015}. 
 Conforme \citeonline{heitkotter_evaluating_2013}, essas aplicações são comumente categorizadas em \textit{webapps} e aplicações híbridas.
 
 \textit{Web apps} são aplicações implementadas utilizando tecnologias \textit{web}, levando em conta aspectos intrínsecos aos dispositivos móveis, 
@@ -228,7 +230,7 @@ criação de um \textit{front-end} que se aproxime o máximo possível da usabil
 aplicações móveis nativas \cite{bezerra_desenvolvimento_2016}.
 
 O Cordova possui muitos \textit{plugins} para poder acessar funcionalidades específicas do aparelho em que está sendo 
-executado. Esses devem ser instalados no projeto do aplicativo via \textit{CLI} \cite{bezerra_desenvolvimento_2016}. 
+executado. Esses devem ser instalados no projeto do aplicativo via \textit{CLI (Command Line Interface)} \cite{bezerra_desenvolvimento_2016}. 
 
 A fim de se evitar confusões em relação aos nomes dados ao PhoneGap e ao Cordova, pode-se entender o PhoneGap 
 como uma distribuição do \textit{Apache Cordova}, mantido pela Adobe Systems Inc. 
@@ -263,7 +265,7 @@ com o antigo já mostrado \cite{ursino_angularjs:_2015}. O ciclo do AngularJS é
 	\label{fig:angular_response}
 \end{figure}
 
-Foi projetado para criação de \textit{SPAs} e com isso faz com que as páginas sejam mais rápidas, visto que, apenas é carregado o conteúdo que precisa ser mostrado, 
+Foi projetado para criação de \textit{SPAs (Single Page Applications)} e com isso faz com que as páginas sejam mais rápidas, visto que, apenas é carregado o conteúdo que precisa ser mostrado, 
 deixando outros conteúdos para serem carregados dinamicamente depois, de acordo com as interações do usuário \cite{rodriguez_diseno_2015}.
 
 \subsection{Ionic} \label{subsection:ionic}
@@ -286,7 +288,7 @@ Um projeto Ionic pode ser dividido em cinco camadas, listadas e detalhadas a seg
 
 \begin{itemize}
     \item \textit{Views}: Camada de apresentação, onde as informações são mostradas para o usuário. Pode ser comparada como 
-    o seu homônimo no padrão \textit{MVC}. Muitas vezes são chamadas de \textit{templates}, pois é a forma com o AngularJS 
+    o seu homônimo no padrão \textit{MVC (Model-View-Controller)}. Muitas vezes são chamadas de \textit{templates}, pois é a forma com o AngularJS 
     se refere a elas. São, normalmente, arquivos \textit{HTML} separados, que são chamados e inseridos quando necessário pelo
     AngularJS. É possível utilizar \textit{data binding} nas Views para poder estabelecer uma conexão com a controladora
     e compartilhar informações entre as duas camadas \cite{drifty_ionic_2016}.
@@ -308,7 +310,7 @@ Um projeto Ionic pode ser dividido em cinco camadas, listadas e detalhadas a seg
 
 \subsubsection{Desenvolvimento Ionic} \label{subsubsection:dev-ionic}
 Para o desenvolvimento de aplicações utilizando Ionic, não é necessário nenhum equipamento específico, assim como no desenvolvimento Android.
-É necessário apenas um computador com qualquer \textit{SO}, no entanto, para o desenvolvimento do \textit{app iOS}, ainda é necessário que se possua um computador com o sistema operacional 
+É necessário apenas um computador com qualquer \textit{SO (Sistema Operacional)}, no entanto, para o desenvolvimento do \textit{app iOS}, ainda é necessário que se possua um computador com o sistema operacional 
 \textit{Mac OS} e com o Xcode \cite{drifty_installing_2016}.
 Pode-se utilizar qualquer \textit{IDE} de acordo com as preferências do programador, não há qualquer tipo de recomendação técnica por parte da equipe ou presente na documentação do Ionic.
 A linguagem utilizada é o \textit{JavaScript}, usando ainda \textit{HTML} e \textit{CSS} para criação da interface gráfica.
@@ -352,7 +354,7 @@ Essas ferramentas são listadas a seguir com uma breve explicação do que cada 
      
 \end{itemize}
 
-\section{Comparativo (Nativo x \textit{Cross-platform})} \label{section:comparativo}
+\section{Comparativo (Nativo x Multiplataforma)} \label{section:comparativo}
 
 % LEMBRAR DE POR COMO VANTAGEM DO CROSS: FASTER(INITIAL) SPEED TO MARKET
 % Esse site faz um comparativo muito bom... http://www.ymedialabs.com/hybrid-vs-native-mobile-apps-the-answer-is-clear/
@@ -383,13 +385,13 @@ aplicação, podem ser feitas customizações para adaptar melhor o aplicativo p
 %Dessa forma, a equipe de desenvolvedores pode focar nos requisitos da aplicação sem se preocupar tanto com as diferenças entre plataformas.
 %essa frase depende da referencia ser encontrada
 
-Na Figura~\ref{fig:dev-natxcross} são apresentadas as diferenças no processo de desenvolvimento de um \textit{app} utilizando tecnologias \textit{cross-plataform} e 
+Na Figura~\ref{fig:dev-natxcross} são apresentadas as diferenças no processo de desenvolvimento de um \textit{app} utilizando tecnologias multiplataforma e 
 nativas.
 
 \begin{figure}[H]
   \centering
     \includegraphics[width=0.7\textwidth]{dev-natxcross}
-    \caption[Desenvolvimento \textit{Cross-plataform} x Nativo]{ Desenvolvimento \textit{Cross-plataform} x Nativo. Fonte: Baseado em \cite{corral_ant_2012}}
+    \caption[Desenvolvimento Multiplataforma (acima) e Nativo (abaixo)]{ Desenvolvimento \textit{Cross-plataform} x Nativo. Fonte: Baseado em \cite{corral_ant_2012}}
 	\label{fig:dev-natxcross}
 \end{figure}
 
@@ -432,7 +434,7 @@ As informações contidas na tabela foram reunidas de vários trabalhos encontra
 						\item Não possui acesso a todas as funcionalidades do dispositivo
 						\item Menor performance comparada ao nativo, linguagens interpretadas e compiladas
 						\item Não possui a mesma usabilidade e experiência de uso das aplicações nativas
-						\item Não possui as últimas atualizações lançadas pelo \textit{SO}, pois para cada atualização do \textit{SO}, é preciso ser feita uma atualização no \textit{cross-platform}											
+						\item Não possui as últimas atualizações lançadas pelo \textit{SO}, pois para cada atualização do \textit{SO}, é preciso ser feita uma atualização no multiplataforma											
 					\end{itemize}												
 				}\\ \hline
 		\end{tabular}}
