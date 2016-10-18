@@ -330,3 +330,47 @@ Além disso o aplicativo desenvolvido apresentou aparência e usabilidade semelh
 
 \subsection{Comparação de funcionalidades} \label{subsec:comparacaofuncionalidades}
 
+Foram selecionadas algumas funcionalidades muito comuns em aplicativos para serem comparadas tecnicamente entre iOS, Android e Ionic, com o objetivo de melhorar o embasamento na tomada de decisão entre o desenvolvimento 
+nativo e multiplataforma.
+
+\subsubsection{Login com Facebook} \label{subsubsec:loginfb}
+Independente da plataforma, sempre deve haver um passo anterior ao desenvolvimento desta funcionalidade que é o registro do 
+aplicativo a ser desenvolvido na plataforma para desenvolvedores do Facebook\footnote{\url{https://developers.facebook.com}}. O registro do aplicativo deve ser feito
+para cada plataforma que se deseja atingir, por exemplo, iOS e Android, utilizando para isso, o nome do pacote do aplicativo em cada plataforma.
+%Por exemplo, na criação do aplicativo iOS é definido um \textit{bundle ID}, já no Android é definido um nome do pacote. 
+Com esta estapa concluída, pode-se iniciar o desenvolvimento desta funcionalidade utilizando para isso o \textit{SDK} do Facebook para iOS e Android.
+No caso do Ionic, existem alguns \textit{plugins} que podem ser utilizados, como por exemplo o \textit{\$cordovaOauth}\footnote{\url{http://ngcordova.com/docs/plugins/oauth/}}, disponível dentro do próprio ngCordova, 
+que permite a conexão com vários provedores de serviços, tais como Google, Github, Facebook e Linkedin, por exemplo. Além desse, existem outros meios de se conectar aos provedores, por exemplo, utilizando o 
+Firebase\footnote{\url{https://www.firebase.com}} do Google e o \textit{plugin phonegap-facebook-plugin}\footnote{\url{https://github.com/Wizcorp/phonegap-facebook-plugin.git}}.
+Desta forma, é possível acessar os dados públicos do usuário como nome, e-mail e foto de perfil para realizar um cadastro e \textit{login} no aplicativo.
+Em todas as três plataformas citadas (iOS, Android e Ionic), a complexidade é similar, havendo apenas diferenças inerentes a cada linguagem e plataforma.
+
+Vale ressaltar que o \textit{plugin} do Cordova é genérico para vários provedores, ou seja, com o mesmo código é possível requisitar os dados em vários serviços distintos. Já nos \textit{SDKs} nativos, isso não ocorre.
+Caso haja a necessidade de obtenção de dados de vários provedores, como por exemplo, no caso de \textit{login} com Facebook e Google, na abordagem nativa é preciso utilizar a \textit{SDK} do Facebook para iOS e Android
+e a \textit{SDK} do Google para iOS e Android. O mesmo não ocorre no multiplataforma, pois com o mesmo \textit{plugin} é possível fazer a conexão com vários serviços apenas alterando uma \textit{string}, 
+o que pode tornar o desenvolvimento mais simples que na abordagem nativa.
+
+\subsubsection{Consumo de Web Services e APIs???????} \label{subsubsec:webservices}
+Como o poder computacional dos dispositivos móveis, embora elevado, ainda não é tão grande como o dos servidores, muitos aplicativos utilizam um modelo cliente/servidor, no qual
+as operações mais custosas computacionamente são processadas. Além disso, persistência de dados dificilmente é feita localmente nos dispositivos para evitar perdas de dados e facilitar a migração para outros 
+dispositivos e uso em outras plataformas. Com isso, é necessário que os aplicativos estejam preparados para se comunicarem com \textit{Web Services}. Para realizar essa comunicação, cada plataforma oferece alguns 
+meios nativos como classes e \textit{frameworks}, no entanto, existem \textit{frameworks} de terceiros que são muito utilizados e conhecidos na comunidade de desenvolvedores tanto para comunicar com as \textit{APIs},
+como para lidar com JSON e XML usados na comunicação entre aplicativo/servidor. 
+No iOS é possível realizar essa comunicação utilizando algumas classes nativas do sistema como por exemplo, \textit{NSURL}, \textit{NSData} e \textit{NSJSONSerialization}, informando uma \textit{URL} 
+na qual o \textit{app} irá se conectar para receber ou enviar algum dado para o servidor, no entanto, toda essa comunicação e tratamento das respostas deverá ser feita manualmente. Para facilitar, existem alguns 
+\textit{frameworks} terceiros como \textit{AlamoFire}\footnote{\url{https://github.com/Alamofire/Alamofire}} que abstraem essa comunição e tratamento dos dados tornando o código mais simples e limpo.
+No Android, existe o \textit{Volley}\footnote{\url{https://developer.android.com/training/volley/index.html}}, da própria Google para facilitar a envio e recebimento dos dados.
+
+
+\subsubsection{Extração de metadados de arquivos} \label{subsubsec:extracaometadata}
+Em alguns casos, pode ser necessário a extração de metadados de algum arquivo específico, como uma imagem ou um áudio. No caso de uma imagem, 
+podem ser retiradas informações como local, hora de criação e até mesmo dados climáticos no momento da captura da foto. No caso de um arquivo de áudio, é possível extrair o título do áudio, o autor ou artista, 
+tempo de duração e álbum. Esses metadados podem ser usados para fornecer mais informações pertinentes ao usuário sobre aquilo que ele está usando, ou até mesmo para fazer filtros e buscas mais inteligentes nos dados que o aplicativo manuseia. 
+
+Para extração de metadados no iOS existem classes nativas como a \textit{AVPlayerItem} e \textit{ALAssetsLibrary} para extração de metadados, respectivamente, de audio e imagens. No Android existe a 
+classe \textit{MediaMetadataRetriever}, que lida com a extração de tipos variados de mídia. Em ambos os casos, iOS e Android, a implementação é simples, pois é preciso apenas seguir os métodos das classes 
+utilizando constantes do sistema para indicar qual dado se deseja obter. Por exemplo, se o objetivo é obter a informação de título, no iOS, basta chamar pela \textit{string} ``title''. Já no Android, para o mesmo 
+objetivo, basta chamar pela \textit{string} ``METADATA\_KEY\_TITLE''.
+
+... parecer sobre o Ionic ...
+
