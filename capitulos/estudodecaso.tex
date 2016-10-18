@@ -351,14 +351,24 @@ e a \textit{SDK} do Google para iOS e Android. O mesmo não ocorre no multiplata
 o que pode tornar o desenvolvimento mais simples que na abordagem nativa.
 
 \subsubsection{Consumo de Web Services e APIs???????} \label{subsubsec:webservices}
-Como o poder computacional dos dispositivos móveis, embora elevado, ainda não é tão grande como o dos servidores, muitos aplicativos utilizam um modelo cliente/servidor, no qual
-as operações mais custosas computacionamente são processadas. Além disso, persistência de dados dificilmente é feita localmente nos dispositivos para evitar perdas de dados e facilitar a migração para outros 
-dispositivos e uso em outras plataformas. Com isso, é necessário que os aplicativos estejam preparados para se comunicarem com \textit{Web Services}. Para realizar essa comunicação, cada plataforma oferece alguns 
-meios nativos como classes e \textit{frameworks}, no entanto, existem \textit{frameworks} de terceiros que são muito utilizados e conhecidos na comunidade de desenvolvedores tanto para comunicar com as \textit{APIs},
-como para lidar com JSON e XML usados na comunicação entre aplicativo/servidor. 
+Como o poder computacional dos dispositivos móveis, embora elevado, ainda não é comparável ao dos servidores, muitos aplicativos utilizam um modelo cliente/servidor, no qual
+as operações mais custosas computacionamente são processadas no lado servidor e não no cliente. Além disso, a persistência dos dados da aplicação dificilmente é feita localmente nos dispositivos para evitar 
+perdas de dados no caso de roubos, extravios e danos ao aparelho, facilitar a migração para outros dispositivos e uso em outras plataformas. Com isso, é necessário que os aplicativos estejam preparados para se 
+comunicarem com \textit{Web Services}. Para realizar essa comunicação, cada plataforma oferece alguns meios nativos como classes e \textit{frameworks}, no entanto, existem \textit{frameworks} de terceiros que 
+são muito utilizados e conhecidos na comunidade de desenvolvedores tanto para comunicar com as \textit{APIs}, como para lidar com JSON e XML usados na comunicação entre aplicativo/servidor. 
 No iOS é possível realizar essa comunicação utilizando algumas classes nativas do sistema como por exemplo, \textit{NSURL}, \textit{NSData} e \textit{NSJSONSerialization}, informando uma \textit{URL} 
 na qual o \textit{app} irá se conectar para receber ou enviar algum dado para o servidor, no entanto, toda essa comunicação e tratamento das respostas deverá ser feita manualmente. Para facilitar, existem alguns 
-\textit{frameworks} terceiros como \textit{AlamoFire}\footnote{\url{https://github.com/Alamofire/Alamofire}} que abstraem essa comunição e tratamento dos dados tornando o código mais simples e limpo.
+\textit{frameworks} terceiros como \textit{AlamoFire}\footnote{\url{https://github.com/Alamofire/Alamofire}} que abstraem essa comunição e tratamento dos dados tornando o código mais simples e limpo. Ao utilizá-lo,
+o programador apenas indica a \textit{URL}, o método da requisição (\textit{POST, GET, PUT, DELETE, etc}) e os parâmetros que deseja enviar ao servidor. Após isso, basta receber a resposta na forma de \textit{JSON},
+e utilizar de acordo com as necessidades do aplicativo. Um trecho de código exemplificando o uso do \textit{AlamoFire} é apresentado a seguir.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{codes/ios/alamofire}
+	\caption[Trecho de código utilizando Alamofire - iOS]{Trecho de código utilizando Alamofire - iOS}
+	\label{fig:alamofire-ios}
+\end{figure}
+
 No Android, existe o \textit{Volley}\footnote{\url{https://developer.android.com/training/volley/index.html}}, da própria Google para facilitar a envio e recebimento dos dados.
 
 
