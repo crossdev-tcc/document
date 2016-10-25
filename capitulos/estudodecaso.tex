@@ -331,7 +331,7 @@ Além disso o aplicativo desenvolvido apresentou aparência e usabilidade semelh
 \subsection{Comparação de funcionalidades} \label{subsec:comparacaofuncionalidades}
 
 Foram selecionadas algumas funcionalidades muito comuns em aplicativos para serem comparadas tecnicamente entre iOS, Android e Ionic, com o objetivo de melhorar o embasamento na tomada de decisão entre o desenvolvimento 
-nativo e multiplataforma. São apresentados trechos de códigos comentados para facilitar o entendimento das funcionalidades.
+nativo e multiplataforma. São apresentados trechos de códigos minerados de repositórios públicos e criados pelos autores, comentados para facilitar o entendimento das funcionalidades.
 
 \subsubsection{Login com Facebook} \label{subsubsec:loginfb}
 Independente da plataforma, sempre deve haver um passo anterior ao desenvolvimento desta funcionalidade que é o registro do 
@@ -440,3 +440,26 @@ A seguir são apresentados trechos de códigos implementando a extração de met
 
 ... parecer sobre o Ionic ...
 
+\subsubsection{Detecção de força do toque} \label{subsubsec:3dtouch}
+Em 2015, alguns dispositivos móveis foram comercializados com uma tecnologia de detecção de pressão nas telas sensíveis ao toque. Primeiramente pela companhia chinesa Huawei e depois pela Apple, trata-se de um recurso 
+capaz de identificar a quantidade de força que o usuário exerceu em um toque, o que abre o leque de possibilidades para novas funcionalidades nos aplicativos desenvolvidos. 
+No iOS, é chamado de \textit{3DTouch} e por enquanto está disponível nos modelos de iPhone 6S ou superior. No Apple Watch e no novo MacBook, assim como no Mate S, da Huawei, é chamado apenas de \textit{Force Touch}, 
+nome original da tecnologia. 
+Vale ressaltar que o Android já possui a capacidade de ler a área de toque por meio de \textit{software}, no entanto, o \textit{Force Touch} não é apenas a leitura de área de toque, mas sim da pressão do toque,
+o que envolve \textit{hardware} e \textit{software}.
+
+A seguir são apresentados trechos de código iOS e Ionic para utilização do \textit{3DTouch}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{codes/ios/3dtouch}
+	\caption[Trecho de código para leitura de pressão no toque - iOS]{Trecho de código para leitura de pressão no toque - iOS}
+	\label{fig:3dtouch-ios}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{codes/ionic/forcetouch}
+	\caption[Trecho de código para leitura de pressão no toque - Ionic]{Trecho de código para leitura de pressão no toque - Ionic}
+	\label{fig:forcetouch-ionic}
+\end{figure}
