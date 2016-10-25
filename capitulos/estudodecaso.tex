@@ -331,7 +331,7 @@ Além disso o aplicativo desenvolvido apresentou aparência e usabilidade semelh
 \subsection{Comparação de funcionalidades} \label{subsec:comparacaofuncionalidades}
 
 Foram selecionadas algumas funcionalidades muito comuns em aplicativos para serem comparadas tecnicamente entre iOS, Android e Ionic, com o objetivo de melhorar o embasamento na tomada de decisão entre o desenvolvimento 
-nativo e multiplataforma.
+nativo e multiplataforma. São apresentados trechos de códigos comentados para facilitar o entendimento das funcionalidades.
 
 \subsubsection{Login com Facebook} \label{subsubsec:loginfb}
 Independente da plataforma, sempre deve haver um passo anterior ao desenvolvimento desta funcionalidade que é o registro do 
@@ -351,11 +351,19 @@ Em todas as três plataformas citadas (iOS, Android e Ionic), a complexidade é 
 Vale ressaltar, que o \textit{login} com redes sociais, nada mais é do que a obtenção dos dados do usuário de uma plataforma terceira por meio do protocolo \textit{OAuth}, 
 ou seja, não são criadas sessões a partir das plataformas terceiras, apenas os dados do usuário na outra plataforma são acessados para que não haja a necessidade do usuário informá-los novamente. A partir dos dados 
 obtidos, o aplicativo se encarrega de realizar o cadastro e \textit{login} do usuário da forma como melhor convier. A seguir são apresentados dois trechos de código no iOS e no Ionic para \textit{login} com o Facebook. 
+No iOS foi utilizado o \textit{SDK} nativo do Facebook, já no Ionic, foi utilizado o \textit{Firebase} 
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{codes/ios/loginfb}
 	\caption[Trecho de código realizando requisição de dados do Facebook - iOS]{Trecho de código realizando requisição de dados do Facebook - iOS}
+	\label{fig:loginfb-ios}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{codes/ionic/loginfb}
+	\caption[Trecho de código realizando requisição de dados do Facebook - Ionic]{Trecho de código realizando requisição de dados do Facebook - Ionic}
 	\label{fig:loginfb-ios}
 \end{figure}
 
@@ -392,7 +400,7 @@ resposta, para só então ser criada uma requisição que permite o envio de dad
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{codes/android/volley}
-	\caption[Trecho de código utilizando Volley - Andrdoid]{Trecho de código utilizando Volley - Andrdoid}
+	\caption[Trecho de código utilizando Volley - Android]{Trecho de código utilizando Volley - Android}
 	\label{fig:volley-android}
 \end{figure}
 
@@ -407,6 +415,28 @@ Para extração de metadados no iOS existem classes nativas como a \textit{AVPla
 classe \textit{MediaMetadataRetriever}, que lida com a extração de tipos variados de mídia. Em ambos os casos, iOS e Android, a implementação é simples, pois é preciso apenas seguir os métodos das classes 
 utilizando constantes do sistema para indicar qual dado se deseja obter. Por exemplo, se o objetivo é obter a informação de título, no iOS, basta chamar pela \textit{string} ``title''. Já no Android, para o mesmo 
 objetivo, basta chamar pela \textit{string} ``METADATA\_KEY\_TITLE''.
+
+A seguir são apresentados trechos de códigos implementando a extração de metadados no iOS e no Android.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{codes/ios/metadata_audio}
+	\caption[Trecho de código para extrair metadados de áudio - iOS]{Trecho de código para extrair metadados de áudio - iOS}
+	\label{fig:metadata_audio-ios}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{codes/android/metadata_midia}
+	\caption[Trecho de código para extrair metadados de mídia - Android]{Trecho de código para extrair metadados de mídia - Android}
+	\label{fig:metadata_midia-android}
+\end{figure}
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[width=1\textwidth]{codes/ios/metadata_video}
+%	\caption[Trecho de código para extrair metadados de vídeo - iOS]{Trecho de código para extrair metadados de vídeo - iOS}
+%	\label{fig:metadata_video-ios}
+%\end{figure}
 
 ... parecer sobre o Ionic ...
 
