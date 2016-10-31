@@ -489,33 +489,9 @@ para ter algumas opções antes de entrar no aplicativo.
 \footnotetext{\url{https://github.com/ashteya/ionic-tutorial-quickactions}}
 
 Em ambos os casos a implementação é simples apenas devendo-se considerar as diferenças entre plataformas e linguagens, no entanto, no caso do Ionic é necessária a utilização do 
-\textit{plugin cordova-plugin-3dtouch}\footnote{\url{https://github.com/EddyVerbruggen/cordova-plugin-3dtouch}}.
+\textit{plugin cordova-plugin-3dtouch}\footnote{\url{https://github.com/EddyVerbruggen/cordova-plugin-3dtouch}}. 
 
-\subsubsection{\textit{Smartwatches}} \label{subsubsec:facial} 
-
-Além de \textit{smartphones} e \textit{tablets}, estão começando a ficar populares os dispositivos \textit{vestíveis} como relógios inteligentes. Isso implica em mais plataformas para dominar 
-e mais possibilidades de aplicativos e funcionalidades para desenvolver. Um dos \textit{smartwatches} mais populares, atualmente, é o Apple Watch. Lançado com um sistema operacional próprio derivado do iOS, o WatchOS, 
-por enquanto, funciona como uma extensão dos aplicativos criados para iPhone, ou seja, adiciona funcionalidades de rápida interação ao relógio para que não seja necessário interagir com o celular a todo momento.
-
-Caso haja a necessidade de criar um aplicativo que suporte o Apple Watch, pode-se optar por desenvolver multiplataforma também, pois já existem \textit{plugins}
-\footnote{\url{https://github.com/leecrossley/cordova-plugin-apple-watch}} do Cordova para realizar a integração entre o aplicativo multiplataforma e a extensão para Apple Watch. No entanto, o \textit{plugin} 
-citado só funciona enquanto o aplicativo no iPhone está rodando. Quando, por algum motivo, o aplicativo deixa de rodar o \textit{plugin} não consegue mais se comunicar com o relógio podendo prejudicar a experiência 
-de uso do aplicativo. Com isso, pode não ser uma boa ideia utilizar funcionalidades que precisam de atualização em tempo real, por exemplo, que recebe dados de um servidor, pois se o aplicativo no iPhone não 
-estiver rodando, o relógio não conseguirá se comunicar e pegar os dados mais recentes, fazendo com 
-que apresente dados desatualizados, prejudicando a experiência de uso.
-
-Vale ressaltar que o aplicativo no Apple Watch deve ser feito nativamente, diretamente no Xcode! O \textit{plugin} apenas fornece um meio para que o \textit{app} multiplataforma do iPhone possa transmitir e receber 
-dados do \textit{app} do relógio, mas não é possível criar a interface e controladoras do relógio via multiplataforma, pois o Apple Watch não possui um navegador (\textit{WebView}) para interpretar o JavaScript assim 
-como o iPhone. Então, deve ser feito o aplicativo utilizando Cordova e Ionic, por exemplo, para o iPhone, e depois criar o \textit{app} no Xcode para Apple Watch e então utilizar um \textit{plugin} para realizar a 
-comunicação entre os dois aplicativos.  
-
-Se o aplicativo planeja utilizar muitos recursos do Apple Watch, como frequencímetro, pedômetro e acelerômetro, como aplicativos voltados para a área da saúde por exemplo, pode ser melhor desenvolver nativamente,
-pois o foco não estará sendo em desenvolver o aplicativo para várias plataformas, mas sim para um dispositivo específico. Com isso, pode-se aproveitar melhor todos os recursos do relógio e todos os benefícios da integração
-do mesmo com o iPhone.
-
-Caso o aplicativo já exista, ainda que seja multiplataforma, é possível desenvolver o aplicativo para o relógio, no entanto, a comunicação entre o iPhone e o relógio não será perfeita no multiplataforma como é no nativo, 
-o que implica em limitar as funcionalidades do aplicativo no relógio para não prejudicar a experiência do usuário, podendo até mesmo fazer com que não valha a pena investir tempo e esforço na criação do aplicativo para
-relógio. Cabe ressaltar que também já existem \textit{plugins}\footnote{\url{https://github.com/tgardner/cordova-androidwear}} do Cordova para Android Wear, os \textit{smartwatches} que rodam Android. 
+\subsubsection{Touch ID} \label{subsubsec:touchid}
 
 \subsubsection{Envio de e-mail e SMS} \label{subsubsec:emailsms}
 Cada plataforma possui seus próprios \textit{frameworks} para incluir dentro do aplicativo a ser desenvolvido o mecanismo de envio de \textit{e-mails} ou mensagens de texto(\textit{SMS}), muito utilizados para compartilhar 
@@ -539,17 +515,56 @@ quanto na multiplataforma o desenvolvimento é simples diferenciando apenas na l
 
 \subsubsection{\textit{Widgets}} \label{subsubsec:widgets}
 
-\subsubsection{Siri} \label{subsubsec:siri}
-
 \subsubsection{Acessibilidade} \label{subsubsec:acessibilidade}
-
-\subsubsection{Touch ID} \label{subsubsec:touchid}
 
 \subsubsection{Câmeras customizadas} \label{subsubsec:customcamera}
 
 \subsubsection{Reconhecimento facial} \label{subsubsec:facial}
-dizer que isso eh possivel nativamente usando tais e tais apis e multiplataforma usando adobe air
+dizer que isso eh possivel nativamente usando tais e tais apis e multiplataforma usando adobe air 
 se quiser fazer em multiplataforma tbm eh possivel
+
+\subsubsection{Siri} \label{subsubsec:siri}
+Os dispositivos móveis, têm se tornado cada vez mais inteligentes e úteis para seus usuários. Funcionam como computadores, agendas, calendários, máquinas fotográficas, etc. Para atenderem ainda mais às necessidades de 
+seus usuários, os dispositivos possuem em sua maioria inteligências artificiais, na forma de assistentes pessoais, criadas para auxiliar no uso dos \textit{smartphones, smartwatches} e \textit{smart TVs}. 
+Na Apple, a assistente é conhecida como Siri, no Windows é a Cortana e para o Android existem alguns aplicativos de terceiros que tentam criar uma assistente pessoal. O mais conhecido é Google Now, da própria Google, 
+embora nesse caso ele não seja uma assitente pessoal, pois não possui traços de personalidade, ele apenas reconhece voz e responde a perguntas com muita eficiência. 
+
+Com a Siri ou Cortana é possível controlar o dispositivo, criando eventos, alarmes, lembretes, abrindo aplicativos e controlando eletrodomésticos, por exemplo, e fazer buscas variadas na \textit{internet}, com o Google Now 
+apenas essa última opção está disponível. Durante a execução deste trabalho, foi lançado o primeiro celular inteiramente feito pela Google chamado de Pixel, que conta com o Google Assistant, uma evolução do Google Now 
+para se tornar uma assistente pessoal. Com ele será possível também controlar o dispositivo assim como as outras assistentes de outras plataformas fazem. 
+
+Durante a execução deste trabalho, a Apple lançou juntamente com a nova versão do sistema operacional, iOS 10, a \textit{API} da Siri para que aplicativos de terceiros possam interagir com a assistente pessoal tornando 
+a experiência de uso dos aplicativos ainda mais intuitiva e prática. Ainda não há \textit{plugins} do Cordova que permitam o uso desse recurso, ou seja, caso haja a necessidade de utilizar a Siri, o multiplataforma ainda 
+não é um opção viável. Vale ressaltar que existem alguns \textit{plugins} para utilizar o reconhecimento de voz e transcrever em texto\footnote{\url{https://github.com/api-ai/api-ai-cordova}} o que foi dito, no entanto, 
+isso não é o mesmo que interagir com a Siri. O Google Assistant ainda não está disponível em outros dispositivos além do Pixel da Google e não existem \textit{SDK} nativo ou \textit{plugins} de terceiros para utilizá-lo. 
+
+Com isso, por enquanto, ainda não é possível desenvolver aplicativos multiplataforma integrados com as assistentes pessoais mais utilizadas.
+
+\subsubsection{\textit{Smartwatches}} \label{subsubsec:facial}
+
+Além de \textit{smartphones} e \textit{tablets}, estão começando a ficar populares os dispositivos \textit{vestíveis} como relógios inteligentes. Isso implica em mais plataformas para dominar 
+e mais possibilidades de aplicativos e funcionalidades para desenvolver. Um dos \textit{smartwatches} mais populares, atualmente, é o Apple Watch. Lançado com um sistema operacional próprio derivado do iOS, o WatchOS, 
+por enquanto, funciona como uma extensão dos aplicativos criados para iPhone, ou seja, adiciona funcionalidades de rápida interação ao relógio para que não seja necessário interagir com o celular a todo momento.
+
+Caso haja a necessidade de criar um aplicativo que suporte o Apple Watch, pode-se optar por desenvolver multiplataforma também, pois já existem \textit{plugins}
+\footnote{\url{https://github.com/leecrossley/cordova-plugin-apple-watch}} do Cordova para realizar a integração entre o aplicativo multiplataforma e a extensão para Apple Watch. No entanto, o \textit{plugin} 
+citado só funciona enquanto o aplicativo no iPhone está rodando. Quando, por algum motivo, o aplicativo deixa de rodar o \textit{plugin} não consegue mais se comunicar com o relógio podendo prejudicar a experiência 
+de uso do aplicativo. Com isso, pode não ser uma boa ideia utilizar funcionalidades que precisam de atualização em tempo real, por exemplo, que recebe dados de um servidor, pois se o aplicativo no iPhone não 
+estiver rodando, o relógio não conseguirá se comunicar e pegar os dados mais recentes, fazendo com 
+que apresente dados desatualizados, prejudicando a experiência de uso.
+
+Vale ressaltar que o aplicativo no Apple Watch deve ser feito nativamente, diretamente no Xcode! O \textit{plugin} apenas fornece um meio para que o \textit{app} multiplataforma do iPhone possa transmitir e receber 
+dados do \textit{app} do relógio, mas não é possível criar a interface e controladoras do relógio via multiplataforma, pois o Apple Watch não possui um navegador (\textit{WebView}) para interpretar o JavaScript assim 
+como o iPhone. Então, deve ser feito o aplicativo utilizando Cordova e Ionic, por exemplo, para o iPhone, e depois criar o \textit{app} no Xcode para Apple Watch e então utilizar um \textit{plugin} para realizar a 
+comunicação entre os dois aplicativos.  
+
+Se o aplicativo planeja utilizar muitos recursos do Apple Watch, como frequencímetro, pedômetro e acelerômetro, como aplicativos voltados para a área da saúde por exemplo, pode ser melhor desenvolver nativamente,
+pois o foco não estará sendo em desenvolver o aplicativo para várias plataformas, mas sim para um dispositivo específico. Com isso, pode-se aproveitar melhor todos os recursos do relógio e todos os benefícios da integração
+do mesmo com o iPhone.
+
+Caso o aplicativo já exista, ainda que seja multiplataforma, é possível desenvolver o aplicativo para o relógio, no entanto, a comunicação entre o iPhone e o relógio não será perfeita no multiplataforma como é no nativo, 
+o que implica em limitar as funcionalidades do aplicativo no relógio para não prejudicar a experiência do usuário, podendo até mesmo fazer com que não valha a pena investir tempo e esforço na criação do aplicativo para
+relógio. Cabe ressaltar que também já existem \textit{plugins}\footnote{\url{https://github.com/tgardner/cordova-androidwear}} do Cordova para Android Wear, os \textit{smartwatches} que rodam Android.
 
 \subsubsection{\textit{Smart TV}} \label{subsubsec:tv}
 Assim como os \textit{smartwatches}, também existem outros dispositivos que estão ficando cada vez mais inteligentes e conectados à \textit{internet}, como por exemplo, os aparelhos de televisão. Alguns já vêm
