@@ -514,7 +514,7 @@ do mesmo com o iPhone.
 
 Caso o aplicativo já exista, ainda que seja multiplataforma, é possível desenvolver o aplicativo para o relógio, no entanto, a comunicação entre o iPhone e o relógio não será perfeita no multiplataforma como é no nativo, 
 o que implica em limitar as funcionalidades do aplicativo no relógio para não prejudicar a experiência do usuário, podendo até mesmo fazer com que não valha a pena investir tempo e esforço na criação do aplicativo para
-relógio. Cabe ressaltar que também já existem \textit{plugins}\footnote{\url{https://github.com/tgardner/cordova-androidwear}} do Cordova para Android Wear, os \textit{smartwatches} que rodam Android.
+relógio. Cabe ressaltar que também já existem \textit{plugins}\footnote{\url{https://github.com/tgardner/cordova-androidwear}} do Cordova para Android Wear, os \textit{smartwatches} que rodam Android. 
 
 \subsubsection{Envio de e-mail e SMS} \label{subsubsec:emailsms}
 
@@ -532,3 +532,22 @@ relógio. Cabe ressaltar que também já existem \textit{plugins}\footnote{\url{
 \subsubsection{Reconhecimento facial} \label{subsubsec:facial}
 dizer que isso eh possivel nativamente usando tais e tais apis e multiplataforma usando adobe air
 se quiser fazer em multiplataforma tbm eh possivel
+
+
+\subsubsection{\textit{Smart TV}} \label{subsubsec:tv}
+Assim como os \textit{smartwatches}, também existem outros dispositivos que estão ficando cada vez mais inteligentes e conectados à \textit{internet}, como por exemplo, os aparelhos de televisão. Alguns já vêm
+com um sistema inteligente de fábrica, no entanto, é possível acoplar centrais multimídia ao televisor por meio de cabos \textit{HDMI} e à \textit{internet} por meio de \textit{Wi-fi} ou conexão \textit{ethernet}, 
+deixando-os mais inteligentes e úteis. Alguns exemplos comerciais são a Apple TV, da Apple, e o Chrome Cast do Google. É possível desenvolver aplicativos para os televisores, aproveitando ao máximo os recursos de 
+áudio e vídeo do aparelho, tornando a experiência com televisão ainda mais imersiva e prática. 
+
+Cada plataforma possui sua própria \textit{SDK} para desenvolvimento dos aplicativos para TV e embora já existam \textit{plugins} do Cordova para lidar com o desenvolvimento de aplicativos para Apple TV e Chrome Cast, 
+não há motivos suficientes para utilizá-los, pois o aplicativo criado não será portado para ambas as plataformas (iOS e Android) e para cada nova funcionalidade que cada TV desenvolver, deverá ser desenvolvido o 
+\textit{plugin} para utilizá-la, ao passo que no desenvolvimento nativo, será possível utilizar o máximo de cada plataforma sempre, respeitando sempre os guias de usabilidade de cada uma. 
+
+Caso a equipe de desenvolvimento já possua conhecimentos em \textit{HTML, CSS, JavaScript} e \textit{Cordova}, pode ser vantajoso desenvolver o aplicativo multiplataforma, considerando o tempo de densenvolvimento, por 
+mais que tenha que ser feito em dois projetos distintos, um para iOS e um para Android, pois a \textit{expertise} da equipe pode compensar. No entanto, ainda será necessário possuir conta de desenvolvedor, um computador com 
+MacOS e Xcode para subir o aplicativo iOS para a loja, por isso caso já haja alguém com experiência no ambiente e plataforma da Apple, desenvolver nativamente seria mais recomendado nas atuais circunstâncias. 
+
+Assim como os \textit{smartwatches}, as TVs possuem guias de estilo e usabilidade muito diferentes dos dispositivos móveis, pois possuem tamanhos de telas e recursos de \textit{hardware} e \textit{software} completamente 
+distintos, ou seja, o desenvolvimento multiplataforma está cada vez mais difícil por ter que, cada vez mais, abarcar um gama de dispositivos muitos diferentes, variando em tamanhos que vão de uma polegada e meia a
+até mais de 100 polegadas e sistemas operacionais, com \textit{SDKs}, \textit{frameworks}, \textit{hardware} e recursos próprios de cada plataforma. 
