@@ -330,8 +330,11 @@ Além disso o aplicativo desenvolvido apresentou aparência e usabilidade semelh
 
 \subsection{Comparação de funcionalidades} \label{subsec:comparacaofuncionalidades}
 
-Foram selecionadas algumas funcionalidades muito comuns em aplicativos para serem comparadas tecnicamente entre iOS, Android e Ionic, com o objetivo de melhorar o embasamento na tomada de decisão entre o desenvolvimento 
-nativo e multiplataforma. São apresentados trechos de códigos minerados de repositórios públicos e criados pelos autores, comentados para facilitar o entendimento das funcionalidades.
+Foram selecionadas algumas funcionalidades muito comuns em aplicativos para serem comparadas tecnicamente entre iOS, Android e Ionic, com o objetivo de melhorar o embasamento para a tomada de decisão entre o desenvolvimento 
+nativo e multiplataforma. Importante ressaltar que para o aplicativo Ionic utilizar os recursos do celular, tanto \textit{hardware} quanto \textit{software}, é sempre necessária a utilização de 
+\textit{plugins} do Cordova, ou seja, sempre que um novo recurso for desenvolvido para um dispositivo, há um tempo de espera para a criação do \textit{plugin} necessário para utilizar o novo recurso, 
+e se o \textit{plugin} for descontinuado, eventualmente poderá quebrar a aplicação e prejudicar a experiência do usuário. A seguir são apresentados trechos de códigos, minerados de repositórios públicos e criados 
+pelos autores, comentados para facilitar o entendimento das funcionalidades. 
 
 \subsubsection{Login com Facebook} \label{subsubsec:loginfb}
 Independente da plataforma, sempre deve haver um passo anterior ao desenvolvimento desta funcionalidade que é o registro do 
@@ -344,28 +347,29 @@ No caso do Ionic, existem alguns \textit{plugins} que podem ser utilizados, como
 que permite a conexão com vários provedores de serviços, tais como Google, Github, Facebook e Linkedin, por exemplo. 
 
 Além desse, existem outros meios de se conectar aos provedores, por exemplo, utilizando o 
-Firebase\footnote{\url{https://www.firebase.com}} do Google e o \textit{plugin phonegap-facebook-plugin}\footnote{\url{https://github.com/Wizcorp/phonegap-facebook-plugin.git}}.
-Desta forma, é possível acessar os dados públicos do usuário como nome, e-mail e foto de perfil para realizar um cadastro e \textit{login} no aplicativo.
+Firebase\footnote{\url{https://www.firebase.com}} do Google. Desta forma, é possível acessar os dados públicos do usuário como nome, e-mail e foto de perfil para realizar um cadastro e \textit{login} no aplicativo.
 Em todas as três plataformas citadas (iOS, Android e Ionic), a complexidade é similar, havendo apenas diferenças inerentes a cada linguagem e plataforma. 
 
 Vale ressaltar, que o \textit{login} com redes sociais, nada mais é do que a obtenção dos dados do usuário de uma plataforma terceira por meio do protocolo \textit{OAuth}, 
 ou seja, não são criadas sessões a partir das plataformas terceiras, apenas os dados do usuário na outra plataforma são acessados para que não haja a necessidade do usuário informá-los novamente. A partir dos dados 
-obtidos, o aplicativo se encarrega de realizar o cadastro e \textit{login} do usuário da forma como melhor convier. A seguir são apresentados dois trechos de código no iOS e no Ionic para \textit{login} com o Facebook. 
-No iOS foi utilizado o \textit{SDK} nativo do Facebook, já no Ionic, foi utilizado o \textit{Firebase} 
+obtidos, o aplicativo se encarrega de realizar o cadastro e \textit{login} do usuário de acordo com as regras de negócio do aplicativo. 
+A seguir são apresentados dois trechos de código no iOS e no Ionic para \textit{login} com o Facebook. No iOS foi utilizado o \textit{SDK} nativo do Facebook, já no Ionic, foi utilizado o \textit{Firebase}. 
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{codes/ios/loginfb}
-	\caption[Trecho de código realizando requisição de dados do Facebook - iOS]{Trecho de código realizando requisição de dados do Facebook - iOS}
+	\caption[Requisição de dados do Facebook no iOS]{Requisição de dados do Facebook no iOS}
 	\label{fig:loginfb-ios}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{codes/ionic/loginfb}
-	\caption[Trecho de código realizando requisição de dados do Facebook - Ionic]{Trecho de código realizando requisição de dados do Facebook - Ionic}
+	\caption[Requisição de dados do Facebook no Ionic]{Requisição de dados do Facebook no Ionic. Fonte: Baseado em Github\protect\footnotemark}
 	\label{fig:loginfb-ios}
 \end{figure}
+
+\footnotetext{\url{https://github.com/fga-gpp-mds/2016.1-Partiu_frontend}}
 
 Vale ressaltar que o \textit{plugin} do Cordova é genérico para vários provedores, ou seja, com o mesmo código é possível requisitar os dados em vários serviços distintos. Já nos \textit{SDKs} nativos, isso não ocorre.
 Caso haja a necessidade de obtenção de dados de vários provedores, como por exemplo, no caso de \textit{login} com Facebook e Google, na abordagem nativa é preciso utilizar a \textit{SDK} do Facebook para iOS e Android
@@ -375,41 +379,54 @@ o que pode tornar o desenvolvimento mais simples que na abordagem nativa.
 \subsubsection{Consumo de Web Services} \label{subsubsec:webservices}
 Como o poder computacional dos dispositivos móveis, embora elevado, ainda não é comparável ao dos servidores, muitos aplicativos utilizam um modelo cliente/servidor, no qual
 as operações mais custosas computacionamente são processadas no lado servidor e não no cliente. Além disso, a persistência dos dados da aplicação dificilmente é feita localmente nos dispositivos para evitar 
-perdas de dados no caso de roubos, extravios ou danos ao aparelho, facilitar a migração para outros dispositivos e uso em outras plataformas. Com isso, é necessário que os aplicativos estejam preparados para se 
+perdas de dados no caso de roubos, extravios ou danos ao aparelho, facilitar a migração para outros dispositivos e o uso em outras plataformas. Com isso, é necessário que os aplicativos estejam preparados para se 
 comunicarem com \textit{Web Services}. Para realizar essa comunicação, cada plataforma oferece alguns meios nativos como classes e \textit{frameworks}, no entanto, existem \textit{frameworks} de terceiros que 
 são muito utilizados e conhecidos na comunidade de desenvolvedores tanto para comunicar com os \textit{Web Services}, como para lidar com JSON e XML usados na comunicação entre aplicativo/servidor. 
+
+Para realizar essa atividade no Ionic, o AngularJS dispõe do \textit{plugin ngResource} muito conhecido e utilizado para interação com \textit{web services}. Ele trás o objeto \textit{\$resource} que recebe uma 
+\textit{URL} e parâmetros da requisição de maneira muito similar à abordagem nativa, apenas distinguindo em termos de linguagem e ambiente de programação. Assim como nas abordagens nativas, também é possível receber 
+o retorno da requisição e tratá-lo dentro de uma \textit{\$promise}, cujo modo de uso se assemelha ao \textit{completion} do iOS e ao \textit{Listener} do Android. A Figura~\ref{fig:resource-ionic} apresenta um trecho 
+de código implementando o consumo de um \textit{web service} privado no Ionic.
+
 No iOS é possível realizar essa comunicação utilizando algumas classes nativas do sistema como por exemplo, \textit{NSURL}, \textit{NSData} e \textit{NSJSONSerialization}, informando uma \textit{URL} 
 na qual o \textit{app} irá se conectar para receber ou enviar algum dado para o servidor, no entanto, toda essa comunicação e tratamento das respostas deverá ser feita manualmente. Para facilitar, existem alguns 
 \textit{frameworks} terceiros como \textit{AlamoFire}\footnote{\url{https://github.com/Alamofire/Alamofire}} e \textit{SwiftyJSON}\footnote{\url{https://github.com/SwiftyJSON/SwiftyJSON}} 
 que abstraem essa comunição e tratamento dos dados em JSON, respectivamente, tornando o código mais simples e limpo. Ao utilizá-lo, o programador apenas indica a \textit{URL}, o método da requisição 
 (\textit{POST, GET, PUT, DELETE, etc}) e os parâmetros que deseja enviar ao servidor. Após isso, basta receber a resposta na forma de \textit{JSON} dentro de um \textit{completion} do \textit{Alamofire}, 
-e utilizar os dados de acordo com as necessidades do aplicativo. Um trecho de código exemplificando o uso do \textit{AlamoFire} e \textit{SwiftyJSON} é apresentado a seguir.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=1\textwidth]{codes/ios/alamofire}
-	\caption[Trecho de código utilizando Alamofire e SwiftyJSON - iOS]{Trecho de código utilizando Alamofire e SwiftyJSON - iOS}
-	\label{fig:alamofire-ios}
-\end{figure}
+e utilizar os dados de acordo com as necessidades do aplicativo. Um trecho de código exemplificando o uso do \textit{AlamoFire} e \textit{SwiftyJSON} é apresentado na Figura~\ref{fig:alamofire-ios}.
 
 No Android, existe o \textit{Volley}\footnote{\url{https://developer.android.com/training/volley/index.html}}, da própria Google para facilitar a envio e recebimento dos dados. Assim como no iOS, define-se o método da 
 requisição, os parâmetros a serem enviados e dentro de um \textit{Listener} receber a resposta do servidor e tratar de acordo com as necessidades do aplicativo. Vale ressaltar que o \textit{Volley}, no momento da realização
 deste trabalho, não é nativamente preparado para enviar dados, apenas receber, de maneira que deve-se criar uma classe customizada de requisição que adiciona os parâmetros a serem enviados na requisição e faz o tratamento da
-resposta, para só então ser criada uma requisição que permite o envio de dados. No exemplo a seguir a classe criada chama-se \textit{CustomJSONObjectRequest} e sua implementação não se encontra na imagem. 
+resposta, para só então ser criada uma requisição que permite o envio de dados. No exemplo da Figura~\ref{fig:volley-android}, a classe criada chama-se \textit{CustomJSONObjectRequest} e sua implementação não se encontra 
+na imagem.
 
 \begin{figure}[H]
 	\centering
+	\includegraphics[width=1\textwidth]{codes/ionic/resource}
+	\caption[Requisição utilizando o ngResource no Ionic]{Requisição utilizando o ngResource no Ionic. Baseado em Github\protect\footnotemark}
+	\label{fig:resource-ionic}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{codes/ios/alamofire}
+	\caption[Requisição utilizando Alamofire e SwiftyJSON no iOS]{Requisição utilizando Alamofire e SwiftyJSON no iOS}
+	\label{fig:alamofire-ios}
+\end{figure} 
+\begin{figure}[H]
+	\centering
 	\includegraphics[width=1\textwidth]{codes/android/volley}
-	\caption[Trecho de código utilizando Volley - Android]{Trecho de código utilizando Volley - Android}
+	\caption[Requisição utilizando Volley no Android]{Requisição utilizando Volley no Android}
 	\label{fig:volley-android}
 \end{figure}
 
-... parecer sobre Ionic ...
+\footnotetext{\url{https://github.com/fga-gpp-mds/2016.1-Partiu_frontend}}
 
 \subsubsection{Extração de metadados de arquivos} \label{subsubsec:extracaometadata}
-Em alguns casos, pode ser necessário a extração de metadados de algum arquivo específico, como uma imagem ou um áudio. No caso de uma imagem, 
-podem ser retiradas informações como local, hora de criação e até mesmo dados climáticos no momento da captura da foto. No caso de um arquivo de áudio, é possível extrair o título do áudio, o autor ou artista, 
-tempo de duração e álbum. Esses metadados podem ser usados para fornecer mais informações pertinentes ao usuário sobre aquilo que ele está usando, ou até mesmo para fazer filtros e buscas mais inteligentes nos dados que o aplicativo manuseia. 
+Em alguns casos, pode ser necessário a extração de metadados de algum arquivo específico, como uma imagem ou um áudio. No caso de uma imagem, podem ser retiradas informações como local, hora de criação e até mesmo 
+dados climáticos no momento da captura da foto. No caso de um arquivo de áudio, é possível extrair o título do áudio, o autor ou artista, tempo de duração e álbum. Esses metadados podem ser usados para 
+melhorar a experiência de uso do aplicativo fornecendo sugestões e funcionalidades mais próximas das necessidades reais do usuário, ou até mesmo para fazer filtros e buscas mais inteligentes nos dados que o 
+aplicativo manuseia. 
 
 Para extração de metadados no iOS existem classes nativas como a \textit{AVPlayerItem} e \textit{ALAssetsLibrary} para extração de metadados, respectivamente, de audio e imagens. No Android existe a 
 classe \textit{MediaMetadataRetriever}, que lida com a extração de tipos variados de mídia. Em ambos os casos, iOS e Android, a implementação é simples, pois é preciso apenas seguir os métodos das classes 
@@ -421,16 +438,18 @@ A seguir são apresentados trechos de códigos implementando a extração de met
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{codes/ios/metadata_audio}
-	\caption[Trecho de código para extrair metadados de áudio - iOS]{Trecho de código para extrair metadados de áudio - iOS}
+	\caption[Extração de metadados de um arquivo áudio no iOS]{Extração de metadados de um arquivo áudio no iOS}
 	\label{fig:metadata_audio-ios}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{codes/android/metadata_midia}
-	\caption[Trecho de código para extrair metadados de mídia - Android]{Trecho de código para extrair metadados de mídia - Android}
+	\caption[Extração de metadados de um arquivo áudio no Android]{Extração de metadados de um arquivo áudio no Android. Baseado em Github\protect\footnotemark}
 	\label{fig:metadata_midia-android}
 \end{figure}
+
+\footnotetext{\url{https://github.com/adorilson/MMUnB}}
 %\begin{figure}[H]
 %	\centering
 %	\includegraphics[width=1\textwidth]{codes/ios/metadata_video}
@@ -438,59 +457,77 @@ A seguir são apresentados trechos de códigos implementando a extração de met
 %	\label{fig:metadata_video-ios}
 %\end{figure}
 
-... parecer sobre o Ionic ...
+\textcolor{red}{... parecer sobre Ionic ...}
 
 \subsubsection{Detecção de força do toque} \label{subsubsec:forcetouch}
 Em 2015, alguns dispositivos móveis foram comercializados com uma tecnologia de detecção de pressão nas telas sensíveis ao toque. Primeiramente pela companhia chinesa Huawei e depois pela Apple, trata-se de um recurso 
 capaz de identificar a quantidade de força que o usuário exerceu em um toque, o que abre o leque de possibilidades para novas funcionalidades nos aplicativos desenvolvidos. 
 No iOS, é chamado de \textit{3DTouch} e por enquanto está disponível nos modelos de iPhone 6S ou superior. No Apple Watch e no novo MacBook, assim como no Mate S, da Huawei, é chamado apenas de \textit{Force Touch}, 
 nome original da tecnologia. 
-Vale ressaltar que o Android já possui a capacidade de ler a área de toque por meio de \textit{software}, no entanto, o \textit{Force Touch} não é apenas a leitura de área de toque, mas sim da pressão do toque,
+Vale ressaltar que o Android já possui a capacidade de ler a área de toque por meio de \textit{software} apenas, no entanto, o \textit{Force Touch} não é apenas a leitura de área de toque, mas sim da pressão do toque,
 o que envolve \textit{hardware} e \textit{software}.
-A seguir são apresentados trechos de código iOS e Ionic para utilização do \textit{3DTouch}.
-%https://github.com/versluis/3D-Touch
+
+A seguir são apresentados trechos de código iOS e Ionic para utilização do \textit{3DTouch} criando \textit{Quick Actions}, uma funcionalidade do iOS que permite que o usuário aperte com mais força o ícone do aplicativo 
+para ter algumas opções antes de entrar no aplicativo.
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{codes/ios/3dtouch}
-	\caption[Trecho de código implementando 3DTouch no iOS]{Trecho de código implementando 3DTouch no iOS}
+	\caption[Trecho de código implementando 3DTouch no iOS.]{Trecho de código implementando 3DTouch no iOS. Fonte: Baseado em Github\protect\footnotemark}
 	\label{fig:3dtouch-ios}
 \end{figure}
-%https://github.com/EddyVerbruggen/cordova-plugin-3dtouch
-%https://github.com/ashteya/ionic-tutorial-quickactions/blob/master/www/js/quickaction.service.js
+
+\footnotetext{\url{https://github.com/versluis/3D-Touch}}
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{codes/ionic/forcetouch}
-	\caption[Trecho de código implementando 3DTouch no Ionic]{Trecho de código implementando 3DTouch no Ionic}
+	\caption[Trecho de código implementando 3DTouch no Ionic]{Trecho de código implementando 3DTouch no Ionic. Fonte: Baseado em Github\protect\footnotemark}
 	\label{fig:forcetouch-ionic}
 \end{figure}
 
+\footnotetext{\url{https://github.com/ashteya/ionic-tutorial-quickactions}}
+
+Em ambos os casos a implementação é simples apenas devendo-se considerar as diferenças entre plataformas e linguagens, no entanto, no caso do Ionic é necessária a utilização do 
+\textit{plugin cordova-plugin-3dtouch}\footnote{\url{https://github.com/EddyVerbruggen/cordova-plugin-3dtouch}}.
+
 \subsubsection{\textit{Smartwatches}} \label{subsubsec:facial} 
 
-Além de \textit{smartphones} e \textit{tablets}, estão começando a ficar populares os dispositivos \textit{wearables} ou \textit{vestíveis} como relógios inteligentes. Isso implica em mais plataformas para dominar 
+Além de \textit{smartphones} e \textit{tablets}, estão começando a ficar populares os dispositivos \textit{vestíveis} como relógios inteligentes. Isso implica em mais plataformas para dominar 
 e mais possibilidades de aplicativos e funcionalidades para desenvolver. Um dos \textit{smartwatches} mais populares é o Apple Watch. Lançado com um sistema operacional próprio derivado do iOS, o WatchOS, 
 por enquanto, funciona como uma extensão dos aplicativos criados para iPhone, ou seja, adiciona funcionalidades de rápida interação ao relógio para que não seja necessário interagir com o celular a todo momento.
 
-Caso haja a necessidade de criar um aplicativo que suporte o Apple Watch, pode-se optar por desenvolver multiplataforma também, pois já existem \texit{plugins}
+Caso haja a necessidade de criar um aplicativo que suporte o Apple Watch, pode-se optar por desenvolver multiplataforma também, pois já existem \textit{plugins}
 \footnote{\url{https://github.com/leecrossley/cordova-plugin-apple-watch}} 
-do Cordova para realizar a integração entre o aplicativo multiplataforma e a extensão para Apple Watch. No entanto, o \texit{plugin} citado só funciona enquanto o aplicativo no iPhone está rodando. Quando, por algum motivo, 
-o aplicativo deixa de rodar o \texit{plugin} não consegue mais se comunicar com o relógio podendo prejudicar a experiência de uso do aplicativo. Com isso, pode não ser uma boa ideia utilizar funcionalidades que 
+do Cordova para realizar a integração entre o aplicativo multiplataforma e a extensão para Apple Watch. No entanto, o \textit{plugin} citado só funciona enquanto o aplicativo no iPhone está rodando. Quando, por algum motivo, 
+o aplicativo deixa de rodar o \textit{plugin} não consegue mais se comunicar com o relógio podendo prejudicar a experiência de uso do aplicativo. Com isso, pode não ser uma boa ideia utilizar funcionalidades que 
 precisam de atualização em tempo real, por exemplo, que recebe dados de um servidor, pois se o aplicativo no iPhone não estiver rodando, o relógio não conseguirá se comunicar e pegar os dados mais recentes, fazendo com 
 que apresente dados desatualizados, prejudicando a experiência de uso.
 
-Vale ressaltar que o aplicativo no Apple Watch deve ser feito nativamente, diretamente no Xcode! O \textit{plugin} apenas fornece um meio para que o \textit{app} do iPhone possa transmitir e receber dados do \textit{app}
+Vale ressaltar que o aplicativo no Apple Watch deve ser feito nativamente, diretamente no Xcode! O \textit{plugin} apenas fornece um meio para que o \textit{app} multiplataforma do iPhone possa transmitir e receber dados do \textit{app}
 do relógio, mas não é possível criar a interface e controladoras do relógio via multiplataforma, pois o Apple Watch não possui um navegador (\textit{WebView}) para interpretar o JavaScript assim como o iPhone. Então, 
-deve ser feito o aplicativo usando Cordova e Ionic para o iPhone, depois criar o \textit{app} no Xcode para Apple Watch e então utilizar um \textit{plugin} para realizar a comunicação entre os dois aplicativos.  
+deve ser feito o aplicativo utilizando Cordova e Ionic, por exemplo, para o iPhone, e depois criar o \textit{app} no Xcode para Apple Watch e então utilizar um \textit{plugin} para realizar a comunicação entre os dois aplicativos.  
 
+Se o aplicativo planeja utilizar muitos recursos do Apple Watch, como frequencímetro, pedômetro e acelerômetro, como aplicativos voltados para a área da saúde por exemplo, pode ser melhor desenvolver nativamente,
+pois o foco não estará sendo em desenvolver o aplicativo para várias plataformas, mas sim para um dispositivo específico. Com isso, pode-se aproveitar melhor todos os recursos do relógio e todos os benefícios da integração
+do mesmo com o iPhone.
 
-Tbm é possivel criar a
+Caso o aplicativo já exista, ainda que seja multiplataforma, é possível desenvolver o aplicativo para o relógio, no entanto, a comunicação entre o iPhone e o relógio não será perfeita no multiplataforma como é no nativo, 
+o que implica em limitar as funcionalidades do aplicativo no relógio para não prejudicar a experiência do usuário, podendo até mesmo fazer com que não valha a pena investir tempo e esforço na criação do aplicativo para
+relógio.
 
+\subsubsection{Envio de e-mail e SMS} \label{subsubsec:emailsms}
 
-ja tenho um app multiplataforma e agora quero dar suporte ao apple watch, é possivel
+\subsubsection{\textit{Widgets}} \label{subsubsec:widgets}
 
-mas se o objetivo for o apple watch ainda eh melhor fazer nativamente 
-eh legal fazer no multiplataforma pq ainda assim ja teria o app para ios e android e ainda poderia fazer o do relogio
-MAS a comunicacao entre o iPhone e o relogio nao eh perfeita no multiplataforma como eh no nativo, pois o app precisa estar rodando para a comunicacao funcionar corretamente
+\subsubsection{Siri} \label{subsubsec:siri}
 
-\subsubsection{Detecção facial} \label{subsubsec:facial}
+\subsubsection{Acessibilidade} \label{subsubsec:acessibilidade}
+
+\subsubsection{Touch ID} \label{subsubsec:touchid}
+
+\subsubsection{Câmeras customizadas} \label{subsubsec:customcamera}
+
+\subsubsection{Reconhecimento facial} \label{subsubsec:facial}
 dizer que isso eh possivel nativamente usando tais e tais apis e multiplataforma usando adobe air
 se quiser fazer em multiplataforma tbm eh possivel
