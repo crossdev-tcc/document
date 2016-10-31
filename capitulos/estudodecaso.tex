@@ -498,15 +498,16 @@ e mais possibilidades de aplicativos e funcionalidades para desenvolver. Um dos 
 por enquanto, funciona como uma extensão dos aplicativos criados para iPhone, ou seja, adiciona funcionalidades de rápida interação ao relógio para que não seja necessário interagir com o celular a todo momento.
 
 Caso haja a necessidade de criar um aplicativo que suporte o Apple Watch, pode-se optar por desenvolver multiplataforma também, pois já existem \textit{plugins}
-\footnote{\url{https://github.com/leecrossley/cordova-plugin-apple-watch}} 
-do Cordova para realizar a integração entre o aplicativo multiplataforma e a extensão para Apple Watch. No entanto, o \textit{plugin} citado só funciona enquanto o aplicativo no iPhone está rodando. Quando, por algum motivo, 
-o aplicativo deixa de rodar o \textit{plugin} não consegue mais se comunicar com o relógio podendo prejudicar a experiência de uso do aplicativo. Com isso, pode não ser uma boa ideia utilizar funcionalidades que 
-precisam de atualização em tempo real, por exemplo, que recebe dados de um servidor, pois se o aplicativo no iPhone não estiver rodando, o relógio não conseguirá se comunicar e pegar os dados mais recentes, fazendo com 
+\footnote{\url{https://github.com/leecrossley/cordova-plugin-apple-watch}} do Cordova para realizar a integração entre o aplicativo multiplataforma e a extensão para Apple Watch. No entanto, o \textit{plugin} 
+citado só funciona enquanto o aplicativo no iPhone está rodando. Quando, por algum motivo, o aplicativo deixa de rodar o \textit{plugin} não consegue mais se comunicar com o relógio podendo prejudicar a experiência 
+de uso do aplicativo. Com isso, pode não ser uma boa ideia utilizar funcionalidades que precisam de atualização em tempo real, por exemplo, que recebe dados de um servidor, pois se o aplicativo no iPhone não 
+estiver rodando, o relógio não conseguirá se comunicar e pegar os dados mais recentes, fazendo com 
 que apresente dados desatualizados, prejudicando a experiência de uso.
 
-Vale ressaltar que o aplicativo no Apple Watch deve ser feito nativamente, diretamente no Xcode! O \textit{plugin} apenas fornece um meio para que o \textit{app} multiplataforma do iPhone possa transmitir e receber dados do \textit{app}
-do relógio, mas não é possível criar a interface e controladoras do relógio via multiplataforma, pois o Apple Watch não possui um navegador (\textit{WebView}) para interpretar o JavaScript assim como o iPhone. Então, 
-deve ser feito o aplicativo utilizando Cordova e Ionic, por exemplo, para o iPhone, e depois criar o \textit{app} no Xcode para Apple Watch e então utilizar um \textit{plugin} para realizar a comunicação entre os dois aplicativos.  
+Vale ressaltar que o aplicativo no Apple Watch deve ser feito nativamente, diretamente no Xcode! O \textit{plugin} apenas fornece um meio para que o \textit{app} multiplataforma do iPhone possa transmitir e receber 
+dados do \textit{app} do relógio, mas não é possível criar a interface e controladoras do relógio via multiplataforma, pois o Apple Watch não possui um navegador (\textit{WebView}) para interpretar o JavaScript assim 
+como o iPhone. Então, deve ser feito o aplicativo utilizando Cordova e Ionic, por exemplo, para o iPhone, e depois criar o \textit{app} no Xcode para Apple Watch e então utilizar um \textit{plugin} para realizar a 
+comunicação entre os dois aplicativos.  
 
 Se o aplicativo planeja utilizar muitos recursos do Apple Watch, como frequencímetro, pedômetro e acelerômetro, como aplicativos voltados para a área da saúde por exemplo, pode ser melhor desenvolver nativamente,
 pois o foco não estará sendo em desenvolver o aplicativo para várias plataformas, mas sim para um dispositivo específico. Com isso, pode-se aproveitar melhor todos os recursos do relógio e todos os benefícios da integração
@@ -517,7 +518,24 @@ o que implica em limitar as funcionalidades do aplicativo no relógio para não 
 relógio. Cabe ressaltar que também já existem \textit{plugins}\footnote{\url{https://github.com/tgardner/cordova-androidwear}} do Cordova para Android Wear, os \textit{smartwatches} que rodam Android. 
 
 \subsubsection{Envio de e-mail e SMS} \label{subsubsec:emailsms}
-
+Cada plataforma possui seus próprios \textit{frameworks} para incluir dentro do aplicativo a ser desenvolvido o mecanismo de envio de \textit{e-mails} ou mensagens de texto(\textit{SMS}), muito utilizados para compartilhar 
+e divulgar informações do aplicativo ou até mesmo o próprio aplicativo e entrar em contato com a equipe de desenvolvimento do mesmo. Para utilizar desses recursos no Ionic, é possível utilizar o 
+\textit{plugin cordova-plugin-email-composer}\footnote{\url{https://github.com/katzer/cordova-plugin-email-composer}} para ter acesso à interface padrão do sistema no qual o aplicativo está sendo executado para envio de 
+\textit{e-mail}. De maneira similar, para o envio de \textit{SMS}, é possível utilizar o \textit{plugin cordova-sms-plugin}\footnote{\url{https://github.com/cordova-sms/cordova-sms-plugin}}. Tanto na abordagem nativa, 
+quanto na multiplataforma o desenvolvimento é simples diferenciando apenas na linguagem e no ambiente. A seguir são apresentados dois trechos de código, no iOS e no Ionic, para o envio de \textit{e-mail}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{codes/ios/email}
+	\caption[Envio de \textit{e-mail} no iOS]{Envio de \textit{e-mail} no iOS}
+	\label{fig:email-ios}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{codes/ionic/email}
+	\caption[Envio de \textit{e-mail} no Ionic]{Envio de \textit{e-mail} no Ionic. Baseado em Github\protect\footnotemark}
+	\label{fig:email-ionic}
+\end{figure}
+\footnotetext{\url{https://github.com/katzer/cordova-plugin-email-composer}}
 
 \subsubsection{\textit{Widgets}} \label{subsubsec:widgets}
 
@@ -533,7 +551,6 @@ relógio. Cabe ressaltar que também já existem \textit{plugins}\footnote{\url{
 dizer que isso eh possivel nativamente usando tais e tais apis e multiplataforma usando adobe air
 se quiser fazer em multiplataforma tbm eh possivel
 
-
 \subsubsection{\textit{Smart TV}} \label{subsubsec:tv}
 Assim como os \textit{smartwatches}, também existem outros dispositivos que estão ficando cada vez mais inteligentes e conectados à \textit{internet}, como por exemplo, os aparelhos de televisão. Alguns já vêm
 com um sistema inteligente de fábrica, no entanto, é possível acoplar centrais multimídia ao televisor por meio de cabos \textit{HDMI} e à \textit{internet} por meio de \textit{Wi-fi} ou conexão \textit{ethernet}, 
@@ -541,8 +558,8 @@ deixando-os mais inteligentes e úteis. Alguns exemplos comerciais são a Apple 
 áudio e vídeo do aparelho, tornando a experiência com televisão ainda mais imersiva e prática. 
 
 Cada plataforma possui sua própria \textit{SDK} para desenvolvimento dos aplicativos para TV e embora já existam \textit{plugins} do Cordova para lidar com o desenvolvimento de aplicativos para Apple TV e Chrome Cast, 
-não há motivos suficientes para utilizá-los, pois o aplicativo criado não será portado para ambas as plataformas (iOS e Android) e para cada nova funcionalidade que cada TV desenvolver, deverá ser desenvolvido o 
-\textit{plugin} para utilizá-la, ao passo que no desenvolvimento nativo, será possível utilizar o máximo de cada plataforma sempre, respeitando sempre os guias de usabilidade de cada uma. 
+no entanto, o aplicativo criado não será portado para ambas as plataformas (iOS e Android) e para cada nova funcionalidade que cada TV desenvolver, deverá ser desenvolvido o \textit{plugin} para utilizá-la, ao passo que 
+no desenvolvimento nativo, será possível utilizar o máximo de cada plataforma sempre, respeitando sempre os guias de usabilidade de cada uma. 
 
 Caso a equipe de desenvolvimento já possua conhecimentos em \textit{HTML, CSS, JavaScript} e \textit{Cordova}, pode ser vantajoso desenvolver o aplicativo multiplataforma, considerando o tempo de densenvolvimento, por 
 mais que tenha que ser feito em dois projetos distintos, um para iOS e um para Android, pois a \textit{expertise} da equipe pode compensar. No entanto, ainda será necessário possuir conta de desenvolvedor, um computador com 
