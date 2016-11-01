@@ -422,6 +422,40 @@ na imagem.
 
 \footnotetext{\url{https://github.com/fga-gpp-mds/2016.1-Partiu_frontend}}
 
+\subsubsection{Detecção de força do toque} \label{subsubsec:forcetouch}
+Em 2015, alguns dispositivos móveis foram comercializados com uma tecnologia de detecção de pressão nas telas sensíveis ao toque. Primeiramente pela companhia chinesa Huawei e depois pela Apple, trata-se de um recurso 
+capaz de identificar a quantidade de força que o usuário exerceu em um toque, o que abre o leque de possibilidades para novas funcionalidades nos aplicativos desenvolvidos. 
+No iOS, é chamado de \textit{3DTouch} e por enquanto está disponível nos modelos de iPhone 6S ou superior. No Apple Watch e no novo MacBook, assim como no Mate S, da Huawei, é chamado apenas de \textit{Force Touch}, 
+nome original da tecnologia. 
+Vale ressaltar que o Android já possui a capacidade de ler a área de toque por meio de \textit{software} apenas, no entanto, o \textit{Force Touch} não é apenas a leitura de área de toque, mas sim da pressão do toque,
+o que envolve \textit{hardware} e \textit{software}.
+
+A seguir são apresentados trechos de código iOS e Ionic para utilização do \textit{3DTouch} criando \textit{Quick Actions}, uma funcionalidade do iOS que permite que o usuário aperte com mais força o ícone do aplicativo 
+para ter algumas opções antes de entrar no aplicativo.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{codes/ios/3dtouch}
+	\caption[Trecho de código implementando 3DTouch no iOS.]{Trecho de código implementando 3DTouch no iOS. Fonte: Baseado em Github\protect\footnotemark}
+	\label{fig:3dtouch-ios}
+\end{figure}
+
+\footnotetext{\url{https://github.com/versluis/3D-Touch}}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{codes/ionic/forcetouch}
+	\caption[Trecho de código implementando 3DTouch no Ionic]{Trecho de código implementando 3DTouch no Ionic. Fonte: Baseado em Github\protect\footnotemark}
+	\label{fig:forcetouch-ionic}
+\end{figure}
+
+\footnotetext{\url{https://github.com/ashteya/ionic-tutorial-quickactions}}
+
+Em ambos os casos a implementação é simples apenas devendo-se considerar as diferenças entre plataformas e linguagens, no entanto, no caso do Ionic é necessária a utilização do 
+\textit{plugin cordova-plugin-3dtouch}\footnote{\url{https://github.com/EddyVerbruggen/cordova-plugin-3dtouch}}. 
+
+\subsubsection{Leitor Biométrico} \label{subsubsec:biometrico}
+
 \subsubsection{Extração de metadados de arquivos} \label{subsubsec:extracaometadata}
 Em alguns casos, pode ser necessário a extração de metadados de algum arquivo específico, como uma imagem ou um áudio. No caso de uma imagem, podem ser retiradas informações como local, hora de criação e até mesmo 
 dados climáticos no momento da captura da foto. No caso de um arquivo de áudio, é possível extrair o título do áudio, o autor ou artista, tempo de duração e álbum. Esses metadados podem ser usados para 
@@ -459,40 +493,6 @@ A seguir são apresentados trechos de códigos implementando a extração de met
 
 \textcolor{red}{... parecer sobre Ionic ...}
 
-\subsubsection{Detecção de força do toque} \label{subsubsec:forcetouch}
-Em 2015, alguns dispositivos móveis foram comercializados com uma tecnologia de detecção de pressão nas telas sensíveis ao toque. Primeiramente pela companhia chinesa Huawei e depois pela Apple, trata-se de um recurso 
-capaz de identificar a quantidade de força que o usuário exerceu em um toque, o que abre o leque de possibilidades para novas funcionalidades nos aplicativos desenvolvidos. 
-No iOS, é chamado de \textit{3DTouch} e por enquanto está disponível nos modelos de iPhone 6S ou superior. No Apple Watch e no novo MacBook, assim como no Mate S, da Huawei, é chamado apenas de \textit{Force Touch}, 
-nome original da tecnologia. 
-Vale ressaltar que o Android já possui a capacidade de ler a área de toque por meio de \textit{software} apenas, no entanto, o \textit{Force Touch} não é apenas a leitura de área de toque, mas sim da pressão do toque,
-o que envolve \textit{hardware} e \textit{software}.
-
-A seguir são apresentados trechos de código iOS e Ionic para utilização do \textit{3DTouch} criando \textit{Quick Actions}, uma funcionalidade do iOS que permite que o usuário aperte com mais força o ícone do aplicativo 
-para ter algumas opções antes de entrar no aplicativo.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=1\textwidth]{codes/ios/3dtouch}
-	\caption[Trecho de código implementando 3DTouch no iOS.]{Trecho de código implementando 3DTouch no iOS. Fonte: Baseado em Github\protect\footnotemark}
-	\label{fig:3dtouch-ios}
-\end{figure}
-
-\footnotetext{\url{https://github.com/versluis/3D-Touch}}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=1\textwidth]{codes/ionic/forcetouch}
-	\caption[Trecho de código implementando 3DTouch no Ionic]{Trecho de código implementando 3DTouch no Ionic. Fonte: Baseado em Github\protect\footnotemark}
-	\label{fig:forcetouch-ionic}
-\end{figure}
-
-\footnotetext{\url{https://github.com/ashteya/ionic-tutorial-quickactions}}
-
-Em ambos os casos a implementação é simples apenas devendo-se considerar as diferenças entre plataformas e linguagens, no entanto, no caso do Ionic é necessária a utilização do 
-\textit{plugin cordova-plugin-3dtouch}\footnote{\url{https://github.com/EddyVerbruggen/cordova-plugin-3dtouch}}. 
-
-\subsubsection{Touch ID} \label{subsubsec:touchid}
-
 \subsubsection{Envio de e-mail e SMS} \label{subsubsec:emailsms}
 Cada plataforma possui seus próprios \textit{frameworks} para incluir dentro do aplicativo a ser desenvolvido o mecanismo de envio de \textit{e-mails} ou mensagens de texto(\textit{SMS}), muito utilizados para compartilhar 
 e divulgar informações do aplicativo ou até mesmo o próprio aplicativo e entrar em contato com a equipe de desenvolvimento do mesmo. Para utilizar desses recursos no Ionic, é possível utilizar o 
@@ -513,23 +513,22 @@ quanto na multiplataforma o desenvolvimento é simples diferenciando apenas na l
 \end{figure}
 \footnotetext{\url{https://github.com/katzer/cordova-plugin-email-composer}}
 
-\subsubsection{\textit{Widgets}} \label{subsubsec:widgets}
-
 \subsubsection{Acessibilidade} \label{subsubsec:acessibilidade}
+algo muito importante é a inclusao
+as empresas se preocupam muito com isso
+dispoem de recursos para acessibilidade
+muitas pessoas com algum tipo de problema usam smartphones tanto pra lazer quanto para reabilitacao
 
-\subsubsection{Câmeras customizadas} \label{subsubsec:customcamera}
+\subsubsection{\textit{Widgets}} \label{subsubsec:widgets}
+o que sao, pra que servem, como fazer
 
-\subsubsection{Reconhecimento facial} \label{subsubsec:facial}
-dizer que isso eh possivel nativamente usando tais e tais apis e multiplataforma usando adobe air 
-se quiser fazer em multiplataforma tbm eh possivel
-
-\subsubsection{Siri} \label{subsubsec:siri}
+\subsubsection{Assistentes Pessoais} \label{subsubsec:siri}
 Os dispositivos móveis, têm se tornado cada vez mais inteligentes e úteis para seus usuários. Funcionam como computadores, agendas, calendários, máquinas fotográficas, etc. Para atenderem ainda mais às necessidades de 
 seus usuários, os dispositivos possuem em sua maioria inteligências artificiais, na forma de assistentes pessoais, criadas para auxiliar no uso dos \textit{smartphones, smartwatches} e \textit{smart TVs}. 
-Na Apple, a assistente é conhecida como Siri, no Windows é a Cortana e para o Android existem alguns aplicativos de terceiros que tentam criar uma assistente pessoal. O mais conhecido é Google Now, da própria Google, 
-embora nesse caso ele não seja uma assitente pessoal, pois não possui traços de personalidade, ele apenas reconhece voz e responde a perguntas com muita eficiência. 
+Na Apple, a assistente é conhecida como Siri, já no Android existem alguns aplicativos de terceiros que tentam criar uma assistente pessoal. O mais conhecido é Google Now, da própria Google, 
+embora nesse caso ele não seja uma assitente pessoal, pois não possui traços de personalidade, ele apenas reconhece voz e responde a perguntas com muita eficiência.
 
-Com a Siri ou Cortana é possível controlar o dispositivo, criando eventos, alarmes, lembretes, abrindo aplicativos e controlando eletrodomésticos, por exemplo, e fazer buscas variadas na \textit{internet}, com o Google Now 
+Com a Siri é possível controlar o dispositivo, criando eventos, alarmes, lembretes, abrindo aplicativos e controlando eletrodomésticos, por exemplo, e fazer buscas variadas na \textit{internet}, com o Google Now 
 apenas essa última opção está disponível. Durante a execução deste trabalho, foi lançado o primeiro celular inteiramente feito pela Google chamado de Pixel, que conta com o Google Assistant, uma evolução do Google Now 
 para se tornar uma assistente pessoal. Com ele será possível também controlar o dispositivo assim como as outras assistentes de outras plataformas fazem. 
 
@@ -537,7 +536,6 @@ Durante a execução deste trabalho, a Apple lançou juntamente com a nova vers�
 a experiência de uso dos aplicativos ainda mais intuitiva e prática. Ainda não há \textit{plugins} do Cordova que permitam o uso desse recurso, ou seja, caso haja a necessidade de utilizar a Siri, o multiplataforma ainda 
 não é um opção viável. Vale ressaltar que existem alguns \textit{plugins} para utilizar o reconhecimento de voz e transcrever em texto\footnote{\url{https://github.com/api-ai/api-ai-cordova}} o que foi dito, no entanto, 
 isso não é o mesmo que interagir com a Siri. O Google Assistant ainda não está disponível em outros dispositivos além do Pixel da Google e não existem \textit{SDK} nativo ou \textit{plugins} de terceiros para utilizá-lo. 
-
 Com isso, por enquanto, ainda não é possível desenvolver aplicativos multiplataforma integrados com as assistentes pessoais mais utilizadas.
 
 \subsubsection{\textit{Smartwatches}} \label{subsubsec:facial}
@@ -583,3 +581,9 @@ MacOS e Xcode para subir o aplicativo iOS para a loja, por isso caso já haja al
 Assim como os \textit{smartwatches}, as TVs possuem guias de estilo e usabilidade muito diferentes dos dispositivos móveis, pois possuem tamanhos de telas e recursos de \textit{hardware} e \textit{software} completamente 
 distintos, ou seja, o desenvolvimento multiplataforma está cada vez mais difícil por ter que, cada vez mais, abarcar um gama de dispositivos muitos diferentes, variando em tamanhos que vão de uma polegada e meia a
 até mais de 100 polegadas e sistemas operacionais, com \textit{SDKs}, \textit{frameworks}, \textit{hardware} e recursos próprios de cada plataforma. 
+
+\subsubsection{Câmeras customizadas} \label{subsubsec:customcamera}
+
+\subsubsection{Reconhecimento facial} \label{subsubsec:facial}
+dizer que isso eh possivel nativamente usando tais e tais apis e multiplataforma usando adobe air 
+se quiser fazer em multiplataforma tbm eh possivel
