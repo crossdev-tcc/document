@@ -436,7 +436,7 @@ para ter algumas opções antes de entrar no aplicativo.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{codes/ios/3dtouch}
-	\caption[Trecho de código implementando 3DTouch no iOS.]{Trecho de código implementando 3DTouch no iOS. Fonte: Baseado em Github\protect\footnotemark}
+	\caption[Criando uma Quick Action com o 3DTouch no iOS.]{Criando uma Quick Action com o 3DTouch no iOS. Fonte: Baseado em Github\protect\footnotemark}
 	\label{fig:3dtouch-ios}
 \end{figure}
 
@@ -445,7 +445,7 @@ para ter algumas opções antes de entrar no aplicativo.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{codes/ionic/forcetouch}
-	\caption[Trecho de código implementando 3DTouch no Ionic]{Trecho de código implementando 3DTouch no Ionic. Fonte: Baseado em Github\protect\footnotemark}
+	\caption[Criando uma Quick Action com o 3DTouch no Ionic]{Criando uma Quick Action com o 3DTouch no Ionic. Fonte: Baseado em Github\protect\footnotemark}
 	\label{fig:forcetouch-ionic}
 \end{figure}
 
@@ -455,6 +455,27 @@ Em ambos os casos a implementação é simples apenas devendo-se considerar as d
 \textit{plugin cordova-plugin-3dtouch}\footnote{\url{https://github.com/EddyVerbruggen/cordova-plugin-3dtouch}}. 
 
 \subsubsection{Leitor Biométrico} \label{subsubsec:biometrico}
+A preocupação por segurança dos dados e privacidade se intensificou, pois os dispositivos móveis agora possuem muitas informações pessoais como contatos, fotos, \textit{e-mails}, localização e até mesmo senhas, no entanto,
+por serem móveis são mais fáceis de serem extraviados, furtados ou invadidos. Com isso, cada dispositivo possui seus próprios meios de autenticação e segurança, sendo a forma mais comum de segurança senhas alfanuméricas. 
+Com o avanço da tecnologia presente nos dispositivos móveis, uma forma que se tornou comum para autenticação de usuário é a leitura biométrica, ou seja, reconhecimento de impressões digitais. Muitos \textit{smartphones} 
+já possuem esse recurso adicionando ao celular uma camada extra de segurança e praticidade. 
+
+Além do celular e dos dados pessoais do usuário, é possível que os dados de um aplicativo em específico sejam protejidos pelo mesmo recurso, ou seja, caso o aparelho seja encontrado desbloqueado, ainda não será possível 
+ter acesso à todos os dados disponíveis dentro dele. Alguns aplicativos que se utilizam desse recurso são, por exemplo, bancos, diários, chaveiros eletrônicos e protetores de fotos. Nos dispositivos da Apple o recurso 
+foi introduzido no iPhone 5 e foi chamado de \textit{Touch ID}, nos dispositivos Android, os aparelhos mais desenvolvidos de cada marca possuem o sensor biométrico. 
+
+Como mencionando anteriormente, é possível proteger os dados de uma aplicação com o leitor biométrico. Para isso, o iOS dispõe do \textit{framework LocalAuthentication}, que permite que a aplicação solicite a leitura da 
+digital, caso o aparelho possua o recurso, e compare com as impressões digitais cadastradas no dispositivo. Caso o dispositivo não possua o recurso, será requerida uma senha alfanumérica comum para desbloquear os dados do 
+aplicativo. No Android, de maneira similar ao iOS, a partir da versão 6.0, foi introduzida uma nova \textit{API}, a \textit{Fingerprint Authentication}, que permite utilizar o sensor biométrico dentro dos aplicativos. A 
+seguir são apresentados trechos de códigos que implementam a verificação biométrica em iOS e Android.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{codes/ios/touchid}
+	\caption[Implementação do Touch ID no iOS]{Implementação do Touch ID no iOS. Fonte: Baseado em AppCoda\protect\footnotemark}
+	\label{fig:forcetouch-ionic}
+\end{figure}
+\footnotetext{\url{https://www.appcoda.com/touch-id-api-ios8/}}
 
 \subsubsection{Extração de metadados de arquivos} \label{subsubsec:extracaometadata}
 Em alguns casos, pode ser necessário a extração de metadados de algum arquivo específico, como uma imagem ou um áudio. No caso de uma imagem, podem ser retiradas informações como local, hora de criação e até mesmo 
