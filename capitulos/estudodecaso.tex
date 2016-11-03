@@ -514,6 +514,13 @@ A seguir são apresentados trechos de códigos implementando a extração de met
 
 \textcolor{red}{... parecer sobre Ionic ...}
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{codes/ionic/metadata_image}
+	\caption[Trecho de código para extrair metadados de mídia - Ionic]{Trecho de código para extrair metadados de mídia - Ionic}
+	\label{fig:metadata_image-ionic}
+\end{figure}
+
 \subsubsection{Envio de e-mail e SMS} \label{subsubsec:emailsms}
 Cada plataforma possui seus próprios \textit{frameworks} para incluir dentro do aplicativo a ser desenvolvido o mecanismo de envio de \textit{e-mails} ou mensagens de texto(\textit{SMS}), muito utilizados para compartilhar 
 e divulgar informações do aplicativo ou até mesmo o próprio aplicativo e entrar em contato com a equipe de desenvolvimento do mesmo. Para utilizar desses recursos no Ionic, é possível utilizar o 
@@ -544,7 +551,7 @@ muitas pessoas com algum tipo de problema usam smartphones tanto pra lazer quant
 o que sao, pra que servem, como fazer
 
 \subsubsection{Assistentes Pessoais} \label{subsubsec:siri}
-Os dispositivos móveis, têm se tornado cada vez mais inteligentes e úteis para seus usuários. Funcionam como computadores, agendas, calendários, máquinas fotográficas, etc. Para atenderem ainda mais às necessidades de 
+Os dispositivos móveis têm se tornado cada vez mais inteligentes e úteis para seus usuários. Funcionam como computadores, agendas, calendários, máquinas fotográficas, etc. Para atenderem ainda mais às necessidades de 
 seus usuários, os dispositivos possuem em sua maioria inteligências artificiais, na forma de assistentes pessoais, criadas para auxiliar no uso dos \textit{smartphones, smartwatches} e \textit{smart TVs}. 
 Na Apple, a assistente é conhecida como Siri, já no Android existem alguns aplicativos de terceiros que tentam criar uma assistente pessoal. O mais conhecido é Google Now, da própria Google, 
 embora nesse caso ele não seja uma assitente pessoal, pois não possui traços de personalidade, ele apenas reconhece voz e responde a perguntas com muita eficiência.
@@ -572,7 +579,7 @@ de uso do aplicativo. Com isso, pode não ser uma boa ideia utilizar funcionalid
 estiver rodando, o relógio não conseguirá se comunicar e pegar os dados mais recentes, fazendo com 
 que apresente dados desatualizados, prejudicando a experiência de uso.
 
-Vale ressaltar que o aplicativo no Apple Watch deve ser feito nativamente, diretamente no Xcode! O \textit{plugin} apenas fornece um meio para que o \textit{app} multiplataforma do iPhone possa transmitir e receber 
+Vale ressaltar que o aplicativo no Apple Watch deve ser feito nativamente, diretamente no Xcode. O \textit{plugin} apenas fornece um meio para que o \textit{app} multiplataforma do iPhone possa transmitir e receber 
 dados do \textit{app} do relógio, mas não é possível criar a interface e controladoras do relógio via multiplataforma, pois o Apple Watch não possui um navegador (\textit{WebView}) para interpretar o JavaScript assim 
 como o iPhone. Então, deve ser feito o aplicativo utilizando Cordova e Ionic, por exemplo, para o iPhone, e depois criar o \textit{app} no Xcode para Apple Watch e então utilizar um \textit{plugin} para realizar a 
 comunicação entre os dois aplicativos.  
@@ -591,8 +598,7 @@ com um sistema inteligente de fábrica, no entanto, é possível acoplar centrai
 deixando-os mais inteligentes e úteis. Alguns exemplos comerciais são a Apple TV, da Apple, e o Chrome Cast do Google. É possível desenvolver aplicativos para os televisores, aproveitando ao máximo os recursos de 
 áudio e vídeo do aparelho, tornando a experiência com televisão ainda mais imersiva e prática. 
 
-Cada plataforma possui sua própria \textit{SDK} para desenvolvimento dos aplicativos para TV e embora já existam \textit{plugins} do Cordova para lidar com o desenvolvimento de aplicativos para Apple TV e Chrome Cast, 
-no entanto, o aplicativo criado não será portado para ambas as plataformas (iOS e Android) e para cada nova funcionalidade que cada TV desenvolver, deverá ser desenvolvido o \textit{plugin} para utilizá-la, ao passo que 
+Cada plataforma possui sua própria \textit{SDK} para desenvolvimento dos aplicativos para TV e embora já existam \textit{plugins} do Cordova para lidar com o desenvolvimento de aplicativos para Apple TV e Chrome Cast, o aplicativo criado não será portado para ambas as plataformas (iOS e Android) e para cada nova funcionalidade que cada TV desenvolver, deverá ser desenvolvido o \textit{plugin} para utilizá-la, ao passo que 
 no desenvolvimento nativo, será possível utilizar o máximo de cada plataforma sempre, respeitando sempre os guias de usabilidade de cada uma. 
 
 Caso a equipe de desenvolvimento já possua conhecimentos em \textit{HTML, CSS, JavaScript} e \textit{Cordova}, pode ser vantajoso desenvolver o aplicativo multiplataforma, considerando o tempo de densenvolvimento, por 
