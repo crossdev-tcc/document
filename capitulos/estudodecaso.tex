@@ -466,16 +466,41 @@ foi introduzido no iPhone 5 e foi chamado de \textit{Touch ID}, nos dispositivos
 
 Como mencionando anteriormente, é possível proteger os dados de uma aplicação com o leitor biométrico. Para isso, o iOS dispõe do \textit{framework LocalAuthentication}, que permite que a aplicação solicite a leitura da 
 digital, caso o aparelho possua o recurso, e compare com as impressões digitais cadastradas no dispositivo. Caso o dispositivo não possua o recurso, será requerida uma senha alfanumérica comum para desbloquear os dados do 
-aplicativo. No Android, de maneira similar ao iOS, a partir da versão 6.0, foi introduzida uma nova \textit{API}, a \textit{Fingerprint Authentication}, que permite utilizar o sensor biométrico dentro dos aplicativos. A 
-seguir são apresentados trechos de códigos que implementam a verificação biométrica em iOS e Android.
+aplicativo. No Android, de maneira similar ao iOS, a partir da versão 6.0, foi introduzida uma nova \textit{API}, a \textit{Fingerprint Authentication}\footnote{\url{https://developer.android.com/about/versions/marshmallow/android-6.0.html}}, 
+que permite utilizar o sensor biométrico dentro dos aplicativos. No Android, é preciso efetuar alguns passos, listados a seguir, antes de poder utilizar a autenticação biométrica. 
+
+\begin{itemize}
+	\item \textbf{Permissão}: É preciso adicionar uma permissão especial no arquivo \textit{Manifest} para que seja possível utilizar o sensor;
+	\begin{itemize}
+		\item \textit{<uses-permission android:name=``android.permission.USE\_FINGERPRINT''/>} 
+	\end{itemize}
+	\item \textbf{\textit{Container} de chaves}: É preciso acessar o \textit{container} de chaves do Android, para poder armazenar uma chave que será criada para a aplicação;
+	\begin{itemize}
+		\item \textit{KeyStore}: onde o sistema guarda todas as chaves de criptografia;
+	\end{itemize}
+	\item \textbf{Gerar uma chave}: Tendo acesso ao \textit{KeyStore}, é preciso gerar uma chave para a aplicação e então armazená-la no \textit{KeyStore};
+\end{itemize}
+
+A seguir são apresentados trechos de códigos que implementam a verificação biométrica em iOS e Android.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{codes/ios/touchid}
 	\caption[Implementação do Touch ID no iOS]{Implementação do Touch ID no iOS. Fonte: Baseado em AppCoda\protect\footnotemark}
-	\label{fig:forcetouch-ionic}
+	\label{fig:touchid-ios}
 \end{figure}
 \footnotetext{\url{https://www.appcoda.com/touch-id-api-ios8/}}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{codes/android/fingerprint}
+	\caption[Implementação da leitura biométrica no Android]{Implementação da leitura biométrica no Android. Fonte: Baseado em Google\protect\footnotemark}
+	\label{fig:fingerprint-android}
+\end{figure}
+\footnotetext{\url{https://developer.android.com/samples/FingerprintDialog/index.html}}
+%http://www.techotopia.com/index.php/An_Android_Fingerprint_Authentication_Tutorial
+%https://github.com/googlesamples/android-FingerprintDialog
+
+
 
 \subsubsection{Extração de metadados de arquivos} \label{subsubsec:extracaometadata}
 Em alguns casos, pode ser necessário a extração de metadados de algum arquivo específico, como uma imagem ou um áudio. No caso de uma imagem, podem ser retiradas informações como local, hora de criação e até mesmo 
