@@ -512,7 +512,32 @@ A seguir são apresentados trechos de códigos implementando a extração de met
 %	\label{fig:metadata_video-ios}
 %\end{figure}
 
-\textcolor{red}{... parecer sobre Ionic ...}
+A extração de dados no Ionic pode ser realizada utilizando um \textit{plugin} do cordova chamado \textit{File}, utilizado para obter 
+acesso aos arquivos e diretórios dos dispositivos. Na documentação do \textit{ngCordova} é apresentada a estrutura de pacotes do iOS e 
+do Android, para auxiliar o desenvolvedor a acessar as pastas desejadas. É apresentada, também, uma lista de possíveis erros
+que podem ocorrer durante o uso do plugin, como arquivo não encontrado, caminho inexistente, erro de \textit{encoding}, entre outros.
+Com o plugin \textit{File} é possível obter as seguintes propriedades:
+ 
+\begin{itemize}
+	\item name: nome do arquivo seguido de sua extenção
+	\item localURL: a url do arquivo, seguido de seu nome e extenção
+	\item type: \textit{Internet media type} ou \textit{MIME type}, padrão usado na Internet para indicar um tipo de dado
+	\item lastModifiedDate: data e hora da última modificação do arquivo
+	\item size: tamanho do arquivo em bytes
+\end{itemize}
+
+Um exemplo de dados obtidos é apresentado na Figura~\ref{fig:metadata_result-ionic}. O código usado para 
+obtenção destes dados é apresentado na Figura~\ref{fig:metadata_image-ionic}.
+Para obtenção da duração de uma música ou um vídeo, é necessário o uso de outro  \textit{plugin} cordova chamado \textit{Media}.
+Não foram encontrados plugins para obtenção de dados tão detalhados quanto os disponíveis no iOS e Android, como informações do autor 
+e álbum de uma música ou a localização geográfica do local em que uma foto foi tirada.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{codes/ionic/metadata_result}
+	\caption[Apresentação dos metadados de uma imagem - Ionic]{Apresentação dos metadados de uma imagem - Ionic}
+	\label{fig:metadata_result-ionic}
+\end{figure}
 
 \begin{figure}[H]
 	\centering
