@@ -630,18 +630,23 @@ Cada plataforma possui suas próprias maneiras de implementá-los, sendo no iOS 
 de notificações. A Figura~\ref{fig:widgets_sample} mostra exemplos de \textit{widgets} no iOS e Android respectivamente.
 
 \begin{figure}[H]
+	\centering
+	\begin{minipage}{.5\textwidth}
 		\centering
-		\begin{minipage}{.5\textwidth}
-			\centering
-			\includegraphics[width=1\linewidth]{codes/ios/widget_eg}
-		\end{minipage}%
-		\begin{minipage}{.5\textwidth}
-			\centering
-			\includegraphics[width=1\linewidth]{codes/android/widget_eg}
-		\end{minipage}
-	\caption[Widgets no iOS (à esquerda) x Widgets no Android (à direita).]{Widgets no iOS (à esquerda) x Widgets no Android (à direita).}
-	\label{fig:widgets_sample}
-	\end{figure}
+		\includegraphics[width=1\linewidth]{codes/ios/widget_eg}
+	\end{minipage}%
+	\begin{minipage}{.5\textwidth}
+		\centering
+		\includegraphics[width=1\linewidth]{codes/android/widget_eg}
+	\end{minipage}
+\caption[\textit{Widgets} no iOS (à esquerda) x \textit{Widgets} no Android (à direita).]{\textit{Widgets} no iOS (à esquerda) x \textit{Widgets} no Android (à direita).}
+\label{fig:widgets_sample}
+\end{figure}
+
+Não é possível criar \textit{widgets} com Ionic e Cordova, pois utilizam \textit{HTML, CSS e JavaScript} embutidas em uma \textit{web view}, e fora dos aplicativos não há um \textit{browser} para renderizar o aplicativo 
+feito no Ionic. O que poderia ser feito é criar o aplicativo multiplataforma e depois alterar os projetos nativamente em cada plataforma para adicionar o \textit{widget} que se deseja. Dessa forma, cada plataforma iria 
+possuir códigos nativos para os respectivos \textit{widgets} além do código do aplicativo multiplataforma em si. Caso o \textit{widget} seja uma parte fundamental da aplicação, pode não ser uma boa ideia o 
+desenvolvimento multiplataforma. 
 
 \subsubsection{Assistentes Pessoais} \label{subsubsec:siri}
 Os dispositivos móveis têm se tornado cada vez mais inteligentes e úteis para seus usuários. Funcionam como computadores, agendas, calendários, máquinas fotográficas, etc. Para atenderem ainda mais às necessidades de 
