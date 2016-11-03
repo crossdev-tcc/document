@@ -353,7 +353,8 @@ Em todas as três plataformas citadas (iOS, Android e Ionic), a complexidade é 
 Vale ressaltar, que o \textit{login} com redes sociais, nada mais é do que a obtenção dos dados do usuário de uma plataforma terceira por meio do protocolo \textit{OAuth}, 
 ou seja, não são criadas sessões a partir das plataformas terceiras, apenas os dados do usuário na outra plataforma são acessados para que não haja a necessidade do usuário informá-los novamente. A partir dos dados 
 obtidos, o aplicativo se encarrega de realizar o cadastro e \textit{login} do usuário de acordo com as regras de negócio do aplicativo. 
-A seguir são apresentados dois trechos de código no iOS e no Ionic para \textit{login} com o Facebook. No iOS foi utilizado o \textit{SDK} nativo do Facebook, já no Ionic, foi utilizado o \textit{Firebase}. 
+As Figuras~\ref{fig:loginfb-ios} e~\ref{fig:loginfb-ionic} apresentam dois trechos de código no iOS e no Ionic para \textit{login} com o Facebook. No iOS foi utilizado o \textit{SDK} nativo do Facebook, 
+já no Ionic, foi utilizado o \textit{Firebase}. 
 
 \begin{figure}[H]
 	\centering
@@ -366,7 +367,7 @@ A seguir são apresentados dois trechos de código no iOS e no Ionic para \texti
 	\centering
 	\includegraphics[width=1\textwidth]{codes/ionic/loginfb}
 	\caption[Requisição de dados do Facebook no Ionic]{Requisição de dados do Facebook no Ionic. Fonte: Baseado em Github\protect\footnotemark}
-	\label{fig:loginfb-ios}
+	\label{fig:loginfb-ionic}
 \end{figure}
 
 \footnotetext{\url{https://github.com/fga-gpp-mds/2016.1-Partiu_frontend}}
@@ -430,8 +431,8 @@ nome original da tecnologia.
 Vale ressaltar que o Android já possui a capacidade de ler a área de toque por meio de \textit{software} apenas, no entanto, o \textit{Force Touch} não é apenas a leitura de área de toque, mas sim da pressão do toque,
 o que envolve \textit{hardware} e \textit{software}.
 
-A seguir são apresentados trechos de código iOS e Ionic para utilização do \textit{3DTouch} criando \textit{Quick Actions}, uma funcionalidade do iOS que permite que o usuário aperte com mais força o ícone do aplicativo 
-para ter algumas opções antes de entrar no aplicativo.
+As Figuras~\ref{fig:3dtouch-ios} e~\ref{fig:forcetouch-ionic} apresentam trechos de código no iOS e no Ionic para utilização do \textit{3DTouch} criando \textit{Quick Actions}, uma funcionalidade do iOS que permite 
+que o usuário aperte com mais força o ícone do aplicativo para ter algumas opções antes de entrar no aplicativo.
 
 \begin{figure}[H]
 	\centering
@@ -439,16 +440,13 @@ para ter algumas opções antes de entrar no aplicativo.
 	\caption[Criando uma Quick Action com o 3DTouch no iOS.]{Criando uma Quick Action com o 3DTouch no iOS. Fonte: Baseado em Github\protect\footnotemark}
 	\label{fig:3dtouch-ios}
 \end{figure}
-
 \footnotetext{\url{https://github.com/versluis/3D-Touch}}
-
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{codes/ionic/forcetouch}
 	\caption[Criando uma Quick Action com o 3DTouch no Ionic]{Criando uma Quick Action com o 3DTouch no Ionic. Fonte: Baseado em Github\protect\footnotemark}
 	\label{fig:forcetouch-ionic}
 \end{figure}
-
 \footnotetext{\url{https://github.com/ashteya/ionic-tutorial-quickactions}}
 
 Em ambos os casos a implementação é simples apenas devendo-se considerar as diferenças entre plataformas e linguagens, no entanto, no caso do Ionic é necessária a utilização do 
@@ -481,7 +479,7 @@ que permite utilizar o sensor biométrico dentro dos aplicativos. No Android, é
 	\item \textbf{Gerar uma chave}: Tendo acesso ao \textit{KeyStore}, é preciso gerar uma chave para a aplicação e então armazená-la no \textit{KeyStore};
 \end{itemize}
 
-A seguir são apresentados trechos de códigos que implementam a verificação biométrica em iOS e Android.
+As Figuras~\ref{fig:touchid-ios} e~\ref{fig:fingerprint-android} apresentam trechos de códigos que implementam a verificação biométrica em iOS e Android.
 
 \begin{figure}[H]
 	\centering
@@ -501,13 +499,12 @@ A seguir são apresentados trechos de códigos que implementam a verificação b
 %https://github.com/googlesamples/android-FingerprintDialog
 
 No Ionic também é possível utilizar a leitura biométrica nos aplicativos. No entanto, para utilizar esse recurso, é necessária a utilização de dois \textit{plugins} separados, um para iOS e um para Android, pois em 
-cada plataforma a autenticação se dá de maneira específica e ainda não há um \textit{plugin} para ambas as plataformas. A seguir são apresentados dois trechos de códigos no Ionic implementando 
-a leitura biométrica. Foram usados os seguintes \textit{plugins}, para iOS e Android, respectivamente:
+cada plataforma a autenticação se dá de maneira específica e ainda não há um \textit{plugin} para ambas as plataformas. As Figuras~\ref{fig:finger-ios-ionic} e~\ref{fig:finger-android-ionic} apresentam dois trechos de 
+códigos no Ionic implementando a leitura biométrica. Foram usados os seguintes \textit{plugins}, para iOS e Android, respectivamente:
 \begin{itemize}
-	\item \textit{cordova-plugin-touchid}\footnote{\url{https://github.com/leecrossley/cordova-plugin-touchid}};
-	\item \textit{cordova-plugin-android-fingerprint-auth}\footnote{\url{https://github.com/mjwheatley/cordova-plugin-android-fingerprint-auth}}; 
+	\item \textbf{iOS}: \textit{cordova-plugin-touchid}\footnote{\url{https://github.com/leecrossley/cordova-plugin-touchid}};
+	\item \textbf{Android}: \textit{cordova-plugin-android-fingerprint-auth}\footnote{\url{https://github.com/mjwheatley/cordova-plugin-android-fingerprint-auth}}; 
 \end{itemize}
- 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{codes/ionic/touchid}
@@ -539,7 +536,7 @@ classe \textit{MediaMetadataRetriever}, que lida com a extração de tipos varia
 utilizando constantes do sistema para indicar qual dado se deseja obter. Por exemplo, se o objetivo é obter a informação de título, no iOS, basta chamar pela \textit{string} ``title''. Já no Android, para o mesmo 
 objetivo, basta chamar pela \textit{string} ``METADATA\_KEY\_TITLE''.
 
-A seguir são apresentados trechos de códigos implementando a extração de metadados no iOS e no Android.
+As Figuras~\ref{fig:metadata_audio-ios} e~\ref{fig:metadata_midia-android} apresentam trechos de códigos implementando a extração de metadados no iOS e no Android.
 
 \begin{figure}[H]
 	\centering
@@ -603,7 +600,8 @@ Cada plataforma possui seus próprios \textit{frameworks} para incluir dentro do
 e divulgar informações do aplicativo ou até mesmo o próprio aplicativo e entrar em contato com a equipe de desenvolvimento do mesmo. Para utilizar desses recursos no Ionic, é possível utilizar o 
 \textit{plugin cordova-plugin-email-composer}\footnote{\url{https://github.com/katzer/cordova-plugin-email-composer}} para ter acesso à interface padrão do sistema no qual o aplicativo está sendo executado para envio de 
 \textit{e-mail}. De maneira similar, para o envio de \textit{SMS}, é possível utilizar o \textit{plugin cordova-sms-plugin}\footnote{\url{https://github.com/cordova-sms/cordova-sms-plugin}}. Tanto na abordagem nativa, 
-quanto na multiplataforma o desenvolvimento é simples diferenciando apenas na linguagem e no ambiente. A seguir são apresentados dois trechos de código, no iOS e no Ionic, para o envio de \textit{e-mail}.
+quanto na multiplataforma o desenvolvimento é simples diferenciando apenas na linguagem e no ambiente. As Figuras~\ref{fig:email-ios} e~\ref{fig:email-ionic} apresentam dois trechos de código, no iOS e no Ionic, 
+para o envio de \textit{e-mail}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{codes/ios/email}
@@ -629,7 +627,7 @@ muitas pessoas com algum tipo de problema usam smartphones tanto pra lazer quant
 realizar ações mais rapidamente e sem entrar necessáriamente em um programa ou aplicativo, sendo alguns dos mais comuns e práticos, o de agenda de eventos e informações climáticas.
 
 Cada plataforma possui suas próprias maneiras de implementá-los, sendo no iOS apenas disponíveis na central de notificações do dispositivo e no Android sendo disponíveis tanto na tela inicial do aparelho quanto na central 
-de notificações. A figura a seguir mostra exemplos de \textit{widgets} no iOS e Android respectivamente
+de notificações. A Figura~\ref{fig:widgets_sample} mostra exemplos de \textit{widgets} no iOS e Android respectivamente.
 
 \begin{figure}[H]
 		\centering
@@ -641,7 +639,7 @@ de notificações. A figura a seguir mostra exemplos de \textit{widgets} no iOS 
 			\centering
 			\includegraphics[width=1\linewidth]{codes/android/widget_eg}
 		\end{minipage}
-	\caption[Widgets]{Widgets}
+	\caption[Widgets no iOS (à esquerda) x Widgets no Android (à direita).]{Widgets no iOS (à esquerda) x Widgets no Android (à direita).}
 	\label{fig:widgets_sample}
 	\end{figure}
 
