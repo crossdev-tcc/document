@@ -564,7 +564,39 @@ A seguir são apresentados trechos de códigos implementando a extração de met
 %	\label{fig:metadata_video-ios}
 %\end{figure}
 
-\textcolor{red}{... parecer sobre Ionic ...}
+A extração de dados no Ionic pode ser realizada utilizando um \textit{plugin} do cordova chamado \textit{File}, utilizado para obter 
+acesso aos arquivos e diretórios dos dispositivos. Na documentação do \textit{ngCordova} é apresentada a estrutura de pacotes do iOS e 
+do Android, para auxiliar o desenvolvedor a acessar as pastas desejadas. É apresentada, também, uma lista de possíveis erros
+que podem ocorrer durante o uso do plugin, como arquivo não encontrado, caminho inexistente, erro de \textit{encoding}, entre outros.
+Com o plugin \textit{File} é possível obter as seguintes propriedades:
+ 
+\begin{itemize}
+	\item name: nome do arquivo seguido de sua extenção
+	\item localURL: a url do arquivo, seguido de seu nome e extenção
+	\item type: \textit{Internet media type} ou \textit{MIME type}, padrão usado na Internet para indicar um tipo de dado
+	\item lastModifiedDate: data e hora da última modificação do arquivo
+	\item size: tamanho do arquivo em bytes
+\end{itemize}
+
+Um exemplo de dados obtidos é apresentado na Figura~\ref{fig:metadata_result-ionic}. O código usado para 
+obtenção destes dados é apresentado na Figura~\ref{fig:metadata_image-ionic}.
+Para obtenção da duração de uma música ou um vídeo, é necessário o uso de outro  \textit{plugin} cordova chamado \textit{Media}.
+Não foram encontrados plugins para obtenção de dados tão detalhados quanto os disponíveis no iOS e Android, como informações do autor 
+e álbum de uma música ou a localização geográfica do local em que uma foto foi tirada.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{codes/ionic/metadata_result}
+	\caption[Apresentação dos metadados de uma imagem - Ionic]{Apresentação dos metadados de uma imagem - Ionic}
+	\label{fig:metadata_result-ionic}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{codes/ionic/metadata_image}
+	\caption[Trecho de código para extrair metadados de mídia - Ionic]{Trecho de código para extrair metadados de mídia - Ionic}
+	\label{fig:metadata_image-ionic}
+\end{figure}
 
 \subsubsection{Envio de e-mail e SMS} \label{subsubsec:emailsms}
 Cada plataforma possui seus próprios \textit{frameworks} para incluir dentro do aplicativo a ser desenvolvido o mecanismo de envio de \textit{e-mails} ou mensagens de texto(\textit{SMS}), muito utilizados para compartilhar 
@@ -596,7 +628,7 @@ muitas pessoas com algum tipo de problema usam smartphones tanto pra lazer quant
 o que sao, pra que servem, como fazer
 
 \subsubsection{Assistentes Pessoais} \label{subsubsec:siri}
-Os dispositivos móveis, têm se tornado cada vez mais inteligentes e úteis para seus usuários. Funcionam como computadores, agendas, calendários, máquinas fotográficas, etc. Para atenderem ainda mais às necessidades de 
+Os dispositivos móveis têm se tornado cada vez mais inteligentes e úteis para seus usuários. Funcionam como computadores, agendas, calendários, máquinas fotográficas, etc. Para atenderem ainda mais às necessidades de 
 seus usuários, os dispositivos possuem em sua maioria inteligências artificiais, na forma de assistentes pessoais, criadas para auxiliar no uso dos \textit{smartphones, smartwatches} e \textit{smart TVs}. 
 Na Apple, a assistente é conhecida como Siri, já no Android existem alguns aplicativos de terceiros que tentam criar uma assistente pessoal. O mais conhecido é Google Now, da própria Google, 
 embora nesse caso ele não seja uma assitente pessoal, pois não possui traços de personalidade, ele apenas reconhece voz e responde a perguntas com muita eficiência.
@@ -624,7 +656,7 @@ de uso do aplicativo. Com isso, pode não ser uma boa ideia utilizar funcionalid
 estiver rodando, o relógio não conseguirá se comunicar e pegar os dados mais recentes, fazendo com 
 que apresente dados desatualizados, prejudicando a experiência de uso.
 
-Vale ressaltar que o aplicativo no Apple Watch deve ser feito nativamente, diretamente no Xcode! O \textit{plugin} apenas fornece um meio para que o \textit{app} multiplataforma do iPhone possa transmitir e receber 
+Vale ressaltar que o aplicativo no Apple Watch deve ser feito nativamente, diretamente no Xcode. O \textit{plugin} apenas fornece um meio para que o \textit{app} multiplataforma do iPhone possa transmitir e receber 
 dados do \textit{app} do relógio, mas não é possível criar a interface e controladoras do relógio via multiplataforma, pois o Apple Watch não possui um navegador (\textit{WebView}) para interpretar o JavaScript assim 
 como o iPhone. Então, deve ser feito o aplicativo utilizando Cordova e Ionic, por exemplo, para o iPhone, e depois criar o \textit{app} no Xcode para Apple Watch e então utilizar um \textit{plugin} para realizar a 
 comunicação entre os dois aplicativos.  
@@ -643,8 +675,7 @@ com um sistema inteligente de fábrica, no entanto, é possível acoplar centrai
 deixando-os mais inteligentes e úteis. Alguns exemplos comerciais são a Apple TV, da Apple, e o Chrome Cast do Google. É possível desenvolver aplicativos para os televisores, aproveitando ao máximo os recursos de 
 áudio e vídeo do aparelho, tornando a experiência com televisão ainda mais imersiva e prática. 
 
-Cada plataforma possui sua própria \textit{SDK} para desenvolvimento dos aplicativos para TV e embora já existam \textit{plugins} do Cordova para lidar com o desenvolvimento de aplicativos para Apple TV e Chrome Cast, 
-no entanto, o aplicativo criado não será portado para ambas as plataformas (iOS e Android) e para cada nova funcionalidade que cada TV desenvolver, deverá ser desenvolvido o \textit{plugin} para utilizá-la, ao passo que 
+Cada plataforma possui sua própria \textit{SDK} para desenvolvimento dos aplicativos para TV e embora já existam \textit{plugins} do Cordova para lidar com o desenvolvimento de aplicativos para Apple TV e Chrome Cast, o aplicativo criado não será portado para ambas as plataformas (iOS e Android) e para cada nova funcionalidade que cada TV desenvolver, deverá ser desenvolvido o \textit{plugin} para utilizá-la, ao passo que 
 no desenvolvimento nativo, será possível utilizar o máximo de cada plataforma sempre, respeitando sempre os guias de usabilidade de cada uma. 
 
 Caso a equipe de desenvolvimento já possua conhecimentos em \textit{HTML, CSS, JavaScript} e \textit{Cordova}, pode ser vantajoso desenvolver o aplicativo multiplataforma, considerando o tempo de densenvolvimento, por 
