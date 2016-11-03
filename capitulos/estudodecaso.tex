@@ -500,6 +500,33 @@ A seguir são apresentados trechos de códigos que implementam a verificação b
 %http://www.techotopia.com/index.php/An_Android_Fingerprint_Authentication_Tutorial
 %https://github.com/googlesamples/android-FingerprintDialog
 
+No Ionic também é possível utilizar a leitura biométrica nos aplicativos. No entanto, para utilizar esse recurso, é necessária a utilização de dois \textit{plugins} separados, um para iOS e um para Android, pois em 
+cada plataforma a autenticação se dá de maneira específica e ainda não há um \textit{plugin} para ambas as plataformas. A seguir são apresentados dois trechos de códigos no Ionic implementando 
+a leitura biométrica. Foram usados os seguintes \textit{plugins}, para iOS e Android, respectivamente:
+\begin{itemize}
+	\item \textit{cordova-plugin-touchid}\footnote{\url{https://github.com/leecrossley/cordova-plugin-touchid}};
+	\item \textit{cordova-plugin-android-fingerprint-auth}\footnote{\url{https://github.com/mjwheatley/cordova-plugin-android-fingerprint-auth}}; 
+\end{itemize}
+ 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{codes/ionic/touchid}
+	\caption[Implementação da leitura biométrica para iOS no Ionic]{Implementação da leitura biométrica para iOS no Ionic. Fonte: Baseado em Github\protect\footnotemark}
+	\label{fig:finger-ios-ionic}
+\end{figure}
+\footnotetext{\url{https://github.com/leecrossley/cordova-plugin-touchid}}
+%https://www.thepolyglotdeveloper.com/2015/08/add-touch-id-authentication-to-your-ionic-framework-app/
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{codes/ionic/fingerprint}
+	\caption[Implementação da leitura biométrica para Android no Ionic]{Implementação da leitura biométrica para Android no Ionic. Fonte: Baseado em Github\protect\footnotemark}
+	\label{fig:finger-android-ionic}
+\end{figure}
+\footnotetext{\url{https://github.com/mjwheatley/cordova-plugin-android-fingerprint-auth}}
+
+  
+É possível criar aplicações que utilizem desse recurso nas duas abordagens, no entanto, de maneira geral, a implementação dessa funcionalidade é mais simples quando se trata do iOS, tanto nativo quanto multiplataforma. 
+Em relação ao desenvolvimento no Android, o multiplataforma é mais simples, em termos de código, que o nativo.
 
 
 \subsubsection{Extração de metadados de arquivos} \label{subsubsec:extracaometadata}
