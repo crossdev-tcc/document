@@ -687,6 +687,24 @@ até mais de 100 polegadas e sistemas operacionais, com \textit{SDKs}, \textit{f
 
 \subsubsection{Câmeras customizadas} \label{subsubsec:customcamera}
 
-\subsubsection{Reconhecimento facial} \label{subsubsec:facial}
-dizer que isso eh possivel nativamente usando tais e tais apis e multiplataforma usando adobe air 
-se quiser fazer em multiplataforma tbm eh possivel
+\subsubsection{Detecção facial} \label{subsubsec:facial}
+A detecção facial é uma tecnologia usada em uma grande variedade de aplicações que identificam
+rostos humanos em imagens. Detectar rostos humanos e extrair traços faciais é uma importante funcionalidade
+com diversas possibilidades de aplicações, tais como reconhecimento facial e videoconferências \cite{wong_efficient_2000}.
+
+A plataforma iOS possui um processador de imagens nativo denominado \textit{CIDetector}, capaz de identificar faces em imagens e vídeos.
+O SDK do Android possui uma API para detecção facial, a \textit{Face Detection}, capaz de detectar faces em imagens.
+
+É possível realizar o processo de detecção facial como o uso de bibliotecas não nativas, como o OpenCV, uma biblioteca livre 
+e multiplataforma amplamente utilizada para processamento de imagens. Com ela é possível não apenas a detecção, como também
+o reconhecimento facial.
+
+Outro exemplo de tecnologia multiplataforma para detecção facial é o Beyond Reality Face NXT, um SDK que oferece suporte 
+a aplicações iOS nativas e a aplicações multiplataformas desenvolvidas com o uso de actionscript \cite{site_beyond_2016}.
+
+O Mobile Vision, da Google, é uma API que possibilita a detecção facial em fotos, vídeos e \textit{streams} ao vivo, 
+tanto em plataformas Android, como em iOS.
+
+O cordova não apresenta bibliotecas próprias para a realização de detecção facial, sendo necessário o uso de bibliotecas externas.
+O Scanbot é um exemplo de SDK que pode ser utilizado junto ao cordova e possibilita detecção de documentos e de faces em tempo real,
+ porém não é totalmente compatível com iOS \cite{gmbh_javascript_2016} e não é uma ferramenta gratuita.
