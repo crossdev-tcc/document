@@ -330,11 +330,11 @@ Além disso o aplicativo desenvolvido apresentou aparência e usabilidade semelh
 
 \subsection{Comparação de funcionalidades} \label{subsec:comparacaofuncionalidades}
 
-Foram selecionadas algumas funcionalidades muito comuns em aplicativos para serem comparadas tecnicamente entre iOS, Android e Ionic, com o objetivo de melhorar o embasamento para a tomada de decisão entre o desenvolvimento 
+Foram selecionadas algumas funcionalidades muito comuns em aplicativos para serem comparadas entre iOS, Android e Ionic, com o objetivo de melhorar o embasamento para a tomada de decisão entre o desenvolvimento 
 nativo e multiplataforma. Importante ressaltar que para o aplicativo Ionic utilizar os recursos do celular, tanto \textit{hardware} quanto \textit{software}, é sempre necessária a utilização de 
 \textit{plugins} do Cordova, ou seja, sempre que um novo recurso for desenvolvido para um dispositivo, há um tempo de espera para a criação do \textit{plugin} necessário para utilizar o novo recurso, 
-e se o \textit{plugin} for descontinuado, eventualmente poderá quebrar a aplicação e prejudicar a experiência do usuário. A seguir são apresentados trechos de códigos, minerados de repositórios públicos e criados 
-pelos autores, comentados para facilitar o entendimento das funcionalidades. 
+e se o \textit{plugin} for descontinuado, eventualmente poderá quebrar a aplicação e prejudicar a experiência do usuário. A seguir são apresentadas as funcionalidades, e em alguns casos trechos de códigos, minerados 
+de repositórios públicos e criados pelos autores, comentados para facilitar o entendimento das funcionalidades e diferenças entre cada plataforma e abordagem de desenvolvimento. 
 
 \subsubsection{Login com Facebook} \label{subsubsec:loginfb}
 %https://ionicthemes.com/tutorials/about/native-facebook-login-with-ionic-framework
@@ -721,24 +721,14 @@ até mais de 100 polegadas e sistemas operacionais, com \textit{SDKs}, \textit{f
 
 \subsubsection{Câmeras customizadas} \label{subsubsec:customcamera}
 
-cordova nao possui um por padrao, contribuidores foram criando e disonibilizando de acordo com suas necessidades
+Um dos recursos mais utilizados nos \textit{smartphones} é a câmera fotográfica. Muitos usuários definem o aparelho a ser adquirido com base na capacidade da camêra, com isso muitos aplicativos aproveitam para 
+oferecer mais funcionalidades que os aplicativos de camêras nativos dos dispositivos. Funcionalidades como filtros de imagens, edição de vídeos, câmera lenta, integração com redes sociais e, em alguns casos, os aplicativos 
+são uma rede social em si. Caso o aplicativo tenha a necessidade de camêras customizadas é possível desenvolvê-lo multiplataforma utilizando alguns \textit{plugins} para o Cordova, por exemplo o 
+\textit{cordova-plugin-camera-preview}\footnote{\url{https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview}}.
 
-Yes you can do it by using mbppower/CordovaCameraPreview plugin that allows camera interaction from HTML code. To create your custom camera what you should do is, start camera on your HTML page. You have to draw rectangle for "Camera Preview Box" with required height-width dimensions and starting point(x,y) as parameters in below code snippet.You can also make it Tap enabled and Drag-able.
-https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview, descontinuado pelo autor, 
-entregue para a comunidade,
-porém nao é atualizado há 8 meses. 
-"Cordova plugin that allows camera interaction from HTML code for showing camera preview below or above the HTML."
-
-https://github.com/performanceactive/phonegap-custom-camera-plugin
-Phonegap plugin which allows the caller to customise a camera preview, including a custom button and overlaying a
- border image in each corner.
-Tb descontinuado, n recebe atualizacao há 2 anos.
-
-https://github.com/donaldp24/CanvasCameraPlugin
-tb dois anos sem atualizacao
-relatos de nao funcionar mais adequadamente no android
-
-http://stackoverflow.com/questions/29755707/implement-camera-in-custom-page-in-cordova-ios
+Tanto o iOS quanto o Android fornecem suporte para a criação de camêras customizadas de acordo com as necessidades dos aplicativos. No iOS é possível utilizar o \textit{framework AVFoundation} para identificar as camêras 
+presentes no dispositivo e utilizá-las de acordo com as regras de negócio do aplicativo. É possível criar interfaces completamente customizadas com quaisquer funcionalidades que a equipe de desenvolvimento seja capaz de 
+implementar. Assim como no iOS, no Android também é possível criar camêras customizadas utilizando o \textit{framework android.hardware.camera2}.
 
 \subsubsection{Detecção facial} \label{subsubsec:facial}
 A detecção facial é uma tecnologia usada em uma grande variedade de aplicações que identificam
@@ -761,3 +751,24 @@ tanto em plataformas Android, como em iOS.
 O cordova não apresenta bibliotecas próprias para a realização de detecção facial, sendo necessário o uso de bibliotecas externas.
 O Scanbot é um exemplo de SDK que pode ser utilizado junto ao cordova e possibilita detecção de documentos e de faces em tempo real,
  porém não é totalmente compatível com iOS e não é uma ferramenta gratuita. %\cite{gmbh_javascript_2016}
+
+\subsubsection{TEMP: Conclusões de funcionalidades} \label{subsubsec:compa_conclu}
+
+\textcolor{red}{\textit{Resumo as funcionalidades, só para facilitar a leitura e entendimento}}
+
+\begin{itemize}
+	\item \textbf{Login com Facebook}: Simples, possível com todas as abordagens, não é um fator tão decisivo assim...
+	\item \textbf{Consumo de Web Services}: Simples, possível com todas as abordagens, não é um fator tão decisivo assim...
+	\item \textbf{Leitor Biométrico}: Simples, possível com todas as abordagens, não é um fator tão decisivo assim, iOS mais fácil que Android, nas duas abordagens...
+	\item \textbf{Extração de metadados de arquivos}: Simples, possível com todas as abordagens, não é um fator tão decisivo assim, no entanto, nativo possui mais informações a serem extraídas...
+	\item \textbf{Envio de e-mail e SMS}: Simples, possível com todas as abordagens, não é um fator tão decisivo assim... (DAR OLHADA NO ANDROID DISSO E PROCURAR UM CÓDIGO)
+	\item \textbf{Widgets}: Pode vir a ser bastante complexo pois tem implementaçoes e interpretações completamente distintas no iOS e no Android, não é possível desenvolver no multiplataforma, pode ser bastante decisivo...
+	\item \textbf{Assistentes pessoais}: Não é possivel integrar os apps multiplataforma com a assistente pessoal do iOS e o Android nem possui uma nativa ainda, pode ser bastante decisivo...
+	\item \textbf{SmartWatches}: Para Apple Watch os plugins multiplataforma são fracos e só funcionam enquanto o app esta aberto (integração entre relogio e celular é fraca), app do relogio deve ser feito nativamente, 
+	existem plugins para Android (nao foram testados por falta de android wear, tempo), pode ser bastante decisivo...
+	\item \textbf{Smart TVs}: Existem plugins para iOS e para Android, mas nao para os dois ao mesmo tempo, isso implica em desenvolver dois projetos separadamente de qualquer forma. Se a equipe tem expertise em tecnologias 
+	web, pode ser vantajoso desenvolver multiplataforma para se aproveitar dessa expertise, no entanto, ainda será preciso computador com MacOS e Xcode, se o alvo for a TV, pode ser bastante decisivo 
+	\item \textbf{Câmeras customizadas}: É possível desenvolver aplicativos multiplataforma com cameras customizadas, porem quanto maior a customização mais dificil o desenvolvimento, tanto para nativo quanto para 
+	multiplataforma, entao cabe a avaliacao da expertise da equipe para saber o que é melhor, pode ser muito decisivo...
+	\item \textbf{Detecção facial}: É possível desenvolver multiplataforma pois exsitem frameworks e plugins para isso, deve-se considerar a performance do aplicativo e uso da internet, pode ser muito decisivo...
+\end{itemize}
