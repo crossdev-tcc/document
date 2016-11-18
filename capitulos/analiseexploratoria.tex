@@ -5,10 +5,29 @@
 Foram selecionadas algumas funcionalidades muito comuns em aplicativos para serem comparadas entre iOS, Android e Ionic, com o objetivo de melhorar o embasamento para a tomada de decisão entre o desenvolvimento 
 nativo e multiplataforma. Importante ressaltar que para o aplicativo Ionic utilizar os recursos do celular, tanto \textit{hardware} quanto \textit{software}, é sempre necessária a utilização de 
 \textit{plugins} do Cordova, ou seja, sempre que um novo recurso for desenvolvido para um dispositivo, há um tempo de espera para a criação do \textit{plugin} necessário para utilizar o novo recurso, 
-e se o \textit{plugin} for descontinuado, eventualmente poderá quebrar a aplicação e prejudicar a experiência do usuário. A seguir são apresentadas as funcionalidades, e em alguns casos trechos de códigos, minerados 
-de repositórios públicos e criados pelos autores, comentados para facilitar o entendimento das funcionalidades e diferenças entre cada plataforma e abordagem de desenvolvimento. 
+e se o \textit{plugin} for descontinuado, eventualmente poderá quebrar a aplicação e prejudicar a experiência do usuário. A seguir são apresentadas as funcionalidades e, em alguns casos, trechos de códigos minerados 
+de repositórios públicos e criados pelos autores comentados para facilitar o entendimento das funcionalidades e diferenças entre cada plataforma e abordagem de desenvolvimento. 
 
-\section{Login com Facebook} \label{subsubsec:loginfb}
+\section{Funcionalidades analisadas}\label{sec:intro_analise_exp}
+
+As funcionalidades alvo da análise e comparação são listadas a seguir e serão explicadas e comparadas nas Subseções~\ref{subsec:loginfb} à~\ref{subsec:facial}. 
+
+\begin{itemize}
+	\item Login com Facebook;
+	\item Consumo de Web Services;
+	\item Detecção de força do toque;
+	\item Leitor Biométrico;
+	\item Extração de metadados de arquivos;
+	\item Envio de e-mail e SMS;
+	\item Widgets;
+	\item Assistentes Pessoais;
+	\item Smartwatches;
+	\item Smart TV;
+	\item Câmeras customizadas;
+	\item Detecção facial;
+\end{itemize}
+
+\subsection{Login com Facebook} \label{subsec:loginfb}
 %https://ionicthemes.com/tutorials/about/native-facebook-login-with-ionic-framework
 Independente da plataforma, sempre deve haver um passo anterior ao desenvolvimento desta funcionalidade que é o registro do 
 aplicativo a ser desenvolvido na plataforma para desenvolvedores do Facebook\footnote{\url{https://developers.facebook.com}}. O registro do aplicativo deve ser feito
@@ -49,12 +68,18 @@ Caso haja a necessidade de obtenção de dados de vários provedores, como por e
 e a \textit{SDK} do Google para iOS e Android. O mesmo não ocorre no multiplataforma, pois com o mesmo \textit{plugin} é possível fazer a conexão com vários serviços apenas alterando uma \textit{string}, 
 o que pode tornar o desenvolvimento mais simples que na abordagem nativa.
 
-\section{Consumo de Web Services} \label{subsubsec:webservices}
+\subsection{Consumo de Web Services} \label{subsec:webservices}
 Como o poder computacional dos dispositivos móveis, embora elevado, ainda não é comparável ao dos servidores, muitos aplicativos utilizam um modelo cliente/servidor, no qual
 as operações mais custosas computacionamente são processadas no lado servidor e não no cliente. Além disso, a persistência dos dados da aplicação dificilmente é feita localmente nos dispositivos para evitar 
 perdas de dados no caso de roubos, extravios ou danos ao aparelho, facilitar a migração para outros dispositivos e o uso em outras plataformas. Com isso, é necessário que os aplicativos estejam preparados para se 
 comunicarem com \textit{Web Services}. Para realizar essa comunicação, cada plataforma oferece alguns meios nativos como classes e \textit{frameworks}, no entanto, existem \textit{frameworks} de terceiros que 
 são muito utilizados e conhecidos na comunidade de desenvolvedores tanto para comunicar com os \textit{Web Services}, como para lidar com JSON e XML usados na comunicação entre aplicativo/servidor. 
+
+No Android, existe o \textit{Volley}\footnote{\url{https://developer.android.com/training/volley/index.html}}, da própria Google para facilitar a envio e recebimento dos dados. Assim como no iOS, define-se o método da 
+requisição, os parâmetros a serem enviados e dentro de um \textit{Listener} receber a resposta do servidor e tratar de acordo com as necessidades do aplicativo. Vale ressaltar que o \textit{Volley}, no momento da realização
+deste trabalho, não é nativamente preparado para enviar dados, apenas receber, de maneira que deve-se criar uma classe customizada de requisição que adiciona os parâmetros a serem enviados na requisição e faz o tratamento da
+resposta, para só então ser criada uma requisição que permite o envio de dados. No exemplo da Figura~\ref{fig:volley-android}, a classe criada chama-se \textit{CustomJSONObjectRequest} e sua implementação não se encontra 
+na imagem.
 
 Para realizar essa atividade no Ionic, o AngularJS dispõe do \textit{plugin ngResource} muito conhecido e utilizado para interação com \textit{web services}. Ele trás o objeto \textit{\$resource} que recebe uma 
 \textit{URL} e parâmetros da requisição de maneira muito similar à abordagem nativa, apenas distinguindo em termos de linguagem e ambiente de programação. Assim como nas abordagens nativas, também é possível receber 
@@ -68,34 +93,27 @@ que abstraem essa comunição e tratamento dos dados em JSON, respectivamente, t
 (\textit{POST, GET, PUT, DELETE, etc}) e os parâmetros que deseja enviar ao servidor. Após isso, basta receber a resposta na forma de \textit{JSON} dentro de um \textit{completion} do \textit{Alamofire}, 
 e utilizar os dados de acordo com as necessidades do aplicativo. Um trecho de código exemplificando o uso do \textit{AlamoFire} e \textit{SwiftyJSON} é apresentado na Figura~\ref{fig:alamofire-ios}.
 
-No Android, existe o \textit{Volley}\footnote{\url{https://developer.android.com/training/volley/index.html}}, da própria Google para facilitar a envio e recebimento dos dados. Assim como no iOS, define-se o método da 
-requisição, os parâmetros a serem enviados e dentro de um \textit{Listener} receber a resposta do servidor e tratar de acordo com as necessidades do aplicativo. Vale ressaltar que o \textit{Volley}, no momento da realização
-deste trabalho, não é nativamente preparado para enviar dados, apenas receber, de maneira que deve-se criar uma classe customizada de requisição que adiciona os parâmetros a serem enviados na requisição e faz o tratamento da
-resposta, para só então ser criada uma requisição que permite o envio de dados. No exemplo da Figura~\ref{fig:volley-android}, a classe criada chama-se \textit{CustomJSONObjectRequest} e sua implementação não se encontra 
-na imagem.
-
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.95\textwidth]{codes/android/volley}
+	\caption[Requisição utilizando Volley no Android]{Requisição utilizando Volley no Android}
+	\label{fig:volley-android}
+\end{figure}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{codes/ionic/resource}
 	\caption[Requisição utilizando o ngResource no Ionic]{Requisição utilizando o ngResource no Ionic. Baseado em Github\protect\footnotemark}
 	\label{fig:resource-ionic}
 \end{figure}
+\footnotetext{\url{https://github.com/fga-gpp-mds/2016.1-Partiu_frontend}}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{codes/ios/alamofire}
 	\caption[Requisição utilizando Alamofire e SwiftyJSON no iOS]{Requisição utilizando Alamofire e SwiftyJSON no iOS}
 	\label{fig:alamofire-ios}
 \end{figure} 
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=1\textwidth]{codes/android/volley}
-	\caption[Requisição utilizando Volley no Android]{Requisição utilizando Volley no Android}
-	\label{fig:volley-android}
-\end{figure}
 
-\footnotetext{\url{https://github.com/fga-gpp-mds/2016.1-Partiu_frontend}}
-
-\section{Detecção de força do toque} \label{subsubsec:forcetouch}
+\subsection{Detecção de força do toque} \label{subsec:forcetouch}
 Em 2015, alguns dispositivos móveis foram comercializados com uma tecnologia de detecção de pressão nas telas sensíveis ao toque. Primeiramente pela companhia chinesa Huawei e depois pela Apple, trata-se de um recurso 
 capaz de identificar a quantidade de força que o usuário exerceu em um toque, o que abre o leque de possibilidades para novas funcionalidades nos aplicativos desenvolvidos. 
 No iOS, é chamado de \textit{3DTouch} e por enquanto está disponível nos modelos de iPhone 6S ou superior. No Apple Watch e no novo MacBook, assim como no Mate S, da Huawei, é chamado apenas de \textit{Force Touch}, 
@@ -124,7 +142,7 @@ que o usuário aperte com mais força o ícone do aplicativo para ter algumas op
 Em ambos os casos a implementação é simples apenas devendo-se considerar as diferenças entre plataformas e linguagens, no entanto, no caso do Ionic é necessária a utilização do 
 \textit{plugin cordova-plugin-3dtouch}\footnote{\url{https://github.com/EddyVerbruggen/cordova-plugin-3dtouch}}. 
 
-\section{Leitor Biométrico} \label{subsubsec:biometrico}
+\subsection{Leitor Biométrico} \label{subsec:biometrico}
 A preocupação por segurança dos dados e privacidade se intensificou, pois os dispositivos móveis agora possuem muitas informações pessoais como contatos, fotos, \textit{e-mails}, localização e até mesmo senhas, no entanto,
 por serem móveis são mais fáceis de serem extraviados, furtados ou invadidos. Com isso, cada dispositivo possui seus próprios meios de autenticação e segurança, sendo a forma mais comum de segurança senhas alfanuméricas. 
 Com o avanço da tecnologia presente nos dispositivos móveis, uma forma que se tornou comum para autenticação de usuário é a leitura biométrica, ou seja, reconhecimento de impressões digitais. Muitos \textit{smartphones} 
@@ -179,7 +197,7 @@ códigos no Ionic implementando a leitura biométrica. Foram usados os seguintes
 \end{itemize}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1\textwidth]{codes/ionic/touchid}
+	\includegraphics[width=0.8\textwidth]{codes/ionic/touchid}
 	\caption[Implementação da leitura biométrica para iOS no Ionic]{Implementação da leitura biométrica para iOS no Ionic. Fonte: Baseado em Github\protect\footnotemark}
 	\label{fig:finger-ios-ionic}
 \end{figure}
@@ -187,7 +205,7 @@ códigos no Ionic implementando a leitura biométrica. Foram usados os seguintes
 %https://www.thepolyglotdeveloper.com/2015/08/add-touch-id-authentication-to-your-ionic-framework-app/
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1\textwidth]{codes/ionic/fingerprint}
+	\includegraphics[width=0.8\textwidth]{codes/ionic/fingerprint}
 	\caption[Implementação da leitura biométrica para Android no Ionic]{Implementação da leitura biométrica para Android no Ionic. Fonte: Baseado em Github\protect\footnotemark}
 	\label{fig:finger-android-ionic}
 \end{figure}
@@ -197,7 +215,7 @@ códigos no Ionic implementando a leitura biométrica. Foram usados os seguintes
 que no Android são necessários alguns passos anteriores ao desenvolvimento. Em relação ao desenvolvimento no Android, o multiplataforma é mais simples que o nativo, em relação à complexidade e quantidade de código a ser 
 desenvolvido.
 
-\section{Extração de metadados de arquivos} \label{subsubsec:extracaometadata}
+\subsection{Extração de metadados de arquivos} \label{subsec:extracaometadata}
 Em alguns casos, pode ser necessário a extração de metadados de algum arquivo específico, como uma imagem ou um áudio. No caso de uma imagem, podem ser retiradas informações como local, hora de criação e até mesmo 
 dados climáticos no momento da captura da foto. No caso de um arquivo de áudio, é possível extrair o título do áudio, o autor ou artista, tempo de duração e álbum. Esses metadados podem ser usados para 
 melhorar a experiência de uso do aplicativo fornecendo sugestões e funcionalidades mais próximas das necessidades reais do usuário, ou até mesmo para fazer filtros e buscas mais inteligentes nos dados que o 
@@ -212,14 +230,14 @@ As Figuras~\ref{fig:metadata_audio-ios} e~\ref{fig:metadata_midia-android} apres
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1\textwidth]{codes/ios/metadata_audio}
+	\includegraphics[width=0.8\textwidth]{codes/ios/metadata_audio}
 	\caption[Extração de metadados de um arquivo áudio no iOS]{Extração de metadados de um arquivo áudio no iOS}
 	\label{fig:metadata_audio-ios}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1\textwidth]{codes/android/metadata_midia}
+	\includegraphics[width=0.8\textwidth]{codes/android/metadata_midia}
 	\caption[Extração de metadados de um arquivo áudio no Android]{Extração de metadados de um arquivo áudio no Android. Baseado em Github\protect\footnotemark}
 	\label{fig:metadata_midia-android}
 \end{figure}
@@ -254,7 +272,7 @@ e álbum de uma música ou a localização geográfica do local em que uma foto 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.5\textwidth]{codes/ionic/metadata_result}
+	\includegraphics[width=1\textwidth]{codes/ionic/metadata_result}
 	\caption[Apresentação dos metadados de uma imagem - Ionic]{Apresentação dos metadados de uma imagem - Ionic}
 	\label{fig:metadata_result-ionic}
 \end{figure}
@@ -267,7 +285,7 @@ e álbum de uma música ou a localização geográfica do local em que uma foto 
 \end{figure}
 \footnotetext{\url{https://github.com/cfjedimaster/Cordova-Examples/tree/master/getfiledata}}
 
-\section{Envio de e-mail e SMS} \label{subsubsec:emailsms}
+\subsection{Envio de e-mail e SMS} \label{subsec:emailsms}
 Cada plataforma possui seus próprios \textit{frameworks} para incluir dentro do aplicativo a ser desenvolvido o mecanismo de envio de \textit{e-mails} ou mensagens de texto(\textit{SMS}), muito utilizados para compartilhar 
 e divulgar informações do aplicativo ou até mesmo o próprio aplicativo e entrar em contato com a equipe de desenvolvimento do mesmo. Para utilizar desses recursos no Ionic, é possível utilizar o 
 \textit{plugin cordova-plugin-email-composer}\footnote{\url{https://github.com/katzer/cordova-plugin-email-composer}} para ter acesso à interface padrão do sistema no qual o aplicativo está sendo executado para envio de 
@@ -289,7 +307,7 @@ para o envio de \textit{e-mail}.
 \footnotetext{\url{https://github.com/katzer/cordova-plugin-email-composer}}
 
 \begin{comment}
-\section{Acessibilidade} \label{subsubsec:acessibilidade}
+\subsection{Acessibilidade} \label{subsec:acessibilidade}
 Não se pode deixar de lado uma grande parcela da população que possui algum tipo de deficiência na hora de planejar novos sistemas e 
 aplicativos. Cada plataforma possui seus próprios recursos para auxiliar pessoas com 
 deficiência a utilizar os \textit{smartphones} e também possuem \textit{SDKs} que os desenvolvedores podem utilizar para deixar os 
@@ -306,7 +324,7 @@ https://github.com/driftyco/ionic/issues/4100
 
 \end{comment} 
  
-\section{\textit{Widgets}} \label{subsubsec:widgets}
+\subsection{\textit{Widgets}} \label{subsec:widgets}
 \textit{Widgets} são atalhos que facilitam o acesso a algum programa. Vários dispositivos possuem esse recurso como computadores, camêras fotográficas, \textit{smartphones} e \textit{tablets}. Eles ajudam o usuário a 
 realizar ações mais rapidamente e sem entrar necessáriamente em um programa ou aplicativo, sendo alguns dos mais comuns e práticos, o de agenda de eventos e informações climáticas.
 
@@ -332,7 +350,7 @@ feito no Ionic. O que poderia ser feito é criar o aplicativo multiplataforma e 
 possuir códigos nativos para os respectivos \textit{widgets} além do código do aplicativo multiplataforma em si. Caso o \textit{widget} seja uma parte fundamental da aplicação, pode não ser uma boa ideia o 
 desenvolvimento multiplataforma. 
 
-\section{Assistentes Pessoais} \label{subsubsec:siri}
+\subsection{Assistentes Pessoais} \label{subsec:siri}
 Os dispositivos móveis têm se tornado cada vez mais inteligentes e úteis para seus usuários. Funcionam como computadores, agendas, calendários, máquinas fotográficas, etc. Para atenderem ainda mais às necessidades de 
 seus usuários, os dispositivos possuem em sua maioria inteligências artificiais, na forma de assistentes pessoais, criadas para auxiliar no uso dos \textit{smartphones, smartwatches} e \textit{smart TVs}. 
 Na Apple, a assistente é conhecida como Siri, já no Android existem alguns aplicativos de terceiros que tentam criar uma assistente pessoal. O mais conhecido é Google Now, da própria Google, 
@@ -348,7 +366,7 @@ não é um opção viável. Vale ressaltar que existem alguns \textit{plugins} p
 isso não é o mesmo que interagir com a Siri. O Google Assistant ainda não está disponível em outros dispositivos além do Pixel da Google e não existem \textit{SDK} nativo ou \textit{plugins} de terceiros para utilizá-lo. 
 Com isso, por enquanto, ainda não é possível desenvolver aplicativos multiplataforma integrados com as assistentes pessoais mais utilizadas.
 
-\section{\textit{Smartwatches}} \label{subsubsec:facial}
+\subsection{\textit{Smartwatches}} \label{subsec:facial}
 
 Além de \textit{smartphones} e \textit{tablets}, estão começando a ficar populares os dispositivos \textit{vestíveis} como relógios inteligentes. Isso implica em mais plataformas para dominar 
 e mais possibilidades de aplicativos e funcionalidades para desenvolver. Um dos \textit{smartwatches} mais populares, atualmente, é o Apple Watch. Lançado com um sistema operacional próprio derivado do iOS, o WatchOS, 
@@ -374,7 +392,7 @@ Caso o aplicativo já exista, ainda que seja multiplataforma, é possível desen
 o que implica em limitar as funcionalidades do aplicativo no relógio para não prejudicar a experiência do usuário, podendo até mesmo fazer com que não valha a pena investir tempo e esforço na criação do aplicativo para
 relógio. Cabe ressaltar que também já existem \textit{plugins}\footnote{\url{https://github.com/tgardner/cordova-androidwear}} do Cordova para Android Wear, os \textit{smartwatches} que rodam Android.
 
-\section{\textit{Smart TV}} \label{subsubsec:tv}
+\subsection{\textit{Smart TV}} \label{subsec:tv}
 Assim como os \textit{smartwatches}, também existem outros dispositivos que estão ficando cada vez mais inteligentes e conectados à \textit{internet}, como por exemplo, os aparelhos de televisão. Alguns já vêm
 com um sistema inteligente de fábrica, no entanto, é possível acoplar centrais multimídia ao televisor por meio de cabos \textit{HDMI} e à \textit{internet} por meio de \textit{Wi-fi} ou conexão \textit{ethernet}, 
 deixando-os mais inteligentes e úteis. Alguns exemplos comerciais são a Apple TV, da Apple, e o Chrome Cast do Google. É possível desenvolver aplicativos para os televisores, aproveitando ao máximo os recursos de 
@@ -391,7 +409,7 @@ Assim como os \textit{smartwatches}, as TVs possuem guias de estilo e usabilidad
 distintos, ou seja, o desenvolvimento multiplataforma está cada vez mais difícil por ter que, cada vez mais, abarcar um gama de dispositivos muitos diferentes, variando em tamanhos que vão de uma polegada e meia a
 até mais de 100 polegadas e sistemas operacionais, com \textit{SDKs}, \textit{frameworks}, \textit{hardware} e recursos próprios de cada plataforma. 
 
-\section{Câmeras customizadas} \label{subsubsec:customcamera}
+\subsection{Câmeras customizadas} \label{subsec:customcamera}
 
 Um dos recursos mais utilizados nos \textit{smartphones} é a câmera fotográfica. Muitos usuários definem o aparelho a ser adquirido com base na capacidade da camêra, com isso muitos aplicativos aproveitam para 
 oferecer mais funcionalidades que os aplicativos de camêras nativos dos dispositivos. Funcionalidades como filtros de imagens, edição de vídeos, câmera lenta, integração com redes sociais e, em alguns casos, os aplicativos 
@@ -402,7 +420,7 @@ Tanto o iOS quanto o Android fornecem suporte para a criação de camêras custo
 presentes no dispositivo e utilizá-las de acordo com as regras de negócio do aplicativo. É possível criar interfaces completamente customizadas com quaisquer funcionalidades que a equipe de desenvolvimento seja capaz de 
 implementar. Assim como no iOS, no Android também é possível criar camêras customizadas utilizando o \textit{framework android.hardware.camera2}.
 
-\section{Detecção facial} \label{subsubsec:facial}
+\subsection{Detecção facial} \label{subsec:facial}
 A detecção facial é uma tecnologia usada em uma grande variedade de aplicações que identificam
 rostos humanos em imagens. Detectar rostos humanos e extrair traços faciais é uma importante funcionalidade
 com diversas possibilidades de aplicações, tais como reconhecimento facial e videoconferências. %\cite{wong_efficient_2000}.
@@ -424,10 +442,10 @@ O cordova não apresenta bibliotecas próprias para a realização de detecção
 O Scanbot é um exemplo de SDK que pode ser utilizado junto ao cordova e possibilita detecção de documentos e de faces em tempo real,
  porém não é totalmente compatível com iOS e não é uma ferramenta gratuita. %\cite{gmbh_javascript_2016}
 
-\section{TEMP: Conclusões de funcionalidades} \label{subsubsec:compa_conclu}
+\section{Conclusões de funcionalidades} \label{sec:compa_conclu}
 
+\begin{comment}
 \textcolor{red}{\textit{Resumo as funcionalidades, só para facilitar a leitura e entendimento}}
-
 \begin{itemize}
 	\item \textbf{Login com Facebook}: Simples, possível com todas as abordagens, não é um fator tão decisivo assim...
 	\item \textbf{Consumo de Web Services}: Simples, possível com todas as abordagens, não é um fator tão decisivo assim...
@@ -444,6 +462,7 @@ O Scanbot é um exemplo de SDK que pode ser utilizado junto ao cordova e possibi
 	multiplataforma, entao cabe a avaliacao da expertise da equipe para saber o que é melhor, pode ser muito decisivo...
 	\item \textbf{Detecção facial}: É possível desenvolver multiplataforma pois exsitem frameworks e plugins para isso, deve-se considerar a performance do aplicativo e uso da internet, pode ser muito decisivo...
 \end{itemize}
+\end{comment}
 
 As funcionalidades Login com Facebook, Consumo de Web Services, Envio de e-mail e SMS e uso do Leitor Biométrico 
 podem ser desenvolvidas tanto na abordagem nativa quanto na multiplataforma, sem ressalvas, não causando influência 
