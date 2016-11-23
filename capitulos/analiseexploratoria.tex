@@ -22,7 +22,7 @@ As funcionalidades alvo da análise e comparação são listadas a seguir e ser�
 	\item Widgets;
 	\item Assistentes Pessoais;
 	\item Smartwatches;
-	\item Smart TV;
+	%\item Smart TV;
 	\item Câmeras customizadas;
 	\item Detecção facial;
 \end{itemize}
@@ -392,6 +392,9 @@ Caso o aplicativo já exista, ainda que seja multiplataforma, é possível desen
 o que implica em limitar as funcionalidades do aplicativo no relógio para não prejudicar a experiência do usuário, podendo até mesmo fazer com que não valha a pena investir tempo e esforço na criação do aplicativo para
 relógio. Cabe ressaltar que também já existem \textit{plugins}\footnote{\url{https://github.com/tgardner/cordova-androidwear}} do Cordova para Android Wear, os \textit{smartwatches} que rodam Android.
 
+\begin{comment}
+	
+
 \subsection{\textit{Smart TV}} \label{subsec:tv}
 Assim como os \textit{smartwatches}, também existem outros dispositivos que estão ficando cada vez mais inteligentes e conectados à \textit{internet}, como por exemplo, os aparelhos de televisão. Alguns já vêm
 com um sistema inteligente de fábrica, no entanto, é possível acoplar centrais multimídia ao televisor por meio de cabos \textit{HDMI} e à \textit{internet} por meio de \textit{Wi-fi} ou conexão \textit{ethernet}, 
@@ -408,6 +411,7 @@ MacOS e Xcode para subir o aplicativo iOS para a loja, por isso caso já haja al
 Assim como os \textit{smartwatches}, as TVs possuem guias de estilo e usabilidade muito diferentes dos dispositivos móveis, pois possuem tamanhos de telas e recursos de \textit{hardware} e \textit{software} completamente 
 distintos, ou seja, o desenvolvimento multiplataforma está cada vez mais difícil por ter que, cada vez mais, abarcar um gama de dispositivos muitos diferentes, variando em tamanhos que vão de uma polegada e meia a
 até mais de 100 polegadas e sistemas operacionais, com \textit{SDKs}, \textit{frameworks}, \textit{hardware} e recursos próprios de cada plataforma. 
+\end{comment}
 
 \subsection{Câmeras customizadas} \label{subsec:customcamera}
 
@@ -421,28 +425,24 @@ presentes no dispositivo e utilizá-las de acordo com as regras de negócio do a
 implementar. Assim como no iOS, no Android também é possível criar camêras customizadas utilizando o \textit{framework android.hardware.camera2}.
 
 \subsection{Detecção facial} \label{subsec:facial}
-A detecção facial é uma tecnologia usada em uma grande variedade de aplicações que identificam
-rostos humanos em imagens. Detectar rostos humanos e extrair traços faciais é uma importante funcionalidade
-com diversas possibilidades de aplicações, tais como reconhecimento facial e videoconferências. %\cite{wong_efficient_2000}.
+A detecção facial é uma tecnologia usada em uma grande variedade de aplicações que identificam rostos humanos em imagens. Detectar rostos humanos e extrair traços faciais é uma importante funcionalidade com diversas 
+possibilidades de aplicações, tais como reconhecimento facial para autenticação de usuário e videoconferências. %\cite{wong_efficient_2000}.
 
-A plataforma iOS possui um processador de imagens nativo denominado \textit{CIDetector}, capaz de identificar faces em imagens e vídeos.
-O SDK do Android possui uma API para detecção facial, a \textit{Face Detection}, capaz de detectar faces em imagens.
+A plataforma iOS possui um processador de imagens nativo denominado \textit{CIDetector}, capaz de identificar faces em imagens e vídeos. O \textit{SDK} do Android possui uma \textit{API} para detecção facial, 
+a \textit{Face Detection}, capaz de detectar faces em imagens.
 
-É possível realizar o processo de detecção facial como o uso de bibliotecas não nativas, como o OpenCV, uma biblioteca livre 
-e multiplataforma amplamente utilizada para processamento de imagens. Com ela é possível não apenas a detecção, como também
-o reconhecimento facial.
+É possível realizar o processo de detecção facial como o uso de bibliotecas não nativas, como o OpenCV, uma biblioteca livre e multiplataforma amplamente utilizada para processamento de imagens. Com ela é possível 
+não apenas a detecção, como também o reconhecimento facial.
 
-Outro exemplo de tecnologia multiplataforma para detecção facial é o Beyond Reality Face NXT, um SDK que oferece suporte 
-a aplicações iOS nativas e a aplicações multiplataformas desenvolvidas com o uso de actionscript.% \cite{site_beyond_2016}.
+Outro exemplo de tecnologia multiplataforma para detecção facial é o Beyond Reality Face NXT, um \textit{SDK} que oferece suporte a aplicações iOS nativas e a aplicações multiplataformas desenvolvidas com o 
+uso de \textit{actionscript}.% \cite{site_beyond_2016}.
 
-O Mobile Vision, da Google, é uma API que possibilita a detecção facial em fotos, vídeos e \textit{streams} ao vivo, 
-tanto em plataformas Android, como em iOS.
+O Mobile Vision, da Google, é uma \textbf{API} que possibilita a detecção facial em fotos, vídeos e \textit{streams} ao vivo, tanto em plataformas Android, como em iOS.
 
-O cordova não apresenta bibliotecas próprias para a realização de detecção facial, sendo necessário o uso de bibliotecas externas.
-O Scanbot é um exemplo de SDK que pode ser utilizado junto ao cordova e possibilita detecção de documentos e de faces em tempo real,
- porém não é totalmente compatível com iOS e não é uma ferramenta gratuita. %\cite{gmbh_javascript_2016}
+O Cordova não apresenta bibliotecas próprias para a realização de detecção facial, sendo necessário o uso de bibliotecas externas. O Scanbot é um exemplo de \textit{SDK} que pode ser utilizado junto ao Cordova e 
+possibilita detecção de documentos e de faces em tempo real, porém não é totalmente compatível com iOS e não é uma ferramenta gratuita. %\cite{gmbh_javascript_2016}
 
-\section{Conclusões de funcionalidades} \label{sec:compa_conclu}
+\section{Consolidação dos resultados} \label{sec:compa_conclu}
 
 \begin{comment}
 \textcolor{red}{\textit{Resumo as funcionalidades, só para facilitar a leitura e entendimento}}
@@ -464,36 +464,28 @@ O Scanbot é um exemplo de SDK que pode ser utilizado junto ao cordova e possibi
 \end{itemize}
 \end{comment}
 
-As funcionalidades Login com Facebook, Consumo de Web Services, Envio de e-mail e SMS e uso do Leitor Biométrico 
-podem ser desenvolvidas tanto na abordagem nativa quanto na multiplataforma, sem ressalvas, não causando influência 
-na escolha entre abordagens.
+As funcionalidades \textbf{Login com Facebook}, \textbf{Consumo de Web Services}, \textbf{Envio de e-mail e SMS} e uso do \textbf{Leitor Biométrico} podem ser desenvolvidas tanto na abordagem nativa quanto na 
+multiplataforma, sem ressalvas, não causando influência na escolha entre abordagens.
 
-Para a realização de extração de metadados de arquivos de mídia, é possível utilizar ferramentas multiplataforma, 
-porém há restrições quanto à obtenção dos dados, pois alguns dados como ... e ... só puderam ser obtidos no desenvolvimento
-nativo.
+Para a realização de \textbf{extração de metadados de arquivos de mídia}, é possível utilizar ferramentas multiplataforma, porém há restrições quanto à obtenção dos dados, pois alguns dados como ... e ... só 
+puderam ser obtidos no desenvolvimento nativo.
 
-A criação de Widgets ainda não é possível com o uso de ferramentas multiplataforma baseadas em soluções web, como o Cordova.
+A criação de \textbf{Widgets} ainda não é possível com o uso de ferramentas multiplataforma baseadas em soluções \textit{web}, como o Cordova.
 
-Para o uso de assistentes pessoais, como a SIRI e o Google Assistant, é necessário o uso de tecnologias nativas.
+Para o uso de \textbf{assistentes pessoais}, como a Siri e o Google Assistant, é necessário o uso de tecnologias nativas.
 
-Não é possível criar aplicativos para SmartWatches, como o Apple Watch, utilizando o Cordova. O que pode-se fazer é criar
-o aplicativo de celular e a comunicação dele com o relógio com tecnologias multiplataforma, porém esta comunicação possuirá
-restrições, por exemplo o aplicativo do relógio só conseguirá trocar informações se o aplicativo do celular estiver aberto,
-o que não é necessário na solução nativa.
+Não é possível criar aplicativos para \textbf{SmartWatches}, como o Apple Watch, utilizando o Cordova. O que pode-se fazer é criar o aplicativo de celular, utilizando tecnologias multiplataforma, o aplicativo do relógio, 
+feito nativamente, e a comunicação do aplicativo com o relógio usando tecnologias multiplataforma, porém esta comunicação terá restrições, por exemplo o aplicativo do relógio só conseguirá trocar informações se o 
+aplicativo do celular estiver aberto, o que não é necessário na solução totalmente nativa.
+\begin{comment}
+Para a criação de aplicativos para \textbf{SmartTVs}, há no Cordova \textit{plugins} para iOS e para Android, mas não para os dois ao mesmo tempo, isso implica em desenvolver dois projetos separadamente de qualquer forma. Se 
+a equipe tem \textit{expertise} em tecnologias \textit{web}, pode ser vantajoso desenvolver multiplataforma para se aproveitar disso, no entanto, ainda será preciso um computador com MacOS e Xcode. Portanto se o foco for 
+desenvolver este tipo de aplicativo é mais vantajoso utilizar as tecnologias nativas disponiblizadas pelas plataformas, aproveitando, assim, o máximo de desempenho e capacidade dos dispositivos de TV.
+\end{comment}
+É possível desenvolver aplicativos multiplataforma com câmeras customizadas, porém quanto maior a customização mais difícil o desenvolvimento, tanto para nativo quanto para multiplataforma, cabendo analisar 
+a \textbf{expertise} da equipe para saber qual abordagem escolher.
 
-Para a criação de aplicativos para SmartTVs, há no Cordova plugins para iOS e para Android, mas não para os dois ao mesmo tempo, 
-isso implica em desenvolver dois projetos separadamente de qualquer forma. 
-Se a equipe tem expertise em tecnologias web, pode ser vantajoso desenvolver multiplataforma 
-para se aproveitar disso, no entanto, ainda será preciso computador com MacOS e Xcode. 
-Portanto se o foco for desenvolver este tipo de aplicativo é mais vantajoso utilizar as tecnologias nativas disponiblizadas pelas 
-plataformas, aproveitando, assim, o máximo de desempenho e capacidade dos dispositivos de TV.
+Para realização de \textbf{detecção facial} em fotos, vídeos e em tempo real, é possível utilizar ferramentas multiplataformas, porém muitas das \textit{APIs} disponibilizadas para isso não são gratuitas ou apresentam 
+algum tipo de restrição, como funcionamento em apenas uma das plataformas, Android ou iOS. Já no desenvolvimento nativo, as proprias plataformas disponibilizam \textit{APIs} que possibilitam detecções faciais.
 
-É possível desenvolver aplicativos multiplataforma com câmeras customizadas, porém quanto maior a customização mais dificil o
- desenvolvimento, tanto para nativo quanto para multiplataforma, cabendo analisar a expertise da equipe para saber qual 
- abordagem escolher.
-
-Para realização de detecção facial em fotos, vídeos e em tempo real, é possível utilizar ferramentas multiplataformas, 
-porém muitas das APIs disponibilizadas para isso não são gratuitas ou apresentam algum tipo de restrição, como funcionamento
-em apenas uma das plataformas, Android ou iOS. Já no desenvolvimento nativo, as proprias plataformas disponibilizam APIs 
-que possibilitam detecções faciais.
-
+\section{  } \label{sec:questionario}
