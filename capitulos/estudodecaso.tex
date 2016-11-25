@@ -40,7 +40,7 @@ usuário para funcionar. Caso o usuário não autorize, o aplicativo fica com fu
 Como banco de dados foi usado o SQLite, por meio do \textit{framework} externo e \textit{open-source FMDB}\footnote{\url{https://github.com/ccgus/fmdb}}, 
 disponível no Github;
 
-A arquitetura do sistema foi criada com base no padrão de projeto \textit{MVC}, possuindo uma camada \textit{DAO (Data Access Object)} para comunicação 
+A arquitetura do sistema foi criada com base no padrão de projeto \textit{MVC}, mostrado na Figura~\ref{fig:mvc}, possuindo uma camada \textit{DAO (Data Access Object)} para comunicação 
 com o banco de dados. No entanto, o \textit{MVC} tradicional difere em alguns aspectos do \textit{MVC} usado no iOS. 
 
 No iOS, o \textit{MVC} trás uma controladora ligada à classe de \textit{view}, que é chamado de \textit{ViewController}, responsável por 
@@ -161,7 +161,7 @@ o multiplataforma Ionic. Há, ainda, um tópico de observações gerais pertinen
  	\item \textbf{Cadastro de Remédios};
  	
  		 \begin{itemize}
-			\item No cadastro de remédios há o uso da câmera do dispositivo para tirar uma foto do medicamento e para registrar a prescrição médica. Opcionalmente, pode-se selecionar as fotos a partir da biblioteca de imagens do dispositivo. Com o uso do \textit{plugin} Cordova de acesso à câmera, essa foi uma tarefa tranquila e que funcionou corretamente em ambas as plataformas, Android e iOS. 
+			\item No cadastro de remédios há o uso da câmera do dispositivo para tirar uma foto do medicamento e para registrar a prescrição médica. Opcionalmente, pode-se selecionar as fotos a partir da biblioteca de imagens do dispositivo. Com o uso do \textit{plugin} Cordova de acesso à câmera, essa foi uma tarefa simples e que funcionou corretamente em ambas as plataformas, Android e iOS. 
 			\item Para que o usuário opte entre  tirar uma nova foto e escolher da galeria do dispositivo, foi utilizado um componente conhecido no iOS como \textit{UIActionSheet}. Com o uso de um único código, o Ionic possibilitou a geração de um componente exatamente igual ao nativo do iOS e de um correspondente no Android. 
 			Na Figura~\ref{fig:ionic_action_camera} é possível observar as diferenças de interface, as quais foram adequadas pelo Ionic para cada plataforma.
 			

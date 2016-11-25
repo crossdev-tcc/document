@@ -148,9 +148,9 @@ por serem móveis são mais fáceis de serem extraviados, furtados ou invadidos.
 Com o avanço da tecnologia presente nos dispositivos móveis, uma forma que se tornou comum para autenticação de usuário é a leitura biométrica, ou seja, reconhecimento de impressões digitais. Muitos \textit{smartphones} 
 já possuem esse recurso adicionando ao celular uma camada extra de segurança e praticidade. 
 
-Além do celular e dos dados pessoais do usuário, é possível que os dados de um aplicativo em específico sejam protejidos pelo mesmo recurso, ou seja, caso o aparelho seja encontrado desbloqueado, ainda não será possível 
+Além do celular e dos dados pessoais do usuário, é possível que os dados de um aplicativo em específico sejam protegidos pelo mesmo recurso, ou seja, caso o aparelho seja encontrado desbloqueado, ainda não será possível 
 ter acesso à todos os dados disponíveis dentro dele. Alguns aplicativos que se utilizam desse recurso são, por exemplo, bancos, diários, chaveiros eletrônicos e protetores de fotos. Nos dispositivos da Apple o recurso 
-foi introduzido no iPhone 5 e foi chamado de \textit{Touch ID}, nos dispositivos Android, os aparelhos mais desenvolvidos de cada marca possuem o sensor biométrico. 
+foi introduzido no iPhone 5 e foi chamado de \textit{Touch ID}, nos dispositivos Android, os aparelhos mais avançados de cada marca possuem o sensor biométrico. 
 
 Como mencionando anteriormente, é possível proteger os dados de uma aplicação com o leitor biométrico. Para isso, o iOS dispõe do \textit{framework LocalAuthentication}, que permite que a aplicação solicite a leitura da 
 digital, caso o aparelho possua o recurso, e compare com as impressões digitais cadastradas no dispositivo. Caso o dispositivo não possua o recurso, será requerida uma senha alfanumérica comum para desbloquear os dados do 
@@ -253,8 +253,8 @@ As Figuras~\ref{fig:metadata_audio-ios} e~\ref{fig:metadata_midia-android} apres
 A extração de dados no Ionic pode ser realizada utilizando um \textit{plugin} do cordova chamado \textit{File}, utilizado para obter 
 acesso aos arquivos e diretórios dos dispositivos. Na documentação do \textit{ngCordova} é apresentada a estrutura de pacotes do iOS e 
 do Android, para auxiliar o desenvolvedor a acessar as pastas desejadas. É apresentada, também, uma lista de possíveis erros
-que podem ocorrer durante o uso do plugin, como arquivo não encontrado, caminho inexistente, erro de \textit{encoding}, entre outros.
-Com o plugin \textit{File} é possível obter as seguintes propriedades:
+que podem ocorrer durante o uso do \textit{plugin}, como arquivo não encontrado, caminho inexistente, erro de \textit{encoding}, entre outros.
+Com o \textit{plugin File} é possível obter as seguintes propriedades:
  
 \begin{itemize}
 	\item name: nome do arquivo seguido de sua extenção
@@ -266,8 +266,8 @@ Com o plugin \textit{File} é possível obter as seguintes propriedades:
 
 Um exemplo de dados obtidos é apresentado na Figura~\ref{fig:metadata_result-ionic}. O código usado para 
 obtenção destes dados é apresentado na Figura~\ref{fig:metadata_image-ionic}.
-Para obtenção da duração de uma música ou um vídeo, é necessário o uso de outro  \textit{plugin} cordova chamado \textit{Media}.
-Não foram encontrados plugins para obtenção de dados tão detalhados quanto os disponíveis no iOS e Android, como informações do autor 
+Para obtenção da duração de uma música ou um vídeo, é necessário o uso de outro  \textit{plugin} chamado \textit{Media}.
+Não foram encontrados \textit{plugins} para obtenção de dados tão detalhados quanto os disponíveis no iOS e Android, como informações do autor 
 e álbum de uma música ou a localização geográfica do local em que uma foto foi tirada.
 
 \begin{figure}[H]
@@ -352,7 +352,7 @@ desenvolvimento multiplataforma.
 
 \subsection{Assistentes Pessoais} \label{subsec:siri}
 Os dispositivos móveis têm se tornado cada vez mais inteligentes e úteis para seus usuários. Funcionam como computadores, agendas, calendários, máquinas fotográficas, etc. Para atenderem ainda mais às necessidades de 
-seus usuários, os dispositivos possuem em sua maioria inteligências artificiais, na forma de assistentes pessoais, criadas para auxiliar no uso dos \textit{smartphones, smartwatches} e \textit{smart TVs}. 
+seus usuários, os dispositivos possuem em sua maioria inteligências artificiais, na forma de assistentes pessoais, criadas para auxiliar no uso dos \textit{smartphones} e \textit{smartwatches}. 
 Na Apple, a assistente é conhecida como Siri, já no Android existem alguns aplicativos de terceiros que tentam criar uma assistente pessoal. O mais conhecido é Google Now, da própria Google, 
 embora nesse caso ele não seja uma assitente pessoal, pois não possui traços de personalidade, ele apenas reconhece voz e responde a perguntas com muita eficiência.
 
@@ -379,9 +379,9 @@ de uso do aplicativo. Com isso, pode não ser uma boa ideia utilizar funcionalid
 estiver rodando, o relógio não conseguirá se comunicar e pegar os dados mais recentes, fazendo com 
 que apresente dados desatualizados, prejudicando a experiência de uso.
 
-Vale ressaltar que o aplicativo no Apple Watch deve ser feito nativamente, diretamente no Xcode. O \textit{plugin} apenas fornece um meio para que o \textit{app} multiplataforma do iPhone possa transmitir e receber 
-dados do \textit{app} do relógio, mas não é possível criar a interface e controladoras do relógio via multiplataforma, pois o Apple Watch não possui um navegador (\textit{WebView}) para interpretar o JavaScript assim 
-como o iPhone. Então, deve ser feito o aplicativo utilizando Cordova e Ionic, por exemplo, para o iPhone, e depois criar o \textit{app} no Xcode para Apple Watch e então utilizar um \textit{plugin} para realizar a 
+Vale ressaltar que o aplicativo no Apple Watch deve ser feito nativamente, diretamente no \textit{Xcode}. O \textit{plugin} apenas fornece um meio para que o \textit{app} multiplataforma do iPhone possa transmitir e receber 
+dados do \textit{app} do relógio, mas não é possível criar a interface e controladoras do relógio via multiplataforma, pois o Apple Watch não possui um navegador (\textit{WebView}) para interpretar o \textit{JavaScript} assim 
+como o iPhone. Então, deve ser feito o aplicativo utilizando Cordova e Ionic, por exemplo, para o iPhone, e depois criar o \textit{app} no \textit{Xcode} para Apple Watch e então utilizar um \textit{plugin} para realizar a 
 comunicação entre os dois aplicativos.  
 
 Se o aplicativo planeja utilizar muitos recursos do Apple Watch, como frequencímetro, pedômetro e acelerômetro, como aplicativos voltados para a área da saúde por exemplo, pode ser melhor desenvolver nativamente,
@@ -437,7 +437,7 @@ não apenas a detecção, como também o reconhecimento facial.
 Outro exemplo de tecnologia multiplataforma para detecção facial é o Beyond Reality Face NXT, um \textit{SDK} que oferece suporte a aplicações iOS nativas e a aplicações multiplataformas desenvolvidas com o 
 uso de \textit{actionscript}.% \cite{site_beyond_2016}.
 
-O Mobile Vision, da Google, é uma \textbf{API} que possibilita a detecção facial em fotos, vídeos e \textit{streams} ao vivo, tanto em plataformas Android, como em iOS.
+O Mobile Vision, da Google, é uma \textit{API} que possibilita a detecção facial em fotos, vídeos e \textit{streams} ao vivo, tanto em plataformas Android, como em iOS.
 
 O Cordova não apresenta bibliotecas próprias para a realização de detecção facial, sendo necessário o uso de bibliotecas externas. O Scanbot é um exemplo de \textit{SDK} que pode ser utilizado junto ao Cordova e 
 possibilita detecção de documentos e de faces em tempo real, porém não é totalmente compatível com iOS e não é uma ferramenta gratuita. %\cite{gmbh_javascript_2016}
@@ -512,7 +512,7 @@ coincidiu com os resultados obtidos na análise exploratória. Tais funcionalida
 Além da experiência própria, esses podem ter sido os principais motivos para que tenham sido analisadas como passíveis de serem implementadas no ambiente multiplataforma.
 
 Para as funcionalidades de \textbf{Leitor Biométrico}, \textbf{\textit{Widgets}} e \textbf{Assistentes Pessoais} a maior parte dos especialistas não soube opinar. Por serem funcionalidades não essenciais, isto é, 
-funcionalidades que se ausentes, não impedem o funcionamento do aplicativo, nem todos os especialistas conhecem ou já tiveram experiência desenvolvendo alguma delas, dificultando o julgamento. 
+funcionalidades que se ausentes, não impedem o funcionamento do aplicativo, pode ser que nem todos os especialistas conheçam ou tenham tido experiência desenvolvendo alguma delas, dificultando o julgamento. 
 
 Em relação ao desenvolvimento de aplicativos para \textbf{\textit{Smartwatches}}, a maioria não soube opinar. Por ser uma tecnologia recente no mercado e não popularizada no país, é possível que os especialistas não 
 tenham experiência e nem interesse neste nicho de aplicações. Para os que opinaram, cerca de 70\% acha que não é possível a criação de aplicativos para os mesmos utilizando tecnologias multiplataforma, coincidindo com 
@@ -532,6 +532,6 @@ Foi questionado se a abordagem multiplataforma pode ser utilizada em qualquer ce
 poderão ocorrer algum tipo de restrição no decorrer do desenvolvimento do aplicativo. Também foi questionado se com a evolução das ferramentas multiplataforma, elas não apresentam mais limitações quando comparadas com as 
 nativas, onde 80\% dos especialistas discordaram.
 
-Foi percebido que muitos especialistas não souberam opinar sobre muitas das questões anteriores e mesmo assim nenhum acredita que o desenvolvimento multiplataforma pode ser usado em qualquer cenário sem restrição. Além 
+Foi percebido que muitos especialistas não souberam opinar ou estavam equivocados sobre muitas das questões anteriores e mesmo assim nenhum acredita que o desenvolvimento multiplataforma pode ser usado em qualquer cenário sem restrição. Além 
 disso, a grande maioria acredita que as ferramentas são limitadas quando comparadas às nativas. De fato, o multiplataforma não é a melhor opção para todos os cenários e ainda apresenta limitações quando comparado à 
 abordagem nativa, porém os especialistas compactuam com essas ideias mesmo sem conhecer as reais capacidades do ambiente multiplataforma, indicando um possível prejulgamento da abordagem.
