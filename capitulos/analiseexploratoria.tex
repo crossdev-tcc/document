@@ -467,8 +467,8 @@ possibilita detecção de documentos e de faces em tempo real, porém não é to
 As funcionalidades \textbf{Login com Facebook}, \textbf{Consumo de Web Services}, \textbf{Envio de e-mail e SMS} e uso do \textbf{Leitor Biométrico} podem ser desenvolvidas tanto na abordagem nativa quanto na 
 multiplataforma, sem ressalvas, não causando influência na escolha entre abordagens.
 
-Para a realização de \textbf{extração de metadados de arquivos de mídia}, é possível utilizar ferramentas multiplataforma, porém há restrições quanto à obtenção dos dados, pois alguns dados como ... e ... só 
-puderam ser obtidos no desenvolvimento nativo.
+Para a realização de \textbf{extração de metadados de arquivos de mídia}, é possível utilizar ferramentas multiplataforma, porém há restrições quanto à obtenção dos dados, visto que alguns deles 
+puderam ser obtidos apenas no desenvolvimento nativo.
 
 A criação de \textbf{Widgets} ainda não é possível com o uso de ferramentas multiplataforma baseadas em soluções \textit{web}, como o Cordova.
 
@@ -477,15 +477,61 @@ Para o uso de \textbf{assistentes pessoais}, como a Siri e o Google Assistant, �
 Não é possível criar aplicativos para \textbf{SmartWatches}, como o Apple Watch, utilizando o Cordova. O que pode-se fazer é criar o aplicativo de celular, utilizando tecnologias multiplataforma, o aplicativo do relógio, 
 feito nativamente, e a comunicação do aplicativo com o relógio usando tecnologias multiplataforma, porém esta comunicação terá restrições, por exemplo o aplicativo do relógio só conseguirá trocar informações se o 
 aplicativo do celular estiver aberto, o que não é necessário na solução totalmente nativa.
+
+É possível desenvolver aplicativos multiplataforma com \textbf{câmeras customizadas}, porém quanto maior a customização, mais difícil o desenvolvimento, tanto para nativo quanto para multiplataforma, cabendo analisar 
+a \textit{expertise} da equipe para saber qual abordagem escolher.
+
+Para realização de \textbf{detecção facial} em fotos, vídeos e em tempo real, é possível utilizar ferramentas multiplataformas, porém muitas das \textit{APIs} disponibilizadas para isso não são gratuitas ou apresentam 
+algum tipo de restrição, como funcionamento em apenas uma das plataformas, Android ou iOS. Já no desenvolvimento nativo, as próprias plataformas disponibilizam \textit{APIs} que possibilitam detecções faciais.
+
 \begin{comment}
 Para a criação de aplicativos para \textbf{SmartTVs}, há no Cordova \textit{plugins} para iOS e para Android, mas não para os dois ao mesmo tempo, isso implica em desenvolver dois projetos separadamente de qualquer forma. Se 
 a equipe tem \textit{expertise} em tecnologias \textit{web}, pode ser vantajoso desenvolver multiplataforma para se aproveitar disso, no entanto, ainda será preciso um computador com MacOS e Xcode. Portanto se o foco for 
 desenvolver este tipo de aplicativo é mais vantajoso utilizar as tecnologias nativas disponiblizadas pelas plataformas, aproveitando, assim, o máximo de desempenho e capacidade dos dispositivos de TV.
 \end{comment}
-É possível desenvolver aplicativos multiplataforma com câmeras customizadas, porém quanto maior a customização mais difícil o desenvolvimento, tanto para nativo quanto para multiplataforma, cabendo analisar 
-a \textbf{expertise} da equipe para saber qual abordagem escolher.
 
-Para realização de \textbf{detecção facial} em fotos, vídeos e em tempo real, é possível utilizar ferramentas multiplataformas, porém muitas das \textit{APIs} disponibilizadas para isso não são gratuitas ou apresentam 
-algum tipo de restrição, como funcionamento em apenas uma das plataformas, Android ou iOS. Já no desenvolvimento nativo, as proprias plataformas disponibilizam \textit{APIs} que possibilitam detecções faciais.
+\section{Opinião dos especialistas} \label{sec:questionario}
+Com o propósito de confrontar a opinião dos especialistas da área de desenvolvimento móvel com os resultados obtidos empiricamente, foi elaborada uma série de afirmações baseadas 
+nas informações obtidas na primeira etapa da análise exploratória. Além das afirmações de caráter técnico, foram elaboradas outras duas para avaliar a percepção geral dos especialistas em relação ao desenvolvimento 
+multiplataforma. Considerando as funcionalidades analisadas, foi abordada a viabilidade de desenvolvimento das mesmas no ambiente multiplataforma. Os especialistas poderiam expressar as suas opiniões de acordo com as 
+opções listadas a seguir.
 
-\section{  } \label{sec:questionario}
+\begin{itemize}
+	\item \textbf{Concordo}: funcionalidade em questão pode ser desenvolvida no ambiente multiplataforma, sem ressalvas;
+	\item \textbf{Concordo, mas há limitações quando comparado ao desenvolvimento nativo}: funcionalidade em questão pode ser desenvolvida no ambiente multiplataforma, com ressalvas;
+	\item \textbf{Discordo}: funcionalidade em questão não pode ser desenvolvida no ambiente multiplataforma;
+	\item \textbf{Não sei opinar}: não sabe se é possível desenvolver a funcionalidade no ambiente multiplataforma;
+	\item \textbf{Outros}: resposta aberta, caso o profissional queira dar uma opinião mais detalhada a respeito da funcionalidade; 
+\end{itemize}
+
+O questionário, bem como os gráficos de análise dos resultados encontram-se no Apêndice~\ref{apen:questionario}.
+
+\subsection{Análise dos dados coletados} \label{subsec:analisedadosquestionario}
+Avaliando as respostas dadas ao questionário, observou-se que a percepção dos especialistas para as funcionalidades de \textbf{Login com Facebook}, \textbf{Consumo de \textit{Web Service}} e \textbf{envio de \textit{e-mail} e SMS}
+coincidiu com os resultados obtidos na análise exploratória. Tais funcionalidades já estão muito difundidas entre os desenvolvedores, além disso, possuem baixo grau de complexidade de implementação no ambiente nativo. 
+Além da experiência própria, esses podem ter sido os principais motivos para que tenham sido analisadas como passíveis de serem implementadas no ambiente multiplataforma.
+
+Para as funcionalidades de \textbf{Leitor Biométrico}, \textbf{\textit{Widgets}} e \textbf{Assistentes Pessoais} a maior parte dos especialistas não soube opinar. Por serem funcionalidades não essenciais, isto é, 
+funcionalidades que se ausentes, não impedem o funcionamento do aplicativo, nem todos os especialistas conhecem ou já tiveram experiência desenvolvendo alguma delas, dificultando o julgamento. 
+
+Em relação ao desenvolvimento de aplicativos para \textbf{\textit{Smartwatches}}, a maioria não soube opinar. Por ser uma tecnologia recente no mercado e não popularizada no país, é possível que os especialistas não 
+tenham experiência e nem interesse neste nicho de aplicações. Para os que opinaram, cerca de 70\% acha que não é possível a criação de aplicativos para os mesmos utilizando tecnologias multiplataforma, coincidindo com 
+os resultados obtidos na análise exploratória. Quanto à comunicação entre o aplicativo para \textbf{\textit{Smartwatch}} e o aplicativo no celular, apenas 5\% dos especialistas responderam de acordo com os dados da análise 
+exploratória, ou seja, concordam que há restrições na comunicação entre ambos os aplicativos. Isso reforça a falta de conhecimento e interesse dos especialistas neste tipo de tecnologia.
+
+No que diz respeito à funcionalidade de \textbf{Detecção Facial}, metade dos especialistas foram equivocados em suas respostas, discordando ou concordando totalmente com a possibilidade do uso deste recurso no ambiente 
+multiplataforma. Na realidade, a implementação deste recurso e possível, porém com limitações, de acordo com os dados obtidos na análise exploratória.  
+
+Quanto à possibilidade de criação de \textbf{Câmeras Customizadas}, mais da metade dos especialistas não sabem que esta funcionalidade pode ser implementada sem limitações no ambiente multiplataforma, conforme os dados 
+obtidos na análise exploratória.
+
+Considerando a necessidade de \textbf{extração de metadados de arquivos de mídia}, apenas 25\% dos especialistas estão de acordo com o que foi obtido na análise exploratória, isto é, é possível a extração de metadados, porém
+com limitações nos dados obtidos.
+
+Foi questionado se a abordagem multiplataforma pode ser utilizada em qualquer cenário de desenvolvimento móvel, onde 75\% dos especialistas discordaram. Os demais concordaram com a afirmação, no entanto, acreditam que 
+poderão ocorrer algum tipo de restrição no decorrer do desenvolvimento do aplicativo. Também foi questionado se com a evolução das ferramentas multiplataforma, elas não apresentam mais limitações quando comparadas com as 
+nativas, onde 80\% dos especialistas discordaram.
+
+Foi percebido que muitos especialistas não souberam opinar sobre muitas das questões anteriores e mesmo assim nenhum acredita que o desenvolvimento multiplataforma pode ser usado em qualquer cenário sem restrição. Além 
+disso, a grande maioria acredita que as ferramentas são limitadas quando comparadas às nativas. De fato, o multiplataforma não é a melhor opção para todos os cenários e ainda apresenta limitações quando comparado à 
+abordagem nativa, porém os especialistas compactuam com essas ideias mesmo sem conhecer as reais capacidades do ambiente multiplataforma, indicando um possível prejulgamento da abordagem.
