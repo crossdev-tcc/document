@@ -139,15 +139,15 @@ A arquitetura Android é baseada nas camadas apresentadas na Figura~\ref{fig:arc
     \item A camada logo a abaixo da \textit{Application Framework} é a \textit{Binder IPC Proxies}, onde \textit{IPC} significa \textit{Inter-Process Comunication}.
     É a camada que faz uma ponte entre as aplicações instaladas na camada superior com a próxima camada, a \textit{System Services}. É uma interface que permite que \textit{APIs}
     de alto nível interajam com serviços do sistema que residem na camada abaixo dela \cite{android_android_2016}. 
-    \item Abaixo da \textit{Binder IPC Proxies} fica a \textit{System Services}, que , por meio de módulos, permite acesso a \textit{hardwares} específicos. Cada serviço presente nessa camada,
+    \item Abaixo da \textit{Binder IPC Proxies} fica a \textit{System Services}, que, por meio de módulos, permite acesso a \textit{hardwares} específicos. Cada serviço presente nessa camada
     foi desenvolvido para gerenciar um componente específico, como busca e notificações. Os serviços foram divididos em duas categorias, \textit{Media} e \textit{System}, explicadas a seguir \cite{android_android_2016}.
     \begin{itemize}
-        \item \textit{Media Server}: são os serviços responsáveis por gerenciar conteúdos de mídia como gravação e reprodução de audio e vídeo. 
-        \item \textit{System Server}: são serviços responsáveis por gerenciar os demais tipos de serviço do sistema como notificações e \textit{windows}.
+        \item \textit{Media Server}: são os serviços responsáveis por gerenciar conteúdos de mídia como gravação e reprodução de áudio e vídeo. 
+        \item \textit{System Server}: são serviços responsáveis por gerenciar os demais tipos de serviço do sistema, como notificações e \textit{windows}.
     \end{itemize}
     \item Abaixo da camada \textit{System Services} fica a camada \textit{HAL (Hardware Abstraction Layer)} que permite que fornecedores de \textit{hardware} criem interfaces e \textit{drivers} para os \textit{hardwares} que
     ele oferecem. Com isso, é possível criar novas funcionalidades e implementá-las sem afetar o resto das camadas do sistema \cite{android_android_2016}.  
-    \item A camada mais baixa é a \textit{Linux Kernel} que é uma versão do \textit{kernel} do Linux com algumas modificações como um gerenciamento de memória mais avançado e próprio para dispositivos 
+    \item A camada mais baixa é a \textit{Linux Kernel}, uma versão do \textit{kernel} do Linux com algumas modificações, como um gerenciamento de memória mais avançado e próprio para dispositivos 
     móveis e funcionalidades para dispositivos embarcados \cite{android_android_2016}. 
     
 \end{itemize}
@@ -217,8 +217,9 @@ para garantir que outras empresas pudessem contribuir \cite{bezerra_desenvolvime
 Como o PhoneGap é uma marca registrada de propriedade da Adobe, na Apache teve seu nome alterado para Cordova.
 Tanto o \textit{Apache Cordova} quanto o \textit{Adobe PhoneGap}, são gratuitos e \textit{open sources}, no entanto, o 
 PhoneGap possui um ambiente integrado com serviços da Adobe, como o \textit{PhoneGap Build} \cite{bezerra_desenvolvimento_2016}.
- 
-Cordova permite que aplicações não nativas tenham acesso à funcionalidades nativas do dispositivo como sensores, 
+
+O Cordova permite que aplicações não nativas tenham acesso às funcionalidades nativas do dispositivo como sensores, 
+
 contatos e câmera. No entanto, o Cordova apenas consegue fazer um aplicativo criado em 
 \textit{HTML} rodar como se fosse nativo em um dispositivo com Android e iOS, mas não consegue 
 imitar a usabilidade e aparência dos dispositivos nativos \cite{bezerra_desenvolvimento_2016}. 
@@ -255,7 +256,7 @@ O usuário faz uma ação por meio da interface gráfica,
 o AngularJS interpreta a ação e faz uma requisição para o servidor pedindo apenas o conteúdo necessário, que é 
 diferente do que já está sendo mostrado para o usuário. 
 O servidor retorna o conteúdo específico e o AngularJS apresenta o novo conteúdo inserindo-o corretamente junto 
-com o antigo já mostrado \cite{ursino_angularjs:_2015}. O ciclo do AngularJS é esquematizado na Figura~\ref{fig:angular_response} a seguir.
+com o antigo já mostrado \cite{ursino_angularjs:_2015}. O ciclo do AngularJS é esquematizado na Figura~\ref{fig:angular_response}, a seguir.
 
 \begin{figure}[h]
   \centering
@@ -309,8 +310,13 @@ Um projeto Ionic pode ser dividido em cinco camadas, listadas e detalhadas a seg
 
 \subsubsection{Desenvolvimento Ionic} \label{subsubsection:dev-ionic}
 Para o desenvolvimento de aplicações utilizando Ionic, não é necessário nenhum equipamento específico, assim como no desenvolvimento Android.
+<<<<<<< HEAD
 É necessário apenas um computador com qualquer \textit{SO}, no entanto, para o desenvolvimento do \textit{app} iOS, ainda é necessário que se possua um computador com o \textit{SO} 
 \textit{Mac OS} e com o Xcode \cite{drifty_installing_2016}.
+=======
+É necessário apenas um computador com qualquer \textit{SO (Sistema Operacional)}, no entanto, para o desenvolvimento do \textit{app} iOS, ainda é necessário que se possua um computador com o \textit{SO} 
+\textit{MacOS} e com o Xcode \cite{drifty_installing_2016}.
+>>>>>>> afe43edf609d1dcc404070dc42f4e5b7ad8a88bb
 Pode-se utilizar qualquer \textit{IDE} de acordo com as preferências do programador, não há qualquer tipo de recomendação técnica por parte da equipe ou presente na documentação do Ionic.
 A linguagem utilizada é o \textit{JavaScript}, usando ainda \textit{HTML} e \textit{CSS} para criação da interface gráfica.
 
