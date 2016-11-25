@@ -5,8 +5,8 @@
 Foram selecionadas algumas funcionalidades muito comuns em aplicativos para serem comparadas entre iOS, Android e Ionic, com o objetivo de melhorar o embasamento para a tomada de decisão entre o desenvolvimento 
 nativo e multiplataforma. Importante ressaltar que para o aplicativo Ionic utilizar os recursos do celular, tanto \textit{hardware} quanto \textit{software}, é sempre necessária a utilização de 
 \textit{plugins} do Cordova, ou seja, sempre que um novo recurso for desenvolvido para um dispositivo, há um tempo de espera para a criação do \textit{plugin} necessário para utilizar o novo recurso, 
-e se o \textit{plugin} for descontinuado, eventualmente poderá quebrar a aplicação e prejudicar a experiência do usuário. A seguir são apresentadas as funcionalidades e, em alguns casos, trechos de códigos minerados 
-de repositórios públicos e criados pelos autores comentados para facilitar o entendimento das funcionalidades e diferenças entre cada plataforma e abordagem de desenvolvimento. 
+e se o \textit{plugin} for descontinuado, eventualmente poderá quebrar a aplicação e prejudicar a experiência do usuário. A seguir são apresentadas as funcionalidades e, em alguns casos, trechos de códigos, minerados 
+de repositórios públicos e criados pelos autores, comentados para facilitar o entendimento das funcionalidades e diferenças entre cada plataforma e abordagem de desenvolvimento. 
 
 \section{Funcionalidades analisadas}\label{sec:intro_analise_exp}
 
@@ -70,7 +70,7 @@ o que pode tornar o desenvolvimento mais simples que na abordagem nativa.
 
 \subsection{Consumo de Web Services} \label{subsec:webservices}
 Como o poder computacional dos dispositivos móveis, embora elevado, ainda não é comparável ao dos servidores, muitos aplicativos utilizam um modelo cliente/servidor, no qual
-as operações mais custosas computacionamente são processadas no lado servidor e não no cliente. Além disso, a persistência dos dados da aplicação dificilmente é feita localmente nos dispositivos para evitar 
+as operações mais custosas computacionamente são processadas no lado servidor e não no cliente. Além disso, a persistência dos dados da aplicação dificilmente é feita apenas localmente nos dispositivos para evitar 
 perdas de dados no caso de roubos, extravios ou danos ao aparelho, facilitar a migração para outros dispositivos e o uso em outras plataformas. Com isso, é necessário que os aplicativos estejam preparados para se 
 comunicarem com \textit{Web Services}. Para realizar essa comunicação, cada plataforma oferece alguns meios nativos como classes e \textit{frameworks}, no entanto, existem \textit{frameworks} de terceiros que 
 são muito utilizados e conhecidos na comunidade de desenvolvedores tanto para comunicar com os \textit{Web Services}, como para lidar com JSON e XML usados na comunicação entre aplicativo/servidor. 
@@ -257,11 +257,11 @@ que podem ocorrer durante o uso do plugin, como arquivo não encontrado, caminho
 Com o plugin \textit{File} é possível obter as seguintes propriedades:
  
 \begin{itemize}
-	\item name: nome do arquivo seguido de sua extenção
-	\item localURL: a url do arquivo, seguido de seu nome e extenção
-	\item type: \textit{Internet media type} ou \textit{MIME type}, padrão usado na Internet para indicar um tipo de dado
-	\item lastModifiedDate: data e hora da última modificação do arquivo
-	\item size: tamanho do arquivo em bytes
+	\item \textbf{\textit{name}}: nome do arquivo seguido de sua extenção
+	\item \textbf{\textit{localURL}}: a url do arquivo, seguido de seu nome e extenção
+	\item \textbf{\textit{type}}: \textit{Internet media type} ou \textit{MIME type}, padrão usado na Internet para indicar um tipo de dado
+	\item \textbf{\textit{lastModifiedDate}}: data e hora da última modificação do arquivo
+	\item \textbf{\textit{size}}: tamanho do arquivo em bytes
 \end{itemize}
 
 Um exemplo de dados obtidos é apresentado na Figura~\ref{fig:metadata_result-ionic}. O código usado para 
@@ -286,7 +286,7 @@ e álbum de uma música ou a localização geográfica do local em que uma foto 
 \footnotetext{\url{https://github.com/cfjedimaster/Cordova-Examples/tree/master/getfiledata}}
 
 \subsection{Envio de e-mail e SMS} \label{subsec:emailsms}
-Cada plataforma possui seus próprios \textit{frameworks} para incluir dentro do aplicativo a ser desenvolvido o mecanismo de envio de \textit{e-mails} ou mensagens de texto(\textit{SMS}), muito utilizados para compartilhar 
+Cada plataforma possui seus próprios \textit{frameworks} para incluir dentro do aplicativo a ser desenvolvido o mecanismo de envio de \textit{e-mails} ou mensagens de texto (\textit{SMS}), muito utilizados para compartilhar 
 e divulgar informações do aplicativo ou até mesmo o próprio aplicativo e entrar em contato com a equipe de desenvolvimento do mesmo. Para utilizar desses recursos no Ionic, é possível utilizar o 
 \textit{plugin cordova-plugin-email-composer}\footnote{\url{https://github.com/katzer/cordova-plugin-email-composer}} para ter acesso à interface padrão do sistema no qual o aplicativo está sendo executado para envio de 
 \textit{e-mail}. De maneira similar, para o envio de \textit{SMS}, é possível utilizar o \textit{plugin cordova-sms-plugin}\footnote{\url{https://github.com/cordova-sms/cordova-sms-plugin}}. Tanto na abordagem nativa, 
@@ -325,8 +325,8 @@ https://github.com/driftyco/ionic/issues/4100
 \end{comment} 
  
 \subsection{\textit{Widgets}} \label{subsec:widgets}
-\textit{Widgets} são atalhos que facilitam o acesso a algum programa. Vários dispositivos possuem esse recurso como computadores, camêras fotográficas, \textit{smartphones} e \textit{tablets}. Eles ajudam o usuário a 
-realizar ações mais rapidamente e sem entrar necessáriamente em um programa ou aplicativo, sendo alguns dos mais comuns e práticos, o de agenda de eventos e informações climáticas.
+\textit{Widgets} são atalhos que facilitam o acesso a algum programa. Vários dispositivos possuem esse recurso, como computadores, camêras fotográficas, \textit{smartphones} e \textit{tablets}. Eles ajudam o usuário a 
+realizar ações mais rapidamente e sem entrar necessariamente em um programa ou aplicativo, sendo alguns dos mais comuns e práticos, o de agenda de eventos e informações climáticas.
 
 Cada plataforma possui suas próprias maneiras de implementá-los, sendo no iOS apenas disponíveis na central de notificações do dispositivo e no Android sendo disponíveis tanto na tela inicial do aparelho quanto na central 
 de notificações. A Figura~\ref{fig:widgets_sample} mostra exemplos de \textit{widgets} no iOS e Android respectivamente.
@@ -380,11 +380,11 @@ estiver rodando, o relógio não conseguirá se comunicar e pegar os dados mais 
 que apresente dados desatualizados, prejudicando a experiência de uso.
 
 Vale ressaltar que o aplicativo no Apple Watch deve ser feito nativamente, diretamente no Xcode. O \textit{plugin} apenas fornece um meio para que o \textit{app} multiplataforma do iPhone possa transmitir e receber 
-dados do \textit{app} do relógio, mas não é possível criar a interface e controladoras do relógio via multiplataforma, pois o Apple Watch não possui um navegador (\textit{WebView}) para interpretar o JavaScript assim 
+dados do \textit{app} do relógio, mas não é possível criar a interface e controladoras do relógio via multiplataforma, pois o Apple Watch não possui um navegador (\textit{WebView}) para interpretar o JavaScript, 
 como o iPhone. Então, deve ser feito o aplicativo utilizando Cordova e Ionic, por exemplo, para o iPhone, e depois criar o \textit{app} no Xcode para Apple Watch e então utilizar um \textit{plugin} para realizar a 
 comunicação entre os dois aplicativos.  
 
-Se o aplicativo planeja utilizar muitos recursos do Apple Watch, como frequencímetro, pedômetro e acelerômetro, como aplicativos voltados para a área da saúde por exemplo, pode ser melhor desenvolver nativamente,
+Se planeja-se que o aplicativo utilize muitos recursos do Apple Watch, como frequencímetro, pedômetro e acelerômetro, como aplicativos voltados para a área da saúde, pode ser melhor desenvolver nativamente,
 pois o foco não estará sendo em desenvolver o aplicativo para várias plataformas, mas sim para um dispositivo específico. Com isso, pode-se aproveitar melhor todos os recursos do relógio e todos os benefícios da integração
 do mesmo com o iPhone.
 
@@ -520,7 +520,7 @@ os resultados obtidos na análise exploratória. Quanto à comunicação entre o
 exploratória, ou seja, concordam que há restrições na comunicação entre ambos os aplicativos. Isso reforça a falta de conhecimento e interesse dos especialistas neste tipo de tecnologia.
 
 No que diz respeito à funcionalidade de \textbf{Detecção Facial}, metade dos especialistas foram equivocados em suas respostas, discordando ou concordando totalmente com a possibilidade do uso deste recurso no ambiente 
-multiplataforma. Na realidade, a implementação deste recurso e possível, porém com limitações, de acordo com os dados obtidos na análise exploratória.  
+multiplataforma. Na realidade, a implementação deste recurso é possível, porém com limitações, de acordo com os dados obtidos na análise exploratória.  
 
 Quanto à possibilidade de criação de \textbf{Câmeras Customizadas}, mais da metade dos especialistas não sabem que esta funcionalidade pode ser implementada sem limitações no ambiente multiplataforma, conforme os dados 
 obtidos na análise exploratória.
