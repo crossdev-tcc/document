@@ -1,7 +1,7 @@
 \chapter{Desenvolvimento de aplicativos móveis} \label{cap:referencialteorico} 
 
 Segundo \citeonline{kassas_taxonomy_2015}, o desenvolvimento de aplicativos móveis diferencia-se do desenvolvimento de outros tipos de \textit{software} por possuir particularidades e restrições. Os desenvolvedores devem 
-ter em mente aspectos como as capacidades do dispositivo móvel, a mobilidade, as especificações dos dispositivos, o design e navegabilidade de interface do usuário, segurança e privacidade do usuário. 
+ter em mente aspectos como as capacidades e especificações dos dispositivo móveis, a mobilidade, o \textit{design} e navegabilidade de interface gráfica, segurança e privacidade do usuário. 
 De acordo com \citeonline{corral_ant_2012}, aplicações móveis  são desenvolvidas dinamicamente e lançadas no mercado em pequenos ciclos. Os produtos finais costumam ser de pequeno porte e comercializados a preços baixos. 
 As equipes de desenvolvimento também tendem a ser pequenas. Algumas particularidades a serem consideradas no desenvolvimento \textit{mobile} são listadas a seguir, baseadas em \citeonline{kassas_taxonomy_2015}.
 
@@ -44,22 +44,22 @@ a aplicação deve ser desenvolvida separadamente para cada uma delas \cite{heit
 %para cada uma das plataformas
 %Dado que
 
-Posto que o \textit{app} é desenvolvido em ambiente próprio, segue-se os padrões técnicos, de interface e de experiência de usuário determinados pela plataforma, provendo um \textit{look and feel} de aplicação nativa ao usuário.
+Posto que o \textit{app} é desenvolvido em ambiente próprio, seguem-se os padrões técnicos, de interface e de experiência de usuário determinados pela plataforma, provendo um \textit{look and feel} de aplicação nativa ao usuário.
 Aplicações nativas tem fácil acesso, por meio de \textit{APIs (Application Programming Interface)} fornecidas pelas plataformas, a recursos dos dispositivos móveis, como sensores, câmera, \textit{GPS (Global Positioning System)}, contatos e \textit{e-mail} \cite{kassas_taxonomy_2015}.
 
 Nas seções a seguir serão descritas as arquiteturas das plataformas iOS e Android, duas das plataformas mais conhecidas e utilizadas para desenvolvimento nativo de aplicações \textit{mobile} \cite{jobe_native_2013}.
 
 \subsection{iOS} \label{subsection:ios}
 
-O \textit{SO} iOS foi lançado em Janeiro de 2007 juntamente com o primeiro \textit{iPhone} e 
+O \textit{SO (Sistema Operacional)} iOS foi lançado em Janeiro de 2007 juntamente com o primeiro \textit{iPhone} e 
 funciona como uma interface entre as aplicações desenvolvidas pelos programadores (\textit{apps}) e o \textit{hardware} 
 dos dispositivos (\textit{iPhone}, \textit{iPad}, \textit{iPod}) \cite{apple_inc_apple_2007}. 
 Dessa forma, a comunicação com o \textit{hardware} do dispositivo se dá 
 por meio de um conjunto bem definido de interfaces do sistema, o que facilita o desenvolvimento de \textit{apps} 
 que funcionam entre os variados tipos de \textit{hardware} dos dispositivos da Apple \cite{apple_inc_developing_2016}. 
 
-Como recomendação, a Apple explica que deve-se preferir o uso de camadas mais elevadas, pois as camadas de 
-mais alto nível possuem abstrações orientadas à objeto de funcionalidades das camadas mais baixas. Isso 
+A arquitetura do iOS é baseada em camadas e, como recomendação, a Apple explica que deve-se preferir o uso de camadas mais elevadas, pois as camadas de 
+possuem abstrações orientadas à objeto de funcionalidades implementadas nas camadas mais baixas. Isso 
 torna o desenvolvimento mais fácil, pois reduz a quantidade de código que deve ser criado e mantém funcionalidades 
 complexas das camadas mais baixas encapsuladas por meio das interfaces. No entanto, não há problema em usar 
 funcionalidades presentes nas camadas mais baixas, se essas não estiverem disponíveis por meio de abstrações nas 
@@ -69,7 +69,7 @@ A maioria das interfaces disponíveis para uso são disponibilizadas por meio de
 imagens, aplicativos auxiliares e arquivos \textit{header}, para o \textit{framework} funcionar corretamente \cite{apple_inc_tech_2014}.
 
 \subsubsection{Arquitetura iOS} \label{subsubsection:arc-ios}
-Sua arquitetura é baseada nas camadas listadas, conforme a Figura~\ref{fig:arc-ios}, a seguir.
+Conforme dito anteriormente, a arquitetura do iOS é baseada nas camadas listadas, conforme a Figura~\ref{fig:arc-ios}, a seguir.
  
 \begin{figure}[H]
   \centering
@@ -84,7 +84,7 @@ As camadas do iOS são explicadas com mais detalhes a seguir.
 	\item A camada \textit{Cocoa Touch} é a camada de mais alto nível onde são fornecidos serviços básicos de interação 
     com o usuário como entrada baseada em toques, notificações \textit{Push} e outras tecnologias necessárias para
      melhorar a experiência do usuário como multitarefas, Continuidade (\textit{Handoff}) e \textit{AirDrop}, além de \textit{frameworks} 
-     de alto nível que permitem acesso a funcionalidades do sistema como \textit{AddressBook} para contatos, \textit{EventKit} 
+     de alto nível que permitem acesso à funcionalidades do sistema como \textit{AddressBook} para contatos, \textit{EventKit} 
      para eventos relacionados ao calendário e \textit{MapKit} para mapas \cite{apple_inc_tech_2014}.
 	\item A camada logo abaixo da \textit{Cocoa Touch} é a camada \textit{Media} que contém tecnologias e \textit{frameworks} necessários 
     para a implementação de experiências multimídia com áudio, vídeo e gráficos \cite{apple_inc_tech_2014}.
@@ -109,9 +109,9 @@ Para agilizar o processo de aprovação, é necessário que o aplicativo esteja 
 
 Desenvolver aplicativos para a plataforma iOS requer um computador com o \textit{SO} Mac OS e o ambiente de desenvolvimento \textit{Xcode} \cite{heitkotter_evaluating_2013}. 
 O desenvolvimento é atrelado a duas linguagens de programação, o \textit{Objective-C} e o \textit{Swift}.
-O Objective-C constitui-se em um superconjunto da linguagem de programação C, da qual herda a maior parte da sua sintaxe, incluindo tipos primitivos e fluxo de declarações, e adiciona sintaxe própria para definição de classes e métodos \cite{apple_inc_about_2014}. 
+%O Objective-C constitui-se em um superconjunto da linguagem de programação C, da qual herda a maior parte da sua sintaxe, incluindo tipos primitivos e fluxo de declarações, e adiciona sintaxe própria para definição de classes e métodos \cite{apple_inc_about_2014}. 
 %É uma linguagem que teve origem nos anos 80 e ganhou destaque junto ao crescimento da Apple.
-O \textit{Swift} foi lançado pela Apple como um sucessor do \textit{Objective-C}. É uma linguagem \textit{software} livre e pode ser integrada a códigos \textit{Objective-C} \cite{apple_inc_swift_2016}. Pouco tempo após o seu lançamento, tornou-se uma das linguagens de programação mais utilizadas no mundo \cite{rebouas_empirical_2016}. Segundo a Apple, o \textit{Swift} possui uma sintaxe concisa e intuitiva \cite{apple_inc_swift_2016}.
+O \textit{Swift} foi lançado pela Apple como um sucessor do \textit{Objective-C}. É uma linguagem \textit{software} livre e pode ser integrada a códigos \textit{Objective-C} \cite{apple_inc_swift_2016}. Pouco tempo após o seu lançamento, tornou-se uma das linguagens de programação mais utilizadas no mundo \cite{rebouas_empirical_2016}. %Segundo a Apple, o \textit{Swift} possui uma sintaxe concisa e intuitiva \cite{apple_inc_swift_2016}.
 
 \subsection{Android} \label{subsection:android}
 
@@ -154,7 +154,7 @@ A arquitetura Android é baseada nas camadas apresentadas na Figura~\ref{fig:arc
 
 \subsubsection{Desenvolvimento Android} \label{subsection:dev-android}
 
-Para o desenvolvimento de aplicações Android é recomendada a  linguagem de programação \textit{Java}.
+O desenvolvimento de aplicações Android é atrelado à linguagem de programação \textit{Java}.
 Não é requerido \textit{SO} específico e a \textit{IDE} indicada pelo Google é o \textit{Android Studio}, oficial para desenvolvimento de aplicativos Android \cite{android_meet_2016}.
 
 Para a publicação na loja de aplicativos do Google, \textit{Google Play Store}, é cobrada uma taxa única de US\$25. 
@@ -217,8 +217,9 @@ para garantir que outras empresas pudessem contribuir \cite{bezerra_desenvolvime
 Como o PhoneGap é uma marca registrada de propriedade da Adobe, na Apache teve seu nome alterado para Cordova.
 Tanto o \textit{Apache Cordova} quanto o \textit{Adobe PhoneGap}, são gratuitos e \textit{open sources}, no entanto, o 
 PhoneGap possui um ambiente integrado com serviços da Adobe, como o \textit{PhoneGap Build} \cite{bezerra_desenvolvimento_2016}.
- 
-O Cordova permite que aplicações não nativas tenham acesso a funcionalidades nativas do dispositivo, como sensores, 
+
+O Cordova permite que aplicações não nativas tenham acesso às funcionalidades nativas do dispositivo como sensores, 
+
 contatos e câmera. No entanto, o Cordova apenas consegue fazer um aplicativo criado em 
 \textit{HTML} rodar como se fosse nativo em um dispositivo com Android e iOS, mas não consegue 
 imitar a usabilidade e aparência dos dispositivos nativos \cite{bezerra_desenvolvimento_2016}. 
@@ -309,8 +310,13 @@ Um projeto Ionic pode ser dividido em cinco camadas, listadas e detalhadas a seg
 
 \subsubsection{Desenvolvimento Ionic} \label{subsubsection:dev-ionic}
 Para o desenvolvimento de aplicações utilizando Ionic, não é necessário nenhum equipamento específico, assim como no desenvolvimento Android.
+<<<<<<< HEAD
+É necessário apenas um computador com qualquer \textit{SO}, no entanto, para o desenvolvimento do \textit{app} iOS, ainda é necessário que se possua um computador com o \textit{SO} 
+\textit{Mac OS} e com o Xcode \cite{drifty_installing_2016}.
+=======
 É necessário apenas um computador com qualquer \textit{SO (Sistema Operacional)}, no entanto, para o desenvolvimento do \textit{app} iOS, ainda é necessário que se possua um computador com o \textit{SO} 
 \textit{MacOS} e com o Xcode \cite{drifty_installing_2016}.
+>>>>>>> afe43edf609d1dcc404070dc42f4e5b7ad8a88bb
 Pode-se utilizar qualquer \textit{IDE} de acordo com as preferências do programador, não há qualquer tipo de recomendação técnica por parte da equipe ou presente na documentação do Ionic.
 A linguagem utilizada é o \textit{JavaScript}, usando ainda \textit{HTML} e \textit{CSS} para criação da interface gráfica.
 
@@ -390,7 +396,7 @@ nativas.
 \begin{figure}[H]
   \centering
     \includegraphics[width=0.7\textwidth]{dev-natxcross}
-    \caption[Desenvolvimento Multiplataforma (acima) e Nativo (abaixo)]{ Desenvolvimento \textit{Cross-plataform} x Nativo. Fonte: Baseado em \cite{corral_ant_2012}}
+    \caption[Desenvolvimento Multiplataforma (acima) e Nativo (abaixo)]{ Desenvolvimento Multiplataforma (acima) e Nativo (abaixo). Fonte: Baseado em \cite{corral_ant_2012}}
 	\label{fig:dev-natxcross}
 \end{figure}
 
