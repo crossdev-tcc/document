@@ -33,7 +33,7 @@ Independente da plataforma, sempre deve haver um passo anterior ao desenvolvimen
 aplicativo a ser desenvolvido na plataforma para desenvolvedores do Facebook\footnote{\url{https://developers.facebook.com}}. O registro do aplicativo deve ser feito
 para cada plataforma que se deseja atingir, por exemplo, iOS e Android, utilizando para isso, o nome do pacote do aplicativo em cada plataforma. 
 
-Com esta estapa concluída, pode-se iniciar o desenvolvimento desta funcionalidade utilizando para isso o \textit{SDK} do Facebook para iOS e Android.
+Com esta etapa concluída, pode-se iniciar o desenvolvimento desta funcionalidade utilizando para isso o \textit{SDK} do Facebook para iOS e Android.
 No caso do Ionic, existem alguns \textit{plugins} que podem ser utilizados, como por exemplo o \textit{\$cordovaOauth}\footnote{\url{http://ngcordova.com/docs/plugins/oauth/}}, disponível dentro do próprio ngCordova, 
 que permite a conexão com vários provedores de serviços, tais como Google, Github, Facebook e Linkedin, por exemplo. 
 
@@ -70,7 +70,7 @@ o que pode tornar o desenvolvimento mais simples que na abordagem nativa.
 
 \subsection{Consumo de Web Services} \label{subsec:webservices}
 Como o poder computacional dos dispositivos móveis, embora elevado, ainda não é comparável ao dos servidores, muitos aplicativos utilizam um modelo cliente/servidor, no qual
-as operações mais custosas computacionamente são processadas no lado servidor e não no cliente. Além disso, a persistência dos dados da aplicação dificilmente é feita apenas localmente nos dispositivos para evitar 
+as operações mais custosas computacionalmente são processadas no lado servidor e não no cliente. Além disso, a persistência dos dados da aplicação dificilmente é feita apenas localmente nos dispositivos para evitar 
 perdas de dados no caso de roubos, extravios ou danos ao aparelho, facilitar a migração para outros dispositivos e o uso em outras plataformas. Com isso, é necessário que os aplicativos estejam preparados para se 
 comunicarem com \textit{Web Services}. Para realizar essa comunicação, cada plataforma oferece alguns meios nativos como classes e \textit{frameworks}, no entanto, existem \textit{frameworks} de terceiros que 
 são muito utilizados e conhecidos na comunidade de desenvolvedores tanto para comunicar com os \textit{Web Services}, como para lidar com JSON e XML usados na comunicação entre aplicativo/servidor. 
@@ -89,7 +89,7 @@ de código implementando o consumo de um \textit{web service} privado no Ionic.
 No iOS é possível realizar essa comunicação utilizando algumas classes nativas do sistema como por exemplo, \textit{NSURL}, \textit{NSData} e \textit{NSJSONSerialization}, informando uma \textit{URL} 
 na qual o \textit{app} irá se conectar para receber ou enviar algum dado para o servidor, no entanto, toda essa comunicação e tratamento das respostas deverá ser feita manualmente. Para facilitar, existem alguns 
 \textit{frameworks} terceiros como \textit{AlamoFire}\footnote{\url{https://github.com/Alamofire/Alamofire}} e \textit{SwiftyJSON}\footnote{\url{https://github.com/SwiftyJSON/SwiftyJSON}} 
-que abstraem essa comunição e tratamento dos dados em JSON, respectivamente, tornando o código mais simples e limpo. Ao utilizá-lo, o programador apenas indica a \textit{URL}, o método da requisição 
+que abstraem essa comunicação e tratamento dos dados em JSON, respectivamente, tornando o código mais simples e limpo. Ao utilizá-lo, o programador apenas indica a \textit{URL}, o método da requisição 
 (\textit{POST, GET, PUT, DELETE, etc}) e os parâmetros que deseja enviar ao servidor. Após isso, basta receber a resposta na forma de \textit{JSON} dentro de um \textit{completion} do \textit{Alamofire}, 
 e utilizar os dados de acordo com as necessidades do aplicativo. Um trecho de código exemplificando o uso do \textit{AlamoFire} e \textit{SwiftyJSON} é apresentado na Figura~\ref{fig:alamofire-ios}.
 
