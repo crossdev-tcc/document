@@ -353,12 +353,13 @@ desenvolvimento multiplataforma.
 \subsection{Assistentes Pessoais} \label{subsec:siri}
 Os dispositivos móveis têm se tornado cada vez mais inteligentes e úteis para seus usuários. Funcionam como computadores, agendas, calendários, máquinas fotográficas, etc. Para atenderem ainda mais às necessidades de 
 seus usuários, os dispositivos possuem em sua maioria inteligências artificiais, na forma de assistentes pessoais, criadas para auxiliar no uso dos \textit{smartphones} e \textit{smartwatches}. 
-Na Apple, a assistente é conhecida como Siri, já no Android existem alguns aplicativos de terceiros que tentam criar uma assistente pessoal. O mais conhecido é Google Now, da própria Google, 
-embora nesse caso ele não seja uma assistente pessoal, pois não possui traços de personalidade, ele apenas reconhece voz e responde a perguntas com muita eficiência.
-
-Com a Siri é possível controlar o dispositivo, criando eventos, alarmes, lembretes, abrindo aplicativos e controlando eletrodomésticos, por exemplo, e fazer buscas variadas na \textit{internet}, com o Google Now 
-apenas essa última opção está disponível. Durante a execução deste trabalho, foi lançado o primeiro celular inteiramente feito pela Google chamado de Pixel, que conta com o Google Assistant, uma evolução do Google Now 
-para se tornar uma assistente pessoal. Com ele será possível também controlar o dispositivo assim como as outras assistentes de outras plataformas fazem. 
+Na Apple, a assistente é conhecida como Siri, já no Android existem alguns aplicativos de terceiros que tentam criar uma assistente pessoal. Durante a execução deste trabalho, foi lançado o primeiro celular 
+inteiramente feito pela Google chamado de Pixel, que conta com o Google Assistant, uma evolução do Google Now para se tornar uma assistente pessoal. Com ele será possível também controlar o dispositivo assim como as 
+outras assistentes de outras plataformas fazem.
+% O mais conhecido é Google Now, da própria Google, 
+% embora nesse caso ele não seja uma assistente pessoal, pois não possui traços de personalidade, ele apenas reconhece voz e responde a perguntas com muita eficiência.
+Com as assistentes pessoais é possível controlar o dispositivo, criando eventos, alarmes, lembretes, abrindo aplicativos e controlando eletrodomésticos, por exemplo, e fazer buscas variadas na \textit{internet}.
+% , com o Google Now apenas essa última opção está disponível.  
 
 Durante a execução deste trabalho, a Apple lançou juntamente com a nova versão do sistema operacional, iOS 10, a \textit{API} da Siri para que aplicativos de terceiros possam interagir com a assistente pessoal tornando 
 a experiência de uso dos aplicativos ainda mais intuitiva e prática. Ainda não há \textit{plugins} do Cordova que permitam o uso desse recurso, ou seja, caso haja a necessidade de utilizar a Siri, o multiplataforma ainda 
@@ -415,14 +416,20 @@ até mais de 100 polegadas e sistemas operacionais, com \textit{SDKs}, \textit{f
 
 \subsection{Câmeras customizadas} \label{subsec:customcamera}
 
-Um dos recursos mais utilizados nos \textit{smartphones} é a câmera fotográfica. Muitos usuários definem o aparelho a ser adquirido com base na capacidade da câmeras, com isso muitos aplicativos aproveitam para 
-oferecer mais funcionalidades que os aplicativos de câmeras nativos dos dispositivos. Funcionalidades como filtros de imagens, edição de vídeos, câmera lenta, integração com redes sociais e, em alguns casos, os aplicativos 
-são uma rede social em si. Caso o aplicativo tenha a necessidade de câmeras customizadas é possível desenvolvê-lo multiplataforma utilizando alguns \textit{plugins} para o Cordova, por exemplo o 
+Um dos recursos mais utilizados nos \textit{smartphones} é a câmera fotográfica. Muitos usuários definem o aparelho a ser adquirido 
+com base na capacidade da câmeras, com isso muitos aplicativos aproveitam para 
+oferecer mais funcionalidades que os aplicativos de câmeras nativos dos dispositivos. Funcionalidades como filtros de imagens, 
+edição de vídeos, câmera lenta, integração com redes sociais e, em alguns casos, os aplicativos 
+são uma rede social em si. Caso o aplicativo tenha a necessidade de câmeras customizadas é possível desenvolvê-lo multiplataforma 
+utilizando alguns \textit{plugins} para o Cordova, por exemplo o 
 \textit{cordova-plugin-camera-preview}\footnote{\url{https://github.com/cordova-plugin-camera-preview/cordova-plugin-camera-preview}}.
 
-Tanto o iOS quanto o Android fornecem suporte para a criação de câmeras customizadas de acordo com as necessidades dos aplicativos. No iOS é possível utilizar o \textit{framework AVFoundation} para identificar as camêras 
-presentes no dispositivo e utilizá-las de acordo com as regras de negócio do aplicativo. É possível criar interfaces completamente customizadas com quaisquer funcionalidades que a equipe de desenvolvimento seja capaz de 
-implementar. Assim como no iOS, no Android também é possível criar câmeras customizadas utilizando o \textit{framework android.hardware.camera2}.
+Tanto o iOS quanto o Android fornecem suporte para a criação de câmeras customizadas de acordo com as necessidades dos aplicativos. 
+No iOS é possível utilizar o \textit{framework AVFoundation} para identificar as camêras 
+presentes no dispositivo e utilizá-las de acordo com as regras de negócio do aplicativo. É possível criar interfaces completamente 
+customizadas com quaisquer funcionalidades que a equipe de desenvolvimento seja capaz de 
+implementar. Assim como no iOS, no Android também é possível criar câmeras customizadas utilizando 
+o \textit{framework android.hardware.camera2}.
 
 \subsection{Detecção facial} \label{subsec:facial}
 A detecção facial é uma tecnologia usada em uma grande variedade de aplicações que identificam rostos humanos em imagens. Detectar rostos humanos e extrair traços faciais é uma importante funcionalidade com diversas 
@@ -535,3 +542,32 @@ nativas, onde 80\% dos especialistas discordaram.
 Foi percebido que muitos especialistas não souberam opinar ou estavam equivocados sobre muitas das questões anteriores e mesmo assim nenhum acredita que o desenvolvimento multiplataforma pode ser usado em qualquer cenário sem restrição. Além 
 disso, a grande maioria acredita que as ferramentas são limitadas quando comparadas às nativas. De fato, o multiplataforma não é a melhor opção para todos os cenários e ainda apresenta limitações quando comparado à 
 abordagem nativa, porém os especialistas compactuam com essas ideias mesmo sem conhecer as reais capacidades do ambiente multiplataforma, indicando um possível prejulgamento da abordagem.
+
+Vale ressaltar, que foram pesquisados aplicativos de sucesso desenvolvidos utilizando as tecnologias abordadas neste trabalho, ou seja, Cordova e Ionic, e nenhum dos aplicativos trazidos na pesquisa são aplicativos de 
+grande sucesso nas lojas. %Isso indica que os aplicativos de maior sucesso ainda são criados utilizando a abordagem nativa. 
+
+O desenvolvimento móvel requer uma análise aprofundada de uma série de fatores, como mercado, público e tecnologias para decidir qual abordagem é a mais adequada para cada situação.
+É importante ressaltar que a abordagem nativa não é melhor que a multiplataforma ou vice-versa, sendo apenas distintas e deve-se avaliar qual utilizar caso a 
+caso. Para cada situação existem fatores que devem ser avaliados de uma maneira conjunta e os selecionados como mais importantes pelos autores são apresentados na Figura~\ref{fig:analiseapp} e explicados a seguir.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.55\textwidth]{analiseapp}
+	\caption[Fatores a serem avaliados no desenvolvimento móvel]{ Fatores a serem avaliados no desenvolvimento móvel.}
+	\label{fig:analiseapp}
+\end{figure}
+
+\begin{itemize}
+    \item \textbf{Tipo e complexidade da aplicação}: cada aplicação possui requisitos diferentes e próprios que originam necessidades e dificuldades inerentes daquele aplicativo. Com isso, deve-se avaliar,
+    com base nos requisitos da aplicação, qual abordagem suporta melhor o \textit{app};
+    \item \textbf{\textit{Expertise} da equipe}: cada equipe possui um conjunto único de habilidades e conhecimentos. No momento da escolha de uma abordagem, esses conhecimentos
+    devem ser levados em consideração, visto que é a equipe de desenvolvimento que irá conceber o produto final. Se a equipe possui mais conhecimentos em uma abordagem do que em outra, isso pode ser 
+    um indicativo de qual abordagem escolher;
+    \item \textbf{Nicho de mercado}: Cada plataforma móvel (iOS, Android, \textit{Windows Phone}, etc), domina uma parcela do mercado e possui um grupo de usuários com 
+    características, opiniões, necessidades e gostos próprios atrelados à plataforma que usam. Com isso, no momento de criar um \textit{app} deve-se pensar para quem é esse aplicativo. Se ele for concebido 
+    para suprir uma demanda de um grupo específico, talvez não haja a necessidade de criá-lo para várias plataformas;
+    \item \textbf{Prazo de desenvolvimento}: Quanto mais plataformas para atender, maior é o tempo necessário para desenvolver a solução. Se o prazo do projeto for apertado para desenvolvimento de mais de uma solução 
+    nativa, há de considerar o desenvolvimento multiplataforma, visto que apenas será codificada uma solução que poderá atender várias plataformas diferentes;
+    \item \textbf{Capital disponível para investimento}: Desenvolver para plataformas nativas exige ambiente, infraestrutura e conhecimentos diferentes para cada plataforma. Dessa forma, quanto mais plataformas se 
+    quer abarcar, mais custoso o projeto será. Uma solução multiplataforma pode ser mais viável economicamente dependendo da situação;
+\end{itemize}

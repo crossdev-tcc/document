@@ -31,38 +31,15 @@ ao par com o que há de mais novo em cada plataforma (iOS, Android). Por exemplo
 ainda não há como realizar esta integração por meio de tecnologias multiplataforma. Além disso, existem alguns casos específicos que não podem ser desenvolvidos com multiplataforma, como \textit{widgets} e aplicativos para 
 \textit{smartwatches}, o que limita as possibilidades do multiplataforma quando comparado ao nativo.
 
-O desenvolvimento móvel requer uma análise aprofundada de uma série de fatores, como mercado, público e tecnologias para decidir qual abordagem é a mais adequada para cada situação.
-É importante ressaltar que a abordagem nativa não é melhor que a multiplataforma ou vice-versa, sendo apenas distintas e deve-se avaliar qual utilizar caso a 
-caso. Para cada situação existem fatores que devem ser avaliados de uma maneira conjunta e os selecionados como mais importantes pelos autores são apresentados na Figura~\ref{fig:analiseapp} e explicados a seguir.
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.55\textwidth]{analiseapp}
-	\caption[Fatores a serem avaliados no desenvolvimento móvel]{ Fatores a serem avaliados no desenvolvimento móvel.}
-	\label{fig:analiseapp}
-\end{figure}
-
-\begin{itemize}
-    \item \textbf{Tipo e complexidade da aplicação}: cada aplicação possui requisitos diferentes e próprios que originam necessidades e dificuldades inerentes daquele aplicativo. Com isso, deve-se avaliar,
-    com base nos requisitos da aplicação, qual abordagem suporta melhor o \textit{app};
-    \item \textbf{\textit{Expertise} da equipe}: cada equipe possui um conjunto único de habilidades e conhecimentos. No momento da escolha de uma abordagem, esses conhecimentos
-    devem ser levados em consideração, visto que é a equipe de desenvolvimento que irá conceber o produto final. Se a equipe possui mais conhecimentos em uma abordagem do que em outra, isso pode ser 
-    um indicativo de qual abordagem escolher;
-    \item \textbf{Nicho de mercado}: Cada plataforma móvel (iOS, Android, \textit{Windows Phone}, etc), domina uma parcela do mercado e possui um grupo de usuários com 
-    características, opiniões, necessidades e gostos próprios atrelados à plataforma que usam. Com isso, no momento de criar um \textit{app} deve-se pensar para quem é esse aplicativo. Se ele for concebido 
-    para suprir uma demanda de um grupo específico, talvez não haja a necessidade de criá-lo para várias plataformas;
-    \item \textbf{Prazo de desenvolvimento}: Quanto mais plataformas para atender, maior é o tempo necessário para desenvolver a solução. Se o prazo do projeto for apertado para desenvolvimento de mais de uma solução 
-    nativa, há de considerar o desenvolvimento multiplataforma, visto que apenas será codificada uma solução que poderá atender várias plataformas diferentes;
-    \item \textbf{Capital disponível para investimento}: Desenvolver para plataformas nativas exige ambiente, infraestrutura e conhecimentos diferentes para cada plataforma. Dessa forma, quanto mais plataformas se 
-    quer abarcar, mais custoso o projeto será. Uma solução multiplataforma pode ser mais viável economicamente dependendo da situação;
-\end{itemize}
-
 \section{Limitações do trabalho} \label{section:limitacoestrabalho}
 Uma limitação deste trabalho é o fato da comparação entre abordagens ter sido feita considerando uma tecnologia multiplataforma baseada em componentes \textit{web}. Existem outros tipos de tecnologia multiplataforma 
 que podem não se encaixar nas conclusões obtidas neste trabalho por não ficarem restritas à execução em \textit{web views}, por exemplo, o Xamarin. 
 
 Outra limitação é o tipo de aplicativo explorado neste trabalho. Foram avaliados e desenvolvidos aplicativos de sistemas de informação móveis que acessam e mantém informações em servidores. 
 Outros tipos de aplicativos como jogos e aplicações seguras, como bancos eletrônicos e mensageiros, possuem requisitos de performance e privacidade que podem impactar na avaliação das abordagens.
+
+Outra limitação é relativa ao estudo de uso que foi feito recriando um aplicativo iOS para Ionic. Não foi criada a versão nativa do Android do mesmo aplicativo para comparar com o aplicativo Android gerado pelo Ionic, isso 
+faria o estudo de uso mais embasado para a comparação entre as duas abordagens.
 
 \section{Trabalhos Futuros} \label{section:trabalhosfuturos}
 Como trabalho futuro pode-se avaliar empiricamente ferramentas para desenvolvimento multiplataforma não baseadas em tecnologias 
